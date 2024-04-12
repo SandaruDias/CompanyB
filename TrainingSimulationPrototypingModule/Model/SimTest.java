@@ -13,5 +13,6 @@ public class SimTest
     private boolean circuitSimulStatus;
     private boolean thermalSimulStatus;
     private boolean manufacturabilityStatus;
+    private String officerName;
 
 }
