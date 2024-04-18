@@ -34,4 +34,11 @@ public class EmployController {
         return "--- HUMAN RESOURCE --- ";
     }
 
+    public Boolean verifyLogin(int index,String password){
+        return employService.verifyLogIn(index,password);
+    }
+
+    public Boolean changePassword(int index,String newPassword){
+        return employService.changePassword(index,newPassword);
+    }
 }

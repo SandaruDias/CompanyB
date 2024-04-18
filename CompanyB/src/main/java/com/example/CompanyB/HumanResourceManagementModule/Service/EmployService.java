@@ -28,4 +28,13 @@ public class EmployService {
     public List<Employ> getEmployByName(String name){
         return searchRepo.findByText(name);
     }
+
+    public Boolean verifyLogIn(int index, String password){
+        return employRepo.findById(index).get().getPassword().equals(password);
+    }
+
+    public Boolean changePassword(int index, String newPassword){
+        employRepo.findById(index).get().setPassword(newPassword);
+        return true;
+    }
 }
