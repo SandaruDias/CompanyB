@@ -3,41 +3,70 @@ package com.example.CompanyB;
 import com.example.CompanyB.FinancePayRollModule.Model.Payroll;
 import com.example.CompanyB.FinancePayRollModule.Repository.PayrollRepository;
 import com.example.CompanyB.FinancePayRollModule.Service.PayrollService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.Date;
+
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-import static org.mockito.BDDMockito.given;
-import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 public class PayrollServiceTests {
 
-    @MockBean
+    @Mock
     private PayrollRepository payrollRepository;
+
+    @Mock
+    private WebClient.Builder webClientBuilder;
+
+    @Mock
+    private WebClient webClient;
+
+    @Mock
+    private WebClient.RequestHeadersUriSpec requestHeadersUriSpec;
+
+    @Mock
+    private WebClient.RequestHeadersSpec requestHeadersSpec;
 
     @InjectMocks
     private PayrollService payrollService;
 
+    @BeforeEach
+    void setUp() {
+        // Set up WebClient Mock
+        when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
+        when(webClientBuilder.build()).thenReturn(webClient);
+        when(webClient.post()).thenReturn((WebClient.RequestBodyUriSpec) requestHeadersUriSpec);
+        when(requestHeadersUriSpec.uri(anyString())).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(null); // Mock further as necessary
+    }
+
     @Test
-    public void testCalculateAndSavePayroll() {
-        // Given
+    void testCalculateAndSavePayroll() {
+        // Arrange
         Payroll payroll = new Payroll();
         payroll.setEmployeeId(1L);
-        payroll.setGrossSalary(5000.00);
-        payroll.setNetSalary(4500.00);
-        payroll.setTaxDeductions(500.00);
+        payroll.setPayPeriodStart(new Date());
+        payroll.setPayPeriodEnd(new Date());
+        payroll.setGrossSalary(10000.00);
+        payroll.setNetSalary(8000.00);
+        payroll.setTaxDeductions(2000.00);
+        payroll.setPayDate(new Date());
+        payroll.setStatus("Processed");
 
-        given(payrollRepository.save(any(Payroll.class))).willReturn(payroll);
+        when(payrollRepository.save(any(Payroll.class))).thenReturn(payroll);
 
-        // When
-        Payroll savedPayroll = payrollService.calculateAndSavePayroll(1L, 160.0, 25.0, 20.0, 30.0, 500.00);
+        // Act
+        Payroll savedPayroll = payrollService.calculateAndSavePayroll(1L, 160.0, 25.0, 20.0, 30.0, 2000.00);
 
-        // Then
-        assertThat(savedPayroll.getNetSalary()).isEqualTo(4500.00);
+        // Assert
         verify(payrollRepository).save(any(Payroll.class));
+        assert savedPayroll.getNetSalary().equals(8000.00);
     }
 }
