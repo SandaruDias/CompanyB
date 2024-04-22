@@ -11,10 +11,10 @@ import java.util.List;
 public class OrderModel {
 
     @Id
-    private String id;
-    private String orderId;
-    private String customerId;
-    private Date orderDate;
+    private String _id;
+    private String order_id;
+    private String customer_id;
+    private String order_date;
     private List<OrderItem> items;
     private String status;
 
