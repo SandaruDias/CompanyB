@@ -12,6 +12,7 @@ public class OnGoingOrder {
     private int waitToThree;
     private int completedNum;
     private  boolean isCompleted;
+    private boolean QAResult;
 
     public String getId() {
         return id;
@@ -91,5 +92,13 @@ public class OnGoingOrder {
 
     public void setCompleted(boolean completed) {
         isCompleted = completed;
+    }
+
+    public boolean isQAResult() {
+        return QAResult;
+    }
+
+    public void setQAResult(boolean QAResult) {
+        this.QAResult = QAResult;
     }
 }
