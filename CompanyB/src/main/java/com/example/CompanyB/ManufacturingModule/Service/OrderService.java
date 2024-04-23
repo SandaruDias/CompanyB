@@ -30,6 +30,7 @@ public class OrderService {
         OnGoingOrder onGoingOrder = new OnGoingOrder(orderId);
         onGoingOrder.setId(fetchOrder.getId());
         onGoingOrder.setTotalNumber(fetchOrder.getQuantity());
+        onGoingOrder.setWaitToOne(fetchOrder.getQuantity());
         System.out.println(testflag);
 
         return onGoingOrder;
