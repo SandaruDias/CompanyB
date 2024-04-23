@@ -1,7 +1,7 @@
 package com.example.CompanyB.ManufacturingModule.Model;
 
 
-public class OnGoingOrder {
+public class  OnGoingOrder {
     private String id;
     private int totalNumber;
     private  int onGoingStationOne;
