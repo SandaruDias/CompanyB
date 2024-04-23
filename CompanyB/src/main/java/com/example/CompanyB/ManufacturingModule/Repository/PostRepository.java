@@ -11,14 +11,7 @@
 package com.example.CompanyB.ManufacturingModule.Repository;
 
 import com.example.CompanyB.ManufacturingModule.Model.Post;
-import com.example.CompanyB.ManufacturingModule.Model.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-//import java.util.Optional;
-//
-//public interface PostRepository extends MongoRepository<Product, String> {
-//    Optional<Product> findById(String id);
-//}
 
 public interface PostRepository extends MongoRepository<Post,String>
 {

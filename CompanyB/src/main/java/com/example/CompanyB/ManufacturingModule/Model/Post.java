@@ -1,17 +1,26 @@
 package com.example.CompanyB.ManufacturingModule.Model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.Arrays;
 
 @Document(collection = "Manufacturing")
 public class Post {
+    @Id
+    private String id; // Ensure there's an ID field if you want to specify it when posting
+    // .
     private String profile;
     private String desc;
     private int exp;
-    private String techs[];
+    private String[] techs;
 
-    public Post() {
+    // Getters, Setters, Constructors
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getProfile() {
@@ -49,7 +58,8 @@ public class Post {
     @Override
     public String toString() {
         return "Post{" +
-                "profile='" + profile + '\'' +
+                "id='" + id + '\'' +
+                ", profile='" + profile + '\'' +
                 ", desc='" + desc + '\'' +
                 ", exp=" + exp +
                 ", techs=" + Arrays.toString(techs) +
