@@ -14,6 +14,10 @@ public class  OnGoingOrder {
     private  boolean isCompleted;
     private boolean QAResult;
 
+    public OnGoingOrder(String id) {
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }
