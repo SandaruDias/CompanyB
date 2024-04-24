@@ -27,6 +27,8 @@ public class OrderService {
 
     }
     public OrderModel checkStockAvailability(OrderModel order) {
+        boolean allItemsGoodToGo = true; // Flag to track if all items have enough stock
+
         List<OrderItem> orderItems = order.getItems();
         for (OrderItem orderItem : orderItems) {
             String itemId = orderItem.getItem_id();
@@ -38,12 +40,21 @@ public class OrderService {
                     orderItem.setStock_status("Enough");
                 } else {
                     orderItem.setStock_status("Not Enough");
+                    allItemsGoodToGo = false; // At least one item doesn't have enough stock
                 }
             } else {
                 // Handle case where inventory item is not found
                 orderItem.setStock_status("Not Found");
+                allItemsGoodToGo = false; // At least one item not found
             }
         }
+        // Update order status based on stock availability
+        if (allItemsGoodToGo) {
+            order.setStatus("Good to go");
+        } else {
+            order.setStatus("Bad request");
+        }
+
         return order;
     }
     public OrderModel fetchOrderDetails(String orderId) {
