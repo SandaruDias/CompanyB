@@ -1,6 +1,7 @@
 package com.example.CompanyB.SalesMarketingModule.Model;
 
 import lombok.Data;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
@@ -11,8 +12,8 @@ import java.util.List;
 public class OrderModel {
 
     @Id
-    private String _id;
-    private String order_id;
+    private ObjectId _id;
+   // private String order_id;
     private String customer_id;
     private String order_date;
     private List<OrderItem> items;

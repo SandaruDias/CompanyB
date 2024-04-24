@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document (collection = "Inventory")
 public class InventoryItem {
 
-    @Id
+
     private String item_id;
     private String name;
     private int quantity_available;
