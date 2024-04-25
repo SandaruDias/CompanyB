@@ -1,5 +1,7 @@
 package com.example.CompanyB.ManufacturingModule.Model;
 
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
+
 import java.util.ArrayList;
 
 public class WorkStationOne extends WorkStation {

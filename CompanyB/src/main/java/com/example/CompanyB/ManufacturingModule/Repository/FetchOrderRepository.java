@@ -10,7 +10,7 @@
 
 package com.example.CompanyB.ManufacturingModule.Repository;
 
-import com.example.CompanyB.ManufacturingModule.Model.FetchOrder;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.FetchOrder;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface FetchOrderRepository extends MongoRepository<FetchOrder,String>

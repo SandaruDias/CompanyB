@@ -1,16 +1,11 @@
 package com.example.CompanyB.ManufacturingModule.Controller;
 
-import com.example.CompanyB.ManufacturingModule.Model.OnGoingOrder;
-import com.example.CompanyB.ManufacturingModule.Model.Post;
-import com.example.CompanyB.ManufacturingModule.Repository.OnGoingOrderRepository;
-import com.example.CompanyB.ManufacturingModule.Service.FetchOrderService;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
 import com.example.CompanyB.ManufacturingModule.Service.OnGoingOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/OnGoingOrder")

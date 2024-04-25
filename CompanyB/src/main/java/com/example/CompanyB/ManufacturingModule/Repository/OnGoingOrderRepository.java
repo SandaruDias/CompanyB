@@ -11,7 +11,7 @@
 package com.example.CompanyB.ManufacturingModule.Repository;
 
 
-import com.example.CompanyB.ManufacturingModule.Model.OnGoingOrder;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface OnGoingOrderRepository extends MongoRepository<OnGoingOrder,String>

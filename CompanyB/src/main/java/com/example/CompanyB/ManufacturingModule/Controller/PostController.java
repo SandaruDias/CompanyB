@@ -1,6 +1,6 @@
 //package com.example.CompanyB.ManufacturingModule.Controller;
 //
-//import com.example.CompanyB.ManufacturingModule.Model.Post;
+//import com.example.CompanyB.ManufacturingModule.DataTransferObject.Post;
 //import com.example.CompanyB.ManufacturingModule.Repository.PostRepository;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.*;
@@ -25,7 +25,7 @@
 //}
 package com.example.CompanyB.ManufacturingModule.Controller;
 
-import com.example.CompanyB.ManufacturingModule.Model.Post;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.Post;
 import com.example.CompanyB.ManufacturingModule.Repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

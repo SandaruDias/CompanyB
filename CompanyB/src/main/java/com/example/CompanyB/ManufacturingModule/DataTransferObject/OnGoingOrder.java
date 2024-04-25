@@ -1,4 +1,4 @@
-package com.example.CompanyB.ManufacturingModule.Model;
+package com.example.CompanyB.ManufacturingModule.DataTransferObject;
 
 
 import org.springframework.data.annotation.Id;
