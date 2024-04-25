@@ -9,17 +9,19 @@ import java.util.Date;
 public class User {
     @Id
     private String id;
-    private Date releasedDate;
-    private String orderComponents;
-    private int numberOfItems;
-    private boolean isReleased;
+    private String First_Name;
+    private String Last_Name;
+    private String Password;
+    private String role;
+    private String Contact_No;
 
-    public User(String id, Date releasedDate, String orderComponents, int numberOfItems, boolean isReleased) {
+    public User(String id, String first_Name, String last_Name, String password, String role, String contact_No) {
         this.id = id;
-        this.releasedDate = releasedDate;
-        this.orderComponents = orderComponents;
-        this.numberOfItems = numberOfItems;
-        this.isReleased = isReleased;
+        First_Name = first_Name;
+        Last_Name = last_Name;
+        Password = password;
+        this.role = role;
+        Contact_No = contact_No;
     }
 
     public String getId() {
@@ -30,46 +32,55 @@ public class User {
         this.id = id;
     }
 
-    public Date getReleasedDate() {
-        return releasedDate;
+    public String getFirst_Name() {
+        return First_Name;
     }
 
-    public void setReleasedDate(Date releasedDate) {
-        this.releasedDate = releasedDate;
+    public void setFirst_Name(String first_Name) {
+        First_Name = first_Name;
     }
 
-    public String getOrderComponents() {
-        return orderComponents;
+    public String getLast_Name() {
+        return Last_Name;
     }
 
-    public void setOrderComponents(String orderComponents) {
-        this.orderComponents = orderComponents;
+    public void setLast_Name(String last_Name) {
+        Last_Name = last_Name;
     }
 
-    public int getNumberOfItems() {
-        return numberOfItems;
+    public String getPassword() {
+        return Password;
     }
 
-    public void setNumberOfItems(int numberOfItems) {
-        this.numberOfItems = numberOfItems;
+    public void setPassword(String password) {
+        Password = password;
     }
 
-    public boolean isReleased() {
-        return isReleased;
+    public String getRole() {
+        return role;
     }
 
-    public void setReleased(boolean released) {
-        isReleased = released;
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getContact_No() {
+        return Contact_No;
+    }
+
+    public void setContact_No(String contact_No) {
+        Contact_No = contact_No;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
-                ", releasedDate=" + releasedDate +
-                ", orderComponents='" + orderComponents + '\'' +
-                ", numberOfItems=" + numberOfItems +
-                ", isReleased=" + isReleased +
+                ", First_Name='" + First_Name + '\'' +
+                ", Last_Name='" + Last_Name + '\'' +
+                ", Password='" + Password + '\'' +
+                ", role='" + role + '\'' +
+                ", Contact_No='" + Contact_No + '\'' +
                 '}';
     }
 }
