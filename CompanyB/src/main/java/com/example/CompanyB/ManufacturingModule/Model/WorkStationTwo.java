@@ -11,7 +11,7 @@ public class WorkStationTwo extends WorkStation {
         int newWaitToTwo = onGoingOrder.getWaitToTwo() -amount;
         int newOnGoing = onGoingOrder.getOnGoingStationTwo()+ amount;
         if (newWaitToTwo >0){
-            onGoingOrder.setWaitToOne(newWaitToTwo);
+            onGoingOrder.setWaitToTwo(newWaitToTwo);
             onGoingOrder.setOnGoingStationTwo(newOnGoing);
             return 0; // successfully fetched
         }
