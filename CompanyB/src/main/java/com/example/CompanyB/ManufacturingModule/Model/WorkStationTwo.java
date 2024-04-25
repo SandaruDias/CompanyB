@@ -2,15 +2,15 @@ package com.example.CompanyB.ManufacturingModule.Model;
 
 import java.util.ArrayList;
 
-public class WorkStationOne extends WorkStation {
+public class WorkStationTwo extends WorkStation {
     public ArrayList<String> onGoingOrdersIds = new ArrayList<>();
     @Override
     public int fetch(OnGoingOrder onGoingOrder, int amount) {
-        int newWaitToOne = onGoingOrder.getWaitToOne() -amount;
-        int newOnGoing = onGoingOrder.getOnGoingStationOne()+ amount;
-        if (newWaitToOne >0){
-            onGoingOrder.setWaitToOne(newWaitToOne);
-            onGoingOrder.setOnGoingStationOne(newOnGoing);
+        int newWaitToTwo = onGoingOrder.getWaitToTwo() -amount;
+        int newOnGoing = onGoingOrder.getOnGoingStationTwo()+ amount;
+        if (newWaitToTwo >0){
+            onGoingOrder.setWaitToOne(newWaitToTwo);
+            onGoingOrder.setOnGoingStationTwo(newOnGoing);
             return 0; // successfully fetched
         }
         else{
@@ -20,11 +20,11 @@ public class WorkStationOne extends WorkStation {
 
     @Override
     public int pass(OnGoingOrder onGoingOrder, int amount) {
-        int newOnGoing = onGoingOrder.getOnGoingStationOne()-amount;
-        int newWaitToTwo = onGoingOrder.getWaitToTwo() + amount;
+        int newOnGoing = onGoingOrder.getOnGoingStationTwo()-amount;
+        int newWaitToThree = onGoingOrder.getWaitToThree() + amount;
         if (newOnGoing>0){
-            onGoingOrder.setOnGoingStationOne(newOnGoing);
-            onGoingOrder.setWaitToTwo(newWaitToTwo);
+            onGoingOrder.setOnGoingStationTwo(newOnGoing);
+            onGoingOrder.setWaitToThree(newWaitToThree);
             return 0; //successfully passed
         }
         else {
