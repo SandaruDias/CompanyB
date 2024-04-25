@@ -20,8 +20,8 @@ public class WorkStationTwo extends WorkStation {
         }
     }
 
-    @Override
-    public int pass(OnGoingOrder onGoingOrder, int amount) {
+
+    public static int pass(OnGoingOrder onGoingOrder, int amount) {
         int newOnGoing = onGoingOrder.getOnGoingStationTwo()-amount;
         int newWaitToThree = onGoingOrder.getWaitToThree() + amount;
         if (newOnGoing>0){
