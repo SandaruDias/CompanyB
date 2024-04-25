@@ -27,7 +27,13 @@ public class WorkStationThree extends WorkStation {
         if (newOnGoing>0){
             onGoingOrder.setOnGoingStationThree(newOnGoing);
             onGoingOrder.setCompletedNum(newCompleted);
-            return 0; //successfully passed
+            if (newCompleted == onGoingOrder.getTotalNumber()){
+                onGoingOrder.setCompleted(true);
+                return 1; // completed whole order
+            }
+            else {
+            return 0;
+            }//successfully passed
         }
         else {
             return -1; // invalid amount
