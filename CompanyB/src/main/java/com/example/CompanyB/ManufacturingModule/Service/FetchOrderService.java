@@ -1,6 +1,7 @@
 package com.example.CompanyB.ManufacturingModule.Service;
 
 import com.example.CompanyB.ManufacturingModule.DataTransferObject.FetchOrder;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
 import com.example.CompanyB.ManufacturingModule.Repository.FetchOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class FetchOrderService {
 
     private final FetchOrderRepository fetchOrderRepository;
+    public OnGoingOrder onGoingOrder;     //Initialize the Ongoing Order
 
     @Autowired
     public FetchOrderService(FetchOrderRepository fetchOrderRepository) {
@@ -18,6 +20,7 @@ public class FetchOrderService {
     public String checkQuantity(String orderId) {
         FetchOrder order = fetchOrderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+        onGoingOrder.setTotalNumber(order.getQuantity()); //set Order quantity from Order table to Our order
 
         if (order.getQuantity() == 22) {
             return "YES";
