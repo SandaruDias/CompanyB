@@ -1,20 +1,27 @@
 package com.example.CompanyB.ManufacturingModule.Service;
 
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.FinalOutput;
 import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
 import com.example.CompanyB.ManufacturingModule.Model.WorkStationOne;
 import com.example.CompanyB.ManufacturingModule.Model.WorkStationThree;
 import com.example.CompanyB.ManufacturingModule.Model.WorkStationTwo;
+import com.example.CompanyB.ManufacturingModule.Repository.FinalOutputRepository;
 import com.example.CompanyB.ManufacturingModule.Repository.OnGoingOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 
 @Service
 public class OnGoingOrderService {
     @Autowired
     private OnGoingOrderRepository onGoingOrderRepository;
+    @Autowired
+    private FinalOutputRepository finalOutputRepository;
 
-    public OnGoingOrderService(OnGoingOrderRepository onGoingOrderRepository) {
+    public OnGoingOrderService(OnGoingOrderRepository onGoingOrderRepository, FinalOutputRepository finalOutputRepository ) {
         this.onGoingOrderRepository = onGoingOrderRepository;
+        this.finalOutputRepository = finalOutputRepository;
     }
 
     public int GetCompletedNumber(String OrderId){
@@ -63,8 +70,11 @@ public class OnGoingOrderService {
         int success = WorkStationTwo.fetch(onGoingOrder,amount);
         if(success ==0){
             onGoingOrderRepository.save(onGoingOrder);
-        }
-        else{
+        } else if (success ==1) {
+            FinalOutput finalOutput = new FinalOutput(onGoingOrder.getId(),onGoingOrder.getCompletedNum(),0,false, LocalDate.now());
+
+
+        } else{
             //allocated to handle invalid amount
         }
         return onGoingOrder;

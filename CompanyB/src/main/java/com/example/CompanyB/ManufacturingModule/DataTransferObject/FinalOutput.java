@@ -3,6 +3,7 @@ package com.example.CompanyB.ManufacturingModule.DataTransferObject;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Document(collection = "Manufacturing_FinalOutput")
@@ -12,14 +13,18 @@ public class FinalOutput {
     private int No_Of_Items_Released;
     private int No_Of_Error_Items;
     private boolean QA_Approval;
-    private Date Released_Date;
+    private LocalDate Released_Date;
 
-    public FinalOutput(String id, int no_Of_Items_Released, int no_Of_Error_Items, boolean QA_Approval, Date released_Date) {
+    public FinalOutput(String id, int no_Of_Items_Released, int no_Of_Error_Items, boolean QA_Approval, LocalDate released_Date) {
         this.id = id;
         this.No_Of_Items_Released = no_Of_Items_Released;
         this.No_Of_Error_Items = no_Of_Error_Items;
         this.QA_Approval = QA_Approval;
         this.Released_Date = released_Date;
+    }
+
+    public FinalOutput() {
+
     }
 
     public String getId() {
@@ -54,11 +59,11 @@ public class FinalOutput {
         this.QA_Approval = QA_Approval;
     }
 
-    public Date getReleased_Date() {
+    public LocalDate getReleased_Date() {
         return Released_Date;
     }
 
-    public void setReleased_Date(Date released_Date) {
+    public void setReleased_Date(LocalDate released_Date) {
         Released_Date = released_Date;
     }
 
