@@ -36,27 +36,6 @@ public class OnGoingOrderController {
         }
     }
 
-    @PutMapping("/SetIsCompleted/{orderId}")
-    public ResponseEntity<?> SetIsCompleted(@PathVariable String orderId) {
-        try {
-            boolean completed=onGoingOrderService.SetIsCompleted(orderId,false);
-
-            return ResponseEntity.ok().body(orderId+ "ISCompleted " +completed );
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderId);
-        }
-    }
-
-    @PutMapping("/PassToWorkStationOne/{orderId}")
-    public ResponseEntity<?> PassToWorkStationOne(@PathVariable String orderId) {
-        try {
-            OnGoingOrder order=onGoingOrderService.WorkStationPass(orderId);
-
-            return ResponseEntity.ok().body(orderId+ "Completed " +order.toString() );
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderId);
-        }
-    }
     @PutMapping("/WorkstationOneFetch/{orderID}")
     public ResponseEntity<?> WorkStationOneFetch(@PathVariable String orderID) {
         try {
