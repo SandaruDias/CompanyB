@@ -22,7 +22,7 @@ public class WorkStationOne extends WorkStation {
     public int pass(OnGoingOrder onGoingOrder, int amount) {
         int newOnGoing = onGoingOrder.getOnGoingStationOne()-amount;
         int newWaitToTwo = onGoingOrder.getWaitToTwo() + amount;
-        if (newOnGoing>0){
+        if (newOnGoing>=0){
             onGoingOrder.setOnGoingStationOne(newOnGoing);
             onGoingOrder.setWaitToTwo(newWaitToTwo);
             return 0; //successfully passed
