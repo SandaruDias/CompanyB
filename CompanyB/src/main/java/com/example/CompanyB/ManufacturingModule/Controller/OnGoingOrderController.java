@@ -57,5 +57,15 @@ public class OnGoingOrderController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderId);
         }
     }
+    @PutMapping("/WorkstationOneFetch/{orderID}")
+    public ResponseEntity<?> WorkStationOneFetch(@PathVariable String orderID) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkstationOneFetch(orderID);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
+        }
+        catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        }
+    }
 
 }

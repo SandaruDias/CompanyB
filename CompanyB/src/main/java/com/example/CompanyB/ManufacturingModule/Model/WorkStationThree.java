@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class WorkStationThree extends WorkStation {
     public ArrayList<String> onGoingOrdersIds = new ArrayList<>();
-    @Override
-    public int fetch(OnGoingOrder onGoingOrder, int amount) {
+
+    public static int  fetch(OnGoingOrder onGoingOrder, int amount) {
         int newWaitToThree = onGoingOrder.getWaitToThree() -amount;
         int newOnGoing = onGoingOrder.getOnGoingStationThree()+ amount;
         if (newWaitToThree >0){

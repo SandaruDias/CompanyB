@@ -35,8 +35,8 @@ public class OnGoingOrderService {
             OnGoingOrder order = onGoingOrderRepository.findById(orderId)
                     .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
         WorkStationOne workStationOne = new WorkStationOne();
-        int  succes=workStationOne.pass(order,1);
-        if(succes ==0){
+        int  success=workStationOne.pass(order,1);
+        if(success ==0){
             onGoingOrderRepository.save(order);
 
         }
@@ -45,4 +45,14 @@ public class OnGoingOrderService {
         return order;
 
     }
+public OnGoingOrder WorkstationOneFetch(String orderId){
+        OnGoingOrder order = onGoingOrderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+        int success = WorkStationOne.fetch(order,1);
+        if(success ==0){
+            onGoingOrderRepository.save(order);
+
+        }
+        return order;
+}
 }
