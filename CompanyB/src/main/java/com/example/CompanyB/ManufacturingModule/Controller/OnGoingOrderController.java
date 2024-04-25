@@ -31,21 +31,65 @@ public class OnGoingOrderController {
         }
     }
 
-
-    @PutMapping("/WorkstationOneFetch/{orderID}")
-    public ResponseEntity<?> WorkStationOneFetch(@PathVariable String orderID) {
+    @PutMapping("/WorkstationOneFetch/{orderID}/{amount}")
+    public ResponseEntity<?> WorkStationOneFetch(@PathVariable String orderID,@PathVariable int amount) {
         try {
-            OnGoingOrder onGoingOrder = onGoingOrderService.WorkstationOneFetch(orderID);
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationOneFetch(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
         catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
         }
     }
-
-
-
-
-
+    @PutMapping("/WorkstationOnePass/{orderID}/{amount}")
+    public ResponseEntity<?> WorkStationOnePass(@PathVariable String orderID,@PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationOnePass(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
+        }
+        catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        }
+    }
+    @PutMapping("/WorkstationTwoFetch/{orderID}/{amount}")
+    public ResponseEntity<?> WorkStationTwoFetch(@PathVariable String orderID,@PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationTwoFetch(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
+        }
+        catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        }
+    }
+    @PutMapping("/WorkstationTwoPass/{orderID}/{amount}")
+    public ResponseEntity<?> WorkStationTwoPass(@PathVariable String orderID,@PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationTwoPass(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
+        }
+        catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        }
+    }
+    @PutMapping("/WorkstationThreeFetch/{orderID}/{amount}")
+    public ResponseEntity<?> WorkStationThreeFetch(@PathVariable String orderID,@PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationThreeFetch(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
+        }
+        catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        }
+    }
+    @PutMapping("/WorkstationThreePass/{orderID}/{amount}")
+    public ResponseEntity<?> WorkStationThreePass(@PathVariable String orderID,@PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationThreePass(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
+        }
+        catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        }
+    }
 
 }
