@@ -32,6 +32,7 @@ public class OnGoingOrderService {
 public OnGoingOrder WorkstationOneFetch(String orderId){
         OnGoingOrder order = onGoingOrderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
         int success = WorkStationOne.fetch(order,1);
         if(success ==0){
             onGoingOrderRepository.save(order);

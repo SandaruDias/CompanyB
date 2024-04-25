@@ -3,6 +3,7 @@ package com.example.CompanyB.ManufacturingModule.Service;
 import com.example.CompanyB.ManufacturingModule.DataTransferObject.FetchOrder;
 import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
 import com.example.CompanyB.ManufacturingModule.Repository.FetchOrderRepository;
+import com.example.CompanyB.ManufacturingModule.Repository.OnGoingOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,28 +11,32 @@ import org.springframework.stereotype.Service;
 public class FetchOrderService {
 
     private final FetchOrderRepository fetchOrderRepository;
-    public OnGoingOrder onGoingOrder;     //Initialize the Ongoing Order
+    private final OnGoingOrderRepository onGoingOrderRepository;
+
 
     @Autowired
-    public FetchOrderService(FetchOrderRepository fetchOrderRepository) {
+    public FetchOrderService(FetchOrderRepository fetchOrderRepository, OnGoingOrderRepository onGoingOrderRepository) {
         this.fetchOrderRepository = fetchOrderRepository;
+        this.onGoingOrderRepository = onGoingOrderRepository;
     }
 
-    public String checkQuantity(String orderId) {
+
+    public OnGoingOrder SetQuantityOfOngoingOrder(String orderId) {
         FetchOrder order = fetchOrderRepository.findById(orderId)
-                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+                .orElseThrow(() -> new RuntimeException("Not found with id: " + orderId));
+
+        OnGoingOrder onGoingOrder=new OnGoingOrder(orderId);
+//                onGoingOrderRepository.findById(orderId).orElseThrow(() -> new RuntimeException("Not found with id: " + orderId));
+
         onGoingOrder.setTotalNumber(order.getQuantity()); //set Order quantity from Order table to Our order
+        onGoingOrder.setWaitToOne(order.getQuantity()); //set Wait to one to Order Quantity
+        onGoingOrderRepository.insert(onGoingOrder);
+        onGoingOrderRepository.save(onGoingOrder);
+        fetchOrderRepository.save(order);
 
-        if (order.getQuantity() == 22) {
-            return "YES";
-        } else {
-            return "NO";
-        }
+        return  onGoingOrder;
     }
-    public String PrintID(String  ID){
-        FetchOrder order = fetchOrderRepository.findById(ID)
-                .orElseThrow(() -> new RuntimeException("Order not found with id: " + ID));
-        return order.getId();
 
-    }
+
+
 }
