@@ -28,7 +28,7 @@ public class WorkStationOne extends WorkStation {
             return 0; //successfully passed
         }
         else {
-            return -1;
+            return -1; // invalid amount
         }
     }
 }
