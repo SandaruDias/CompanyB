@@ -1,8 +1,13 @@
 package com.example.CompanyB.ManufacturingModule.DataTransferObject;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Date;
 
+@Document(collection = "Manufacturing_User")
 public class User {
+    @Id
     private String id;
     private Date releasedDate;
     private String orderComponents;
