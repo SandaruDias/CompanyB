@@ -88,7 +88,7 @@ public class OnGoingOrderController {
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
         catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e + orderID);
         }
     }
 

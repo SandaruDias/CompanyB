@@ -19,6 +19,7 @@ public class OnGoingOrderService {
     @Autowired
     private FinalOutputRepository finalOutputRepository;
 
+    @Autowired
     public OnGoingOrderService(OnGoingOrderRepository onGoingOrderRepository, FinalOutputRepository finalOutputRepository ) {
         this.onGoingOrderRepository = onGoingOrderRepository;
         this.finalOutputRepository = finalOutputRepository;
@@ -70,11 +71,8 @@ public class OnGoingOrderService {
         int success = WorkStationTwo.fetch(onGoingOrder,amount);
         if(success ==0){
             onGoingOrderRepository.save(onGoingOrder);
-        } else if (success ==1) {
-            FinalOutput finalOutput = new FinalOutput(onGoingOrder.getId(),onGoingOrder.getCompletedNum(),0,false, LocalDate.now());
-
-
-        } else{
+        }
+        else{
             //allocated to handle invalid amount
         }
         return onGoingOrder;
@@ -110,7 +108,16 @@ public class OnGoingOrderService {
         int success = WorkStationThree.pass(onGoingOrder,amount);
         if(success ==0){
             onGoingOrderRepository.save(onGoingOrder);
+            // say that success
         }
+       else if (success ==1) {
+          FinalOutput finalOutput = new FinalOutput(onGoingOrder.getId(),onGoingOrder.getCompletedNum(),0,false, LocalDate.now());
+          onGoingOrderRepository.save(onGoingOrder);
+          try{finalOutputRepository.insert(finalOutput);}
+          catch (RuntimeException e){
+              finalOutputRepository.save(finalOutput);
+          }
+      }
         else{
             //allocated to handle invalid amount
         }

@@ -10,7 +10,7 @@ public class WorkStationThree extends WorkStation {
     public static int  fetch(OnGoingOrder onGoingOrder, int amount) {
         int newWaitToThree = onGoingOrder.getWaitToThree() -amount;
         int newOnGoing = onGoingOrder.getOnGoingStationThree()+ amount;
-        if (newWaitToThree >0){
+        if (newWaitToThree >=0){
             onGoingOrder.setWaitToThree(newWaitToThree);
             onGoingOrder.setOnGoingStationThree(newOnGoing);
             return 0; // successfully fetched
@@ -24,7 +24,7 @@ public class WorkStationThree extends WorkStation {
     public static int pass(OnGoingOrder onGoingOrder, int amount) {
         int newOnGoing = onGoingOrder.getOnGoingStationThree()-amount;
         int newCompleted = onGoingOrder.getCompletedNum() + amount;
-        if (newOnGoing>0){
+        if (newOnGoing>=0){
             onGoingOrder.setOnGoingStationThree(newOnGoing);
             onGoingOrder.setCompletedNum(newCompleted);
             if (newCompleted == onGoingOrder.getTotalNumber()){
