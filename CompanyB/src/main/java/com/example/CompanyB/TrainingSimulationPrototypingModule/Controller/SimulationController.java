@@ -10,31 +10,31 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/simulation")
+@RequestMapping("/tps/simulations")
 public class SimulationController
 {
     @Autowired
     private SimulService simService;
 
-    @PostMapping("/newSimulation")
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public String createSimTest(@RequestBody SimTestTO sim){
         return simService.createSim(sim);
     }
 
-    @GetMapping("/allSimulations")
+    @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<SimTest> getAllSims(){
         return simService.getAllSims();
     }
 
-    @GetMapping("/deleteSim")
+    @GetMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public String deleteSimulation(@RequestParam String id){
         return simService.deleteSimulation(id);
     }
 
-    @PutMapping("/updateSimulation")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public String updateSimTest(@RequestBody SimTestTO sim){
         return simService.updateSim(sim);
