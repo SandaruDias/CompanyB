@@ -51,8 +51,6 @@ public class PrototypeController {
         }
     }
 
-    // Implement other methods based on PrototypeService operations (selectMaterials, recordDesignComments, etc.)
-    // Use appropriate HTTP methods (POST, PUT, etc.) and handle potential exceptions (NotFoundException, etc.)
 
 }
 

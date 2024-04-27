@@ -29,13 +29,9 @@ public class Prototype {
     @Getter
     private String rejectionMessage;
     private String designDocument;
-    private String prototypeShape;
-    private String selectedMaterials;
-    private String designComments;
     private String practicalExperiment;
-    private Boolean userPreferences;
-    private Boolean finalApproval;
-    private Boolean statusSimulationApproval;
+
+
 
 
 }

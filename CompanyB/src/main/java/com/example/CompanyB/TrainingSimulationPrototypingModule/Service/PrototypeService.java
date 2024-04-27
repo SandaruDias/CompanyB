@@ -28,8 +28,8 @@ public class PrototypeService {
     public String rejectFailedDesign(String message, Long prototypeId) throws Exception {
         Prototype prototype = prototypeRepository.findById(prototypeId)
                 .orElseThrow(() -> new Exception("Prototype not found with id: " + prototypeId));
-        // Update the prototype with rejection status (consider adding a rejection field)
-        prototype.setRejected(true); // Assuming a boolean isRejected field
+
+        prototype.setRejected(true);
         prototype.setRejectionMessage(message);
         prototypeRepository.save(prototype);
         return "Design rejected: " + message;
