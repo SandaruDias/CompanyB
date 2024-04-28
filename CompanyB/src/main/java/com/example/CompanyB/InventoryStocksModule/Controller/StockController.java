@@ -8,6 +8,7 @@ import com.example.CompanyB.InventoryStocksModule.Model.OrderDetail;
 import com.example.CompanyB.InventoryStocksModule.Model.supplier;
 import com.example.CompanyB.InventoryStocksModule.Service.SupplierService;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -87,10 +88,12 @@ public class StockController {
     }
 
     @PostMapping("/order")
-    public OrderDetail addOrder(OrderDetail orderDetail) {  // Updated entity name
+    @ResponseBody
+    public OrderDetail addOrder(@RequestBody OrderDetail orderDetail) {  // Updated entity name
         List<stock1> stockList = stockService.getAllStock();
+        List<supplier> supplierList = supplierService.getAllSupplier();
         orderDetail.product = stockList.stream().filter(stock -> stock.getId().equals(orderDetail.productId)).findFirst().get();  // Updated entity name
-        
+        orderDetail.supplier = supplierList.stream().filter(supplier -> supplier.getSuppliername().equals(orderDetail.product.getSuppliername())).findFirst().get();
         OrderDetail newOrder =stockService.addOrder(orderDetail);
         return newOrder;
     }
