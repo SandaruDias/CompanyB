@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button, Heading, Input } from "../../components";
 import Header from "../../components/Header";
+import axios from "axios";
 
 export default function WorkersInterfaceonePage() {
+ 
+
+  const api = "http://localhost:8090";
+
+  const [orderId, setOrderId] = useState('');
+
+  const handleTest = async () => {
+    try {
+      const response = await axios.get(`${api}/FetchOrders/${orderId}`);
+      console.log(response.data); // Assuming the response contains the data you want to log
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -19,10 +35,19 @@ export default function WorkersInterfaceonePage() {
           <div className="mt-7 flex w-[87%] items-start justify-between gap-5 md:w-full md:flex-col">
             <div className="mt-5 flex w-[45%] items-start justify-center gap-[15px] md:w-full sm:flex-col">
               <Heading as="h2" className="mt-[13px] !font-extrabold capitalize">
-                Order Id{" "}
+              Order Id{" "}
               </Heading>
-              <Input shape="round" name="edittext" className="mb-[5px] flex-grow sm:px-5" />
-              <Button size="xs" shape="square" className="min-w-[134px] font-extrabold">
+              <Input
+                shape="round"
+                name="orderId"
+                className="mb-[5px] flex-grow sm:px-5"
+                placeholder="Add Order ID"
+                onChange={(event) => setOrderId(event.target.value)}
+                value={orderId}
+                type="text"
+              />
+
+              <Button size="xs" shape="square" className="min-w-[134px] font-extrabold" onClick={handleTest}>
                 Submit
               </Button>
             </div>
