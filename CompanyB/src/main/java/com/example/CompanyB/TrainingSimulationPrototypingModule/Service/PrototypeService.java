@@ -25,17 +25,17 @@ public class PrototypeService {
     }
 
 
-    public String rejectFailedDesign(String message, Long prototypeId) throws Exception {
+    public void rejectFailedDesign(String message, Long prototypeId) throws Exception {
         Prototype prototype = prototypeRepository.findById(prototypeId)
                 .orElseThrow(() -> new Exception("Prototype not found with id: " + prototypeId));
 
         prototype.setRejected(true);
         prototype.setRejectionMessage(message);
         prototypeRepository.save(prototype);
-        return "Design rejected: " + message;
     }
 
     public void deleteById(Long id) {
+        prototypeRepository.deleteById(id);
     }
     public String selectMaterials(String materials, Long prototypeId) throws Exception {
         Prototype prototype = prototypeRepository.findById(prototypeId)
@@ -65,6 +65,3 @@ public class PrototypeService {
         return prototype.getColor();
     }
 }
-
-
-
