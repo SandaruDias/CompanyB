@@ -11,15 +11,17 @@ export default function WorkersInterfaceonePage() {
 
   const [orderId, setOrderId] = useState('');
 
-  const handleTest = async () => {
-    try {
-      const response = await axios.get(`${api}/FetchOrders/${orderId}`);
-      console.log(response.data); // Assuming the response contains the data you want to log
-    } catch (err) {
-      console.log(err);
-    }
+  // const handleTest = async () => {
+  //   try {
+  //     const response = await axios.get(`${api}/FetchOrders/${orderId}`);
+  //     console.log(response.data); // Assuming the response contains the data you want to log
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  const handleChange = (event) => {
+    console.log(event.target.value)
   };
-
   return (
     <>
       <Helmet>
@@ -42,12 +44,12 @@ export default function WorkersInterfaceonePage() {
                 name="orderId"
                 className="mb-[5px] flex-grow sm:px-5"
                 placeholder="Add Order ID"
-                onChange={(event) => setOrderId(event.target.value)}
+                onChange={handleChange}
                 value={orderId}
                 type="text"
               />
 
-              <Button size="xs" shape="square" className="min-w-[134px] font-extrabold" onClick={handleTest}>
+              <Button size="xs" shape="square" className="min-w-[134px] font-extrabold" onClick={handleChange}>
                 Submit
               </Button>
             </div>
