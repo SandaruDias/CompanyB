@@ -4,35 +4,28 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "Prototype")
-
 public class Prototype {
 
     @Id
-    private Long id;
+    private Long id; // Unique identifier for the prototype
 
-    @Setter
-    private String materials;
-    @Setter
-    private String comments;
-    @Getter
-    private String shape;
-    @Getter
-    private String color;
-    @Setter
-    private boolean isRejected;
-    @Setter
-    @Getter
-    private String rejectionMessage;
-    private String designDocument;
-    private String practicalExperiment;
+    private String materials; // Materials used in the prototype
 
+    private String comments; // Notes or feedback about the prototype
 
+    private String shape; // Shape of the prototype
+
+    private String color; // Color of the prototype
+
+    private boolean isRejected; // Flag indicating if the design is rejected
+
+    private String rejectionMessage; // Reason for rejection (if applicable)
 
 
 }
+
     
