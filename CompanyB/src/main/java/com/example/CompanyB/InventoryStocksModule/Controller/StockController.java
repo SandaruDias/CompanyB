@@ -20,8 +20,6 @@ import java.util.List;
 
 
 import java.util.stream.Collectors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -58,7 +56,7 @@ public class StockController {
     
     @PostMapping("/add")
     @ResponseBody
-    public ResponseEntity<stock1> addStock(stock1 stock, @RequestParam String id) { 
+    public ResponseEntity<stock1> addStock(@RequestBody stock1 stock, @RequestParam String id) { 
         try {
             stock1 addedStock = stockService.addStock(stock, id);
             return new ResponseEntity<stock1>(addedStock, HttpStatus.OK);
@@ -73,7 +71,8 @@ public class StockController {
     }
 
     @PostMapping("/update")
-    public ResponseEntity<stock1> updateStock(stock1 stock) {
+    
+    public ResponseEntity<stock1> updateStock(@RequestBody stock1 stock) {
         try{
             stock1 updatedStock = stockService.updateStockUnits(stock.getId(), stock.getUnits());
             return new ResponseEntity<stock1>(updatedStock, HttpStatus.OK);

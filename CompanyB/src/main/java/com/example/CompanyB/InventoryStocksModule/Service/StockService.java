@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +42,11 @@ public class StockService {
         if (existingSupplier == null) {
             throw new Exception("Supplier Not found");
         }
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = now.format(formatter);
+        stock.setCreatedDateTime(formattedDateTime);
+        stock.setSuppliername(existingSupplier.getSuppliername());
         stock1 addedStock = stockDao.save(stock);
         return addedStock;
     }
@@ -50,7 +57,12 @@ public class StockService {
         if (existingStock == null) {
             throw new Exception("stock not found");
         }
-        existingStock.setUnits(existingStock.getUnits() + newUnits); // Add new units to current units
+        existingStock.setUnits(existingStock.getUnits() + newUnits);
+         // Add new units to current units
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = now.format(formatter);
+        existingStock.setUpdatedDateTime(formattedDateTime); 
         stock1 updatedstock=stockDao.save(existingStock);
         return updatedstock;
     

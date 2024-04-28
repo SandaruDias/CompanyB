@@ -9,6 +9,6 @@ import java.util.List;
 public interface StockDao extends MongoRepository<stock1, String> {
     stock1 findByName(String name);
 
-    @Query(value = "{}", fields = "{ 'createdDate' : 1, 'updatedDate' : 1, 'updatedUser' : 1, 'id' : 1, 'name' : 1, 'units' : 1, 'suppliername' : 1, 'baseValue' : 1}")
+    @Query(value = "{}", fields = "{ 'createdDateTime' : 1, 'updatedDateTime' : 1, 'updatedUser' : 1, 'id' : 1, 'name' : 1, 'units' : 1, 'suppliername' : 1, 'baseValue' : 1}")
     List<stock1> findAllWithDetails();
 }

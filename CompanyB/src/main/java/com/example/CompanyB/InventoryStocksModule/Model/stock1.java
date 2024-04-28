@@ -15,7 +15,7 @@ public class stock1 {
     private Integer units;
     private String suppliername;
     private Integer baseValue;
-    private Date createdDate;
-    private Date updatedDate;
-    private String updatedUser;
+    private String createdDateTime;
+    private String updatedDateTime;
+    private String updatedUser="stock manager";
 }
