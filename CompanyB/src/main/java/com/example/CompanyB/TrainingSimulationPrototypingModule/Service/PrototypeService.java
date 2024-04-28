@@ -65,6 +65,3 @@ public class PrototypeService {
         return prototype.getColor();
     }
 }
-
-
-
