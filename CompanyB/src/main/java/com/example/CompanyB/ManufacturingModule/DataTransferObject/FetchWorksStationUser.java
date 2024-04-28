@@ -17,18 +17,18 @@ public class FetchWorksStationUser {
 
     private Integer workStationId;
     private String userId;
-    private String useraName;
+    private String userName;
     private boolean isActive;
+    private List<String> orderID;
 
 //    private List<StationOrder> oderId;
 //    private Map<String,Integer> HashMap;
 
 
-    public FetchWorksStationUser(String id, Integer workStationId, String userId, String useraName, boolean isActive) {
-        this.id = id;
+    public FetchWorksStationUser( Integer workStationId, String userId, String userName, boolean isActive) {
         this.workStationId = workStationId;
         this.userId = userId;
-        this.useraName = useraName;
+        this.userName = userName;
         this.isActive = isActive;
     }
 
@@ -56,12 +56,12 @@ public class FetchWorksStationUser {
         this.userId = userId;
     }
 
-    public String getUseraName() {
-        return useraName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUseraName(String useraName) {
-        this.useraName = useraName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public boolean isActive() {
@@ -82,14 +82,16 @@ public class FetchWorksStationUser {
 //        this.oderId = oderId;
 //    }
 
+
     @Override
     public String toString() {
         return "FetchWorksStationUser{" +
                 "id='" + id + '\'' +
                 ", workStationId=" + workStationId +
                 ", userId='" + userId + '\'' +
-                ", useraName='" + useraName + '\'' +
+                ", userName='" + userName + '\'' +
                 ", isActive=" + isActive +
+                ", orderID=" + orderID +
                 '}';
     }
 }

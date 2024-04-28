@@ -115,7 +115,7 @@ public class OnGoingOrderService {
           onGoingOrderRepository.save(onGoingOrder);
           try{finalOutputRepository.insert(finalOutput);}
           catch (RuntimeException e){
-              finalOutputRepository.save(finalOutput);
+              //allocated to handle entering already completed order.
           }
       }
         else{
