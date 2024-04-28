@@ -1,6 +1,7 @@
 package com.example.CompanyB.InventoryStocksModule.Model;
 
 import com.example.CompanyB.InventoryStocksModule.Model.stock1;
+import com.example.CompanyB.InventoryStocksModule.Model.supplier;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -11,12 +12,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class OrderDetail {
     @Id
     private String id; 
-
     public String productId;
+    private Integer units;
     
     @DBRef
     public stock1 product;
-    private Integer units;
-    private String suppliername;
+
+    @DBRef
+    public supplier supplier;
 }
 

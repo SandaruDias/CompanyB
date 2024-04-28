@@ -8,6 +8,7 @@ import com.example.CompanyB.InventoryStocksModule.Model.OrderDetail;
 import com.example.CompanyB.InventoryStocksModule.Model.supplier;
 import com.example.CompanyB.InventoryStocksModule.Service.SupplierService;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -20,8 +21,6 @@ import java.util.List;
 
 
 import java.util.stream.Collectors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -58,7 +57,7 @@ public class StockController {
     
     @PostMapping("/add")
     @ResponseBody
-    public ResponseEntity<stock1> addStock(stock1 stock, @RequestParam String id) { 
+    public ResponseEntity<stock1> addStock(@RequestBody stock1 stock, @RequestParam String id) { 
         try {
             stock1 addedStock = stockService.addStock(stock, id);
             return new ResponseEntity<stock1>(addedStock, HttpStatus.OK);
@@ -73,7 +72,8 @@ public class StockController {
     }
 
     @PostMapping("/update")
-    public ResponseEntity<stock1> updateStock(stock1 stock) {
+    
+    public ResponseEntity<stock1> updateStock(@RequestBody stock1 stock) {
         try{
             stock1 updatedStock = stockService.updateStockUnits(stock.getId(), stock.getUnits());
             return new ResponseEntity<stock1>(updatedStock, HttpStatus.OK);
@@ -88,10 +88,12 @@ public class StockController {
     }
 
     @PostMapping("/order")
-    public OrderDetail addOrder(OrderDetail orderDetail) {  // Updated entity name
+    @ResponseBody
+    public OrderDetail addOrder(@RequestBody OrderDetail orderDetail) {  // Updated entity name
         List<stock1> stockList = stockService.getAllStock();
+        List<supplier> supplierList = supplierService.getAllSupplier();
         orderDetail.product = stockList.stream().filter(stock -> stock.getId().equals(orderDetail.productId)).findFirst().get();  // Updated entity name
-        
+        orderDetail.supplier = supplierList.stream().filter(supplier -> supplier.getSuppliername().equals(orderDetail.product.getSuppliername())).findFirst().get();
         OrderDetail newOrder =stockService.addOrder(orderDetail);
         return newOrder;
     }
