@@ -1,22 +1,37 @@
 package com.example.CompanyB.GeneralManagementModule.Model;
 
-
+import jakarta.validation.constraints.Email;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "User_Data")
+@Getter
+@Setter
 
 public class User {
 
     @Id
+    @NonNull
     private String id;
+    @NonNull
     private String firstName;
+    @NonNull
     private String lastName;
+    @NonNull
+    @Email(message = "Please enter valid Email")
     private String email;
+    @NonNull
     private String address;
+    @NonNull
     private Integer mobileNo;
+    @NonNull
     private String userName;
+    @NonNull
     private String password;
+    @NonNull
     private String role;
 
     public User() {
@@ -34,77 +49,6 @@ public class User {
         this.role = role;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Integer getMobileNo() {
-        return mobileNo;
-    }
-
-    public void setMobileNo(Integer mobileNo) {
-        this.mobileNo = mobileNo;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 
     @Override
     public String toString() {
