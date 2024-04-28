@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@Document(collection = "Orders")
+@Document(collection = "SalesMarketing/Orders")
 public class OrderModel {
 
     @Id
