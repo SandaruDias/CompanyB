@@ -1,14 +1,15 @@
 package com.example.CompanyB.ManufacturingModule.Model;
 
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
+
 import java.util.ArrayList;
 
 public class WorkStationOne extends WorkStation {
     public ArrayList<String> onGoingOrdersIds = new ArrayList<>();
-    @Override
-    public int fetch(OnGoingOrder onGoingOrder, int amount) {
+    public static int fetch(OnGoingOrder onGoingOrder, int amount) {
         int newWaitToOne = onGoingOrder.getWaitToOne() -amount;
         int newOnGoing = onGoingOrder.getOnGoingStationOne()+ amount;
-        if (newWaitToOne >0){
+        if (newWaitToOne >=0){
             onGoingOrder.setWaitToOne(newWaitToOne);
             onGoingOrder.setOnGoingStationOne(newOnGoing);
             return 0; // successfully fetched
@@ -18,17 +19,16 @@ public class WorkStationOne extends WorkStation {
         }
     }
 
-    @Override
-    public int pass(OnGoingOrder onGoingOrder, int amount) {
+    public static int pass(OnGoingOrder onGoingOrder, int amount) {
         int newOnGoing = onGoingOrder.getOnGoingStationOne()-amount;
         int newWaitToTwo = onGoingOrder.getWaitToTwo() + amount;
-        if (newOnGoing>0){
+        if (newOnGoing>=0){
             onGoingOrder.setOnGoingStationOne(newOnGoing);
             onGoingOrder.setWaitToTwo(newWaitToTwo);
             return 0; //successfully passed
         }
         else {
-            return -1;
+            return -1; // invalid amount
         }
     }
 }

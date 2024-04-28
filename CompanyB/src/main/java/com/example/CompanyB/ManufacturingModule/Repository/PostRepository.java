@@ -10,7 +10,7 @@
 
 package com.example.CompanyB.ManufacturingModule.Repository;
 
-import com.example.CompanyB.ManufacturingModule.Model.Post;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.Post;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface PostRepository extends MongoRepository<Post,String>

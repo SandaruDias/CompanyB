@@ -1,6 +1,6 @@
 package com.example.CompanyB.ManufacturingModule.Controller;
 
-import com.example.CompanyB.ManufacturingModule.Model.OnGoingOrder;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
 import com.example.CompanyB.ManufacturingModule.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ public class OrderController {
     public ResponseEntity<?> checkQuantity(@PathVariable String orderId) {
         try {
             OnGoingOrder onGoingOrder = orderService.AssignOrderDetails(orderId);
-            return ResponseEntity.ok().body(onGoingOrder.getTotalNumber() +" No of items have in the order no of "+ onGoingOrder.getId());
+            return ResponseEntity.ok().body(onGoingOrder.getTotalNumber() +" No of items have in the order no of "+ onGoingOrder.getId()+"wait to one"+onGoingOrder.getWaitToOne());
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderId);
         }

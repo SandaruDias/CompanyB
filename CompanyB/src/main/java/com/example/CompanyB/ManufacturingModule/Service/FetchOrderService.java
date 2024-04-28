@@ -1,6 +1,6 @@
 package com.example.CompanyB.ManufacturingModule.Service;
 
-import com.example.CompanyB.ManufacturingModule.Model.FetchOrder;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.FetchOrder;
 import com.example.CompanyB.ManufacturingModule.Repository.FetchOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

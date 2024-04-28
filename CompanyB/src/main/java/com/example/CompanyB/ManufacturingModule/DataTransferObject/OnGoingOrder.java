@@ -1,8 +1,14 @@
-package com.example.CompanyB.ManufacturingModule.Model;
+package com.example.CompanyB.ManufacturingModule.DataTransferObject;
 
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Manufacturing_Order")
 public class  OnGoingOrder {
+    @Id
     private String id;
+
     private int totalNumber;
     private  int onGoingStationOne;
     private int onGoingStationTwo;
@@ -104,5 +110,22 @@ public class  OnGoingOrder {
 
     public void setQAResult(boolean QAResult) {
         this.QAResult = QAResult;
+    }
+
+    @Override
+    public String toString() {
+        return "OnGoingOrder{" +
+                "id='" + id + '\'' +
+                ", totalNumber=" + totalNumber +
+                ", onGoingStationOne=" + onGoingStationOne +
+                ", onGoingStationTwo=" + onGoingStationTwo +
+                ", onGoingStationThree=" + onGoingStationThree +
+                ", waitToOne=" + waitToOne +
+                ", waitToTwo=" + waitToTwo +
+                ", waitToThree=" + waitToThree +
+                ", completedNum=" + completedNum +
+                ", isCompleted=" + isCompleted +
+                ", QAResult=" + QAResult +
+                '}';
     }
 }

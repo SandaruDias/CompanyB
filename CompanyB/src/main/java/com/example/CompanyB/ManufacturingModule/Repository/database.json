@@ -54,17 +54,44 @@
   }
   ],
   "Final Output Data Entity": [{
-    "User_ID": "OD0001",
+    "Order_Id": "OD0001",
     "No_Of_Items_Released": 20,
     "QA_Approval": true,
     "Released_Date": "2022-01-01",
     "Final_Order": ""
   },
     {
-      "User_ID": "OD0001",
+      "Order_Id": "OD0001",
       "No_Of_Items_Released": 20,
       "QA_Approval": true,
       "Released_Date": "2022-01-01",
       "Final_Order": ""
-    }]
+    }],
+  "Order Entity": [    {
+    "id": "OD0001",
+    "totalNumber": 20,
+    "onGoingStationOne": 1,
+    "onGoingStationTwo": 1,
+    "onGoingStationThree": 1,
+    "waitToOne": 1,
+    "waitToTwo": 1,
+    "waitToThree": 1,
+    "completedNum": 1,
+    "isCompleted": true,
+    "QAResult":true
+  },
+    {
+      "id": "OD0002",
+      "totalNumber": 20,
+      "onGoingStationOne": 1,
+      "onGoingStationTwo": 1,
+      "onGoingStationThree": 1,
+      "waitToOne": 1,
+      "waitToTwo": 1,
+      "waitToThree": 1,
+      "completedNum": 1,
+      "isCompleted": true,
+      "QAResult":true
+    }
+  ]
 }

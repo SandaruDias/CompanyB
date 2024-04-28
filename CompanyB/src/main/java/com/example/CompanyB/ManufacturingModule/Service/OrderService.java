@@ -1,7 +1,7 @@
 package com.example.CompanyB.ManufacturingModule.Service;
 
-import com.example.CompanyB.ManufacturingModule.Model.FetchOrder;
-import com.example.CompanyB.ManufacturingModule.Model.OnGoingOrder;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.FetchOrder;
+import com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder;
 import com.example.CompanyB.ManufacturingModule.Repository.FetchOrderRepository;
 import com.example.CompanyB.ManufacturingModule.Repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
