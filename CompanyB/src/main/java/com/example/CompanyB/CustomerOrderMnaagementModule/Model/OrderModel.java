@@ -1,65 +1,34 @@
 package com.example.CompanyB.CustomerOrderMnaagementModule.Model;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Document(collection = "Order")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderModel {
 
-    private int orderId;
-    private int customer; 
-    private String[] orderInfo;
+    @Id
+    private ObjectId id;
+    private String customerID; 
+    private Object orderInfo;
+    private String pcbFile;
     private boolean simulationStatus;
     private boolean partsAvailable ;
     private boolean confirmation;
-    private boolean manufactureDone;
+    private String manufactureDone;
     private double payment;
 
+    @DocumentReference
+    private Feedback feedback; 
+
     
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-    public void setCustomer(int customer) {
-        this.customer = customer;
-    }
-    public void setOrderInfo(String[] orderInfo) {
-        this.orderInfo = orderInfo;
-    }
-    public void setSimulationStatus(boolean simulationStatus) {
-        this.simulationStatus = simulationStatus;
-    }
-    public void setPartsAvailable(boolean partsAvailable) {
-        this.partsAvailable = partsAvailable;
-    }
-    public void setConfirmation(boolean confirmation) {
-        this.confirmation = confirmation;
-    }
-    public void setManufactureDone(boolean manufactureDone) {
-        this.manufactureDone = manufactureDone;
-    }
-    public void setPayment(double payment) {
-        this.payment = payment;
-    }
-
-    public int getOrderId() {
-        return orderId;
-    }
-    public int getCustomer() {
-        return customer;
-    }
-    public String[] getOrderInfo() {
-        return orderInfo;
-    }
-    public boolean isSimulationStatus() {
-        return simulationStatus;
-    }
-    public boolean isPartsAvailable() {
-        return partsAvailable;
-    }
-    public boolean isConfirmation() {
-        return confirmation;
-    }
-    public boolean isManufactureDone() {
-        return manufactureDone;
-    }
-    public double getPayment() {
-        return payment;
-    }    
-
+    
 }

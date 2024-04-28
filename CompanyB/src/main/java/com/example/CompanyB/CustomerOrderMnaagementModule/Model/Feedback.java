@@ -1,31 +1,22 @@
 package com.example.CompanyB.CustomerOrderMnaagementModule.Model;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Document(collection = "Feedback")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Feedback {
-    
-    private String[] feedBack;
+
+    private ObjectId id;
+    private String body;
     private int ratings;
-    private int orderId;
     
-    public void setFeedBack(String[] feedBack) {
-        this.feedBack = feedBack;
-    }
-    public void setRatings(int ratings) {
-        this.ratings = ratings;
-    }
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-    public String[] getFeedBack() {
-        return feedBack;
-    }
-    public int getRatings() {
-        return ratings;
-    }
-    public int getOrderId() {
-        return orderId;
-    }
-
     
-
 }
