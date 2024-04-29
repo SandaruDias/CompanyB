@@ -13,11 +13,13 @@
   justify-content: center;
   align-items: center;
   height: 70%;
-  width: 30%;
+  width: 50%;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(77, 10, 185, 0.2);
   column-gap: 100px;
+  
 }
+
 .details {
   display: flex;
   flex-direction: column;
@@ -28,7 +30,7 @@
 input[type="password"] {
   width: 110%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #bd1313;
   border-radius: 5px;
   font-size: 16px;
   outline: none;
@@ -37,13 +39,13 @@ input[type="password"] {
 .login-button {
   width: 120%;
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #448fe0;
+  color: #f8f1f1;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 14px;
+  transition: background-color 0.2s ease;
+  font-size: 16px;
   font-weight: bold;
 }
 
