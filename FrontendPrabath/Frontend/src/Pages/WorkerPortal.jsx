@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./../Styles/Login.css";
+import "./../Styles/WorkerPortal.css";
 import Select from "react-dropdown-select";
 
 function WorkerPortal() {
-  const [details, setDetails] = useState({ username: "", password: "" });
+  const [details, setDetails] = useState({ username: "", password: "", workStation: "" });
   const [selectedValue, setSelectedValue] = useState([]);
 
   // Updated options for Select dropdown with Work Stations
@@ -22,15 +22,20 @@ function WorkerPortal() {
 
   const handleSelectChange = (values) => {
     setSelectedValue(values);
+    // Assuming single selection, so getting the first selected value
+    const selectedStation = values.length > 0 ? values[0].value : "";
+    setDetails(prev => ({
+      ...prev,
+      workStation: selectedStation
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(details);
-    console.log(selectedValue);
     // Setup validation
     // Pass to database
-    setDetails({ username: "", password: "" });
+    setDetails({ username: "", password: "", workStation: "" });
   };
 
   return (
@@ -64,7 +69,7 @@ function WorkerPortal() {
               searchable={true}
               clearable={true}
               style={{
-                width: '100%',
+                width: '80%',
                 fontSize: '16px',
                 backgroundColor: 'white',
               }}

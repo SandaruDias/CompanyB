@@ -34,7 +34,7 @@ export default function HomepageLoginWorkerOnePage() {
             </Button>
             <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max w-full flex-col items-center gap-[15px] rounded-[70px] bg-black-900_82 px-[61px] pb-[61px] md:px-5 md:pb-5">
               <Text size="lg" as="p" className="text-center !font-bebasneue capitalize !text-white-A700">
-                Log in Portal
+                Log in 
               </Text>
               <div className="flex w-[65%] justify-center rounded-[31px] bg-white-A700 md:w-full md:p-5">
                 <div className="mb-[5px] flex w-full flex-col gap-[54px] sm:gap-[27px]">
