@@ -8,13 +8,13 @@ import java.util.Date;
 public class PaymentTransaction {
     @Id
     private String id;
-    private String customerId; // Customer ID
+    private String customerId;
+    private String invoiceId;  // Link to the Invoice
     private Double amount;
     private String paymentMethod;
     private Date paymentDate;
-    private String transactionId;
 
-    // Getters and setters
+    // Getters and setters including invoiceId
 
     public String getId() {
         return id;
@@ -30,6 +30,14 @@ public class PaymentTransaction {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public String getInvoiceId() {
+        return invoiceId;
+    }
+
+    public void setInvoiceId(String invoiceId) {
+        this.invoiceId = invoiceId;
     }
 
     public Double getAmount() {
@@ -54,9 +62,5 @@ public class PaymentTransaction {
 
     public void setPaymentDate(Date paymentDate) {
         this.paymentDate = paymentDate;
-    }
-
-    public String getTransactionId() {
-        return transactionId;
     }
 }

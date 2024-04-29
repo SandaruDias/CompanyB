@@ -14,24 +14,20 @@ public class FinanceController {
     @Autowired
     private FinanceService financeService;
 
-    @PostMapping("/processOrder")
-    public ResponseEntity<Invoice> processOrder(@RequestBody OrderDetailsDTO orderDetails) {
-        boolean creditValid = financeService.validateCustomerCredit(orderDetails.getCustomerId());
-        if (!creditValid) {
-            return ResponseEntity.badRequest().body(null);
-        }
-        Invoice invoice = financeService.createInvoice(orderDetails);
+    @PostMapping("/invoices")
+    public ResponseEntity<Invoice> createInvoice(@RequestBody OrderDetailsDTO orderDetails) {
+        Invoice invoice = financeService.createAndProcessInvoice(orderDetails);
         return ResponseEntity.ok(invoice);
     }
 
-    @PostMapping("/recordPayment")
-    public ResponseEntity<Object> recordPayment(@RequestBody PaymentTransaction paymentRequest) {
-        PaymentTransaction transaction = financeService.recordPayment(
-                paymentRequest.getTransactionId(),
-                paymentRequest.getAmount(),
-                paymentRequest.getPaymentMethod(),
-                paymentRequest.getCustomerId()
-        );
+    @PostMapping("/payments")
+    public ResponseEntity<PaymentTransaction> processPayment(@RequestParam String invoiceId,
+                                                             @RequestParam Double amount,
+                                                             @RequestParam String paymentMethod,
+                                                             @RequestParam String customerId) {
+        PaymentTransaction transaction = financeService.processPayment(invoiceId, amount, paymentMethod, customerId);
         return ResponseEntity.ok(transaction);
     }
+
+    // Add more endpoints for admin functionalities like editing invoice and payments
 }

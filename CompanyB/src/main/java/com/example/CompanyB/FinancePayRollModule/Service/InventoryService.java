@@ -1,39 +1,83 @@
 package com.example.CompanyB.FinancePayRollModule.Service;
 
 import com.example.CompanyB.FinancePayRollModule.Model.InventoryInvoice;
-import com.example.CompanyB.FinancePayRollModule.Model.ShortageReport;
 import com.example.CompanyB.FinancePayRollModule.Repository.InventoryInvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class InventoryService {
     @Autowired
     private InventoryInvoiceRepository invoiceRepository;
 
-    public InventoryInvoice assessFinancialRisks(ShortageReport report) {
-        InventoryInvoice invoice = new InventoryInvoice();
-        invoice.setMaterialName(report.getMaterialName());
-        invoice.setQuantityShort(report.getQuantityShort());
-        invoice.setMarketPrice(calculateMarketPrice(report.getMaterialId()));
-        invoice.setPotentialLoss(calculatePotentialLoss(report.getQuantityShort(), invoice.getMarketPrice()));
+    public InventoryInvoice processShortageReport(String materialName, int quantityShort, double marketPrice, double potentialLoss, String adjustmentPlan, String urgentOrderDetails, Date dueDate) {
+        InventoryInvoice invoice = new InventoryInvoice(materialName, quantityShort, marketPrice, potentialLoss, adjustmentPlan, urgentOrderDetails, dueDate);
+        invoiceRepository.save(invoice);
+        return invoice;
+    }
 
+    // Additional service methods can be implemented here
+    public List<InventoryInvoice> findInvoicesByMaterialName(String materialName) {
+        return invoiceRepository.findByMaterialName(materialName);
+    }
+
+    public List<InventoryInvoice> findInvoicesWithHighPotentialLoss(double threshold) {
+        return invoiceRepository.findByPotentialLossGreaterThan(threshold);
+    }
+
+
+    public List<InventoryInvoice> findInvoicesByAdjustmentPlan(String keyword) {
+        return invoiceRepository.findByAdjustmentPlanContaining(keyword);
+    }
+
+    public List<InventoryInvoice> findInvoicesByDateRange(Date startDate, Date endDate) {
+        return invoiceRepository.findByDueDateBetween(startDate, endDate);
+    }
+
+    public InventoryInvoice updateInvoice(String invoiceId, String newAdjustmentPlan, String newUrgentOrderDetails) {
+        InventoryInvoice invoice = invoiceRepository.findById(invoiceId).orElseThrow(() -> new IllegalArgumentException("No invoice found with ID: " + invoiceId));
+        invoice.setAdjustmentPlan(newAdjustmentPlan);
+        invoice.setUrgentOrderDetails(newUrgentOrderDetails);
         return invoiceRepository.save(invoice);
     }
 
-    private double calculateMarketPrice(String materialId) {
-        // Implement market price calculation based on external data or internal rules
-        return 100.0; // Placeholder value
+    public InventoryInvoice getInvoiceById(String invoiceId) {
+        Optional<InventoryInvoice> invoice = invoiceRepository.findById(invoiceId);
+        if (!invoice.isPresent()) {
+            throw new IllegalArgumentException("No invoice found with ID: " + invoiceId);
+        }
+        return invoice.get();
     }
 
-    private double calculatePotentialLoss(int quantityShort, double marketPrice) {
-        return quantityShort * marketPrice; // Simple calculation
+    public byte[] downloadInvoiceReport(String invoiceId) {
+        InventoryInvoice invoice = invoiceRepository.findById(invoiceId)
+                .orElseThrow(() -> new IllegalArgumentException("No invoice found with ID: " + invoiceId));
+        return generateCsvReport(invoice);
     }
 
-    public List<InventoryInvoice> findAllInvoices() {
-        return invoiceRepository.findAll();
+    private byte[] generateCsvReport(InventoryInvoice invoice) {
+        String header = "Material Name,Quantity Short,Market Price,Potential Loss\n";
+        String record = String.format("%s,%d,%.2f,%.2f\n",
+                invoice.getMaterialName(),
+                invoice.getQuantityShort(),
+                invoice.getMarketPrice(),
+                invoice.getPotentialLoss());
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try {
+            outputStream.write(header.getBytes(StandardCharsets.UTF_8));
+            outputStream.write(record.getBytes(StandardCharsets.UTF_8));
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to generate report", e);
+        }
+        return outputStream.toByteArray();
     }
+
 }
-

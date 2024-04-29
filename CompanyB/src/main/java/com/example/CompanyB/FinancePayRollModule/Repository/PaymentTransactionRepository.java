@@ -2,7 +2,9 @@ package com.example.CompanyB.FinancePayRollModule.Repository;
 
 import com.example.CompanyB.FinancePayRollModule.Model.PaymentTransaction;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import java.util.List;
 
 public interface PaymentTransactionRepository extends MongoRepository<PaymentTransaction, String> {
-    // You can add custom methods if necessary
+    List<PaymentTransaction> findByInvoiceId(String invoiceId);
+    List<PaymentTransaction> findByCustomerId(String customerId);
 }

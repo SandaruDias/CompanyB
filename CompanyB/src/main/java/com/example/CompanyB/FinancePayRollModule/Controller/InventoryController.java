@@ -1,57 +1,84 @@
 package com.example.CompanyB.FinancePayRollModule.Controller;
 
 import com.example.CompanyB.FinancePayRollModule.Model.InventoryInvoice;
-import com.example.CompanyB.FinancePayRollModule.Model.ShortageReport;
-import com.example.CompanyB.FinancePayRollModule.Service.AlertService;
 import com.example.CompanyB.FinancePayRollModule.Service.InventoryService;
-import com.example.CompanyB.FinancePayRollModule.Repository.InventoryInvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/finance")
+@RequestMapping("/api/inventory")
 public class InventoryController {
     @Autowired
     private InventoryService inventoryService;
-    
-    @Autowired
-    private InventoryInvoiceRepository inventoryInvoiceRepository;
 
-    @Autowired
-    private AlertService alertService;
+    @PostMapping("/processShortage")
+    public ResponseEntity<InventoryInvoice> handleInventoryShortage(@RequestBody InventoryInvoice inventoryInvoice) {
+        InventoryInvoice processedInvoice = inventoryService.processShortageReport(
+                inventoryInvoice.getMaterialName(),
+                inventoryInvoice.getQuantityShort(),
+                inventoryInvoice.getMarketPrice(),
+                inventoryInvoice.getPotentialLoss(),
+                inventoryInvoice.getAdjustmentPlan(),
+                inventoryInvoice.getUrgentOrderDetails(),
+                inventoryInvoice.getDueDate());
+        return ResponseEntity.ok(processedInvoice);
+    }
 
-    @PostMapping("/shortageReports")
-    public ResponseEntity<InventoryInvoice> handleShortageReport(@RequestBody ShortageReport report) {
-        InventoryInvoice invoice = inventoryService.assessFinancialRisks(report);
+    @GetMapping("/{id}")
+    public ResponseEntity<InventoryInvoice> getInvoiceById(@PathVariable String id) {
+        InventoryInvoice invoice = inventoryService.getInvoiceById(id);
         return ResponseEntity.ok(invoice);
     }
 
-    @GetMapping("/invoices")
-    public ResponseEntity<Object> getAllInvoices() {
-        List<InventoryInvoice> invoices = inventoryInvoiceRepository.findAll();
+    // Additional endpoints for searching, editing, and downloading reports can be added here
+    @GetMapping("/searchByMaterial")
+    public ResponseEntity<List<InventoryInvoice>> getInvoicesByMaterialName(@RequestParam String materialName) {
+        List<InventoryInvoice> invoices = inventoryService.findInvoicesByMaterialName(materialName);
         return ResponseEntity.ok(invoices);
     }
 
-    @GetMapping("/invoices/{id}")
-    public ResponseEntity<InventoryInvoice> getInvoiceById(@PathVariable String id) {
-        return inventoryInvoiceRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+
+    @GetMapping("/searchByPotentialLoss")
+    public ResponseEntity<List<InventoryInvoice>> getInvoicesByPotentialLoss(@RequestParam double threshold) {
+        List<InventoryInvoice> invoices = inventoryService.findInvoicesWithHighPotentialLoss(threshold);
+        return ResponseEntity.ok(invoices);
     }
 
 
-    @PostMapping("/sendAlert")
-    public ResponseEntity<Void> sendAlert(@RequestBody InventoryInvoice invoice) {
-        String message = buildAlertMessage(invoice);
-        alertService.sendAlertToDepartments(message);
-        return ResponseEntity.ok().build();
+    @GetMapping("/searchByDateRange")
+    public ResponseEntity<List<InventoryInvoice>> getInvoicesByDateRange(@RequestParam String start, @RequestParam String end) throws ParseException, ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = sdf.parse(start);
+        Date endDate = sdf.parse(end);
+        List<InventoryInvoice> invoices = inventoryService.findInvoicesByDateRange(startDate, endDate);
+        return ResponseEntity.ok(invoices);
     }
 
-    private String buildAlertMessage(InventoryInvoice invoice) {
-        return String.format("Alert: Potential loss of $%.2f due to shortage of %s (Quantity Short: %d)",
-                invoice.getPotentialLoss(), invoice.getMaterialName(), invoice.getQuantityShort());
+    @PutMapping("/update/{id}")
+    public ResponseEntity<InventoryInvoice> updateInvoice(@PathVariable String id,
+                                                          @RequestParam String adjustmentPlan,
+                                                          @RequestParam String urgentOrderDetails) {
+        InventoryInvoice updatedInvoice = inventoryService.updateInvoice(id, adjustmentPlan, urgentOrderDetails);
+        return ResponseEntity.ok(updatedInvoice);
+    }
+
+
+    @GetMapping("/download/{id}")
+    public ResponseEntity<byte[]> downloadInvoiceReport(@PathVariable String id) {
+        byte[] data = inventoryService.downloadInvoiceReport(id);
+        HttpHeaders headers = new HttpHeaders();
+        headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=invoice-report-" + id + ".csv");
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        return new ResponseEntity<>(data, headers, HttpStatus.OK);
     }
 
 }
