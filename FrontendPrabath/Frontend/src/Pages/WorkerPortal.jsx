@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./../Styles/Login.css";
 import Select from "react-dropdown-select";
+import { useHistory } from "react-router-dom"; // Import useHistory from react-router-dom
 
 function WorkerPortal() {
   const [details, setDetails] = useState({ username: "", password: "" });
   const [selectedValue, setSelectedValue] = useState([]);
+  const history = useHistory(); // Create a history object
 
   // Updated options for Select dropdown with Work Stations
   const options = [
@@ -31,6 +33,12 @@ function WorkerPortal() {
     // Setup validation
     // Pass to database
     setDetails({ username: "", password: "" });
+
+    // Check the selected value and navigate to the corresponding page
+    if (selectedValue.length > 0) {
+      const selectedOption = selectedValue[0].value;
+      history.push(`/workstation/${selectedOption}`);
+    }
   };
 
   return (
