@@ -39,7 +39,6 @@ public class InventoryController {
         return ResponseEntity.ok(invoice);
     }
 
-    // Additional endpoints for searching, editing, and downloading reports can be added here
     @GetMapping("/searchByMaterial")
     public ResponseEntity<List<InventoryInvoice>> getInvoicesByMaterialName(@RequestParam String materialName) {
         List<InventoryInvoice> invoices = inventoryService.findInvoicesByMaterialName(materialName);

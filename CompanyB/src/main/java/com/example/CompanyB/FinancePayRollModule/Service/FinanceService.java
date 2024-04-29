@@ -60,4 +60,25 @@ public class FinanceService {
         invoice.setStatus(status);
         invoiceRepository.save(invoice);
     }
+
+    public Invoice updateInvoice(String invoiceId, Double amount, Boolean status) {
+        Invoice invoice = invoiceRepository.findById(invoiceId).orElseThrow(() -> new RuntimeException("Invoice not found"));
+        if (amount != null) {
+            invoice.setAmount(amount);
+        }
+        if (status != null) {
+            invoice.setStatus(status);
+        }
+        invoiceRepository.save(invoice);
+        return invoice;
+    }
+
+    public PaymentTransaction updatePayment(String transactionId, Double amount, String paymentMethod) {
+        PaymentTransaction transaction = paymentTransactionRepository.findById(transactionId).orElseThrow(() -> new RuntimeException("Payment transaction not found"));
+        transaction.setAmount(amount);
+        transaction.setPaymentMethod(paymentMethod);
+        paymentTransactionRepository.save(transaction);
+        return transaction;
+    }
+
 }

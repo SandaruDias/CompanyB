@@ -25,7 +25,6 @@ public class InventoryInvoice {
     public InventoryInvoice() {}
 
     // Getters and Setters for all fields
-
     public String getMaterialName() {
         return materialName;
     }

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -48,15 +49,17 @@ public class PayrollService {
         return payroll;
     }
 
-    private void sendPayrollReportToHRSystem(Payroll payroll) {
+    public void sendPayrollReportToHRSystem(Payroll payroll) {
         webClient.post()
                 .uri("/payroll-report")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(payroll)
                 .retrieve()
                 .bodyToMono(String.class)
-                .subscribe(response -> System.out.println("Report sent successfully: " + response));
+                .subscribe(response -> System.out.println("Report sent successfully: " + response),
+                        error -> System.err.println("Error sending report: " + error.getMessage()));
     }
+
 
     public Payroll updatePayroll(String payrollId, Double deductions, Double taxRate) {
         Payroll payroll = payrollRepository.findById(payrollId).orElseThrow(() -> new RuntimeException("Payroll not found"));
@@ -105,9 +108,16 @@ public class PayrollService {
         }
     }
 
-    // Method to find payroll by ID
     public Payroll findPayrollById(String payrollId) {
         return payrollRepository.findById(payrollId)
                 .orElseThrow(() -> new IllegalArgumentException("Payroll not found with ID: " + payrollId));
     }
+
+    public void deletePayrollById(String payrollId) {
+        if (!payrollRepository.existsById(payrollId)) {
+            throw new IllegalArgumentException("Payroll not found with ID: " + payrollId);
+        }
+        payrollRepository.deleteById(payrollId);
+    }
+
 }

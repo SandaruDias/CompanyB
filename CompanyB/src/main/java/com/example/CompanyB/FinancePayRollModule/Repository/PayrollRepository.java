@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PayrollRepository extends MongoRepository<Payroll, String> {
-    // Custom query to find payroll by employee ID
     Page<Payroll> findByEmployeeId(Long employeeId, Pageable pageable);
 }

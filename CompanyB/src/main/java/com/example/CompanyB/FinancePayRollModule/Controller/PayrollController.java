@@ -3,6 +3,7 @@ package com.example.CompanyB.FinancePayRollModule.Controller;
 import com.example.CompanyB.FinancePayRollModule.Model.Payroll;
 import com.example.CompanyB.FinancePayRollModule.Service.PayrollService;
 import com.example.CompanyB.FinancePayRollModule.Repository.PayrollRepository;
+import com.example.CompanyB.FinancePayRollModule.Service.dto.PayrollDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -26,15 +27,17 @@ public class PayrollController {
     public PayrollRepository payrollRepository;
 
     @PostMapping("/calculate")
-    public ResponseEntity<Payroll> calculatePayroll(@RequestParam Long employeeId,
-                                                    @RequestParam String employeeName,
-                                                    @RequestParam Double hoursWorked,
-                                                    @RequestParam Double hourlyRate,
-                                                    @RequestParam Double overtimeHours,
-                                                    @RequestParam Double overtimeRate,
-                                                    @RequestParam Double deductions,
-                                                    @RequestParam Double taxRate) {
-        Payroll payroll = payrollService.calculateAndSavePayroll(employeeId, employeeName, hoursWorked, hourlyRate, overtimeHours, overtimeRate, deductions, taxRate);
+    public ResponseEntity<Payroll> calculatePayroll(@RequestBody PayrollDTO payrollDTO) {
+        Payroll payroll = payrollService.calculateAndSavePayroll(
+                payrollDTO.getEmployeeId(),
+                payrollDTO.getEmployeeName(),
+                payrollDTO.getHoursWorked(),
+                payrollDTO.getHourlyRate(),
+                payrollDTO.getOvertimeHours(),
+                payrollDTO.getOvertimeRate(),
+                payrollDTO.getDeductions(),
+                payrollDTO.getTaxRate()
+        );
         return ResponseEntity.ok(payroll);
     }
 
@@ -52,7 +55,6 @@ public class PayrollController {
         return ResponseEntity.ok(updatedPayroll);
     }
 
-    // In your PayrollController
     @GetMapping("/download/{employeeId}")
     public ResponseEntity<byte[]> downloadPayrollDetails(@PathVariable Long employeeId) {
         List<Payroll> payrolls = payrollRepository.findByEmployeeId(employeeId, Pageable.unpaged()).getContent();
@@ -61,5 +63,12 @@ public class PayrollController {
         headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=payroll-report.csv");
         return new ResponseEntity<>(data, headers, HttpStatus.OK);
     }
+
+    @DeleteMapping("/{payrollId}")
+    public ResponseEntity<Void> deletePayroll(@PathVariable String payrollId) {
+        payrollService.deletePayrollById(payrollId);
+        return ResponseEntity.noContent().build();
+    }
+
 
 }

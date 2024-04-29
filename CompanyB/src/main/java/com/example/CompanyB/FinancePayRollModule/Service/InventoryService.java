@@ -23,7 +23,6 @@ public class InventoryService {
         return invoice;
     }
 
-    // Additional service methods can be implemented here
     public List<InventoryInvoice> findInvoicesByMaterialName(String materialName) {
         return invoiceRepository.findByMaterialName(materialName);
     }
