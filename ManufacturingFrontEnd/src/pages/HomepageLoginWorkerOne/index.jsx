@@ -70,7 +70,7 @@ export default function HomepageLoginWorkerOnePage() {
                     </div>
                     <div className="flex items-start gap-[38px] self-stretch sm:flex-col">
                       <Text as="p" className="mt-[5px] text-center capitalize">
-                        Workstation
+                        Workst
                       </Text>
                       <Input
                         size="sm"
