@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e70442a-e4f8-4852-b8e4-02c07e3cf967" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/FinanceBillModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/FinanceBillModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/InventoryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/InventoryItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/OrderModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/OrderModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/FinanceBillModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/FinanceBillModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/InventoryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/InventoryItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/FinanceBillService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/FinanceBillService.class" afterDir="false" />
-    </list>
+    <list default="true" id="1e70442a-e4f8-4852-b8e4-02c07e3cf967" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
