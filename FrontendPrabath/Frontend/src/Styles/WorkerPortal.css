@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #edf0f2;
+  background-color: #527891;
   gap: 20px;
 }
 .login {
@@ -13,10 +13,11 @@
   justify-content: center;
   align-items: center;
   height: 70%;
-  width: 30%;
+  width: 50%;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   column-gap: 100px;
+  background-color:'black';
 }
 .details {
   display: flex;
@@ -28,7 +29,7 @@
 input[type="password"] {
   width: 110%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #a78a8a;
   border-radius: 5px;
   font-size: 16px;
   outline: none;
@@ -37,13 +38,13 @@ input[type="password"] {
 .login-button {
   width: 120%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #3784d6;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
