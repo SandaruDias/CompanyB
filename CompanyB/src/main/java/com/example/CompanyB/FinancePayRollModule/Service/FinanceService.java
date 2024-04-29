@@ -81,4 +81,18 @@ public class FinanceService {
         return transaction;
     }
 
+    public void deleteInvoice(String invoiceId) {
+        if (!invoiceRepository.existsById(invoiceId)) {
+            throw new RuntimeException("Invoice not found with ID: " + invoiceId);
+        }
+        invoiceRepository.deleteById(invoiceId);
+    }
+
+    public void deletePayment(String transactionId) {
+        if (!paymentTransactionRepository.existsById(transactionId)) {
+            throw new RuntimeException("Payment transaction not found with ID: " + transactionId);
+        }
+        paymentTransactionRepository.deleteById(transactionId);
+    }
+
 }

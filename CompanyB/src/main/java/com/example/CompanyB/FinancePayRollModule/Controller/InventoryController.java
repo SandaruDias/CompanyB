@@ -45,16 +45,14 @@ public class InventoryController {
         return ResponseEntity.ok(invoices);
     }
 
-
     @GetMapping("/searchByPotentialLoss")
     public ResponseEntity<List<InventoryInvoice>> getInvoicesByPotentialLoss(@RequestParam double threshold) {
         List<InventoryInvoice> invoices = inventoryService.findInvoicesWithHighPotentialLoss(threshold);
         return ResponseEntity.ok(invoices);
     }
 
-
     @GetMapping("/searchByDateRange")
-    public ResponseEntity<List<InventoryInvoice>> getInvoicesByDateRange(@RequestParam String start, @RequestParam String end) throws ParseException, ParseException {
+    public ResponseEntity<List<InventoryInvoice>> getInvoicesByDateRange(@RequestParam String start, @RequestParam String end) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date startDate = sdf.parse(start);
         Date endDate = sdf.parse(end);
@@ -63,13 +61,14 @@ public class InventoryController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<InventoryInvoice> updateInvoice(@PathVariable String id,
-                                                          @RequestParam String adjustmentPlan,
-                                                          @RequestParam String urgentOrderDetails) {
-        InventoryInvoice updatedInvoice = inventoryService.updateInvoice(id, adjustmentPlan, urgentOrderDetails);
+    public ResponseEntity<InventoryInvoice> updateInvoice(@PathVariable String id, @RequestBody UpdateInvoiceRequest updateRequest) {
+        InventoryInvoice updatedInvoice = inventoryService.updateInvoice(
+                id,
+                updateRequest.getAdjustmentPlan(),
+                updateRequest.getUrgentOrderDetails()
+        );
         return ResponseEntity.ok(updatedInvoice);
     }
-
 
     @GetMapping("/download/{id}")
     public ResponseEntity<byte[]> downloadInvoiceReport(@PathVariable String id) {
@@ -80,4 +79,25 @@ public class InventoryController {
         return new ResponseEntity<>(data, headers, HttpStatus.OK);
     }
 
+    static class UpdateInvoiceRequest {
+        private String adjustmentPlan;
+        private String urgentOrderDetails;
+
+        // Getters and Setters
+        public String getAdjustmentPlan() {
+            return adjustmentPlan;
+        }
+
+        public void setAdjustmentPlan(String adjustmentPlan) {
+            this.adjustmentPlan = adjustmentPlan;
+        }
+
+        public String getUrgentOrderDetails() {
+            return urgentOrderDetails;
+        }
+
+        public void setUrgentOrderDetails(String urgentOrderDetails) {
+            this.urgentOrderDetails = urgentOrderDetails;
+        }
+    }
 }
