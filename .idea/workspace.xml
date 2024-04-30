@@ -5,32 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Works Stations are modeled">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T083947.404.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T134050.404.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T134145.200.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T134210.200.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T134451.404.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T134633.200.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T134650.404.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T140649.404.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T140744.404.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T141058.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T143028.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T143108.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T143131.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T143144.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T143156.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T143207.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T143217.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-28T101414.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-28T170824.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-28T170926.200.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Service/UserControllingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Service/UserControllingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/UserControllingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/UserControllingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/LoginPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerPortal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerPortal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" afterDir="false" />
->>>>>>> parent of aae5889 (commit to reslove 2)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +59,7 @@
   "keyToString": {
     "HTTP Request.All in generated-requests.executor": "Run",
     "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #10.executor": "Run",
     "HTTP Request.generated-requests | #2.executor": "Run",
     "HTTP Request.generated-requests | #21.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
@@ -80,15 +69,10 @@
     "HTTP Request.generated-requests | #35.executor": "Run",
     "HTTP Request.generated-requests | #36.executor": "Run",
     "HTTP Request.generated-requests | #37.executor": "Run",
-<<<<<<< HEAD
-    "HTTP Request.generated-requests | #38.executor": "Run",
-    "HTTP Request.generated-requests | #39.executor": "Run",
-    "HTTP Request.generated-requests | #4.executor": "Run",
-=======
     "HTTP Request.generated-requests | #4.executor": "Run",
     "HTTP Request.generated-requests | #6.executor": "Run",
     "HTTP Request.generated-requests | #7.executor": "Run",
->>>>>>> parent of aae5889 (commit to reslove 2)
+    "HTTP Request.generated-requests | #9.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -106,34 +90,24 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-<<<<<<< HEAD
-=======
     "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files",
->>>>>>> parent of aae5889 (commit to reslove 2)
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.CompanyB_Application">
-    <configuration name="generated-requests | #35" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="35" requestIdentifier="#35" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #36" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="36" requestIdentifier="#36" runType="Run single request">
+    <configuration name="generated-requests | #10" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="10" requestIdentifier="#10" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #37" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="37" requestIdentifier="#37" runType="Run single request">
       <method v="2" />
     </configuration>
-<<<<<<< HEAD
-    <configuration name="generated-requests | #38" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="38" requestIdentifier="#38" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #39" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="39" requestIdentifier="#39" runType="Run single request">
-=======
     <configuration name="generated-requests | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="6" requestIdentifier="#6" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="7" requestIdentifier="#7" runType="Run single request">
->>>>>>> parent of aae5889 (commit to reslove 2)
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #9" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="9" requestIdentifier="#9" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="CompanyB_Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -145,17 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
-        <item itemvalue="HTTP Request.generated-requests | #39" />
-        <item itemvalue="HTTP Request.generated-requests | #37" />
-        <item itemvalue="HTTP Request.generated-requests | #38" />
-=======
+        <item itemvalue="HTTP Request.generated-requests | #9" />
+        <item itemvalue="HTTP Request.generated-requests | #10" />
         <item itemvalue="HTTP Request.generated-requests | #7" />
         <item itemvalue="HTTP Request.generated-requests | #6" />
         <item itemvalue="HTTP Request.generated-requests | #37" />
->>>>>>> parent of aae5889 (commit to reslove 2)
-        <item itemvalue="HTTP Request.generated-requests | #36" />
-        <item itemvalue="HTTP Request.generated-requests | #35" />
       </list>
     </recent_temporary>
   </component>
@@ -181,11 +149,7 @@
       <workItem from="1714119768978" duration="1113000" />
       <workItem from="1714317509348" duration="3840000" />
       <workItem from="1714482633712" duration="94000" />
-<<<<<<< HEAD
-      <workItem from="1714482735609" duration="7580000" />
-=======
       <workItem from="1714482735609" duration="2956000" />
->>>>>>> parent of aae5889 (commit to reslove 2)
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />
