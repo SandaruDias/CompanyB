@@ -1,3 +1,39 @@
+GET http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/OD0002
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T234507.200.json
+
+###
+
+GET http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/OD0003
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T232307.404.txt
+
+###
+
+GET http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/OD0002
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T232302.200.json
+
+###
+
+GET http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/OD0001
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T232227.200.json
+
+###
+
 GET http://localhost:8090/FetchOrders/OD0002
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
@@ -450,47 +486,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-04-26T140744.404.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/0
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T140649.404.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/0
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134650.404.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/23
-Content-Type: application/x-www-form-urlenc
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134633.200.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/0
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134451.404.txt
 
 ###
 
