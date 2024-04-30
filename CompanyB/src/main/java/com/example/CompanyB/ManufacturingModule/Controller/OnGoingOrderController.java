@@ -19,15 +19,7 @@ public class OnGoingOrderController {
         this.onGoingOrderService = onGoingOrderService;
     }
 
-    @GetMapping("GetOrderToWorkStation/{orderId}")
-    public ResponseEntity<?> GetOrderToWorkStation(@PathVariable String orderId) {
-        try {
 
-            return ResponseEntity.ok().body(onGoingOrderService.GetOrderToWorkStation(orderId));
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderId);
-        }
-    }
     @GetMapping("GetCompletedNumber/{orderId}")
     public ResponseEntity<?> GetCompletedNumber(@PathVariable String orderId) {
         try {
