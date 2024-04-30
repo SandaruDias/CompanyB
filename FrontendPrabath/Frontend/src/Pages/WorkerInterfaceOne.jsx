@@ -3,15 +3,17 @@ import "./../Styles/WorkerInterfaceOne.css";
 import ProgressBar from './ProgressBar';
 
 const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
+const apiGetOrderToWorkStation = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
 
 function WorkerInterfaceOne() {
   const [orderId1, setOrderId1] = useState('');
   const [orderId2, setOrderId2] = useState('');
-  const [numberOfItems, setNumberOfItems] = useState(0);
+  const [onGoingItems, setOnGoingItems] = useState(0);
   const [completedItems, setCompletedItems] = useState(0);
   const [remainingItems, setRemainingItems] = useState(0);
   const [errors, setErrors] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [numberOfItems, setNumberOfItems] = useState(0);
 
   useEffect(() => {
     // Fetch initial data from the backend
@@ -19,7 +21,6 @@ function WorkerInterfaceOne() {
   }, []);
 
   const fetchData = (orderId) => {
-    
     if (!orderId) {
       // alert("Please enter an Order ID before adding.");
       return; // Stop execution if orderId is empty
@@ -42,7 +43,6 @@ function WorkerInterfaceOne() {
           setRemainingItems(data.waitToOne);
           setProgress(0);
           setOrderId2('');
-          
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -52,9 +52,36 @@ function WorkerInterfaceOne() {
       console.log(e);
       alert("Already added!");
     }
-    
   };
   
+  const GetOrderToWorkStation = () => {
+    try {
+      fetch(apiGetOrderToWorkStation + orderId1)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (!data) {
+            throw new Error('No data received from the backend');
+          }
+          alert("Continue the Order.");
+          setOnGoingItems(data.onGoingStationOne);
+          setCompletedItems(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree)
+          setRemainingItems(data.waitToOne);
+          // setProgress(((data.totalNumber-(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree))/data.totalNumber));
+          setProgress((23/4).toFixed(1));
+          setOrderId2('');
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  };
   
   const handleChange = (event) => {
     if (event.target.name === 'orderid1') {
@@ -74,7 +101,7 @@ function WorkerInterfaceOne() {
     e.preventDefault();
     // Handle form submission logic here
     console.log("Pass Order");
-    fetchData(orderId1);
+    GetOrderToWorkStation();
   };
 
   return (
@@ -93,7 +120,7 @@ function WorkerInterfaceOne() {
             value={orderId1}
           />
           <button className="login-button" onClick={handleSubmit}>
-            Submmit 
+            Submit 
           </button>
         </div>
         
@@ -122,7 +149,7 @@ function WorkerInterfaceOne() {
       <div className="rectangle-container"> {/* Wrapper for the rectangle */}
         <div className="rectangle-content">
           <div>
-            <h3>Number of Items: {numberOfItems}</h3>
+            <h3>On-Going Items: {onGoingItems}</h3>
             <h3>Completed Items: {completedItems}</h3>
             <h3>Remaining Items: {remainingItems}</h3>
             <h3>Errors: {errors}</h3>

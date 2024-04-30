@@ -1,0 +1,13 @@
+{
+  "id": "OD0002",
+  "totalNumber": 12,
+  "onGoingStationOne": 0,
+  "onGoingStationTwo": 0,
+  "onGoingStationThree": 0,
+  "waitToOne": 12,
+  "waitToTwo": 0,
+  "waitToThree": 0,
+  "completedNum": 0,
+  "completed": false,
+  "qaresult": false
+}
