@@ -72,7 +72,7 @@ function WorkerInterfaceOne() {
           setCompletedItems(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree)
           setRemainingItems(data.waitToOne);
           // setProgress(((data.totalNumber-(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree))/data.totalNumber));
-          setProgress((23/4).toFixed(1));
+          setProgress(34);
           setOrderId2('');
         })
         .catch((error) => {
