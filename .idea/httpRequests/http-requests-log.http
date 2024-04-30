@@ -1,3 +1,113 @@
+PUT http://localhost:8090/User/workStation/signout/1
+Content-Type: application/x-www-form-url
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T230345.200.txt
+
+###
+
+PUT http://localhost:8090/User/workStation/signout/3
+Content-Type: application/x-www-form-url
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T224438.200.txt
+
+###
+
+PUT http://localhost:8090/User/workStation/signout/1
+Content-Type: application/x-www-form-url
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T224433.200.txt
+
+###
+
+PUT http://localhost:8090/User/workStation/signout/2
+Content-Type: application/x-www-form-url
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T224419.200.txt
+
+###
+
+PUT http://localhost:8090/User/workStation/signout/2
+Content-Type: application/x-www-form-url
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T223632.200.txt
+
+###
+
+PUT http://localhost:8090/User/workStation/signout/1
+Content-Type: application/x-www-form-url
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T223620.200.txt
+
+###
+
+PUT http://localhost:8090/User/workStation/signout/1/PRH
+Content-Type: application/x-www-form-url
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T212136.200.txt
+
+###
+
+PUT http://localhost:8090/User/workStation/signout/2/PRH
+Content-Type: application/x-www-form-url
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T212037.200.txt
+
+###
+
+PUT http://localhost:8090/User/workstationLogin/2/PRH/123
+Content-Type: application/x-www-form-urlencode
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T203518.200.txt
+
+###
+
+PUT http://localhost:8090/User/workstationLogin/2/PRH/123
+Content-Type: application/x-www-form-urlencode
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-30T201949.200.txt
+
+###
+
 GET http://localhost:8090/Orders/OD0003
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
@@ -394,108 +504,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-04-26T143028.200.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/0
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T141058.200.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/0
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T140744.404.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/0
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T140649.404.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/0
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134650.404.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/23
-Content-Type: application/x-www-form-urlenc
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134633.200.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/0
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134451.404.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/1
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134210.200.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/23
-Content-Type: application/x-www-form-urlenc
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134145.200.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/1
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T134050.404.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationThreePass/OD0001/1
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-26T083947.404.txt
 
 ###
 

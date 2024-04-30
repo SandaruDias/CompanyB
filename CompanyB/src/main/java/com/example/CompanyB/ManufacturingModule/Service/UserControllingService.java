@@ -70,11 +70,16 @@ public class UserControllingService {
         }
     }
 
-    public int signOut(int workStationID,String userName){
+    public int signOut(int workStationID){
         try {
-            FetchWorksStationUser fetchWorksStationUser = fetchWorkStationUserRepository.findByWorkStationIdAndUserName(workStationID, userName);
-            fetchWorksStationUser.setActive(false);
-            fetchWorkStationUserRepository.save(fetchWorksStationUser);
+            ArrayList<FetchWorksStationUser> arrayList = fetchWorkStationUserRepository.findByisActive(true);
+            for(FetchWorksStationUser i:arrayList) {
+                if (i.getWorkStationId() == workStationID) {
+                    i.setActive(false);
+                    fetchWorkStationUserRepository.save(i);
+                }
+            }
+
             return 0; // sign out successful
         }
         catch (Exception e){

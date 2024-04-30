@@ -1,1 +1,0 @@
-org.springframework.dao.DuplicateKeyException: Write operation error on server ac-egfqriu-shard-00-01.njfhzwf.mongodb.net:27017. Write error: WriteError{code=11000, message='E11000 duplicate key error collection: CompanyB.Manufacturing_FinalOutput index: _id_ dup key: { _id: "OD0001" }', details={}}.OD0001
