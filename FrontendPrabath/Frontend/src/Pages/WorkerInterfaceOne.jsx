@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./../Styles/WorkerInterfaceOne.css";
 import ProgressBar from './ProgressBar';
 
+const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
+
 function WorkerInterfaceOne() {
   const [orderId1, setOrderId1] = useState('');
   const [orderId2, setOrderId2] = useState('');
@@ -9,24 +11,51 @@ function WorkerInterfaceOne() {
   const [completedItems, setCompletedItems] = useState(0);
   const [remainingItems, setRemainingItems] = useState(0);
   const [errors, setErrors] = useState(0);
-  const [progress, setProgress] = useState(0); // Corrected state initialization
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Fetch data from the backend
-    fetch("backend-url")
-      .then((response) => response.json())
-      .then((data) => {
-        // Update the state with data from the backend
-        setNumberOfItems(data.numberOfItems);
-        setCompletedItems(data.completedItems);
-        setRemainingItems(data.remainingItems);
-        setErrors(data.errors);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+    // Fetch initial data from the backend
+    fetchData();
   }, []);
 
+  const fetchData = (orderId) => {
+    
+    if (!orderId) {
+      // alert("Please enter an Order ID before adding.");
+      return; // Stop execution if orderId is empty
+    }
+  
+    try {
+      fetch(apiPlaceOrder + orderId)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (!data) {
+            throw new Error('No data received from the backend');
+          }
+          alert("Order Added!.");
+          setNumberOfItems(data.totalNumber);
+          setRemainingItems(data.waitToOne);
+          setProgress(0);
+          setOrderId2('');
+          
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          alert("Already added!");
+        });
+    } catch (e) {
+      console.log(e);
+      alert("Already added!");
+    }
+    
+  };
+  
+  
   const handleChange = (event) => {
     if (event.target.name === 'orderid1') {
       setOrderId1(event.target.value);
@@ -35,10 +64,17 @@ function WorkerInterfaceOne() {
     }
   };
 
+  const handleAddOrder = () => {
+    // Handle adding order logic here
+    console.log("Add Order");
+    fetchData(orderId2);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log("Form submitted");
+    console.log("Pass Order");
+    fetchData(orderId1);
   };
 
   return (
@@ -57,7 +93,7 @@ function WorkerInterfaceOne() {
             value={orderId1}
           />
           <button className="login-button" onClick={handleSubmit}>
-            Submit 
+            Submmit 
           </button>
         </div>
         
@@ -69,7 +105,7 @@ function WorkerInterfaceOne() {
             onChange={handleChange}
             value={orderId2}
           />
-          <button className="login-button" onClick={handleSubmit}>
+          <button className="login-button" onClick={handleAddOrder}>
             Add
           </button>
         </div>
@@ -101,9 +137,9 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="noofitems1" // Corrected input name
+            name="noofitems1"
             onChange={handleChange}
-            value={orderId1} // Changed to orderId1 for consistency
+            value={orderId1}
           />
           <button className="login-button" onClick={handleSubmit}>
             Pass
@@ -114,11 +150,11 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="noofitems2" // Corrected input name
+            name="noofitems2"
             onChange={handleChange}
-            value={orderId2} // Changed to orderId2 for consistency
+            value={orderId2}
           />
-          <button className="login-button" onClick={handleSubmit}>
+          <button className="login-button" onClick={handleAddOrder}>
             Add
           </button>
         </div>
