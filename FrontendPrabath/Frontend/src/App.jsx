@@ -8,6 +8,7 @@ import UpdateStock from "./Pages/UpdateStock";
 import SelectionPage from "./Pages/SelectionPage";
 import WorkerPortal from "./Pages/WorkerPortal";
 
+
 function App() {
   return (
     <Router>
