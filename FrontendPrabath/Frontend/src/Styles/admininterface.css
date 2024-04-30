@@ -1,0 +1,64 @@
+.assembly-line {
+    font-family: sans-serif;
+    margin: 2rem auto;
+    width: 90%;
+    height: 720px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    animation: fadeIn 0.5s ease-in-out;
+    background-color: rgb(165, 233, 245);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .assembly-line table {
+    width: 90%;
+    border-collapse: collapse;
+    align-items: center;
+  }
+  
+  .assembly-line th,
+  .assembly-line td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .assembly-line thead th {
+    background-color: #f2f2f2;
+  }
+  
+  .assembly-line button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #30b4e9;
+    color: white;
+  }
+  
+  .assembly-line button:hover {
+    background-color: #224799;
+  }
+  
+  .progress {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid #ddd;
+  }
+  .progress-bar-inner {
+    text-align: center;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    background-color: green;
+    border-radius: 5px;
+  }
+  /* Add your custom progress bar styles here */
