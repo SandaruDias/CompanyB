@@ -1,3 +1,21 @@
+GET http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/OD0001
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-05-01T030514.200.json
+
+###
+
+GET http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-05-01T030456.404.txt
+
+###
+
 PUT http://localhost:8090/User/workStation/signout/1
 Content-Type: application/x-www-form-urlencoded1
 Content-Length: 0
@@ -475,26 +493,4 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-04-28T175830.200.txt
-
-###
-
-PUT http://localhost:8090/User/adminlogin/tharoosha/Vj
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-28T171133.200.txt
-
-###
-
-PUT http://localhost:8090/User/adminlogin/VJ/Vj
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-28T170939.200.txt
 
