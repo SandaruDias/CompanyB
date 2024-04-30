@@ -3,10 +3,12 @@ package com.example.CompanyB.ManufacturingModule.Controller;
 import com.example.CompanyB.ManufacturingModule.Service.UserControllingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/User")
 
 public class UserController {
@@ -57,10 +59,10 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
-    @PutMapping("workStation/signout/{workStationId}")
-    public ResponseEntity<?> signOut(@PathVariable int workStationId){
+    @PutMapping("workStation/signout/{workStationId}/{userName}")
+    public ResponseEntity<?> signOut(@PathVariable int workStationId,@PathVariable String userName){
         try{
-            int result = userControllingService.signOut(workStationId);
+            int result = userControllingService.signOut(workStationId,userName);
             if (result ==0){
                 return ResponseEntity.status(HttpStatus.OK).body("Signed Out");
             }
