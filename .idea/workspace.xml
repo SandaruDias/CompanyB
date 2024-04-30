@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Works Stations are modeled">
+
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T083636.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T083744.404.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T083817.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T140744.404.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-26T141058.200.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/FetchOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/FetchOrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/UserController.class" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +55,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "HTTP Request.All in generated-requests.executor": "Run",
@@ -83,8 +92,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.CompanyB_Application">
     <configuration name="generated-requests | #37" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="37" requestIdentifier="#37" runType="Run single request">
       <method v="2" />
@@ -110,11 +120,13 @@
     </configuration>
     <recent_temporary>
       <list>
+
         <item itemvalue="HTTP Request.generated-requests | #43" />
         <item itemvalue="HTTP Request.generated-requests | #40" />
         <item itemvalue="HTTP Request.generated-requests | #39" />
         <item itemvalue="HTTP Request.generated-requests | #37" />
         <item itemvalue="HTTP Request.generated-requests | #38" />
+
       </list>
     </recent_temporary>
   </component>
@@ -138,10 +150,12 @@
       <workItem from="1714099877554" duration="1155000" />
       <workItem from="1714118969215" duration="712000" />
       <workItem from="1714119768978" duration="1113000" />
-      <workItem from="1714317509348" duration="3840000" />
-      <workItem from="1714482633712" duration="94000" />
-      <workItem from="1714482735609" duration="9946000" />
-      <workItem from="1714507218330" duration="349000" />
+
+      <workItem from="1714121411410" duration="171000" />
+      <workItem from="1714122008780" duration="1554000" />
+      <workItem from="1714279316447" duration="20558000" />
+      <workItem from="1714507455094" duration="316000" />
+
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />
