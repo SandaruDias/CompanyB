@@ -2,6 +2,7 @@
     font-family: sans-serif;
     margin: 2rem auto;
     width: 90%;
+    height: 720px;
     border: 1px solid #ddd;
     border-radius: 4px;
     animation: fadeIn 0.5s ease-in-out;
@@ -52,5 +53,12 @@
     margin-top: 1rem;
     border-top: 1px solid #ddd;
   }
-  
+  .progress-bar-inner {
+    text-align: center;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    background-color: green;
+    border-radius: 5px;
+  }
   /* Add your custom progress bar styles here */

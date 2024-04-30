@@ -27,7 +27,7 @@ function ProgressBar() {
 
     return (
         <div className="progress-bar">
-            <div className="progress-bar-inner" style={{ width: `${width}%`, backgroundColor: 'green' }}>
+            <div className="progress-bar-inner" style={{ width: `${width}%`, backgroundColor: 'blue' }}>
                 {width}%
             </div>
         </div>
