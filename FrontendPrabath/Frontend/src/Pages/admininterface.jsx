@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './../Styles/admininterface.css';
 import ProgressBar from './ProgressBar';
+import Progressbarnadmin from './progressbarnadmin';
+import Progressbar3 from './progressbar3';
+import Pnew from './Pnew';
 
 function admininterface() {
   const [workstations, setWorkstations] = useState([
@@ -36,7 +39,8 @@ function admininterface() {
       <br />
       <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
         <button style={{ marginRight: '10px' }}>Home Page</button>
-        <button>worker details</button>
+        <button style={{ marginRight: '10px' }}>worker details</button>
+        <button>Sign OUT</button>
       </div>
 
       <table style={{ borderCollapse: 'collapse', border: '1px solid black', justifyContent: 'center' }}>
@@ -101,13 +105,13 @@ function admininterface() {
         <div className="input-container"> 
         <div className="app">
           <h2>Progress Bar</h2>
-          <ProgressBar progress={80} />
+          <Progressbarnadmin progress={80} />
         </div>
       </div>
         <div className="input-container"> 
         <div className="app">
           <h2>Progress Bar</h2>
-          <ProgressBar progress={90} />
+          <Progressbar3 progress={90} />
         </div>
         
         
@@ -117,9 +121,13 @@ function admininterface() {
       </div>
      <br />
      <br />
+      
+     <div className="app"></div>
      <h2 htmlFor="First name">overall progress</h2>
-     <ProgressBar progress={90} />
+     <Pnew progress={90} />
     </div>
+    
+ 
     
   );
 }

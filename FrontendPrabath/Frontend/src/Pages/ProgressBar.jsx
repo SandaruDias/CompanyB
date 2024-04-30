@@ -19,7 +19,7 @@ function ProgressBar() {
         return new Promise((resolve, reject) => {
             // Replace this with your actual API call to fetch progress from the backend
             setTimeout(() => {
-                const progress = 50; // Example progress value received from the backend
+                const progress = 80; // Example progress value received from the backend
                 resolve(progress);
             }, 2000);
         });

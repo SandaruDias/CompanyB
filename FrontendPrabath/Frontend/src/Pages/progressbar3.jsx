@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Progressbarnadmin() {
+function Progressbar3() {
     const [width, setWidth] = useState(0);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function Progressbarnadmin() {
         return new Promise((resolve, reject) => {
             // Replace this with your actual API call to fetch progress from the backend
             setTimeout(() => {
-                const progress = 50; // Example progress value received from the backend
+                const progress = 26; // Example progress value received from the backend
                 resolve(progress);
             }, 2000);
         });
@@ -34,6 +34,4 @@ function Progressbarnadmin() {
     );
 }
 
-export default Progressbarnadmin;
-
-
+export default Progressbar3;
