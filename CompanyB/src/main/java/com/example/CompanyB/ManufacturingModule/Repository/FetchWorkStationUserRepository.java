@@ -19,9 +19,12 @@ import com.example.CompanyB.ManufacturingModule.DataTransferObject.FetchWorksSta
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+
 @Repository
 public interface FetchWorkStationUserRepository extends MongoRepository<FetchWorksStationUser, String> {
 
-    boolean existsFetchWorksStationUserByWorkStationIdAndActive(int workStationId, boolean isActive);
     FetchWorksStationUser findByWorkStationIdAndUserName(int workStationID,String userName);
+
+    ArrayList<FetchWorksStationUser>  findByisActive (boolean isActive);
 }
