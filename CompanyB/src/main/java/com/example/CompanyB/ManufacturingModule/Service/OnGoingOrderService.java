@@ -39,6 +39,12 @@ public class OnGoingOrderService {
         return IsCompleted;
     }
 
+    public OnGoingOrder GetOrderToWorkStation(String orderId){
+
+        return onGoingOrderRepository.findById(orderId).orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+    }
+
     public OnGoingOrder WorkStationOneFetch (String orderId, int amount){
         OnGoingOrder onGoingOrder = onGoingOrderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));

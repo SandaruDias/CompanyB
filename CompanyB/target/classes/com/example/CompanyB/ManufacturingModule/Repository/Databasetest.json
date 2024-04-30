@@ -1,0 +1,15 @@
+{
+  "_id": {
+    "$oid": "662de0a6ca62064bbbb483f2"
+  },
+  "workStationId": {
+    "$numberInt": "1"
+  },
+  "userId": "US0001",
+  "useraName": "prh",
+  "isActive": true,
+  "oderId": [
+    ["OD001", {"$numberInt": "12"}],
+    ["OD002", {"$numberInt": "23"}]
+  ]
+}
