@@ -59,10 +59,10 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
-    @PutMapping("workStation/signout/{workStationId}/{userName}")
-    public ResponseEntity<?> signOut(@PathVariable int workStationId,@PathVariable String userName){
+    @PutMapping("workStation/signout/{workStationId}")
+    public ResponseEntity<?> signOut(@PathVariable int workStationId){
         try{
-            int result = userControllingService.signOut(workStationId,userName);
+            int result = userControllingService.signOut(workStationId);
             if (result ==0){
                 return ResponseEntity.status(HttpStatus.OK).body("Signed Out");
             }
