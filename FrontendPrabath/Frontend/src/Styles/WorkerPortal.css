@@ -5,7 +5,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+<<<<<<< HEAD
   background-color: #f4f7f8;
+=======
+  background-color: white    ;
+>>>>>>> c3489f9c2c135aae03950fc97855493c51fba65f
   gap: 20px;
 }
 .login {
