@@ -5,10 +5,9 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: white; /* Set background color to white */
+  background-color: #edf0f2;
   gap: 20px;
 }
-
 .login {
   display: flex;
   justify-content: center;
@@ -18,15 +17,13 @@
   border-radius: 10px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
   column-gap: 100px;
-  background-color: white; /* Ensure background color is white */
 }
-
 .details {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 70px;
-  background-color: white;
+
 }
 .details input[type="text"],
 input[type="password"] {
@@ -39,9 +36,11 @@ input[type="password"] {
 }
 
 .login-button {
-  width: 50%; 
+
+  width: 120%;
+
   padding: 10px;
-  background-color: #000000;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -52,7 +51,9 @@ input[type="password"] {
 }
 
 button:hover {
-  background-color: #335dc6;
+
+  background-color: #0056b3;
+
 }
 .login-title {
   justify-content: center;
@@ -62,4 +63,3 @@ button:hover {
   font-optical-sizing: auto;
   font-style: normal;
 }
-

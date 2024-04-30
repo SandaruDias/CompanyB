@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './../Styles/admininterface.css';
+import ProgressBar from './ProgressBar';
+import Progressbarnadmin from './progressbarnadmin';
+import Progressbar3 from './progressbar3';
+import Pnew from './Pnew';
 
 function admininterface() {
   const [workstations, setWorkstations] = useState([
@@ -25,70 +29,105 @@ function admininterface() {
   };
 
   return (
-    
-    <div className="assembly-line">
+    <div className="assembly-line"  > 
       <h1>Company B</h1>
       <h2>Assembly line</h2>
-        <label htmlFor="First name">order ID:=</label>
-        <input type="string" id="First name" name="First name"/>
-        <button type="Register">Submit</button>
-        <br/> 
-        <br />
-        <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
-          <button style={{ marginRight: '10px' }}>Home Page</button>
-          <button>worker details</button>
-        </div>
-        
-      <table  style={{ borderCollapse: 'collapse', border: '1px solid black', justifyContent: 'center' }} >
-      <thead>
+      <label htmlFor="First name">order ID:</label>
+      <input type="string" id="First name" name="First name" />
+      <button type="Register">Submit</button>
+      <br />
+      <br />
+      <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
+        <button style={{ marginRight: '10px' }}>Home Page</button>
+        <button style={{ marginRight: '10px' }}>worker details</button>
+        <button>Sign OUT</button>
+      </div>
+
+      <table style={{ borderCollapse: 'collapse', border: '1px solid black', justifyContent: 'center' }}>
+        <thead>
           <tr>
-            <th style={{ border: '1px solid black', padding: '8px' }}>workstation 01</th>
-            <th style={{ border: '1px solid black', padding: '8px' }}>workstation 02</th>
-            <th style={{ border: '1px solid black', padding: '8px' }}>workstation 03</th>
+            <th>workstation 01</th>
+            <th>workstation 02</th>
+            <th>workstation 03</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">No of items:-</label>
-        <input type="string" id="First name" name="First name"/></td>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">No of items:-</label>
-        <input type="string" id="First name" name="First name"/></td>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">No of items:-</label>
-        <input type="string" id="First name" name="First name"/></td>
+            <td >
+            <div className="rectangle-container"> 
+                <div className="rectangle-content">
+                <div>
+                    <h3>Number of Items: {}</h3>
+                    <h3>Completed Items: {}</h3>
+                    <h3>Remaining Items: {}</h3>
+                    <h3>Errors: {}</h3>
+                </div>
+                </div>
+            </div>
+            </td>
+            <td >
+            <div className="rectangle-container"> 
+                <div className="rectangle-content"> {/* Wrapper for the rectangle */}
+                    <div>
+                        <h3>Number of Items: {}</h3>
+                        <h3>Completed Items: {}</h3>
+                        <h3>Remaining Items: {}</h3>
+                        <h3>Errors: {}</h3>
+                    </div>
+                </div>
+            </div>
+            </td>
+            <td >
+            <div className="rectangle-container"> 
+                <div className="rectangle-content"> {/* Wrapper for the rectangle */}
+                    <div>
+                        <h3>Number of Items: {}</h3>
+                        <h3>Completed Items: {}</h3>
+                        <h3>Remaining Items: {}</h3>
+                        <h3>Errors: {}</h3>
+                    </div>
+                </div>
+            </div>
+             </td>
           </tr>
-          <tr>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">completed items;-</label>
-        <input type="string" id="First name" name="First name"/></td>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">completed items;-</label>
-        <input type="string" id="First name" name="First name"/></td>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">completed items;-</label>
-        <input type="string" id="First name" name="First name"/></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">remaining items:-</label>
-        <input type="string" id="First name" name="First name"/></td>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">remaining items:-</label>
-        <input type="string" id="First name" name="First name"/></td>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">remaining items:-</label>
-        <input type="string" id="First name" name="First name"/></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">Errors:-</label>
-        <input type="string" id="First name" name="First name"/></td>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">Errors:-</label>
-        <input type="string" id="First name" name="First name"/></td>
-            <td style={{ border: '1px solid black', padding: '8px' }}><label htmlFor="First name">Errors:-</label>
-        <input type="string" id="First name" name="First name"/></td>
-          </tr>
-          
+         
         </tbody>
       </table>
-      <br />
-      <br />
-      <label htmlFor="First name">overall progress:=</label>
-        <input type="string" id="First name" name="First name"/> 
-    </div>
 
+      {/* Progress Bars */}
+      <div className="progress-bars-container" style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className="input-container"> 
+        <div className="app">
+          <h2>Progress Bar</h2>
+          <ProgressBar progress={90} />
+        </div>
+      </div>
+        <div className="input-container"> 
+        <div className="app">
+          <h2>Progress Bar</h2>
+          <Progressbarnadmin progress={80} />
+        </div>
+      </div>
+        <div className="input-container"> 
+        <div className="app">
+          <h2>Progress Bar</h2>
+          <Progressbar3 progress={90} />
+        </div>
+        
+        
+      </div>
+      
+        
+      </div>
+     <br />
+     <br />
+      
+     <div className="app"></div>
+     <h2 htmlFor="First name">overall progress</h2>
+     <Pnew progress={90} />
+    </div>
+    
+ 
     
   );
 }
