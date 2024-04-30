@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("http://localhost:5173/")
+@CrossOrigin("http://localhost:3000/")
 @RequestMapping("/FetchOrders")
 public class FetchOrderController {
 
@@ -26,7 +26,7 @@ public class FetchOrderController {
             String result = fetchOrderService.checkQuantity(orderId);
             String ID= fetchOrderService.printID(orderId);
             OnGoingOrder onGoingOrder=fetchOrderService.fetchOrderFromOrderDetails(orderId);
-            return ResponseEntity.ok().body(onGoingOrder);
+            return ResponseEntity.ok().body(result + ", ID: " + ID);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderId);
         }
