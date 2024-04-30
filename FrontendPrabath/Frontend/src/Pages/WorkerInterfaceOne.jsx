@@ -2,87 +2,31 @@ import React, { useState, useEffect } from "react";
 import "./../Styles/WorkerInterfaceOne.css";
 import ProgressBar from './ProgressBar';
 
-const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
-const apiGetOrderToWorkStation = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
-
 function WorkerInterfaceOne() {
   const [orderId1, setOrderId1] = useState('');
   const [orderId2, setOrderId2] = useState('');
-  const [onGoingItems, setOnGoingItems] = useState(0);
+  const [numberOfItems, setNumberOfItems] = useState(0);
   const [completedItems, setCompletedItems] = useState(0);
   const [remainingItems, setRemainingItems] = useState(0);
   const [errors, setErrors] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [numberOfItems, setNumberOfItems] = useState(0);
+  const [progress, setProgress] = useState(0); // Corrected state initialization
 
   useEffect(() => {
-    // Fetch initial data from the backend
-    fetchData();
+    // Fetch data from the backend
+    fetch("backend-url")
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the state with data from the backend
+        setNumberOfItems(data.numberOfItems);
+        setCompletedItems(data.completedItems);
+        setRemainingItems(data.remainingItems);
+        setErrors(data.errors);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
 
-  const fetchData = (orderId) => {
-    if (!orderId) {
-      // alert("Please enter an Order ID before adding.");
-      return; // Stop execution if orderId is empty
-    }
-  
-    try {
-      fetch(apiPlaceOrder + orderId)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          if (!data) {
-            throw new Error('No data received from the backend');
-          }
-          alert("Order Added!.");
-          setNumberOfItems(data.totalNumber);
-          setRemainingItems(data.waitToOne);
-          setProgress(0);
-          setOrderId2('');
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-          alert("Already added!");
-        });
-    } catch (e) {
-      console.log(e);
-      alert("Already added!");
-    }
-  };
-  
-  const GetOrderToWorkStation = () => {
-    try {
-      fetch(apiGetOrderToWorkStation + orderId1)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          if (!data) {
-            throw new Error('No data received from the backend');
-          }
-          alert("Continue the Order.");
-          setOnGoingItems(data.onGoingStationOne);
-          setCompletedItems(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree)
-          setRemainingItems(data.waitToOne);
-          // setProgress(((data.totalNumber-(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree))/data.totalNumber));
-          setProgress((23/4).toFixed(1));
-          setOrderId2('');
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  
   const handleChange = (event) => {
     if (event.target.name === 'orderid1') {
       setOrderId1(event.target.value);
@@ -91,17 +35,10 @@ function WorkerInterfaceOne() {
     }
   };
 
-  const handleAddOrder = () => {
-    // Handle adding order logic here
-    console.log("Add Order");
-    fetchData(orderId2);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log("Pass Order");
-    GetOrderToWorkStation();
+    console.log("Form submitted");
   };
 
   return (
@@ -132,7 +69,7 @@ function WorkerInterfaceOne() {
             onChange={handleChange}
             value={orderId2}
           />
-          <button className="login-button" onClick={handleAddOrder}>
+          <button className="login-button" onClick={handleSubmit}>
             Add
           </button>
         </div>
@@ -149,7 +86,7 @@ function WorkerInterfaceOne() {
       <div className="rectangle-container"> {/* Wrapper for the rectangle */}
         <div className="rectangle-content">
           <div>
-            <h3>On-Going Items: {onGoingItems}</h3>
+            <h3>Number of Items: {numberOfItems}</h3>
             <h3>Completed Items: {completedItems}</h3>
             <h3>Remaining Items: {remainingItems}</h3>
             <h3>Errors: {errors}</h3>
@@ -164,9 +101,9 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="noofitems1"
+            name="noofitems1" // Corrected input name
             onChange={handleChange}
-            value={orderId1}
+            value={orderId1} // Changed to orderId1 for consistency
           />
           <button className="login-button" onClick={handleSubmit}>
             Pass
@@ -177,11 +114,11 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="noofitems2"
+            name="noofitems2" // Corrected input name
             onChange={handleChange}
-            value={orderId2}
+            value={orderId2} // Changed to orderId2 for consistency
           />
-          <button className="login-button" onClick={handleAddOrder}>
+          <button className="login-button" onClick={handleSubmit}>
             Add
           </button>
         </div>

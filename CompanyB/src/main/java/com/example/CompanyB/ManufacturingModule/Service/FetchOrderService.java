@@ -40,7 +40,6 @@ public class FetchOrderService {
         onGoingOrder.setTotalNumber(fetchOrder.getQuantity());
         onGoingOrder.setWaitToOne(fetchOrder.getQuantity());
         onGoingOrderRepository.insert(onGoingOrder); // assuming save is the correct method if insert doesn't exist.
-        onGoingOrderRepository.save(onGoingOrder);
         return onGoingOrder;
     }
 

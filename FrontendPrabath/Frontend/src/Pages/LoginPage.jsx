@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./../Styles/Login.css";
 import login_image from "./../Images/Login.png";
+import axios from "axios"
+import { useHistory } from "react-router-dom";
 
 function LoginPage() {
   const [details, setDetails] = useState({ username: "", password: "" });
-
+  const history = useHistory(); // Create a history object
   const handleChange = (event) => {
     setDetails((prev) => ({
       ...prev,
@@ -12,12 +14,29 @@ function LoginPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(details);
     //setup vaidation
     //pass to database
-    setDetails({ username: "", password: "" });
+    try {
+      const response = await axios.put(`http://localhost:8090/User/adminLogin/${details.username}/${details.password}`);
+      console.log(response.data); // Log the response data
+      if (response.data === "Login Successful") {
+        // Redirect to AdminInterface.jsx page
+        history.push("/AdminInterface")
+      } else {
+        // Handle other cases if needed
+        alert("Login failed: " + response.data);
+      }
+      // If you need to perform any action based on the response data, do it here
+
+      // Reset the form after successful login
+      setDetails({ username: "", password: "" });
+    } catch (error) {
+      console.error('Error logging in:', error.message);
+      // You can handle errors here, such as displaying an error message to the user
+    };
   };
 
   return (
