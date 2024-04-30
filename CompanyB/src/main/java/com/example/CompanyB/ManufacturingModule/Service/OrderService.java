@@ -21,17 +21,17 @@ public class OrderService {
     public OnGoingOrder AssignOrderDetails(String orderId) {
 
 
-        FetchOrderService fetchOrderService = new FetchOrderService(fetchOrderRepository);
+//        FetchOrderService fetchOrderService = new FetchOrderService(fetchOrderRepository);
 
         FetchOrder fetchOrder = fetchOrderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
 
-        String testflag = fetchOrderService.checkQuantity(orderId);
+//        String testflag = fetchOrderService.checkQuantity(orderId);
         OnGoingOrder onGoingOrder = new OnGoingOrder(orderId);
         onGoingOrder.setId(fetchOrder.getId());
         onGoingOrder.setTotalNumber(fetchOrder.getQuantity());
         onGoingOrder.setWaitToOne(fetchOrder.getQuantity());
-        System.out.println(testflag);
+//        System.out.println(testflag);
 
         return onGoingOrder;
     }
