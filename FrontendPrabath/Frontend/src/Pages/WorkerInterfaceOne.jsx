@@ -41,6 +41,7 @@ function WorkerInterfaceOne() {
           setNumberOfItems(data.totalNumber);
           setRemainingItems(data.waitToOne);
           setProgress(0);
+          setOrderId2('');
           
         })
         .catch((error) => {
