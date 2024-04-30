@@ -3,12 +3,13 @@ import "./../Styles/WorkerInterfaceOne.css";
 import ProgressBar from './ProgressBar';
 
 function WorkerInterfaceOne() {
-  const [details, setDetails] = useState({ orderid: "", noofitems: "" });
-  const [progress] = useState(0);
+  const [orderId1, setOrderId1] = useState('');
+  const [orderId2, setOrderId2] = useState('');
   const [numberOfItems, setNumberOfItems] = useState(0);
   const [completedItems, setCompletedItems] = useState(0);
   const [remainingItems, setRemainingItems] = useState(0);
   const [errors, setErrors] = useState(0);
+  const [progress, setProgress] = useState(0); // Corrected state initialization
 
   useEffect(() => {
     // Fetch data from the backend
@@ -27,16 +28,17 @@ function WorkerInterfaceOne() {
   }, []);
 
   const handleChange = (event) => {
-    setDetails((prev) => ({
-      ...prev,
-      [event.target.name]: event.target.value,
-    }));
+    if (event.target.name === 'orderid1') {
+      setOrderId1(event.target.value);
+    } else if (event.target.name === 'orderid2') {
+      setOrderId2(event.target.value);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(details);
-    setDetails({ orderid: "", noofitems: "" });
+    // Handle form submission logic here
+    console.log("Form submitted");
   };
 
   return (
@@ -50,12 +52,12 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="Order Id"
-            name="orderid"
+            name="orderid1"
             onChange={handleChange}
-            value={details.orderid}
+            value={orderId1}
           />
           <button className="login-button" onClick={handleSubmit}>
-            Submit
+            Submit 
           </button>
         </div>
         
@@ -63,9 +65,9 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="Order Id"
-            name="orderid" // Corrected the property name
+            name="orderid2"
             onChange={handleChange}
-            value={details.orderid} // Use the same state for both inputs
+            value={orderId2}
           />
           <button className="login-button" onClick={handleSubmit}>
             Add
@@ -94,16 +96,14 @@ function WorkerInterfaceOne() {
 
       <div className="vertical-space">  </div>
       
-      
-
       <div className="input-container">
         <div className="left-container">
           <input
             type="text"
             placeholder="No of Items"
-            name="noofitems"
+            name="noofitems1" // Corrected input name
             onChange={handleChange}
-            value={details.noofitems}
+            value={orderId1} // Changed to orderId1 for consistency
           />
           <button className="login-button" onClick={handleSubmit}>
             Pass
@@ -114,9 +114,9 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="noofitems" // Corrected the property name
+            name="noofitems2" // Corrected input name
             onChange={handleChange}
-            value={details.noofitems} // Use the same state for both inputs
+            value={orderId2} // Changed to orderId2 for consistency
           />
           <button className="login-button" onClick={handleSubmit}>
             Add
