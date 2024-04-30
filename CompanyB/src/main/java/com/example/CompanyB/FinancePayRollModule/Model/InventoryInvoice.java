@@ -3,6 +3,7 @@ package com.example.CompanyB.FinancePayRollModule.Model;
 import java.util.Date;
 
 public class InventoryInvoice {
+    private String inventoryInvoiceId;
     private String materialName;
     private int quantityShort;
     private double marketPrice;
@@ -12,7 +13,8 @@ public class InventoryInvoice {
 
     private Date dueDate;
 
-    public InventoryInvoice(String materialName, int quantityShort, double marketPrice, double potentialLoss, String adjustmentPlan, String urgentOrderDetails, Date dueDate) {
+    public InventoryInvoice(String inventoryInvoiceId, String materialName, int quantityShort, double marketPrice, double potentialLoss, String adjustmentPlan, String urgentOrderDetails, Date dueDate) {
+        this.inventoryInvoiceId = inventoryInvoiceId;
         this.materialName = materialName;
         this.quantityShort = quantityShort;
         this.marketPrice = marketPrice;
@@ -79,5 +81,13 @@ public class InventoryInvoice {
 
     public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
+    }
+
+    public void setId(String number) {
+        this.inventoryInvoiceId = number;
+    }
+
+    public String getinventoryInvoiceId() {
+        return inventoryInvoiceId;
     }
 }

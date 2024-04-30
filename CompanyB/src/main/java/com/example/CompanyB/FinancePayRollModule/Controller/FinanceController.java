@@ -42,7 +42,7 @@ public class FinanceController {
     public ResponseEntity<Invoice> updateInvoice(@PathVariable String invoiceId,
                                                  @RequestBody InvoiceUpdateDTO invoiceDetails) {
         try {
-            Invoice updatedInvoice = financeService.updateInvoice(invoiceId, invoiceDetails.getAmount(), invoiceDetails.getStatus());
+            Invoice updatedInvoice = financeService.updateInvoice(invoiceId, invoiceDetails);
             return ResponseEntity.ok(updatedInvoice);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);

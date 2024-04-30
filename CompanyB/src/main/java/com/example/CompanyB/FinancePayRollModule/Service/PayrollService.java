@@ -7,6 +7,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -14,6 +16,7 @@ import reactor.core.publisher.Mono;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -118,6 +121,14 @@ public class PayrollService {
             throw new IllegalArgumentException("Payroll not found with ID: " + payrollId);
         }
         payrollRepository.deleteById(payrollId);
+    }
+
+    public List<Payroll> findPayrollsByEmployeeId(Long employeeId, Pageable pageable) {
+        Page<Payroll> payrolls = payrollRepository.findByEmployeeId(employeeId, pageable);
+        if (payrolls != null) {
+            return payrolls.getContent();
+        }
+        return Collections.emptyList(); // Ensure it never returns null
     }
 
 }

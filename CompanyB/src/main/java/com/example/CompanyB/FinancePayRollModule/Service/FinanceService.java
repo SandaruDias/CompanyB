@@ -4,6 +4,7 @@ import com.example.CompanyB.FinancePayRollModule.Model.Invoice;
 import com.example.CompanyB.FinancePayRollModule.Model.PaymentTransaction;
 import com.example.CompanyB.FinancePayRollModule.Repository.InvoiceRepository;
 import com.example.CompanyB.FinancePayRollModule.Repository.PaymentTransactionRepository;
+import com.example.CompanyB.FinancePayRollModule.Service.dto.InvoiceUpdateDTO;
 import com.example.CompanyB.FinancePayRollModule.Service.dto.OrderDetailsDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,16 +62,18 @@ public class FinanceService {
         invoiceRepository.save(invoice);
     }
 
-    public Invoice updateInvoice(String invoiceId, Double amount, Boolean status) {
-        Invoice invoice = invoiceRepository.findById(invoiceId).orElseThrow(() -> new RuntimeException("Invoice not found"));
-        if (amount != null) {
-            invoice.setAmount(amount);
+    public Invoice updateInvoice(String invoiceId, InvoiceUpdateDTO invoiceDetails) {
+        Invoice invoice = invoiceRepository.findById(invoiceId)
+                .orElseThrow(() -> new IllegalArgumentException("Invoice not found with ID: " + invoiceId));
+
+        if (invoiceDetails.getAmount() != null) {
+            invoice.setAmount(invoiceDetails.getAmount());
         }
-        if (status != null) {
-            invoice.setStatus(status);
+        if (invoiceDetails.getStatus() != null) {
+            invoice.setStatus(invoiceDetails.getStatus());
         }
-        invoiceRepository.save(invoice);
-        return invoice;
+
+        return invoiceRepository.save(invoice);
     }
 
     public PaymentTransaction updatePayment(String transactionId, Double amount, String paymentMethod) {

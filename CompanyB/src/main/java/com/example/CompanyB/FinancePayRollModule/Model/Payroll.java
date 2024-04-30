@@ -12,6 +12,10 @@ public class Payroll {
     private String employeeName;  // Added to handle employee's name
     private Date payPeriodStart;
     private Date payPeriodEnd;
+    private Double HoursWorked;
+    private Double HourlyRate;
+    private Double OvertimeHours;
+    private Double OvertimeRate;
     private Double grossSalary;
     private Double netSalary;
     private Double taxRate;       // To handle dynamic tax calculations
@@ -114,5 +118,37 @@ public class Payroll {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Double getHoursWorked() {
+        return HoursWorked;
+    }
+
+    public void setHoursWorked(Double hoursWorked) {
+        HoursWorked = hoursWorked;
+    }
+
+    public Double getHourlyRate() {
+        return HourlyRate;
+    }
+
+    public void setHourlyRate(Double hourlyRate) {
+        HourlyRate = hourlyRate;
+    }
+
+    public Double getOvertimeHours() {
+        return OvertimeHours;
+    }
+
+    public void setOvertimeHours(Double overtimeHours) {
+        OvertimeHours = overtimeHours;
+    }
+
+    public Double getOvertimeRate() {
+        return OvertimeRate;
+    }
+
+    public void setOvertimeRate(Double overtimeRate) {
+        OvertimeRate = overtimeRate;
     }
 }

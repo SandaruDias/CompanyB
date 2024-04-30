@@ -54,20 +54,22 @@ public class PayrollController {
         Payroll updatedPayroll = payrollService.updatePayroll(payrollId, deductions, taxRate);
         return ResponseEntity.ok(updatedPayroll);
     }
-
-    @GetMapping("/download/{employeeId}")
-    public ResponseEntity<byte[]> downloadPayrollDetails(@PathVariable Long employeeId) {
-        List<Payroll> payrolls = payrollRepository.findByEmployeeId(employeeId, Pageable.unpaged()).getContent();
-        byte[] data = payrollService.generatePayrollReport(payrolls);
-        HttpHeaders headers = new HttpHeaders();
-        headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=payroll-report.csv");
-        return new ResponseEntity<>(data, headers, HttpStatus.OK);
-    }
-
     @DeleteMapping("/{payrollId}")
     public ResponseEntity<Void> deletePayroll(@PathVariable String payrollId) {
         payrollService.deletePayrollById(payrollId);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/download/{employeeId}")
+    public ResponseEntity<byte[]> downloadPayrollDetails(@PathVariable Long employeeId) {
+        List<Payroll> payrolls = payrollService.findPayrollsByEmployeeId(employeeId, Pageable.unpaged());
+        if (payrolls.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        byte[] data = payrollService.generatePayrollReport(payrolls);
+        HttpHeaders headers = new HttpHeaders();
+        headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=payroll-report.csv");
+        return new ResponseEntity<>(data, headers, HttpStatus.OK);
     }
 
 

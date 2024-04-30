@@ -23,6 +23,7 @@ public class InventoryController {
     @PostMapping("/processShortage")
     public ResponseEntity<InventoryInvoice> handleInventoryShortage(@RequestBody InventoryInvoice inventoryInvoice) {
         InventoryInvoice processedInvoice = inventoryService.processShortageReport(
+                inventoryInvoice.getinventoryInvoiceId(),
                 inventoryInvoice.getMaterialName(),
                 inventoryInvoice.getQuantityShort(),
                 inventoryInvoice.getMarketPrice(),

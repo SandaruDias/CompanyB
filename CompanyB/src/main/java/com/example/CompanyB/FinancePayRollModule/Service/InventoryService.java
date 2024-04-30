@@ -20,8 +20,8 @@ public class InventoryService {
     @Autowired
     private AlertService alertService;
 
-    public InventoryInvoice processShortageReport(String materialName, int quantityShort, double marketPrice, double potentialLoss, String adjustmentPlan, String urgentOrderDetails, Date dueDate) {
-        InventoryInvoice savedInvoice = new InventoryInvoice(materialName, quantityShort, marketPrice, potentialLoss, adjustmentPlan, urgentOrderDetails, dueDate);
+    public InventoryInvoice processShortageReport(String inventoryInvoiceId,String materialName, int quantityShort, double marketPrice, double potentialLoss, String adjustmentPlan, String urgentOrderDetails, Date dueDate) {
+        InventoryInvoice savedInvoice = new InventoryInvoice(inventoryInvoiceId, materialName, quantityShort, marketPrice, potentialLoss, adjustmentPlan, urgentOrderDetails, dueDate);
         invoiceRepository.save(savedInvoice);
         // Check if potential loss exceeds a certain threshold to send an alert
         if (savedInvoice.getPotentialLoss() > 10000) { // Threshold value can be set based on business requirements
