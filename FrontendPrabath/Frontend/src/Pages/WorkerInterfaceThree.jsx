@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./../Styles/WorkerInterfaceThree.css";
-import ProgressBar from './ProgressBar';
+import ProgressBar from "./ProgressBarthree";
 
 function WorkerInterfaceThree() {
   const [details, setDetails] = useState({ orderid: "", noofitems: "" });
