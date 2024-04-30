@@ -7,6 +7,7 @@ import GenerateReport from "./Pages/GenerateReport";
 import UpdateStock from "./Pages/UpdateStock";
 import SelectionPage from "./Pages/SelectionPage";
 import WorkerPortal from "./Pages/WorkerPortal";
+import admininterface from "./Pages/admininterface";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/AddItem" component={AddItem} />
         <Route path="/generatereport" component={GenerateReport} />
         <Route path="/updatestock" component={UpdateStock} />
+        <Route path="/AdminInterface" component={admininterface}/>
       </Switch>
     </Router>
   );
