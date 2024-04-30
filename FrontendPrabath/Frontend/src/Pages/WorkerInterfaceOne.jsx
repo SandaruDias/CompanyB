@@ -71,8 +71,7 @@ function WorkerInterfaceOne() {
           setOnGoingItems(data.onGoingStationOne);
           setCompletedItems(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree)
           setRemainingItems(data.waitToOne);
-          // setProgress(((data.totalNumber-(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree))/data.totalNumber));
-          setProgress(34);
+          setProgress((((data.totalNumber-(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree))/data.totalNumber)*100).toFixed(1));
           setOrderId2('');
         })
         .catch((error) => {
