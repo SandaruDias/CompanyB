@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./../Styles/Login.css";
-
-
+import login_image from "./../Images/Login.png";
 
 function LoginPage() {
   const [details, setDetails] = useState({ username: "", password: "" });
@@ -25,7 +24,7 @@ function LoginPage() {
     <div className="login-container">
       <div className="login">
         <div className="details">
-          <h1 className="login-title">Admin Portal</h1>
+          <h1 className="login-title">       Admin Portal</h1>
           <div className="username">
             <input
               type="text"
