@@ -4,12 +4,21 @@ import './../Styles/Selection.css'
 
 function SelectionPage() {
   return (
-    <><div className='selection-container'>
-      <button className='admin-button'><Link to={"/adminPortal"}>Admin Portal</Link></button>
-    </div><div className='selection-container'>
-        <button className='worker-button'><Link to={"/workerPortal"}>Worker Portal</Link></button>
-      </div></>
-  )
+    <div className="login-container">
+      <div className="login">
+        <div className="details">
+          <h1 className="login-title">Select your role</h1>
+          <Link to={"/adminPortal"} className="button-link">
+  <h2><button className='admin-button'>Admin</button></h2>
+</Link>
+<Link to={"/workerportal"} className="button-link">
+  <h2><button className='worker-button'>Worker</button></h2>
+</Link>
+        </div>  
+      </div>
+      </div>
+  );
+  
 }
 
 export default SelectionPage

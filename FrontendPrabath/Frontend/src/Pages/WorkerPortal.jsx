@@ -46,7 +46,7 @@ function WorkerPortal() {
     <div className="login-container">
       <div className="login">
         <div className="details">
-          <h1 className="login-title">Worker Portal.</h1>
+          <h1 className="login-title">Worker Portal</h1>
           <div className="username">
             <input
               type="text"
@@ -73,7 +73,7 @@ function WorkerPortal() {
               searchable={true}
               clearable={true}
               style={{
-                width: '80%',
+                width: '115%',
                 fontSize: '16px',
                 backgroundColor: 'white',
               }}
