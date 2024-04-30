@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./../Styles/WorkerPortal.css";
 import Select from "react-dropdown-select";
 import { useHistory } from "react-router-dom"; // Import useHistory from react-router-dom
-import axios from "axios"
-
 
 function WorkerPortal() {
   const [details, setDetails] = useState({ username: "", password: "", workStation: "" });
@@ -12,9 +10,9 @@ function WorkerPortal() {
 
   // Updated options for Select dropdown with Work Stations
   const options = [
-    { label: "Work Station 1", value: "1" },
-    { label: "Work Station 2", value: "2" },
-    { label: "Work Station 3", value: "3" }
+    { label: "Work Station 1", value: "work_station_1" },
+    { label: "Work Station 2", value: "work_station_2" },
+    { label: "Work Station 3", value: "work_station_3" }
   ];
 
   const handleChange = (event) => {
@@ -34,40 +32,13 @@ function WorkerPortal() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(details);
-    try {
-      const response = await axios.put(`http://localhost:8090/User/workstationLogin/${details.workStation}/${details.username}/${details.password}`);
-      console.log(response.data); // Log the response data
-      if(response.data === "Login Successful"){
-        if(details.workStation==="1"){
-          history.push("/WorkStationOne")
-        }
-        if(details.workStation==="2"){
-          history.push("/WorkStationTwo")
-        }
-        if(details.workStation==="3"){
-          history.push("/WorkStationThree")
-        }
-
-
-      } else {
-        // Handle other cases if needed
-        alert("Login failed: " + response.data);
-      }
-      
-
-      // Reset the form after successful login
-      setDetails({ username: "", password: "", workStation: details.workStation });
-    } catch (error) {
-      console.error('Error logging in:', error.message);
-      // You can handle errors here, such as displaying an error message to the user
-    }
     // Setup validation
     // Pass to database
 
-    
+    setDetails({ username: "", password: "", workStation: "" });
 
   };
 

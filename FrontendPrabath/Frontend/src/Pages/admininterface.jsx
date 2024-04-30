@@ -4,7 +4,6 @@ import ProgressBar from './ProgressBar';
 import Progressbarnadmin from './progressbarnadmin';
 import Progressbar3 from './progressbar3';
 import Pnew from './Pnew';
-import { useHistory } from "react-router-dom";
 
 function admininterface() {
   const [workstations, setWorkstations] = useState([
@@ -12,7 +11,6 @@ function admininterface() {
     { id: 2, name: 'Workstation 02', noOfItems: 10, completedItems: 5, remainingItems: 5, errors: 0 },
     { id: 3, name: 'Workstation 03', noOfItems: 10, completedItems: 5, remainingItems: 5, errors: 0 },
   ]);
-  const history = useHistory(); // Create a history object
 
   const handleStart = (id) => {
     setWorkstations(
@@ -29,12 +27,6 @@ function admininterface() {
       )
     );
   };
-  const signOut = (e) =>{
-    const confirmed = window.confirm("Are you sure you want to sign out?");
-    if (confirmed) {
-      history.push("/");
-    }
-  }
 
   return (
     <div className="assembly-line"  > 
@@ -48,9 +40,7 @@ function admininterface() {
       <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
         <button style={{ marginRight: '10px' }}>Home Page</button>
         <button style={{ marginRight: '10px' }}>worker details</button>
-        <button className='sign-out-button' onClick={signOut}>
-          Sign OUT
-          </button>
+        <button>Sign OUT</button>
       </div>
 
       <table style={{ borderCollapse: 'collapse', border: '1px solid black', justifyContent: 'center' }}>
