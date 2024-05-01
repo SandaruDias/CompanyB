@@ -8,6 +8,9 @@ const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
 const apiGetOrderToWorkStation = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
 
 function WorkerInterfaceOne() {
+
+  
+
   const [orderId1, setOrderId1] = useState('');
   const [orderId2, setOrderId2] = useState('');
   const [onGoingItems, setOnGoingItems] = useState(0);

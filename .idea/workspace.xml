@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Works Stations are modeled">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceThree.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceThree.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceTwo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceTwo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +156,7 @@
       <workItem from="1714540172588" duration="1193000" />
       <workItem from="1714541507325" duration="3402000" />
       <workItem from="1714548927220" duration="358000" />
+      <workItem from="1714549743049" duration="431000" />
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />

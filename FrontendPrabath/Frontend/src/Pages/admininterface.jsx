@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import './../Styles/admininterface.css';
 import ProgressBar from './ProgressBar';
 import Pnew from './Pnew';
+import { useHistory } from "react-router-dom";
 
 const apiOrderObject = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
 
 function AdminInterface() {
+  const history = useHistory();
+
   const [onGoingItemsOne, setOnGoingItemsOne] = useState(0);
   const [onGoingItemsTwo, setOnGoingItemsTwo] = useState(0);
   const [onGoingItemsThree, setOnGoingItemsThree] = useState(0);
@@ -56,7 +59,11 @@ function AdminInterface() {
     } catch (error) {
       console.error('Error fetching data:', error);
     }
+
   };
+  const signOut = (e) =>{
+    history.push("/")
+  }
 
   return (
     <div className="assembly-line">
@@ -72,7 +79,7 @@ function AdminInterface() {
       <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
         <button style={{ marginRight: '10px' }}>Home Page</button>
         <button style={{ marginRight: '10px' }}>Worker Details</button>
-        <button>Sign Out</button>
+        <button onClick={signOut}> Sign Out</button>
       </div>
 
       <table style={{ borderCollapse: 'collapse', border: '1px solid black', justifyContent: 'center' }}>
