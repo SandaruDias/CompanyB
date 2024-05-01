@@ -5,6 +5,17 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
+<> 2024-05-01T121009.200.txt
+
+###
+
+PUT http://localhost:8090/User/workStation/signout/1
+Content-Type: application/x-www-form-urlencoded1
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
 <> 2024-05-01T084824.200.txt
 
 ###
@@ -482,15 +493,4 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-04-28T183842.200.txt
-
-###
-
-PUT http://localhost:8090/User/workstationLogin/1/PRH/123
-Content-Type: application/x-www-form-urlencode
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-28T182153.200.txt
 
