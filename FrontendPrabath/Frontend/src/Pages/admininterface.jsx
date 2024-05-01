@@ -39,7 +39,7 @@ function AdminInterface() {
       setCompletedItemsThree(data.completedNum);
 
       setErrorsOne(data.errorOne);
-      setErrorsTwo(data.errorTw0);
+      setErrorsTwo(data.errorTwo);
       setErrorsThree(data.errorThree);
 
       setRemainingItemsOne(data.waitToOne);
