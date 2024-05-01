@@ -3,12 +3,10 @@ package com.example.CompanyB.ManufacturingModule.Controller;
 import com.example.CompanyB.ManufacturingModule.DataTransferObject.FetchUser;
 import com.example.CompanyB.ManufacturingModule.Service.FetchUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("http://localhost:5173/")
 @RequestMapping("/FetchUser")
 public class FetchUserController {
 

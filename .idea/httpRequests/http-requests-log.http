@@ -1,44 +1,18 @@
-PUT http://localhost:8090/OnGoingOrder/WorkstationOneFetch/OD0001/5
-Content-Type: application/x-www-form-urlen
-Content-Length: 0
+GET http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/OD0001
 Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2024-05-01T071538.200.txt
+<> 2024-05-01T030514.200.json
 
 ###
 
-PUT http://localhost:8090/OnGoingOrder/WorkstationOneFetch/OD0001/5
-Content-Type: application/x-www-form-urlen
-Content-Length: 0
+GET http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/1
 Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2024-05-01T031936.200.txt
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationOneFetch/OD0001/20
-Content-Type: application/x-www-form-url
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-01T030059.404.json
-
-###
-
-PUT http://localhost:8090/OnGoingOrder/WorkstationOnePass/OD0001/18
-Content-Type: application/x-www-form-urlenco
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-01T030007.200.txt
+<> 2024-05-01T030456.404.txt
 
 ###
 
@@ -497,4 +471,26 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-04-28T180120.200.txt
+
+###
+
+PUT http://localhost:8090/User/workstationLogin/1/VJ/Vj
+Content-Type: application/x-www-form-urlencode
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-28T180049.200.txt
+
+###
+
+PUT http://localhost:8090/User/workstationLogin/1/VJ/Vj
+Content-Type: application/x-www-form-urlencode
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-28T175830.200.txt
 
