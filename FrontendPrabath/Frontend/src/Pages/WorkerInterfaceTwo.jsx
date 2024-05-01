@@ -43,6 +43,8 @@ function WorkerInterfaceTwo() {
           alert("Order Added!.");
           setNumberOfItems(data.totalNumber);
           setRemainingItems(data.waitToOne);
+          setErrors(0);
+          setProgress(0);
           setOrderId2('');
         })
         .catch((error) => {
@@ -73,6 +75,7 @@ function WorkerInterfaceTwo() {
           setOnGoingItems(data.onGoingStationTwo);
           setCompletedItems(data.onGoingStationThree+data.waitToThree+data.completedNum)
           setRemainingItems(data.waitToTwo);
+          setErrors(data.errorOne);
           setProgress((((data.onGoingStationThree+data.waitToThree+data.completedNum)/data.totalNumber)*100).toFixed(1));
 
         })
@@ -126,9 +129,32 @@ function WorkerInterfaceTwo() {
   const handleSubmit = () =>{
     GetOrderToWorkStation();
   }
+  const handleSignOut = () => {
+    // Implement sign out logic here
+    console.log("Sign Out");
+  };
+
+  const handleAddError = async (e) => {
+    
+    setErrors(errors+1);
+    try {
+      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationTwoError/' + orderId1 + '/' + (1))
+    }
+    catch (error) {
+      alert("Enter Valid Amount");
+    }
+    // Handle adding order logic here
+  
+    GetOrderToWorkStation();
+    console.log("Add Error Item",errors+1);
+    
+  };
 
   return (
     <div className="worker-interface-one">
+          <div className="top-right">
+        <button className="login-button" onClick={handleSignOut}>Sign Out</button>
+      </div>
       <div className="details">
         <h1 className="login-title" style={{ textAlign: 'center' }}>Workstation 02</h1>
       </div>
@@ -198,6 +224,7 @@ function WorkerInterfaceTwo() {
           </button>
         </div>
       </div>
+      <button className="error-button" onClick={handleAddError}>Add Error Item</button>
     </div>
   );
 }

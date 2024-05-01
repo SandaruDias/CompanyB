@@ -84,6 +84,7 @@ function WorkerInterfaceThree() {
       console.log(e);
     }
   };
+
   
   const handleChange = (event) => {
     if (event.target.name === 'orderid1') {
@@ -128,8 +129,33 @@ function WorkerInterfaceThree() {
     GetOrderToWorkStation();
   };
 
+  const handleSignOut = () => {
+    // Implement sign out logic here
+    console.log("Sign Out");
+  };
+
+  const handleAddError = async (e) => {
+    
+    setErrors(errors+1);
+    try {
+      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOneError/' + orderId1 + '/' + (1))
+    }
+    catch (error) {
+      alert("Enter Valid Amount");
+    }
+    // Handle adding order logic here
+  
+    GetOrderToWorkStation();
+    console.log("Add Error Item",errors+1);
+    
+  };
+
+
   return (
     <div className="worker-interface-one">
+            <div className="top-right">
+        <button className="login-button" onClick={handleSignOut}>Sign Out</button>
+      </div>
       <div className="details">
         <h1 className="login-title" style={{ textAlign: 'center' }}>Workstation 03</h1>
       </div>
@@ -199,6 +225,7 @@ function WorkerInterfaceThree() {
           </button>
         </div>
       </div>
+      <button className="error-button" onClick={handleAddError}>Add Error Item</button>
     </div>
   );
 }

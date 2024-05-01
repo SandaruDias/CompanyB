@@ -43,7 +43,7 @@ function WorkerInterfaceOne() {
           alert("Order Added!.");
           setNumberOfItems(data.totalNumber);
           setRemainingItems(data.waitToOne);
-          
+          setErrors(0);
           setProgress(0);
           setOrderId2('');
         })
@@ -76,7 +76,7 @@ function WorkerInterfaceOne() {
           setCompletedItems(data.onGoingStationTwo + data.onGoingStationThree + data.waitToTwo + data.waitToThree)
           setRemainingItems(data.waitToOne);
           setErrors(data.errorOne);
-          setProgress((completedItems / data.totalNumber).toFixed(1));
+          setProgress(((data.onGoingStationTwo + data.onGoingStationThree + data.waitToTwo + data.waitToThree) / data.totalNumber*100).toFixed(1));
 
         })
         .catch((error) => {
@@ -242,7 +242,8 @@ function WorkerInterfaceOne() {
         </div>
       </div>
 
-      <div className="vertical-space">  </div>
+      <div className="vertical-space">  
+      </div>
       
       <button className="error-button" onClick={handleAddError}>Add Error Item</button>
   
