@@ -56,8 +56,8 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationOnePass(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
     @PutMapping("/WorkstationTwoFetch/{orderID}/{amount}")
@@ -66,8 +66,8 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationTwoFetch(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
     @PutMapping("/WorkstationTwoPass/{orderID}/{amount}")
@@ -76,8 +76,8 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationTwoPass(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
     @PutMapping("/WorkstationThreeFetch/{orderID}/{amount}")
@@ -86,7 +86,7 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationThreeFetch(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
+        catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
         }
     }
@@ -96,8 +96,8 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationThreePass(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
 
