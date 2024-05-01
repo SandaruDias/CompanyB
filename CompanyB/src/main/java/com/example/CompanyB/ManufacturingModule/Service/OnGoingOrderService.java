@@ -81,6 +81,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
         return onGoingOrder;
@@ -93,6 +94,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
 
@@ -106,6 +108,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
         return onGoingOrder;
@@ -127,6 +130,7 @@ public class OnGoingOrderService {
           }
       }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
 
