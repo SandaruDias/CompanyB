@@ -70,11 +70,11 @@ function WorkerInterfaceOne() {
           if (!data) {
             throw new Error('No data received from the backend');
           }
-          alert("Continue the Order.");
+          alert("Continue to the Order.");
           setOnGoingItems(data.onGoingStationOne);
           setCompletedItems(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree)
           setRemainingItems(data.waitToOne);
-          setProgress((((data.totalNumber-(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree))/data.totalNumber)*100).toFixed(1));
+          setProgress((completedItems/data.totalNumber).toFixed(1));
 
         })
         .catch((error) => {
@@ -99,24 +99,39 @@ function WorkerInterfaceOne() {
     }
   };
 
+  const handleFetchOrder = async () => {
+
+    // Handle adding order logic here
+    console.log("Add Order");
+    fetchData(orderId2);
+  };
   const handleAddOrder = async () => {
     try{
-      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOneFetch/${orderid1}/${noofitems1}')
+      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOneFetch/'+ orderId1 +'/'+ numberOfItemsAdd)
     }
     catch(error){
-        alert(error);
+        alert("Enter Valid Amount");
     }
     // Handle adding order logic here
     console.log("Add Order");
-    fetchData(orderId1);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Pass Order");
     GetOrderToWorkStation();
   };
+
+  const handleSubmitPass =async (e) => {
+    try{
+      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOnePass/'+ orderId1 +'/'+ numberOfItemsPass)
+    }
+    catch(error){
+        alert("Enter Valid Amount");
+    }
+    // Handle adding order logic here
+    console.log("Add Order");
+    GetOrderToWorkStation();
+  };
+
+  const handleSubmit = () =>{
+    GetOrderToWorkStation();
+  }
 
   return (
     <div className="worker-interface-one">
@@ -146,7 +161,7 @@ function WorkerInterfaceOne() {
             onChange={handleChange}
             value={orderId2}
           />
-          <button className="login-button" onClick={handleAddOrder}>
+          <button className="login-button" onClick={handleFetchOrder}>
             Add
           </button>
         </div>
@@ -182,7 +197,7 @@ function WorkerInterfaceOne() {
             onChange={handleChange}
             value={numberOfItemsPass}
           />
-          <button className="login-button" onClick={handleSubmit}>
+          <button className="login-button" onClick={handleSubmitPass}>
             Pass
           </button>
         </div>
