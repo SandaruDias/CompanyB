@@ -81,7 +81,7 @@ public class OrderService {
 
     // Updating the simaualtion staus
     @SuppressWarnings("null")
-    public OrderModel updateSimulationStaus(String customerID, Boolean simulationStatus) {
+    public OrderModel updateSimulationStatus(String customerID, Boolean simulationStatus) {
         Optional<OrderModel> existingOrder = orderRepository.findOrderByCustomerID(customerID);
         if (existingOrder.isPresent()) {
             Field field = ReflectionUtils.findField(OrderModel.class, "simulationStatus");
