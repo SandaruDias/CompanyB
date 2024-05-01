@@ -178,7 +178,7 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="numberOfItemsPass"
+            name="noOFItemsPass"
             onChange={handleChange}
             value={numberOfItemsPass}
           />
@@ -191,7 +191,7 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="numberOfItemsAdd"
+            name="noOfItemsAdd"
             onChange={handleChange}
             value={numberOfItemsAdd}
           />
