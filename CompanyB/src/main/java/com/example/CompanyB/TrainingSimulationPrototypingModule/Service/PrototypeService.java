@@ -52,4 +52,4 @@ public class PrototypeService {
     public PrototypeModel getPrototype(String id) {
         return prototypeRepository.findById(id).orElse(null);
     }
-}
+

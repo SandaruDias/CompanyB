@@ -30,9 +30,25 @@ public class PrototypeController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create prototype.");
         }
+
+
+    @PutMapping("/update/{id}") // Update existing prototype
+    public ResponseEntity<Prototype> updatePrototype(@PathVariable Long id, @RequestBody Prototype prototype) throws NotFoundException {
+        prototype.setId(id); // Set the ID in the request body (consider validation)
+        Prototype updatedPrototype = prototypeService.createPrototype(prototype); // Use createPrototype to update
+        if (updatedPrototype == null) {
+            throw new NotFoundException();
+        }
+        return ResponseEntity.ok(updatedPrototype);
     }
 
-    @GetMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deletePrototype(@PathVariable Long id) {
+        prototypeService.deleteById(id); // Assuming a deleteById method in PrototypeService
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("get/{id}")
     public ResponseEntity<PrototypeModel> getPrototype(@PathVariable String id) {
         try {
             PrototypeModel prototype = prototypeService.getPrototype(id);
