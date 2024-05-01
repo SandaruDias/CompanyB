@@ -38,7 +38,7 @@ function AdminInterface() {
       setOnGoingItemsThree(data.onGoingStationThree);
 
       setCompletedItemsOne(data.waitToThree+data.onGoingStationTwo+data.waitToTwo+data.completedNum);
-      setCompletedItemsTwo(data.onGoingStationThree+data.waitToThree);
+      setCompletedItemsTwo(data.onGoingStationThree+data.waitToThree+data.completedNum);
       setCompletedItemsThree(data.completedNum);
 
       setErrorsOne(data.errorOne);
@@ -50,9 +50,9 @@ function AdminInterface() {
       setRemainingItemsThree(data.waitToThree);
       // (((data.totalNumber-(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree))/data.totalNumber)*100
 
-      setProgressOne(((completedItemsOne)/data.totalNumber).toFixed(1)*100);
-      setProgressTwo(((completedItemsTwo)/data.totalNumber).toFixed(1)*100);
-      setProgressThree(((completedItemsThree)/data.totalNumber).toFixed(1)*100);
+      setProgressOne(((data.waitToThree+data.onGoingStationTwo+data.waitToTwo+data.completedNum)/data.totalNumber*100).toFixed(1));
+      setProgressTwo(((data.onGoingStationThree+data.waitToThree+data.completedNum)/data.totalNumber*100).toFixed(1));
+      setProgressThree((((data.completedNum)/data.totalNumber)*100).toFixed(1));
       setProgressFour(((progressOne+progressTwo+progressThree)/3).toFixed(1));
 
       // You can update other state variables as needed
