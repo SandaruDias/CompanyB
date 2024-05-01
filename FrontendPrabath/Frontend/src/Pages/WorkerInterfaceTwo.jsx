@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./../Styles/WorkerInterfaceOne.css";
 import ProgressBar from './ProgressBar';
 import axios from "axios"
+import { useHistory } from "react-router-dom";
 
 const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
 const apiGetOrderToWorkStation = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
 
 function WorkerInterfaceTwo() {
+
+  const history = useHistory();
+
   const [orderId1, setOrderId1] = useState('');
   const [orderId2, setOrderId2] = useState('');
   const [onGoingItems, setOnGoingItems] = useState(0);
@@ -129,11 +133,15 @@ function WorkerInterfaceTwo() {
   const handleSubmit = () =>{
     GetOrderToWorkStation();
   }
-  const handleSignOut = () => {
-    // Implement sign out logic here
-    console.log("Sign Out");
-  };
-
+  const handleSignOut =async () => {
+    try{const response =await axios.put("http://localhost:8090/User/workStation/signout/2")
+      history.push("/")
+      console.log("Sign Out");
+  
+  }catch(error){
+    console.log(error)
+  }
+  }
   const handleAddError = async (e) => {
     
     setErrors(errors+1);
