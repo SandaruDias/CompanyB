@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./../Styles/WorkerInterfaceThree.css";
 import ProgressBar from "./ProgressBar";
 import axios from "axios"
+import { useHistory } from "react-router-dom";
 
 const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
 const apiGetOrderToWorkStation = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
 
 function WorkerInterfaceThree() {
+  const history = useHistory();
  
   const [orderId1, setOrderId1] = useState('');
   const [orderId2, setOrderId2] = useState('');
@@ -74,6 +76,7 @@ function WorkerInterfaceThree() {
           setOnGoingItems(data.onGoingStationThree);
           setCompletedItems(data.completedNum)
           setRemainingItems(data.waitToThree);
+          setErrors(data.errorThree);
           setProgress(((data.completedNum/data.totalNumber)*100).toFixed(1));
 
         })
@@ -129,9 +132,14 @@ function WorkerInterfaceThree() {
     GetOrderToWorkStation();
   };
 
-  const handleSignOut = () => {
-    // Implement sign out logic here
-    console.log("Sign Out");
+  const handleSignOut =async () => {
+    try{const response =await axios.put("http://localhost:8090/User/workStation/signout/2")
+      history.push("/")
+      console.log("Sign Out");
+  
+  }catch(error){
+    console.log(error)
+  }
   };
 
   const handleAddError = async (e) => {

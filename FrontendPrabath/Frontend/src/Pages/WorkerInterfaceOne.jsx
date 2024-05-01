@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./../Styles/WorkerInterfaceOne.css";
 import ProgressBar from './ProgressBar';
 import axios from "axios"
+import { useHistory } from "react-router-dom";
 
 const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
 const apiGetOrderToWorkStation = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
@@ -16,6 +17,8 @@ function WorkerInterfaceOne() {
   const [progress, setProgress] = useState(0);
   const [numberOfItemsAdd, setNumberOfItemsAdd] = useState('');
   const [numberOfItemsPass, setNumberOfItemsPass] = useState('');
+
+  const history = useHistory();
 
   useEffect(() => {
     // Fetch initial data from the backend
@@ -43,7 +46,7 @@ function WorkerInterfaceOne() {
           alert("Order Added!.");
           setNumberOfItems(data.totalNumber);
           setRemainingItems(data.waitToOne);
-          setErrors(0);
+          
           setProgress(0);
           setOrderId2('');
         })
@@ -75,8 +78,7 @@ function WorkerInterfaceOne() {
           setOnGoingItems(data.onGoingStationOne);
           setCompletedItems(data.onGoingStationTwo + data.onGoingStationThree + data.waitToTwo + data.waitToThree)
           setRemainingItems(data.waitToOne);
-          setErrors(data.errorOne);
-          setProgress(((data.onGoingStationTwo + data.onGoingStationThree + data.waitToTwo + data.waitToThree) / data.totalNumber*100).toFixed(1));
+          setProgress(((data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree)/data.totalNumber*100).toFixed(1));
 
         })
         .catch((error) => {
@@ -135,9 +137,15 @@ function WorkerInterfaceOne() {
     GetOrderToWorkStation();
   }
 
-  const handleSignOut = () => {
-    // Implement sign out logic here
-    console.log("Sign Out");
+  const handleSignOut =async () => {
+    try{const response =await axios.put("http://localhost:8090/User/workStation/signout/1")
+      history.push("/")
+      console.log("Sign Out");
+  
+  }catch(error){
+    console.log(error)
+  }
+    
   };
 
   const handleAddError = async (e) => {
@@ -242,8 +250,7 @@ function WorkerInterfaceOne() {
         </div>
       </div>
 
-      <div className="vertical-space">  
-      </div>
+      <div className="vertical-space">  </div>
       
       <button className="error-button" onClick={handleAddError}>Add Error Item</button>
   
