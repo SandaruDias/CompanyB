@@ -38,9 +38,9 @@ function AdminInterface() {
       setCompletedItemsTwo(data.onGoingStationThree+data.waitToThree);
       setCompletedItemsThree(data.completedNum);
 
-      setErrorsOne(data.errorNum);
-      setErrorsTwo(data.errorNum);
-      setErrorsThree(data.errorNum);
+      setErrorsOne(data.errorOne);
+      setErrorsTwo(data.errorTw0);
+      setErrorsThree(data.errorThree);
 
       setRemainingItemsOne(data.waitToOne);
       setRemainingItemsTwo(data.waitToTwo);
