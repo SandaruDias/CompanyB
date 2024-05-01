@@ -101,4 +101,47 @@ public class OnGoingOrderController {
         }
     }
 
+//    @PutMapping("/WorkstationOneError/{orderID}")
+//    public ResponseEntity<?> WorkstationOneError(@PathVariable String orderId,@PathVariable int amount) {
+//        try {
+//            int onGoingOrder = onGoingOrderService.WorkstationOneError(orderId);
+//            return ResponseEntity.ok().body(orderId+ "Error " +onGoingOrder );
+//        }
+//        catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+//        }
+//    }
+
+    @PutMapping("/WorkstationOneError/{orderID}/{amount}")
+    public ResponseEntity<?> WorkstationOneError(@PathVariable String orderID, @PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkstationOneError(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder );
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+        }
+    }
+
+    @PutMapping("/WorkstationTwoError/{orderID}/{amount}")
+    public ResponseEntity<?> WorkstationTwoError(@PathVariable String orderID, @PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkstationTwoError(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder );
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+        }
+    }
+    @PutMapping("/WorkstationThreeError/{orderID}/{amount}")
+    public ResponseEntity<?> WorkstationThreeError(@PathVariable String orderID, @PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkstationThreeError(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder );
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+        }
+    }
+
 }

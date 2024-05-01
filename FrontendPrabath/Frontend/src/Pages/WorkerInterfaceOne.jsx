@@ -27,7 +27,7 @@ function WorkerInterfaceOne() {
       // alert("Please enter an Order ID before adding.");
       return; // Stop execution if orderId is empty
     }
-  
+
     try {
       fetch(apiPlaceOrder + orderId2)
         .then((response) => {
@@ -43,6 +43,7 @@ function WorkerInterfaceOne() {
           alert("Order Added!.");
           setNumberOfItems(data.totalNumber);
           setRemainingItems(data.waitToOne);
+          
           setProgress(0);
           setOrderId2('');
         })
@@ -55,7 +56,7 @@ function WorkerInterfaceOne() {
       alert("Already added!");
     }
   };
-  
+
   const GetOrderToWorkStation = () => {
     try {
       fetch(apiGetOrderToWorkStation + orderId1)
@@ -72,9 +73,10 @@ function WorkerInterfaceOne() {
           }
           alert("Continue to the Order.");
           setOnGoingItems(data.onGoingStationOne);
-          setCompletedItems(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree)
+          setCompletedItems(data.onGoingStationTwo + data.onGoingStationThree + data.waitToTwo + data.waitToThree)
           setRemainingItems(data.waitToOne);
-          setProgress((completedItems/data.totalNumber).toFixed(1));
+          setErrors(data.errorOne);
+          setProgress((completedItems / data.totalNumber).toFixed(1));
 
         })
         .catch((error) => {
@@ -84,7 +86,7 @@ function WorkerInterfaceOne() {
       console.log(e);
     }
   };
-  
+
   const handleChange = (event) => {
     if (event.target.name === 'orderid1') {
       setOrderId1(event.target.value);
@@ -106,35 +108,59 @@ function WorkerInterfaceOne() {
     fetchData(orderId2);
   };
   const handleAddOrder = async () => {
-    try{
-      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOneFetch/'+ orderId1 +'/'+ numberOfItemsAdd)
+    try {
+      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOneFetch/' + orderId1 + '/' + numberOfItemsAdd)
     }
-    catch(error){
-        alert("Enter Valid Amount");
-    }
-    // Handle adding order logic here
-    console.log("Add Order");
-    GetOrderToWorkStation();
-  };
-
-  const handleSubmitPass =async (e) => {
-    try{
-      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOnePass/'+ orderId1 +'/'+ numberOfItemsPass)
-    }
-    catch(error){
-        alert("Enter Valid Amount");
+    catch (error) {
+      alert("Enter Valid Amount");
     }
     // Handle adding order logic here
     console.log("Add Order");
     GetOrderToWorkStation();
   };
 
-  const handleSubmit = () =>{
+  const handleSubmitPass = async (e) => {
+    try {
+      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOnePass/' + orderId1 + '/' + numberOfItemsPass)
+    }
+    catch (error) {
+      alert("Enter Valid Amount");
+    }
+    // Handle adding order logic here
+    console.log("Add Order");
+    GetOrderToWorkStation();
+  };
+
+  const handleSubmit = () => {
     GetOrderToWorkStation();
   }
 
+  const handleSignOut = () => {
+    // Implement sign out logic here
+    console.log("Sign Out");
+  };
+
+  const handleAddError = async (e) => {
+    
+    setErrors(errors+1);
+    try {
+      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOneError/' + orderId1 + '/' + (1))
+    }
+    catch (error) {
+      alert("Enter Valid Amount");
+    }
+    // Handle adding order logic here
+  
+    GetOrderToWorkStation();
+    console.log("Add Error Item",errors+1);
+    
+  };
+
   return (
     <div className="worker-interface-one">
+      <div className="top-right">
+        <button className="login-button" onClick={handleSignOut}>Sign Out</button>
+      </div>
       <div className="details">
         <h1 className="login-title" style={{ textAlign: 'center' }}>Workstation 01</h1>
       </div>
@@ -149,10 +175,10 @@ function WorkerInterfaceOne() {
             value={orderId1}
           />
           <button className="login-button" onClick={handleSubmit}>
-            Submit 
+            Submit
           </button>
         </div>
-        
+
         <div className="right-containerD">
           <input
             type="text"
@@ -167,7 +193,7 @@ function WorkerInterfaceOne() {
         </div>
       </div>
 
-      <div className="input-container"> 
+      <div className="input-container">
         <div className="app">
           <h1>Progress Bar</h1>
           <ProgressBar progress={progress} />
@@ -187,7 +213,7 @@ function WorkerInterfaceOne() {
       </div>
 
       <div className="vertical-space">  </div>
-      
+
       <div className="input-container">
         <div className="left-container">
           <input
@@ -201,7 +227,7 @@ function WorkerInterfaceOne() {
             Pass
           </button>
         </div>
-        
+
         <div className="right-container">
           <input
             type="text"
@@ -215,7 +241,13 @@ function WorkerInterfaceOne() {
           </button>
         </div>
       </div>
+
+      <div className="vertical-space">  </div>
+      
+      <button className="error-button" onClick={handleAddError}>Add Error Item</button>
+  
     </div>
+    
   );
 }
 
