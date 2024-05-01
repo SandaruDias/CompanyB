@@ -75,7 +75,7 @@ function WorkerInterfaceTwo() {
           setOnGoingItems(data.onGoingStationTwo);
           setCompletedItems(data.onGoingStationThree+data.waitToThree+data.completedNum)
           setRemainingItems(data.waitToTwo);
-          setErrors(data.errorOne);
+          setErrors(data.errorTwo);
           setProgress((((data.onGoingStationThree+data.waitToThree+data.completedNum)/data.totalNumber)*100).toFixed(1));
 
         })

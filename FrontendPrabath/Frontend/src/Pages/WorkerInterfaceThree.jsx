@@ -74,6 +74,7 @@ function WorkerInterfaceThree() {
           setOnGoingItems(data.onGoingStationThree);
           setCompletedItems(data.completedNum)
           setRemainingItems(data.waitToThree);
+          setErrors(data.errorThree);
           setProgress(((data.completedNum/data.totalNumber)*100).toFixed(1));
 
         })
