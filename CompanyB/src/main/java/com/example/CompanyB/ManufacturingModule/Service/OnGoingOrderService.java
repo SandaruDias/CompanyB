@@ -132,4 +132,49 @@ public class OnGoingOrderService {
 
         return onGoingOrder;
     }
+
+    public OnGoingOrder WorkstationOneError(String orderId, int amount){
+        OnGoingOrder onGoingOrder = onGoingOrderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+        try {
+            int amountOne=(int)amount;
+            onGoingOrder.setErrorOne(onGoingOrder.getErrorOne()+amountOne);
+            onGoingOrderRepository.save(onGoingOrder);
+
+        }catch (Exception e){
+
+        }
+        return onGoingOrder;
+    }
+
+    public OnGoingOrder WorkstationTwoError(String orderId, int amount){
+        OnGoingOrder onGoingOrder = onGoingOrderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+        try {
+            int amountTwo=(int)amount;
+            onGoingOrder.setErrorTwo(onGoingOrder.getErrorTwo()+amountTwo);
+            onGoingOrderRepository.save(onGoingOrder);
+
+        }catch (Exception e){
+
+        }
+        return onGoingOrder;
+    }
+
+    public OnGoingOrder WorkstationThreeError(String orderId, int amount){
+        OnGoingOrder onGoingOrder = onGoingOrderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+        try {
+            int amountThree=(int)amount;
+            onGoingOrder.setErrorThree(onGoingOrder.getErrorThree()+amountThree);
+            onGoingOrderRepository.save(onGoingOrder);
+
+        }catch (Exception e){
+
+        }
+        return onGoingOrder;
+    }
 }
