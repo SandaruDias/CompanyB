@@ -1,0 +1,1 @@
+OD0001Completed OnGoingOrder{id='OD0001', totalNumber=43, onGoingStationOne=5, onGoingStationTwo=11, onGoingStationThree=0, waitToOne=17, waitToTwo=8, waitToThree=4, completedNum=43, isCompleted=true, QAResult=true}

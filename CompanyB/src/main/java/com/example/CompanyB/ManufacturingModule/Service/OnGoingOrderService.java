@@ -10,6 +10,7 @@ import com.example.CompanyB.ManufacturingModule.Repository.OnGoingOrderRepositor
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOError;
 import java.time.LocalDate;
 
 @Service
@@ -53,7 +54,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
-            //allocated to handle invalid amount
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
         }
         return onGoingOrder;
     }

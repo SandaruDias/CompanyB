@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./../Styles/WorkerInterfaceOne.css";
 import ProgressBar from './ProgressBar';
+import axios from "axios"
 
 const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
 const apiGetOrderToWorkStation = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
@@ -13,7 +14,8 @@ function WorkerInterfaceOne() {
   const [remainingItems, setRemainingItems] = useState(0);
   const [errors, setErrors] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [numberOfItems, setNumberOfItems] = useState(0);
+  const [numberOfItemsAdd, setNumberOfItemsAdd] = useState('');
+  const [numberOfItemsPass, setNumberOfItemsPass] = useState('');
 
   useEffect(() => {
     // Fetch initial data from the backend
@@ -27,7 +29,7 @@ function WorkerInterfaceOne() {
     }
   
     try {
-      fetch(apiPlaceOrder + orderId)
+      fetch(apiPlaceOrder + orderId2)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -59,6 +61,7 @@ function WorkerInterfaceOne() {
       fetch(apiGetOrderToWorkStation + orderId1)
         .then((response) => {
           if (!response.ok) {
+            alert('Enter Correct Order Id')
             throw new Error('Network response was not ok');
           }
           return response.json();
@@ -72,7 +75,7 @@ function WorkerInterfaceOne() {
           setCompletedItems(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree)
           setRemainingItems(data.waitToOne);
           setProgress((((data.totalNumber-(data.onGoingStationTwo+data.onGoingStationThree+data.waitToTwo+data.waitToThree))/data.totalNumber)*100).toFixed(1));
-          setOrderId2('');
+
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -88,12 +91,24 @@ function WorkerInterfaceOne() {
     } else if (event.target.name === 'orderid2') {
       setOrderId2(event.target.value);
     }
+    else if (event.target.name === 'noOfItemsAdd') {
+      setNumberOfItemsAdd(event.target.value);
+    }
+    else if (event.target.name === 'noOFItemsPass') {
+      setNumberOfItemsPass(event.target.value);
+    }
   };
 
-  const handleAddOrder = () => {
+  const handleAddOrder = async () => {
+    try{
+      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationOneFetch/${orderid1}/${noofitems1}')
+    }
+    catch(error){
+        alert(error);
+    }
     // Handle adding order logic here
     console.log("Add Order");
-    fetchData(orderId2);
+    fetchData(orderId1);
   };
 
   const handleSubmit = (e) => {
@@ -123,7 +138,7 @@ function WorkerInterfaceOne() {
           </button>
         </div>
         
-        <div className="right-container">
+        <div className="right-containerD">
           <input
             type="text"
             placeholder="Order Id"
@@ -163,9 +178,9 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="noofitems1"
+            name="numberOfItemsPass"
             onChange={handleChange}
-            value={orderId1}
+            value={numberOfItemsPass}
           />
           <button className="login-button" onClick={handleSubmit}>
             Pass
@@ -176,9 +191,9 @@ function WorkerInterfaceOne() {
           <input
             type="text"
             placeholder="No of Items"
-            name="noofitems2"
+            name="numberOfItemsAdd"
             onChange={handleChange}
-            value={orderId2}
+            value={numberOfItemsAdd}
           />
           <button className="login-button" onClick={handleAddOrder}>
             Add

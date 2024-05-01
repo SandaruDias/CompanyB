@@ -43,10 +43,10 @@ public class OnGoingOrderController {
     public ResponseEntity<?> WorkStationOneFetch(@PathVariable String orderID,@PathVariable int amount) {
         try {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationOneFetch(orderID,amount);
-            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
+            return ResponseEntity.ok().body("Completed");
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
     @PutMapping("/WorkstationOnePass/{orderID}/{amount}")
