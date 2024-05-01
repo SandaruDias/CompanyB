@@ -53,7 +53,7 @@ function AdminInterface() {
       setProgressOne(((data.waitToThree+data.onGoingStationTwo+data.waitToTwo+data.completedNum)/data.totalNumber*100).toFixed(1));
       setProgressTwo(((data.onGoingStationThree+data.waitToThree+data.completedNum)/data.totalNumber*100).toFixed(1));
       setProgressThree((((data.completedNum)/data.totalNumber)*100).toFixed(1));
-      setProgressFour(((progressOne+progressTwo+progressThree)/3).toFixed(1));
+      setProgressFour((((((((data.completedNum)/data.totalNumber)*100))+(((data.onGoingStationThree+data.waitToThree+data.completedNum)/data.totalNumber*100))+(((data.waitToThree+data.onGoingStationTwo+data.waitToTwo+data.completedNum)/data.totalNumber*100))))/3).toFixed(1));
 
       // You can update other state variables as needed
     } catch (error) {
