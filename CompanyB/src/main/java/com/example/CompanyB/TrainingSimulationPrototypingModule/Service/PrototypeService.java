@@ -1,9 +1,11 @@
 package com.example.CompanyB.TrainingSimulationPrototypingModule.Service;
 
-import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.Prototype;
+import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.PrototypeModel;
 import com.example.CompanyB.TrainingSimulationPrototypingModule.Repository.PrototypeRepository;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Service
 public class PrototypeService {
@@ -15,53 +17,39 @@ public class PrototypeService {
         this.prototypeRepository = prototypeRepository;
     }
 
-    public Prototype viewDesignDocument(Long id) throws ChangeSetPersister.NotFoundException {
-        return prototypeRepository.findById(id)
-                .orElseThrow(ChangeSetPersister.NotFoundException::new); // Use NotFoundException
-    }
-
-    public Prototype createPrototype(Prototype prototype) {
-        return prototypeRepository.save(prototype);
-    }
-
-
-    public void rejectFailedDesign(String message, Long prototypeId) throws Exception {
-        Prototype prototype = prototypeRepository.findById(prototypeId)
-                .orElseThrow(() -> new Exception("Prototype not found with id: " + prototypeId));
-
-        prototype.setRejected(true);
-        prototype.setRejectionMessage(message);
-        prototypeRepository.save(prototype);
-    }
-
-    public void deleteById(Long id) {
-        prototypeRepository.deleteById(id);
-    }
-    public String selectMaterials(String materials, Long prototypeId) throws Exception {
-        Prototype prototype = prototypeRepository.findById(prototypeId)
-                .orElseThrow(() -> new Exception("Prototype not found with id: " + prototypeId));
-        prototype.setMaterials(materials);
-        prototypeRepository.save(prototype);
-        return "Materials selection saved successfully!";
-    }
-
-    public String recordDesignComments(String comments, Long prototypeId) throws Exception {
-        Prototype prototype = prototypeRepository.findById(prototypeId)
-                .orElseThrow(() -> new Exception("Prototype not found with id: " + prototypeId));
+    public String createPrototype(MultipartFile file, String material, String color, String shape, String comments, boolean thermalTestPassed, boolean electricalTestPassed) throws IOException {
+        PrototypeModel prototype = new PrototypeModel();
+        prototype.setDesignDocumentPdf(file.getBytes());
+        prototype.setMaterial(material);
+        prototype.setColor(color);
+        prototype.setShape(shape);
         prototype.setComments(comments);
-        prototypeRepository.save(prototype);
-        return "Design comments recorded!";
+        prototype.setThermalTestPassed(thermalTestPassed);
+        prototype.setElectricalTestPassed(electricalTestPassed);
+
+        // Determine approval status and message
+        String approvalStatus;
+        String approvalMessage;
+        if (thermalTestPassed && electricalTestPassed) {
+            approvalStatus = "Pass";
+            approvalMessage = "Prototype approved.";
+        } else {
+            approvalStatus = "Fail";
+            approvalMessage = "Prototype failed due to testing issues.";
+        }
+        prototype.setApprovalStatus(approvalStatus);
+        prototype.setApprovalMessage(approvalMessage);
+
+        // Save the prototype only if both tests pass
+        if (thermalTestPassed && electricalTestPassed) {
+            PrototypeModel savedPrototype = prototypeRepository.save(prototype);
+            return savedPrototype.getId();
+        } else {
+            return null; // Return null to indicate rejection
+        }
     }
 
-    public String getDesignShape(Long prototypeId) throws Exception {
-        Prototype prototype = prototypeRepository.findById(prototypeId)
-                .orElseThrow(() -> new Exception("Prototype not found with id: " + prototypeId));
-        return prototype.getShape();
+    public PrototypeModel getPrototype(String id) {
+        return prototypeRepository.findById(id).orElse(null);
     }
 
-    public String getDesignColor(Long prototypeId) throws Exception {
-        Prototype prototype = prototypeRepository.findById(prototypeId)
-                .orElseThrow(() -> new Exception("Prototype not found with id: " + prototypeId));
-        return prototype.getColor();
-    }
-}
