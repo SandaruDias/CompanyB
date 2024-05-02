@@ -23,7 +23,11 @@ public class AdministratorService {
     }
 
     public void deleteAdministrator(String id) {
-        administratorRepo.deleteById(id);
+        if (administratorRepo.existsById(id)) {
+            administratorRepo.deleteById(id);
+        } else {
+            throw new IllegalArgumentException("Invalid ID: " + id);
+        }
     }
     public List<Administrator> getAllAdmin(){
         return administratorRepo.findAll();

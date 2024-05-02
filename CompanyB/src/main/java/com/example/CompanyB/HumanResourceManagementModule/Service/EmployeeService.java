@@ -49,23 +49,26 @@ public class EmployeeService {
         employeeRepo.deleteById(id);
     }
 
-    public String getCourseLevelById(String id) {
+    public int getCourseLevelById(String id) {
         Optional<Employee> optionalEmployee = employeeRepo.findById(id);
         if (optionalEmployee.isPresent()) {
             return optionalEmployee.get().getCourseLevel();
         } else {
-            return "Employee not found";
+            throw new IllegalArgumentException("Invalid Employee ID: " + id);
         }
     }
 
-    public void updateEmployeeCourseLevel(String id, String newlevel) {
+    public void updateEmployeeCourseLevel(String id, Integer newLevel) {
         Optional<Employee> optionalEmployee = employeeRepo.findById(id);
         if (optionalEmployee.isPresent()) {
             Employee existingEmployee = optionalEmployee.get();
-            existingEmployee.setCourseLevel(newlevel);
+            existingEmployee.setCourseLevel(newLevel);
             employeeRepo.save(existingEmployee);
+        } else {
+            throw new IllegalArgumentException("Invalid Employee ID: " + id);
         }
     }
+
 
     public Employee getEmployeeById(String id) {
         return employeeRepo.findById(id).orElse(null);

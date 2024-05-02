@@ -17,9 +17,9 @@ public class ApplicantController {
     private ApplicantService applicantService;
 
     @PostMapping("/add")
-    public ResponseEntity<Void> addApplicant(@RequestBody Applicant applicant) {
+    public ResponseEntity<String> addApplicant(@RequestBody Applicant applicant) {
         applicantService.addApplication(applicant);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.CREATED).body("Successfully created");
     }
 
     @GetMapping("/getAll")

@@ -67,7 +67,7 @@ public class AdministratorController {
     }
 
     @PostMapping("/create/{employeeId}")
-    public ResponseEntity<Void> createAdministrator(@PathVariable String employeeId) {
+    public ResponseEntity<String> createAdministrator(@PathVariable String employeeId) {
         Employee employee = employeeService.getEmployeeById(employeeId);
         if (employee != null) {
             Administrator administrator = new Administrator();
@@ -84,17 +84,30 @@ public class AdministratorController {
             administrator.setDivision(employee.getDivision());
             administrator.setPassword("login123");
             administratorService.createAdministrator(administrator);
-            return ResponseEntity.status(HttpStatus.CREATED).build();
+            String message = "Account creation successful";
+
+            return ResponseEntity.status(HttpStatus.CREATED).body(message);
         } else {
-            return ResponseEntity.notFound().build();
+            String message = "Resource not found. Please Try Again.";
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(message);
         }
     }
 
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteAdministrator(@PathVariable String id) {
-        administratorService.deleteAdministrator(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deleteAdministrator(@PathVariable String id) {
+        try {
+            administratorService.deleteAdministrator(id);
+            String message = "Account deleted successfully";
+            return ResponseEntity.status(HttpStatus.NO_CONTENT)
+                    .header("message", message)
+                    .build();
+        } catch (IllegalArgumentException e) {
+            String errorMessage = "Invalid ID: " + id ;
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(errorMessage);
+        }
     }
 
     //Method For Change Password

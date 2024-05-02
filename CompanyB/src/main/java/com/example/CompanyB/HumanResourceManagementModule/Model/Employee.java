@@ -16,5 +16,5 @@ public class Employee extends Person{
     private double allowance;
     private int otRate;
     private double workingDays;
-    private String courseLevel;
+    private Integer courseLevel;
 }
