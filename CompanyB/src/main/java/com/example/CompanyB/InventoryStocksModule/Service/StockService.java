@@ -4,7 +4,7 @@ import com.example.CompanyB.InventoryStocksModule.Repository.OrderDao;
 import com.example.CompanyB.InventoryStocksModule.Repository.StockDao;
 import com.example.CompanyB.InventoryStocksModule.Repository.SupplierDao;
 import com.example.CompanyB.InventoryStocksModule.Model.OrderDetail;
-import com.example.CompanyB.InventoryStocksModule.Model.stock1;
+import com.example.CompanyB.InventoryStocksModule.Model.stock;
 import com.example.CompanyB.InventoryStocksModule.Model.supplier;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class StockService {
 
     /*public List<stock1> getAllStock() {
         return stockDao.findAll();*/
-    public List<stock1> getAllStock() {
+    public List<stock> getAllStock() {
             return stockDao.findAllWithDetails(); 
     }
     
@@ -37,7 +37,7 @@ public class StockService {
         return supplierDao.findAllWithDetails(); 
 }
 
-    public  stock1 addStock(stock1 stock, String supplierId) throws Exception {
+    public  stock addStock(stock stock, String supplierId) throws Exception {
         supplier existingSupplier = supplierDao.findById(supplierId).get();
         if (existingSupplier == null) {
             throw new Exception("Supplier Not found");
@@ -47,12 +47,12 @@ public class StockService {
         String formattedDateTime = now.format(formatter);
         stock.setCreatedDateTime(formattedDateTime);
         stock.setSuppliername(existingSupplier.getSuppliername());
-        stock1 addedStock = stockDao.save(stock);
+        stock addedStock = stockDao.save(stock);
         return addedStock;
     }
 
-    public stock1 updateStockUnits(String id, Integer units) throws Exception {
-        stock1 existingStock = stockDao.findById(id).get();
+    public stock updateStockUnits(String id, Integer units) throws Exception {
+        stock existingStock = stockDao.findById(id).get();
         int newUnits = units;
         if (existingStock == null) {
             throw new Exception("stock not found");
@@ -63,8 +63,24 @@ public class StockService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String formattedDateTime = now.format(formatter);
         existingStock.setUpdatedDateTime(formattedDateTime); 
-        stock1 updatedstock=stockDao.save(existingStock);
+        stock updatedstock=stockDao.save(existingStock);
         return updatedstock;
+    
+    }
+    public stock releasedStockUnits(String id, Integer units) throws Exception {
+        stock existingStock = stockDao.findById(id).get();
+        int newUnits = units;
+        if (existingStock == null) {
+            throw new Exception("stock not found");
+        }
+        existingStock.setUnits(existingStock.getUnits() - newUnits);
+         // Add new units to current units
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = now.format(formatter);
+        existingStock.setUpdatedDateTime(formattedDateTime); 
+        stock releasedstock=stockDao.save(existingStock);
+        return releasedstock;
     
     }
 
