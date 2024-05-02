@@ -55,4 +55,14 @@ public class ProductController {
         }
     }
 
+    @PostMapping("/delete")
+    public ResponseEntity<String> deleteProduct(@RequestBody Product product) {
+        try {
+            return ResponseEntity.ok(productService.deleteProduct(product));
+        } catch (Exception e) {
+            logger.error("An error has occurred: {}", e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
 }

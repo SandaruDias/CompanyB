@@ -46,4 +46,11 @@ public class ProductServiceImpl implements ProductService {
         return "Product has been successfully updated!";
     }
 
+    @Override
+    public String deleteProduct(Product product) {
+        //delete product by ID
+        productRepository.deleteById(product.getId());
+        return "Product has been successfully deleted!";
+    }
+
 }
