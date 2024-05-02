@@ -27,7 +27,7 @@ public class SupplierController {
     @ResponseBody
     public List<supplier> generateSupplierReport(Model model) {
         List<supplier> supplierList = supplierService.getAllSupplier(); 
-        model.addAttribute("supplier", supplierList);
+        model.addAttribute( "supplier", supplierList);
         return supplierList;
     }
     @PostMapping("/add")
