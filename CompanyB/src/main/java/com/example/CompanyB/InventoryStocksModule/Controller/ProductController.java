@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*",allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/product")
 public class ProductController {
 
@@ -39,6 +39,16 @@ public class ProductController {
     public ResponseEntity<Product> getProductById(@PathVariable(value = "id") String id) {
         try {
             return ResponseEntity.ok(productService.getProductById(id));
+        } catch (Exception e) {
+            logger.error("An error has occurred: {}", e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<String> updateProduct(@RequestBody Product product) {
+        try {
+            return ResponseEntity.ok(productService.updateProduct(product));
         } catch (Exception e) {
             logger.error("An error has occurred: {}", e.getMessage(), e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
