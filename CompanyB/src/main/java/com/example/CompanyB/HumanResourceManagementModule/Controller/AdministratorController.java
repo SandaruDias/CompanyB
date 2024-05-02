@@ -2,7 +2,10 @@ package com.example.CompanyB.HumanResourceManagementModule.Controller;
 
 import com.example.CompanyB.HumanResourceManagementModule.Model.Administrator;
 import com.example.CompanyB.HumanResourceManagementModule.Model.Employee;
+import com.example.CompanyB.HumanResourceManagementModule.Model.EmployeeAttendanceModel;
+import com.example.CompanyB.HumanResourceManagementModule.Repository.EmployeeAttendanceRepo;
 import com.example.CompanyB.HumanResourceManagementModule.Service.AdministratorService;
+import com.example.CompanyB.HumanResourceManagementModule.Service.EmployeeAttendanceService;
 import com.example.CompanyB.HumanResourceManagementModule.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("hr/administrator")
@@ -22,6 +26,9 @@ public class AdministratorController {
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    private EmployeeAttendanceRepo employeeAttendanceRepo;
 
     @PostMapping("/create")
     public void createAdministrator(@RequestBody Administrator administrator){
@@ -99,5 +106,14 @@ public class AdministratorController {
 
     //Method For Change Password
 
-
+    @GetMapping("/permission/{id}")
+    public boolean getPermission(@PathVariable String id) {
+        Optional<EmployeeAttendanceModel> employee = employeeAttendanceRepo.findById(id);
+        if (employee.isPresent()) {
+            employee.get().setShortLeave("Taken");
+            employeeAttendanceRepo.save(employee.get());
+            return administratorService.getPermission(id);
+        }
+        return false;
+    }
 }

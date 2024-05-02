@@ -15,6 +15,7 @@ public class EmployeeAttendanceModel {
 
     private double hoursWorked;
     private LocalDateTime checkInTime;
+    private String shortLeave;
     private LocalDateTime checkOutTime;
     private double perMonthHoursWorked;
 
