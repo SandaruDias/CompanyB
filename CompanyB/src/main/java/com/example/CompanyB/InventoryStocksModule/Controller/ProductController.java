@@ -65,4 +65,24 @@ public class ProductController {
         }
     }
 
+    @PostMapping("/add-units")
+    public ResponseEntity<String> addProductUnits(@RequestBody Product product) {
+        try {
+            return ResponseEntity.ok(productService.addProductUnits(product));
+        } catch (Exception e) {
+            logger.error("An error has occurred: {}", e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @PostMapping("/release-product")
+    public ResponseEntity<String> releaseProduct(@RequestBody Product product) {
+        try {
+            return ResponseEntity.ok(productService.releaseProduct(product));
+        } catch (Exception e) {
+            logger.error("An error has occurred: {}", e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
 }

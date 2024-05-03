@@ -53,4 +53,61 @@ public class ProductServiceImpl implements ProductService {
         return "Product has been successfully deleted!";
     }
 
+    @Override
+    public String addProductUnits(Product product) {
+
+        if (product.getUnits() > 0) {
+            //get matching product by ID
+            Product matchingProduct = productRepository.findProductById(product.getId());
+            if (matchingProduct == null) {
+                return "Invalid Product Id!";
+            }
+            //set unit to variable
+            int units = matchingProduct.getUnits() + product.getUnits();
+            //set new unit to matching object
+            matchingProduct.setUnits(units);
+            //update timestamp
+            matchingProduct.setUpdatedDate(LocalDateTime.now());
+            //save product object with new units
+            productRepository.save(matchingProduct);
+
+            return product.getUnits() + " units has been successfully added! " + units + " units available now.";
+
+        } else {
+            return "Invalid Unit Count. Please enter positive numbers!";
+        }
+    }
+
+
+    @Override
+    public String releaseProduct(Product product) {
+
+        //check is positive number
+        if (product.getUnits() > 0) {
+
+            //filter matching product by ID
+            Product matchingProduct = productRepository.findProductById(product.getId());
+            if (matchingProduct == null) {
+                return "Invalid Product Id!";
+            }
+
+            //get unit count form matching record
+            int units = matchingProduct.getUnits();
+
+            if (units > 0 && units >= product.getUnits()) {
+                //set new unit to matching object
+                matchingProduct.setUnits(units - product.getUnits());
+                //update timestamp
+                matchingProduct.setUpdatedDate(LocalDateTime.now());
+                //save product object with new units
+                productRepository.save(matchingProduct);
+
+                return product.getUnits() + " units has been released! Only " + matchingProduct.getUnits() + " units left.";
+            }
+            return "Product is not available. Only " + units + " units left.";
+        } else {
+            return "Invalid Unit Count. Please enter positive numbers!";
+        }
+    }
+
 }

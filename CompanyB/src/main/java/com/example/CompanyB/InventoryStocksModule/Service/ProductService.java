@@ -13,4 +13,8 @@ public interface ProductService {
     String updateProduct(Product product);
 
     String deleteProduct(Product product);
+
+    String addProductUnits(Product product);
+
+    String releaseProduct(Product product);
 }
