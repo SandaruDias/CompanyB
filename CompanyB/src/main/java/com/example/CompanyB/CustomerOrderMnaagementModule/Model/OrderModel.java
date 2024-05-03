@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Builder
 public class OrderModel {
 
     @Id
@@ -27,7 +28,8 @@ public class OrderModel {
     private int quantity;
     private double thickness;
     private List<Double> dimensions;
-    private String pcbFile;
+
+    private byte[] pcbFile;
     
     private boolean simulationStatus;
     private boolean partsAvailable;
