@@ -3,6 +3,7 @@ import "./../Styles/WorkerPortal.css";
 import Select from "react-dropdown-select";
 import { useHistory } from "react-router-dom"; // Import useHistory from react-router-dom
 import axios from "axios"
+import { Link } from "react-router-dom";
 
 
 function WorkerPortal() {
@@ -72,9 +73,14 @@ function WorkerPortal() {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container" style={{backgroundColor : "#c5c5c5"}}>
       <div className="login">
         <div className="details">
+        <div className="navigation-bar">
+        <Link to={"/"} style={{textDecoration: "none", color: "white"}} ><button  className="home-button">Selection Page</button> </Link>
+        <Link to={"/home"} style={{textDecoration: "none", color: "white"}}><button className="home-button">Home Page</button> </Link>
+             
+          </div>
           <h1 className="login-title">Worker Portal</h1>
           <div className="username">
             <input
@@ -102,13 +108,15 @@ function WorkerPortal() {
               searchable={true}
               clearable={true}
               style={{
-                width: '115%',
+                width: '104%',
                 fontSize: '16px',
                 backgroundColor: 'white',
               }}
             />
           </div>
-          <button className="login-button" onClick={handleSubmit}>
+          <button style={{
+                padding: "11px"
+              }} className="login-button" onClick={handleSubmit}>
             Login
           </button>
         </div>

@@ -6,8 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Works Stations are modeled">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/OnGoingOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/OnGoingOrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/LoginPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/SelectionPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/SelectionPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerPortal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerPortal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/Selection.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/Selection.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/WorkerInterfaceOne.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/WorkerInterfaceOne.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/admininterface.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/admininterface.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +169,8 @@
       <workItem from="1714551089210" duration="134000" />
       <workItem from="1714557023461" duration="114000" />
       <workItem from="1714557237474" duration="87000" />
-      <workItem from="1714557373783" duration="324000" />
+      <workItem from="1714557373783" duration="398000" />
+      <workItem from="1714637799954" duration="615000" />
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />

@@ -168,16 +168,19 @@ function WorkerInterfaceOne() {
   };
 
   return (
+    <div style={{backgroundColor: "#c5c5c5" , height: "100vh"}}>
+
+    
     <div className="worker-interface-one">
       <div className="top-right">
         <button className="login-button" onClick={handleSignOut}>Sign Out</button>
       </div>
-      <div className="details">
-        <h1 className="login-title" style={{ textAlign: 'center' }}>Workstation 01</h1>
+      <div className="details"style={{ textAlign: 'center' , marginTop: "30px"}}>
+        <h1 className="login-title">Workstation 01</h1>
       </div>
 
       <div className="input-container">
-        <div className="left-container">
+        <div style={{display: "flex"}} className="left-container">
           <input
             type="text"
             placeholder="Order Id"
@@ -190,7 +193,7 @@ function WorkerInterfaceOne() {
           </button>
         </div>
 
-        <div className="right-containerD">
+        <div style={{display: "flex"}} className="right-container">
           <input
             type="text"
             placeholder="Order Id"
@@ -213,7 +216,7 @@ function WorkerInterfaceOne() {
       <div className="vertical-space">  </div>
 
       <div className="rectangle-container"> {/* Wrapper for the rectangle */}
-        <div className="rectangle-content">
+        <div className="rectangle-content" >
           <div>
             <h3>On-Going Items: {onGoingItems}</h3>
             <h3>Completed Items: {completedItems}</h3>
@@ -226,7 +229,7 @@ function WorkerInterfaceOne() {
       <div className="vertical-space">  </div>
 
       <div className="input-container">
-        <div className="left-container">
+        <div style={{display: "flex"}} className="left-container">
           <input
             type="text"
             placeholder="No of Items"
@@ -239,7 +242,7 @@ function WorkerInterfaceOne() {
           </button>
         </div>
 
-        <div className="right-container">
+        <div style={{display: "flex"}} className="right-container">
           <input
             type="text"
             placeholder="No of Items"
@@ -255,8 +258,9 @@ function WorkerInterfaceOne() {
 
       <div className="vertical-space">  </div>
       
-      <button className="error-button" onClick={handleAddError}>Add Error Item</button>
+      <button style={{color:"white",border:"none",padding:"10px",}}className="error-button" onClick={handleAddError}>Add Error Item</button>
   
+    </div>
     </div>
     
   );

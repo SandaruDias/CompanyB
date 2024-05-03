@@ -38,7 +38,17 @@
 .worker-interface-one {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 50%;
+  background-color: #ffffff;
+  box-shadow: inset;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 50px;
+  left: 25%;
 }
 
 .input-container {
@@ -52,6 +62,7 @@
 .right-container {
   display: inline-block;
   margin-bottom: 10px; /* Add margin between containers */
+  display: flex;
 }
 
 .left-container input,
@@ -93,4 +104,8 @@
   justify-content: center;
   font-weight: bold; /* Bold font for the progress text */
   color: white; /* Text color */
+}
+.error-button{
+  background-color: rgb(193, 85, 85);
+  border-radius: 5px;
 }

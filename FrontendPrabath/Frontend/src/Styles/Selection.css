@@ -1,5 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
+.home-button-container{
+  display: flex;
+  justify-content: right;
+}
+.home-button{
+  width: fit-content;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  border: none;
+  padding: 10px;
+  background-color:white;
+  border-color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-decoration: none;  
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(163, 163, 172);
+  display: flex;
+  margin-left: 10px;
+}
+
 .admin-button,
 .worker-button {
   color: black;
@@ -12,11 +42,16 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 16px;
+  font-weight: bold;
+  color: #f5f5f5;
   text-decoration: none;  
   justify-content: center;
   align-items: center;
+  background-color: rgb(163, 163, 172);
+  border: none;
 
 }
+
 
 button:hover {
   background-color:#335dc6;
@@ -28,7 +63,7 @@ button:hover {
   align-items: center;
   height: 80%;
   width : 100%;
-  background-color:#f5f5f5; /* Set background color to light gray */
+  background-color:#c5c5c5; /* Set background color to light gray */
   gap: 20px;
 }
 
@@ -57,5 +92,6 @@ button:hover {
 
 .button-link {
   text-decoration: none;
+  color: white;
 }
 

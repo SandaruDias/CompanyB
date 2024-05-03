@@ -82,12 +82,12 @@ function AdminInterface() {
         <button onClick={signOut}> Sign Out</button>
       </div>
 
-      <table style={{ borderCollapse: 'collapse', border: '1px solid black', justifyContent: 'center' }}>
+      <table>
         <thead>
           <tr>
-            <th>Workstation 01</th>
-            <th>Workstation 02</th>
-            <th>Workstation 03</th>
+            <th style={{textAlign: "center" }}>Workstation 01</th>
+            <th  style={{textAlign: "center" }}>Workstation 02</th>
+            <th  style={{textAlign: "center" }}>Workstation 03</th>
           </tr>
         </thead>
         <tbody>
@@ -161,8 +161,8 @@ function AdminInterface() {
 
       {/* Overall Progress */}
       <div className="input-container">
-        <div className="app">
-          <h1>Overall Progress</h1>
+        <div  className="app">
+          <h1 style={{textAlign: "center"}}>Overall Progress</h1>
           <ProgressBar progress={progressFour} />
         </div>
       </div>

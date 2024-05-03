@@ -3,6 +3,7 @@ import "./../Styles/Login.css";
 import login_image from "./../Images/Login.png";
 import axios from "axios"
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
   const [details, setDetails] = useState({ username: "", password: "" });
@@ -40,17 +41,23 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container" style={{backgroundColor : "#c5c5c5"}}>
       <div className="login">
         <div className="details">
-          <h1 className="login-title">       Admin Portal</h1>
-          <div className="username">
-            <input
+        <div className="navigation-bar">
+        <button  className="home-button"><Link to={"/"} style={{textDecoration: "none", color: "white"}} >Selection Page</Link></button>  
+            <button className="home-button"><Link to={"/home"} style={{textDecoration: "none", color: "white"}}>Home Page</Link></button>  
+          </div>
+          <h1 style = {{textAlign: "center"}} className="login-title">Admin Portal</h1>
+          
+          <div  className="username">
+            <input 
               type="text"
               placeholder="Username"
               name="username"
               onChange={handleChange}
               value={details.username}
+              style={{width : "100%"}}
             />
           </div>
           <div className="password">
@@ -62,7 +69,7 @@ function LoginPage() {
               value={details.password}
             />
           </div>
-          <button className="login-button" onClick={handleSubmit}>
+          <button style={{padding: "10px"}} className="login-button" onClick={handleSubmit}>
             Login
           </button>
         </div>
