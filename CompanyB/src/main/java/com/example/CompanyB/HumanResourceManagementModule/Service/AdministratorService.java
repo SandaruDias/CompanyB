@@ -30,8 +30,13 @@ public class AdministratorService {
     }
 
     // Method to delete an administrator by ID
-    public void deleteAdministrator(String id) {
-        administratorRepo.deleteById(id);
+    public boolean deleteAdministrator(String id) {
+        if(administratorRepo.findById(id).isPresent()){
+            administratorRepo.deleteById(id);
+            return true;
+        }
+
+        return false;
     }
 
     // Method to retrieve all administrators
