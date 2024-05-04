@@ -13,14 +13,17 @@ public class TransactionController {
     private TransactionService transactionService;
 
     @PostMapping("/processPayroll")
-    public Transaction processPayroll(@RequestParam double amount) {
-        transactionService.processPayrollTransaction(amount);
-        return null;
+    public Transaction processPayroll(@RequestParam double amount, @RequestParam String payrollId) {
+        return transactionService.processPayrollTransaction(amount, payrollId);
     }
 
     @PostMapping("/processInvoice")
-    public Transaction processInvoice(@RequestParam double amount) {
-        transactionService.processInvoiceTransaction(amount);
-        return null;
+    public Transaction processInvoice(@RequestParam double amount, @RequestParam String invoiceId) {
+        return transactionService.processInvoiceTransaction(amount, invoiceId);
+    }
+
+    @GetMapping("/currentBalance")
+    public double getCurrentBalance() {
+        return transactionService.getCurrentBalance();
     }
 }

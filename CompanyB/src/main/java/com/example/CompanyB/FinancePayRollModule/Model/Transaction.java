@@ -8,9 +8,12 @@ import java.util.Date;
 public class Transaction {
     @Id
     private String transactionId;
-    private double balance;
+    private double income;
+    private double expense;
+    private double balance; // current balance after the transaction
     private Date transactionDate;
-    private String transactionMethod; // "payroll" or "invoice"
+    private String transactionType; // "payroll" or "invoice"
+    private String referenceId; // payrollId or invoiceId
 
     public Transaction() {}
 
@@ -20,6 +23,22 @@ public class Transaction {
 
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
+    }
+
+    public double getIncome() {
+        return income;
+    }
+
+    public void setIncome(double income) {
+        this.income = income;
+    }
+
+    public double getExpense() {
+        return expense;
+    }
+
+    public void setExpense(double expense) {
+        this.expense = expense;
     }
 
     public double getBalance() {
@@ -38,11 +57,19 @@ public class Transaction {
         this.transactionDate = transactionDate;
     }
 
-    public String getTransactionMethod() {
-        return transactionMethod;
+    public String getTransactionType() {
+        return transactionType;
     }
 
-    public void setTransactionMethod(String transactionMethod) {
-        this.transactionMethod = transactionMethod;
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public String getReferenceId() {
+        return referenceId;
+    }
+
+    public void setReferenceId(String referenceId) {
+        this.referenceId = referenceId;
     }
 }

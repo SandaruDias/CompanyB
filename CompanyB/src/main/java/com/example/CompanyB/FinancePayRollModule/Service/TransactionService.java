@@ -4,7 +4,6 @@ import com.example.CompanyB.FinancePayRollModule.Model.Transaction;
 import com.example.CompanyB.FinancePayRollModule.Repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 
 @Service
@@ -13,23 +12,39 @@ public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
 
+    public double getCurrentBalance() {
+        return transactionRepository.findTopByOrderByTransactionDateDesc()
+                .map(Transaction::getBalance)
+                .orElse(0.0);
+    }
+
     public void saveTransaction(Transaction transaction) {
         transactionRepository.save(transaction);
     }
 
-    public void processPayrollTransaction(double amount) {
+    public Transaction processPayrollTransaction(double amount, String payrollId) {
+        double currentBalance = getCurrentBalance();
         Transaction transaction = new Transaction();
         transaction.setTransactionDate(new Date());
-        transaction.setBalance(-amount); // Deduct from the balance
-        transaction.setTransactionMethod("payroll");
+        transaction.setExpense(amount);
+        transaction.setIncome(0);
+        transaction.setBalance(currentBalance - amount);
+        transaction.setTransactionType("payroll");
+        transaction.setReferenceId(payrollId);
         saveTransaction(transaction);
+        return transaction;
     }
 
-    public void processInvoiceTransaction(double amount) {
+    public Transaction processInvoiceTransaction(double amount, String invoiceId) {
+        double currentBalance = getCurrentBalance();
         Transaction transaction = new Transaction();
         transaction.setTransactionDate(new Date());
-        transaction.setBalance(amount); // Add to the balance
-        transaction.setTransactionMethod("invoice");
+        transaction.setIncome(amount);
+        transaction.setExpense(0);
+        transaction.setBalance(currentBalance + amount);
+        transaction.setTransactionType("invoice");
+        transaction.setReferenceId(invoiceId);
         saveTransaction(transaction);
+        return transaction;
     }
 }
