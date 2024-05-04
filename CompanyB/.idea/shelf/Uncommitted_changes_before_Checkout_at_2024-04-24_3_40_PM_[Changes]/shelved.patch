@@ -1,0 +1,19 @@
+Index: src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/SimulationController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.CompanyB.TrainingSimulationPrototypingModule.Controller;\r\n\r\nimport org.springframework.web.bind.annotation.RestController;\r\n\r\n@RestController // Make SimulationController a controller component\r\npublic class SimulationController\r\n{\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/SimulationController.java b/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/SimulationController.java
+--- a/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/SimulationController.java	
++++ b/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/SimulationController.java	
+@@ -1,8 +1,10 @@
+ package com.example.CompanyB.TrainingSimulationPrototypingModule.Controller;
+ 
++import org.springframework.web.bind.annotation.RequestMapping;
+ import org.springframework.web.bind.annotation.RestController;
+ 
+ @RestController // Make SimulationController a controller component
++@RequestMapping("/simulation")
+ public class SimulationController
+ {
+ 
