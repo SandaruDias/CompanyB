@@ -15,4 +15,8 @@ public class SalesReportModel {
     private double profit;
 
     // Getters and setters
+    private String productId;
+    private String productName;
+    private int quantitySold;
+
 }

@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e70442a-e4f8-4852-b8e4-02c07e3cf967" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/SalesRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Repository/SalesRecordRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Service/SalesRecordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Controller/SalesRecordController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel$SalesRecordModelBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Repository/SalesRecordRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/SalesRecordService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/FinanceBillModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/FinanceBillModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/InventoryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/InventoryItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/FinanceBillService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/FinanceBillService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +31,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -23,20 +42,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CompanyB_Application.executor": "Run",
-    "JUnit.CompanyBApplicationTests.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "SalesMarketingSystem",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CompanyB_Application.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompanyBApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CompanyB_Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;SalesMarketingSystem&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.CompanyB_Application">
+}</component>
+  <component name="RunManager" selected="Spring Boot.CompanyB_Application">
     <configuration name="CompanyB_Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.CompanyB.CompanyB_Application" />
       <module name="CompanyB" />
@@ -65,12 +97,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CompanyB_Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="CompanyB" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.CompanyB.CompanyB_Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.CompanyB.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.CompanyB_Application" />
         <item itemvalue="Application.CompanyB_Application" />
         <item itemvalue="JUnit.CompanyBApplicationTests" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-53826d6a" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -80,7 +133,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714330578495</updated>
+      <workItem from="1714480971380" duration="794000" />
+      <workItem from="1714495892453" duration="1197000" />
+      <workItem from="1714629222288" duration="221000" />
+      <workItem from="1714629453418" duration="739000" />
+      <workItem from="1714821514071" duration="6459000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
