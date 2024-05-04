@@ -13,10 +13,12 @@ public class ApplicantService {
     @Autowired
     private ApplicantRepo applicantRepo;
 
+    // Method to add a new application
     public void addApplication(Applicant applicant){
         applicantRepo.save(applicant);
     }
 
+    // Method to retrieve all applications
     public List<Applicant> getAllApplication(){
         return applicantRepo.findAll();
     }

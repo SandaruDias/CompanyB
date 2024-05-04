@@ -16,12 +16,14 @@ public class ApplicantController {
     @Autowired
     private ApplicantService applicantService;
 
+    // Endpoint to add a new applicant
     @PostMapping("/add")
     public ResponseEntity<Void> addApplicant(@RequestBody Applicant applicant) {
         applicantService.addApplication(applicant);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    // Endpoint to retrieve all applications
     @GetMapping("/getAll")
     public ResponseEntity<List<Applicant>> getAllApplications() {
         List<Applicant> applications = applicantService.getAllApplication();

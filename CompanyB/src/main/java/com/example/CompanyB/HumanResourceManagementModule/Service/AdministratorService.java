@@ -17,31 +17,46 @@ public class AdministratorService {
 
     @Autowired
     private AdministratorRepo administratorRepo;
+
     @Autowired
     private EmployeeAttendanceRepo employeeAttendanceRepo;
 
+    // Method to retrieve an administrator by ID
     public Administrator getAdministratorById(String id) {
         return administratorRepo.findById(id).orElse(null);
     }
 
+    // Method to create a new administrator
     public void createAdministrator(Administrator administrator) {
         administratorRepo.save(administrator);
     }
 
+    // Method to delete an administrator by ID
     public void deleteAdministrator(String id) {
         administratorRepo.deleteById(id);
     }
+
+    // Method to retrieve all administrators
     public List<Administrator> getAllAdmin(){
         return administratorRepo.findAll();
     }
 
-    public void changePassword(String id,String newPassword){
-        administratorRepo.findById(id).get().setPassword(newPassword);
-    }
-    public boolean getPermission(String id){
-        Optional<EmployeeAttendanceModel> employeeAttendanceModel = employeeAttendanceRepo.findById(id);
-        employeeAttendanceModel.get().setShortLeave("Taken");
-        return true;
+    // Method to change the password of an administrator
+    public void changePassword(String id, String newPassword){
+        // Find the administrator by ID and update the password
+        administratorRepo.findById(id).ifPresent(administrator -> administrator.setPassword(newPassword));
     }
 
+    // Method to grant permission for an operation (example: set short leave as "Taken")
+    public boolean getPermission(String id){
+        Optional<EmployeeAttendanceModel> employeeAttendanceModel = employeeAttendanceRepo.findById(id);
+        if (employeeAttendanceModel.isPresent()) {
+            // Set short leave status to "Taken" for the given ID
+            employeeAttendanceModel.get().setShortLeave("Taken");
+            return true;
+        } else {
+            return false; // Return false if attendance record is not found
+        }
+    }
 }
+
