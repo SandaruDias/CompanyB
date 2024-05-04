@@ -2,20 +2,16 @@ package com.example.CompanyB.HumanResourceManagementModule.Controller;
 
 import com.example.CompanyB.HumanResourceManagementModule.Model.Administrator;
 import com.example.CompanyB.HumanResourceManagementModule.Model.Employee;
-import com.example.CompanyB.HumanResourceManagementModule.Model.EmployeeAttendanceModel;
 import com.example.CompanyB.HumanResourceManagementModule.Repository.EmployeeAttendanceRepo;
 import com.example.CompanyB.HumanResourceManagementModule.Service.AdministratorService;
-import com.example.CompanyB.HumanResourceManagementModule.Service.EmployeeAttendanceService;
 import com.example.CompanyB.HumanResourceManagementModule.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("hr/administrator")
@@ -32,8 +28,9 @@ public class AdministratorController {
 
     // Endpoint to create a new administrator
     @PostMapping("/create")
-    public void createAdministrator(@RequestBody Administrator administrator){
+    public ResponseEntity<String> createAdministrator(@RequestBody Administrator administrator) {
         administratorService.createAdministrator(administrator);
+        return ResponseEntity.ok("Administrator created successfully.");
     }
 
     // Endpoint to get administrator information by ID
@@ -74,7 +71,7 @@ public class AdministratorController {
 
     // Endpoint to create an administrator based on an employee ID
     @PostMapping("/create/{employeeId}")
-    public ResponseEntity<Void> createAdministrator(@PathVariable String employeeId) {
+    public ResponseEntity<String> createAdministrator(@PathVariable String employeeId) {
         Employee employee = employeeService.getEmployeeById(employeeId);
         if (employee != null) {
             // Create new administrator based on employee information
@@ -92,7 +89,7 @@ public class AdministratorController {
             administrator.setDivision(employee.getDivision());
             administrator.setPassword("login123");
             administratorService.createAdministrator(administrator);
-            return ResponseEntity.status(HttpStatus.CREATED).build();
+            return ResponseEntity.ok("Administrator created successfully.");
         } else {
             // Return 404 Not Found if employee with given ID is not found
             return ResponseEntity.notFound().build();
@@ -101,9 +98,13 @@ public class AdministratorController {
 
     // Endpoint to delete an administrator by ID
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteAdministrator(@PathVariable String id) {
-        administratorService.deleteAdministrator(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deleteAdministrator(@PathVariable String id) {
+        boolean isDeleted = administratorService.deleteAdministrator(id);
+        if (isDeleted) {
+            return ResponseEntity.ok("Administrator with ID " + id + " has been successfully deleted.");
+        } else {
+            return ResponseEntity.ok("Administrator with ID " + id + " was not found.");
+        }
     }
 
     // granting the permission for short leaves at the specified time by the administrator
