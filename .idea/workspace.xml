@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e70442a-e4f8-4852-b8e4-02c07e3cf967" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/SalesRecordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Repository/SalesRecordRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Service/SalesRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Controller/SalesRecordController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel$SalesRecordModelBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Repository/SalesRecordRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/SalesRecordService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/FinanceBillModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/FinanceBillModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/InventoryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/InventoryItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/OrderModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/FinanceBillService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/FinanceBillService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/SalesReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/SalesReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel$SalesRecordModelBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel$SalesRecordModelBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +125,7 @@
       <workItem from="1714495892453" duration="1197000" />
       <workItem from="1714629222288" duration="221000" />
       <workItem from="1714629453418" duration="739000" />
-      <workItem from="1714821514071" duration="6459000" />
+      <workItem from="1714821514071" duration="8861000" />
     </task>
     <servers />
   </component>
