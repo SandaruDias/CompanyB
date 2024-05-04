@@ -3,6 +3,7 @@ package com.example.CompanyB.TrainingSimulationPrototypingModule.Service;
 import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.PrototypeModel;
 import com.example.CompanyB.TrainingSimulationPrototypingModule.Repository.PrototypeRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class PrototypeService {
     public PrototypeService(PrototypeRepository prototypeRepository) {
         this.prototypeRepository = prototypeRepository;
     }
-
+    @Transactional
     public String createPrototype(MultipartFile file, String material, String color, String shape, String comments, boolean thermalTestPassed, boolean electricalTestPassed) throws IOException {
         PrototypeModel prototype = new PrototypeModel();
         prototype.setDesignDocumentPdf(file.getBytes());

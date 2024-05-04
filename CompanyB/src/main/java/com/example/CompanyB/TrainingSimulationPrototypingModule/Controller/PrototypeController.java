@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/tps/prototypes")
 public class PrototypeController {
@@ -22,14 +24,19 @@ public class PrototypeController {
                                                   @RequestParam("material") String material,
                                                   @RequestParam("color") String color,
                                                   @RequestParam("shape") String shape,
-                                                  @RequestParam("comments") String comments, boolean thermalTestPassed, boolean electricalTestPassed) {
+                                                  @RequestParam("comments") String comments,
+                                                  boolean thermalTestPassed,
+                                                  boolean electricalTestPassed) {
         try {
             String prototypeId = prototypeService.createPrototype(file, material, color, shape, comments, thermalTestPassed, electricalTestPassed);
             return ResponseEntity.ok(prototypeId);
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create prototype.");
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to process file.");
         }
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<PrototypeModel> getPrototype(@PathVariable String id) {
