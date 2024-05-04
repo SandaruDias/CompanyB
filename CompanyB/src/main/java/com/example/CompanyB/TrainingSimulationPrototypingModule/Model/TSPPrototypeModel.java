@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Prototype")
 @Getter
 @Setter
-public class PrototypeModel {
+public class TSPPrototypeModel {
     @Id
     private String id;
     private byte[] designDocumentPdf;

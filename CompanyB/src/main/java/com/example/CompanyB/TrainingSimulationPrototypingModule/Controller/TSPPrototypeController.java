@@ -1,7 +1,7 @@
 package com.example.CompanyB.TrainingSimulationPrototypingModule.Controller;
 
-import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.PrototypeModel;
-import com.example.CompanyB.TrainingSimulationPrototypingModule.Service.PrototypeService;
+import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.TSPPrototypeModel;
+import com.example.CompanyB.TrainingSimulationPrototypingModule.Service.TSPPrototypeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,12 +9,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/tps/prototypes")
-public class PrototypeController {
+public class TSPPrototypeController {
 
-    private final PrototypeService prototypeService;
+    private final TSPPrototypeService TSPPrototypeService;
 
-    public PrototypeController(PrototypeService prototypeService) {
-        this.prototypeService = prototypeService;
+    public TSPPrototypeController(TSPPrototypeService TSPPrototypeService) {
+        this.TSPPrototypeService = TSPPrototypeService;
     }
 
     @PostMapping("/create")
@@ -24,7 +24,7 @@ public class PrototypeController {
                                                   @RequestParam("shape") String shape,
                                                   @RequestParam("comments") String comments, boolean thermalTestPassed, boolean electricalTestPassed) {
         try {
-            String prototypeId = prototypeService.createPrototype(file, material, color, shape, comments, thermalTestPassed, electricalTestPassed);
+            String prototypeId = TSPPrototypeService.createPrototype(file, material, color, shape, comments, thermalTestPassed, electricalTestPassed);
             return ResponseEntity.ok(prototypeId);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create prototype.");
@@ -32,9 +32,9 @@ public class PrototypeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PrototypeModel> getPrototype(@PathVariable String id) {
+    public ResponseEntity<TSPPrototypeModel> getPrototype(@PathVariable String id) {
         try {
-            PrototypeModel prototype = prototypeService.getPrototype(id);
+            TSPPrototypeModel prototype = TSPPrototypeService.getPrototype(id);
             if (prototype != null) {
                 return ResponseEntity.ok(prototype);
             } else {
@@ -47,7 +47,7 @@ public class PrototypeController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePrototype(@PathVariable String id) {
         try {
-            prototypeService.deletePrototype(id);
+            TSPPrototypeService.deletePrototype(id);
             return ResponseEntity.noContent().build();
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
