@@ -1,0 +1,199 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1" date="1714318719811" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2024-04-28 9:08 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/SalesMarketingModule/Controller/SampleController8.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/SalesMarketingModule/Controller/SampleController8.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleController8.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Repository/OrderDao.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Repository/OrderDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/OrderDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Controller/UserController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Controller/UserController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/UserController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/ManufacturingModule/Model/SampleModel2.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/ManufacturingModule/Model/SampleModel2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleModel2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Service/UserService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Service/UserService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/UserService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Model/User.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Model/User.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/User.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/QualityAssuranceModule/Service/SampleService7.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/QualityAssuranceModule/Service/SampleService7.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleService7.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Repository/UserDao.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Repository/UserDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/UserDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Controller/SupplierController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Controller/SupplierController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SupplierController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/GeneralManagementModule/Controller/SampleController9.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/GeneralManagementModule/Controller/SampleController9.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleController9.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/QualityAssuranceModule/Model/SampleModel7.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/QualityAssuranceModule/Model/SampleModel7.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleModel7.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/ManufacturingModule/Service/SampleService2.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/ManufacturingModule/Service/SampleService2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleService2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/FinancePayRollModule/Model/SampleModel6.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/FinancePayRollModule/Model/SampleModel6.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleModel6.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Controller/SampleController5.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Controller/SampleController5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleController5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/ManufacturingModule/Controller/SampleClass2.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/ManufacturingModule/Controller/SampleClass2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleClass2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Repository/SupplierDao.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Repository/SupplierDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SupplierDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Service/StockService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Service/StockService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/StockService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/HumanResourceManagementModule/Service/SampleService4.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/HumanResourceManagementModule/Service/SampleService4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleService4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/FinancePayRollModule/Controller/SampleController6.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/FinancePayRollModule/Controller/SampleController6.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleController6.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/SampleService3.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/SampleService3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleService3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/GeneralManagementModule/Service/SampleService9.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/GeneralManagementModule/Service/SampleService9.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleService9.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/FinancePayRollModule/Service/SampleService6.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/FinancePayRollModule/Service/SampleService6.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleService6.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Model/SimTest.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Model/SimTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SimTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/SimulationController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/SimulationController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SimulationController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Model/OrderDetail.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Model/OrderDetail.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/OrderDetail.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Service/SupplierService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Service/SupplierService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SupplierService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/QualityAssuranceModule/Controller/SampleController7.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/QualityAssuranceModule/Controller/SampleController7.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleController7.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Service/SampleService5.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Service/SampleService5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleService5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Model/supplier.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Model/supplier.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/supplier.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/CompanyB_Application.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/CompanyB_Application.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/CompanyB_Application.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/SampleModel5.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/SampleModel5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleModel5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/SalesMarketingModule/Service/SampleService8.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/SalesMarketingModule/Service/SampleService8.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleService8.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Controller/StockController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Controller/StockController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/StockController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/SampleModel4.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/SampleModel4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleModel4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Repository/StockDao.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Repository/StockDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/StockDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Model/stock1.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/InventoryStocksModule/Model/stock1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/stock1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/GeneralManagementModule/Model/SampleModel9.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/GeneralManagementModule/Model/SampleModel9.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleModel9.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/SampleController4.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/SampleController4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleController4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/SalesMarketingModule/Model/SampleModel8.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/SalesMarketingModule/Model/SampleModel8.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM_[Changes]1/SampleModel8.class" />
+  </binary>
+</changelist>
