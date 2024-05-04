@@ -1,9 +1,9 @@
 package com.example.CompanyB.GeneralManagementModule.Model;
 
+import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Subscription_Data")
@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Subscribtion {
 
     @NonNull
+    @Email
     private String email;
 
     public Subscribtion() {
