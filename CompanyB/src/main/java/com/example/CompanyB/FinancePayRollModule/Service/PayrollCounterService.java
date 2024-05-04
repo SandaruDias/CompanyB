@@ -10,7 +10,7 @@ public class PayrollCounterService {
     @Autowired
     private PayrollCounterRepository counterRepository;
 
-    public synchronized int getNextInvoiceId() {
+    public synchronized int getNextPayrollId() {
         PayrollCounter counter = (PayrollCounter) counterRepository.findById("payroll_counter")
                 .orElse(new PayrollCounter("payroll_counter", 0));
 

@@ -86,14 +86,25 @@ public class PayrollDTO {
     private String employeeName;
     private double basicSalary;
     private double otHours;
-    private double salaryPerHour;
-    private double workingHours;
+    private double workingDays;
     private double taxPercentage;
     private double deductions;
-    private double benefits;
+    private double allowance;
     private Date payrollDate;
 
+    private Date payrollStartDate;
+    private Date payrollEndDate;
+
+
     // Getters and setters
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getEmployeeId() {
         return employeeId;
@@ -127,20 +138,12 @@ public class PayrollDTO {
         this.otHours = otHours;
     }
 
-    public double getSalaryPerHour() {
-        return salaryPerHour;
+    public double getWorkingDays() {
+        return workingDays;
     }
 
-    public void setSalaryPerHour(double salaryPerHour) {
-        this.salaryPerHour = salaryPerHour;
-    }
-
-    public double getWorkingHours() {
-        return workingHours;
-    }
-
-    public void setWorkingHours(double workingHours) {
-        this.workingHours = workingHours;
+    public void setWorkingDays(double workingDays) {
+        this.workingDays = workingDays;
     }
 
     public double getTaxPercentage() {
@@ -159,12 +162,12 @@ public class PayrollDTO {
         this.deductions = deductions;
     }
 
-    public double getBenefits() {
-        return benefits;
+    public double getAllowance() {
+        return allowance;
     }
 
-    public void setBenefits(double benefits) {
-        this.benefits = benefits;
+    public void setAllowance(double allowance) {
+        this.allowance = allowance;
     }
 
     public Date getPayrollDate() {
@@ -173,5 +176,21 @@ public class PayrollDTO {
 
     public void setPayrollDate(Date payrollDate) {
         this.payrollDate = payrollDate;
+    }
+
+    public Date getPayrollStartDate() {
+        return payrollStartDate;
+    }
+
+    public void setPayrollStartDate(Date payrollStartDate) {
+        this.payrollStartDate = payrollStartDate;
+    }
+
+    public Date getPayrollEndDate() {
+        return payrollEndDate;
+    }
+
+    public void setPayrollEndDate(Date payrollEndDate) {
+        this.payrollEndDate = payrollEndDate;
     }
 }

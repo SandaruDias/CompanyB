@@ -162,27 +162,32 @@ import java.util.Date;
 @Document
 public class EmployeePayroll {
     @Id
-    private String id;
+    private String payrollId;
     private String employeeId;
     private String employeeName;
     private double basicSalary;
     private double otHours;
-    private double salaryPerHour;
-    private double workingHours;
+    private double workingDays;
+    private double allowance;
     private double taxPercentage;
     private double deductions;
-    private double benefits;
     private Date payrollDate;
+
+    private Date payrollStartDate;
+
+    private Date payrollEndDate;
+
+    private double grossPay;
     private double netPay;
 
     // Constructors, getters, and setters
 
-    public String getId() {
-        return id;
+    public String getPayrollId() {
+        return payrollId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPayrollId(String payrollId) {
+        this.payrollId = payrollId;
     }
 
     public String getEmployeeId() {
@@ -217,20 +222,20 @@ public class EmployeePayroll {
         this.otHours = otHours;
     }
 
-    public double getSalaryPerHour() {
-        return salaryPerHour;
+    public double getWorkingDays() {
+        return workingDays;
     }
 
-    public void setSalaryPerHour(double salaryPerHour) {
-        this.salaryPerHour = salaryPerHour;
+    public void setWorkingDays(double workingDays) {
+        this.workingDays = workingDays;
     }
 
-    public double getWorkingHours() {
-        return workingHours;
+    public double getAllowance() {
+        return allowance;
     }
 
-    public void setWorkingHours(double workingHours) {
-        this.workingHours = workingHours;
+    public void setAllowance(double allowance) {
+        this.allowance = allowance;
     }
 
     public double getTaxPercentage() {
@@ -249,20 +254,28 @@ public class EmployeePayroll {
         this.deductions = deductions;
     }
 
-    public double getBenefits() {
-        return benefits;
-    }
-
-    public void setBenefits(double benefits) {
-        this.benefits = benefits;
-    }
-
     public Date getPayrollDate() {
         return payrollDate;
     }
 
     public void setPayrollDate(Date payrollDate) {
         this.payrollDate = payrollDate;
+    }
+
+    public Date getPayrollStartDate() {
+        return payrollStartDate;
+    }
+
+    public void setPayrollStartDate(Date payrollStartDate) {
+        this.payrollStartDate = payrollStartDate;
+    }
+
+    public Date getPayrollEndDate() {
+        return payrollEndDate;
+    }
+
+    public void setPayrollEndDate(Date payrollEndDate) {
+        this.payrollEndDate = payrollEndDate;
     }
 
     public double getNetPay() {
@@ -272,4 +285,6 @@ public class EmployeePayroll {
     public void setNetPay(double netPay) {
         this.netPay = netPay;
     }
+
+
 }
