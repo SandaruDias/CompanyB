@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 public class Employee extends Person{
     @Id
-    private String userId ;
+    private String id ;
     private String recruitedDate;
     private int salary;
     private double allowance;

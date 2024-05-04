@@ -1,11 +1,9 @@
 package com.example.CompanyB.HumanResourceManagementModule.Service;
 
 import com.example.CompanyB.HumanResourceManagementModule.Model.Administrator;
-import com.example.CompanyB.HumanResourceManagementModule.Model.Employee;
 import com.example.CompanyB.HumanResourceManagementModule.Model.EmployeeAttendanceModel;
 import com.example.CompanyB.HumanResourceManagementModule.Repository.AdministratorRepo;
 import com.example.CompanyB.HumanResourceManagementModule.Repository.EmployeeAttendanceRepo;
-import com.example.CompanyB.HumanResourceManagementModule.Repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,10 +36,21 @@ public class AdministratorService {
     public void changePassword(String id,String newPassword){
         administratorRepo.findById(id).get().setPassword(newPassword);
     }
+
+
+
+
+    // granting permission for short leaves
+    // but for this the employee has to check in the morning and ask for the permission from HR admin.
     public boolean getPermission(String id){
         Optional<EmployeeAttendanceModel> employeeAttendanceModel = employeeAttendanceRepo.findById(id);
-        employeeAttendanceModel.get().setShortLeave("Taken");
-        return true;
+        if (employeeAttendanceModel.isPresent()) {
+            employeeAttendanceModel.get().setShortLeave("Taken");
+            employeeAttendanceRepo.save(employeeAttendanceModel.get());
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
