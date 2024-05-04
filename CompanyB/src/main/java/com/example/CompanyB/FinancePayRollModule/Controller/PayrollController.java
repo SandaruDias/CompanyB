@@ -1,76 +1,79 @@
 package com.example.CompanyB.FinancePayRollModule.Controller;
 
-import com.example.CompanyB.FinancePayRollModule.Model.Payroll;
+import com.example.CompanyB.FinancePayRollModule.Model.EmployeePayroll;
+import com.example.CompanyB.FinancePayRollModule.Model.Invoice;
 import com.example.CompanyB.FinancePayRollModule.Service.PayrollService;
-import com.example.CompanyB.FinancePayRollModule.Repository.PayrollRepository;
 import com.example.CompanyB.FinancePayRollModule.Service.dto.PayrollDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/payroll")
 public class PayrollController {
-    private final PayrollService payrollService;
 
     @Autowired
-    public PayrollController(PayrollService payrollService) {
-        this.payrollService = payrollService;
+    private PayrollService payrollService;
+
+    @PostMapping
+    public EmployeePayroll addPayroll(@RequestBody PayrollDTO payrollDTO) {
+        return payrollService.createPayroll(payrollDTO);
     }
 
-    @Autowired
-    public PayrollRepository payrollRepository;
-
-    @PostMapping("/calculate")
-    public ResponseEntity<Payroll> calculatePayroll(@RequestBody PayrollDTO payrollDTO) {
-        Payroll payroll = payrollService.calculateAndSavePayroll(
-                payrollDTO.getEmployeeId(),
-                payrollDTO.getEmployeeName(),
-                payrollDTO.getHoursWorked(),
-                payrollDTO.getHourlyRate(),
-                payrollDTO.getOvertimeHours(),
-                payrollDTO.getOvertimeRate(),
-                payrollDTO.getDeductions(),
-                payrollDTO.getTaxRate()
-        );
-        return ResponseEntity.ok(payroll);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePayroll(@PathVariable String id) {
+        payrollService.deletePayroll(id);
+        return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{payrollId}")
-    public ResponseEntity<Payroll> getPayrollById(@PathVariable String payrollId) {
-        Payroll payroll = payrollService.findPayrollById(payrollId);
-        return ResponseEntity.ok(payroll);
+    @GetMapping
+    public List<EmployeePayroll> getAllPayrolls() {
+        return payrollService.getAllPayrollDetails();
     }
 
-    @PutMapping("/update/{payrollId}")
-    public ResponseEntity<Payroll> updatePayroll(@PathVariable String payrollId,
-                                                 @RequestParam Double deductions,
-                                                 @RequestParam Double taxRate) {
-        Payroll updatedPayroll = payrollService.updatePayroll(payrollId, deductions, taxRate);
-        return ResponseEntity.ok(updatedPayroll);
-    }
-    @DeleteMapping("/{payrollId}")
-    public ResponseEntity<Void> deletePayroll(@PathVariable String payrollId) {
-        payrollService.deletePayrollById(payrollId);
-        return ResponseEntity.noContent().build();
+    @GetMapping("/{id}")
+    public EmployeePayroll getPayrollById(@PathVariable String id) {
+        return payrollService.getPayrollById(id);
     }
 
-    @GetMapping("/download/{employeeId}")
-    public ResponseEntity<byte[]> downloadPayrollDetails(@PathVariable Long employeeId) {
-        List<Payroll> payrolls = payrollService.findPayrollsByEmployeeId(employeeId, Pageable.unpaged());
+    @PutMapping("/{id}")
+    public ResponseEntity<EmployeePayroll> updatePayroll(@PathVariable String id, @RequestBody EmployeePayroll updatedPayroll) {
+        try {
+            return ResponseEntity.ok(payrollService.updatePayroll(id, updatedPayroll));
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/employee/{employeeId}")
+    public ResponseEntity<List<EmployeePayroll>> getPayrollsByEmployeeId(@PathVariable String employeeId) {
+        List<EmployeePayroll> payrolls = payrollService.findPayrollsByEmployeeId(employeeId);
         if (payrolls.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-        byte[] data = payrollService.generatePayrollReport(payrolls);
-        HttpHeaders headers = new HttpHeaders();
-        headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=payroll-report.csv");
-        return new ResponseEntity<>(data, headers, HttpStatus.OK);
+        return ResponseEntity.ok(payrolls);
     }
 
-
+    @GetMapping("/download/{employeeId}")
+    public ResponseEntity<InputStreamResource> downloadPayrollsByEmployeeId(@PathVariable String employeeId) {
+        try {
+            List<EmployeePayroll> payrolls = payrollService.findPayrollsByEmployeeId(employeeId);
+            byte[] data = payrollService.generateExcelReport(payrolls);
+            HttpHeaders headers = new HttpHeaders();
+            headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=payrolls.xlsx");
+            return ResponseEntity.ok()
+                    .headers(headers)
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .body(new InputStreamResource(new ByteArrayInputStream(data)));
+        } catch (IOException e) {
+            return ResponseEntity.internalServerError().build();
+        }
+    }
 }
