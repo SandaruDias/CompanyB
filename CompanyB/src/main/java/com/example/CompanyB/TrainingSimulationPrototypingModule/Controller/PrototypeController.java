@@ -1,6 +1,5 @@
 package com.example.CompanyB.TrainingSimulationPrototypingModule.Controller;
 
-import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.PrototypeModel;
 import com.example.CompanyB.TrainingSimulationPrototypingModule.Service.PrototypeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
