@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("sales")
+@RequestMapping("/sales")
 public class SalesReportController {
 
     @Autowired
@@ -31,5 +31,19 @@ public class SalesReportController {
         return salesService.getAllSales();
         //model.addAttribute("orders", orders);
         // return "order-list"; // Assuming you have a Thymeleaf template named "order-list.html"
+    }
+    @GetMapping("/totalSalesAmount")
+    public double getTotalSalesAmount() {
+        return salesService.getTotalSalesAmount();
+    }
+
+    @GetMapping("/totalProfit")
+    public double getTotalProfit() {
+        return salesService.getTotalProfit();
+    }
+
+    @GetMapping("/averageProfitMargin")
+    public double getAverageProfitMargin() {
+        return salesService.getAverageProfitMargin();
     }
 }

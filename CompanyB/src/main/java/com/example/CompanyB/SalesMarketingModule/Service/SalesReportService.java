@@ -20,4 +20,32 @@ public class SalesReportService {
     public List<SalesReportModel> generateSalesReport(Date startDate, Date endDate) {
         return salesRepository.findBySaleDateBetween(startDate, endDate);
     }
+
+    public double getTotalSalesAmount() {
+        List<SalesReportModel> sales = salesRepository.findAll();
+        double totalSalesAmount = 0;
+        for (SalesReportModel sale : sales) {
+            totalSalesAmount += sale.getAmount();
+        }
+        return totalSalesAmount;
+    }
+
+    public double getTotalProfit() {
+        List<SalesReportModel> sales = salesRepository.findAll();
+        double totalProfit = 0;
+        for (SalesReportModel sale : sales) {
+            totalProfit += sale.getProfit();
+        }
+        return totalProfit;
+    }
+
+    public double getAverageProfitMargin() {
+        double totalSalesAmount = getTotalSalesAmount();
+        double totalProfit = getTotalProfit();
+        if (totalSalesAmount != 0) {
+            return totalProfit / totalSalesAmount;
+        } else {
+            return 0;
+        }
+    }
 }
