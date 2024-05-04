@@ -1,0 +1,16 @@
+Index: src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.CompanyB.TrainingSimulationPrototypingModule.Service;\r\n\r\nimport com.example.CompanyB.TrainingSimulationPrototypingModule.Model.PrototypeModel;\r\nimport com.example.CompanyB.TrainingSimulationPrototypingModule.Repository.PrototypeRepository;\r\nimport org.springframework.stereotype.Service;\r\nimport org.springframework.web.multipart.MultipartFile;\r\n\r\nimport java.io.IOException;\r\n\r\n@Service\r\npublic class PrototypeService {\r\n\r\n\r\n    private final PrototypeRepository prototypeRepository;\r\n\r\n    public PrototypeService(PrototypeRepository prototypeRepository) {\r\n        this.prototypeRepository = prototypeRepository;\r\n    }\r\n\r\n    public String createPrototype(MultipartFile file, String material, String color, String shape, String comments, boolean thermalTestPassed, boolean electricalTestPassed) throws IOException {\r\n        PrototypeModel prototype = new PrototypeModel();\r\n        prototype.setDesignDocumentPdf(file.getBytes());\r\n        prototype.setMaterial(material);\r\n        prototype.setColor(color);\r\n        prototype.setShape(shape);\r\n        prototype.setComments(comments);\r\n        prototype.setThermalTestPassed(thermalTestPassed);\r\n        prototype.setElectricalTestPassed(electricalTestPassed);\r\n\r\n        // Determine approval status and message\r\n        String approvalStatus;\r\n        String approvalMessage;\r\n        if (thermalTestPassed && electricalTestPassed) {\r\n            approvalStatus = \"Pass\";\r\n            approvalMessage = \"Prototype approved.\";\r\n        } else {\r\n            approvalStatus = \"Fail\";\r\n            approvalMessage = \"Prototype failed due to testing issues.\";\r\n        }\r\n        prototype.setApprovalStatus(approvalStatus);\r\n        prototype.setApprovalMessage(approvalMessage);\r\n\r\n        // Save the prototype only if both tests pass\r\n        if (thermalTestPassed && electricalTestPassed) {\r\n            PrototypeModel savedPrototype = prototypeRepository.save(prototype);\r\n            return savedPrototype.getId();\r\n        } else {\r\n            return null; // Return null to indicate rejection\r\n        }\r\n    }\r\n\r\n    public PrototypeModel getPrototype(String id) {\r\n        return prototypeRepository.findById(id).orElse(null);\r\n    }\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.java b/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.java
+--- a/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.java	
++++ b/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.java	
+@@ -52,4 +52,4 @@
+     public PrototypeModel getPrototype(String id) {
+         return prototypeRepository.findById(id).orElse(null);
+     }
+-
++}

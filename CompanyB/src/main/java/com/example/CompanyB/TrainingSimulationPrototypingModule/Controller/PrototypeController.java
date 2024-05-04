@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/tps/prototypes")
 public class PrototypeController {
 
-
     private final PrototypeService prototypeService;
 
     public PrototypeController(PrototypeService prototypeService) {
