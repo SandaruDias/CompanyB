@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+.login-button {
+  width: auto; /* Changed width to auto */
+  padding: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.login-button:hover { /* Changed to .login-button:hover */
+  background-color: #0056b3;
+}
+
+.login-title {
+  text-align: center;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+}
+
+.input-container {
+  flex: 1;
+  margin-right: 10px; /* Adjust spacing between containers */
+}
+
+.input-container:last-child {
+  margin-right: 0; /* Remove margin-right for the last input container */
+}
+
+.worker-interface-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background-color: #ffffff;
+  box-shadow: inset;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 50px;
+  left: 25%;
+}
+
+.input-container {
+  display: flex;
+}
+
+.left-container, .right-container {
+  margin: 0 10px;
+}
+.left-container,
+.right-container {
+  display: inline-block;
+  margin-bottom: 10px; /* Add margin between containers */
+  display: flex;
+}
+
+.left-container input,
+.right-container input {
+  width: calc(50% - 5px); /* Adjust input width */
+  margin-right: 5px; /* Add spacing between inputs */
+}
+
+.vertical-space {
+  margin-bottom: 30px;
+}
+
+.rectangle-container {
+  width: fit-content; /* Adjust the width as needed */
+  margin: auto; /* Center the rectangle */
+  padding: 20px; /* Add padding for space inside the rectangle */
+  background-color: #f0f0f0; /* Background color of the rectangle */
+  border: 1px solid #ccc; /* Border for the rectangle */
+  border-radius: 10px; /* Adjust the border radius to round the corners */
+}
+
+.rectangle-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-bar {
+  width: 1500px; /* Adjust the width of the progress bar container */
+  height: 30px; /* Adjust the height of the progress bar */
+  border-radius: 5px; /* Add border-radius to round the corners */
+  overflow: hidden; /* Ensure that the inner progress bar stays within the container */
+}
+
+.progress-bar-inner {
+  height: 100%; /* Ensure that the inner progress bar fills the height of the container */
+  background-color: green; /* Background color of the progress bar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold; /* Bold font for the progress text */
+  color: white; /* Text color */
+}
+.error-button{
+  background-color: rgb(193, 85, 85);
+  border-radius: 5px;
+}

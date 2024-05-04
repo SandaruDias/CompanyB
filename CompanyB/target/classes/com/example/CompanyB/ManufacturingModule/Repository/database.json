@@ -1,0 +1,97 @@
+{
+  "Raw Material Data Entity": [
+    {
+      "Order_ID": "OD00001",
+      "Released_Date": "2022-01-01",
+      "Order_Components": "",
+      "No_Of_Items": 11,
+      "Is_Released": false
+    },
+    {
+      "Order_ID": "OD00001",
+      "Released_Date": "2022-01-01",
+      "Order_Components": "",
+      "No_Of_Items": 11,
+      "Is_Released": false
+    }
+  ],
+  "User Data Entity": [{
+    "User_ID": "US0001",
+    "User_Category": "Employee",
+    "Station_NO": 1,
+    "Reporting_Time": "11.55 am",
+    "Leaving_Time": "11.55 am"
+  },{
+    "User_ID": "US0001",
+    "User_Category": "Employee",
+    "Station_NO": 1,
+    "Reporting_Time": "11.55 am",
+    "Leaving_Time": "11.55 am"
+  }
+  ],
+  "production Station Entity": [{
+    "User_ID": "US0001",
+    "Total No of Items": 2,
+    "S1_completed": 1,
+    "S1_Worker": "US0001",
+    "S2_completed": 1,
+    "S2_Worker": "US0001",
+    "S3_completed": 1,
+    "S3_Worker": "US0001",
+    "Error_Items": 1,
+    "Completed_Items": 20
+  },{
+    "User_ID": "US0001",
+    "Total No of Items": 2,
+    "S1_completed": 1,
+    "S1_Worker": "US0001",
+    "S2_completed": 1,
+    "S2_Worker": "US0001",
+    "S3_completed": 1,
+    "S3_Worker": "US0001",
+    "Error_Items": 1,
+    "Completed_Items": 20
+  }
+  ],
+  "Final Output Data Entity": [{
+    "Order_Id": "OD0001",
+    "No_Of_Items_Released": 20,
+    "QA_Approval": true,
+    "Released_Date": "2022-01-01",
+    "Final_Order": ""
+  },
+    {
+      "Order_Id": "OD0001",
+      "No_Of_Items_Released": 20,
+      "QA_Approval": true,
+      "Released_Date": "2022-01-01",
+      "Final_Order": ""
+    }],
+  "Order Entity": [    {
+    "id": "OD0001",
+    "totalNumber": 20,
+    "onGoingStationOne": 1,
+    "onGoingStationTwo": 1,
+    "onGoingStationThree": 1,
+    "waitToOne": 1,
+    "waitToTwo": 1,
+    "waitToThree": 1,
+    "completedNum": 1,
+    "isCompleted": true,
+    "QAResult":true
+  },
+    {
+      "id": "OD0002",
+      "totalNumber": 20,
+      "onGoingStationOne": 1,
+      "onGoingStationTwo": 1,
+      "onGoingStationThree": 1,
+      "waitToOne": 1,
+      "waitToTwo": 1,
+      "waitToThree": 1,
+      "completedNum": 1,
+      "isCompleted": true,
+      "QAResult":true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "timestamp": "2024-05-01T05:25:00.351+00:00",
+  "status": 500,
+  "error": "Internal Server Error",
+  "path": "/OnGoingOrder/WorkstationOneError/OD0002/4"
+}
