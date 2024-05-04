@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/tps/prototypes")
 public class PrototypeController {
 
-
     private final PrototypeService prototypeService;
 
     public PrototypeController(PrototypeService prototypeService) {
@@ -30,25 +29,9 @@ public class PrototypeController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create prototype.");
         }
-
-
-    @PutMapping("/update/{id}") // Update existing prototype
-    public ResponseEntity<Prototype> updatePrototype(@PathVariable Long id, @RequestBody Prototype prototype) throws NotFoundException {
-        prototype.setId(id); // Set the ID in the request body (consider validation)
-        Prototype updatedPrototype = prototypeService.createPrototype(prototype); // Use createPrototype to update
-        if (updatedPrototype == null) {
-            throw new NotFoundException();
-        }
-        return ResponseEntity.ok(updatedPrototype);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deletePrototype(@PathVariable Long id) {
-        prototypeService.deleteById(id); // Assuming a deleteById method in PrototypeService
-        return ResponseEntity.noContent().build();
-    }
-
-    @GetMapping("get/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<PrototypeModel> getPrototype(@PathVariable String id) {
         try {
             PrototypeModel prototype = prototypeService.getPrototype(id);
@@ -61,4 +44,14 @@ public class PrototypeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePrototype(@PathVariable String id) {
+        try {
+            prototypeService.deletePrototype(id);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
 }

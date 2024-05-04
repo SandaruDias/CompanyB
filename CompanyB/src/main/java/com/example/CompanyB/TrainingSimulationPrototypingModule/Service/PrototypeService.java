@@ -48,8 +48,12 @@ public class PrototypeService {
             return null; // Return null to indicate rejection
         }
     }
-
     public PrototypeModel getPrototype(String id) {
         return prototypeRepository.findById(id).orElse(null);
     }
+    public void deletePrototype(String id) {
+        prototypeRepository.deleteById(id);
+    }
+}
+
 
