@@ -1,0 +1,1 @@
+FetchUser{id='EM01', firstName='Prithvi', lastName='Prithvi', password='King', role='HR', mobileNo='758412579', userName='King'}

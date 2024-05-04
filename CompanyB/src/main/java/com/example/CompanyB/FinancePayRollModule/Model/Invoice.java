@@ -1,6 +1,5 @@
 package com.example.CompanyB.FinancePayRollModule.Model;
 
-import com.example.CompanyB.FinancePayRollModule.Service.dto.ProductDetailsDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
