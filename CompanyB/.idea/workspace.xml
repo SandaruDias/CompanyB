@@ -4,7 +4,101 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3e8b545-490a-4bb9-a3c9-d7d214b18567" name="Changes" comment="" />
+    <list default="true" id="c3e8b545-490a-4bb9-a3c9-d7d214b18567" name="Changes" comment="Dependency 'Lombok' has been removed from excluding dependency list">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-24_3_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-24_3_40_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-05-04_1_22_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-05-04_1_22_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-04_2_06_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-04_2_06_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/CustomerOrderMnaagementModule/Controller/SampleController5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/CustomerOrderMnaagementModule/Model/SampleModel5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/CustomerOrderMnaagementModule/Repository/SampleRepository5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/CustomerOrderMnaagementModule/Service/SampleService5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/FinancePayRollModule/Controller/SampleController6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/FinancePayRollModule/Model/SampleModel6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/FinancePayRollModule/Repository/SampleRepository6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/FinancePayRollModule/Service/SampleService6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Controller/SampleController9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Model/SampleModel9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Repository/SampleRepository9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Service/SampleService9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/SampleClass2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/ManufacturingModule/Model/SampleModel2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/ManufacturingModule/Repository/SampleRepository2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/ManufacturingModule/Service/SampleService2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Controller/SampleController7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Model/SampleModel7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Repository/SampleRepository7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Service/SampleService7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CompanyB_Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CompanyB_Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Controller/SampleController5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Controller/SampleController5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/SampleModel5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/SampleModel5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Service/SampleService5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Service/SampleService5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Controller/SampleController6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Controller/SampleController6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Model/SampleModel6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Model/SampleModel6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Service/SampleService6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Service/SampleService6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Controller/SampleController9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Controller/SampleController9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Model/SampleModel9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Model/SampleModel9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Service/SampleService9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Service/SampleService9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/AdministratorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/AdministratorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/EmployeeAttendanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/EmployeeAttendanceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/EmployeeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Controller/SampleController4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/EmployeeAttendanceModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/EmployeeAttendanceModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/SampleModel4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/TotalHoursWorkedModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/TotalHoursWorkedModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Repository/SampleRepository4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Service/AdministratorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Service/AdministratorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Service/EmployeeAttendanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Service/EmployeeAttendanceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Service/SampleService4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/SampleController1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/StockController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/SupplierController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/SupplierController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/OrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/OrderDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/SampleModel1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/stock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/supplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/supplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/OrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/OrderDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/SampleRepository1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/StockDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/StockDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/SupplierDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/SupplierDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Repository/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/Impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/Impl/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/SampleService1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/StockService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/StockService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/SupplierService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/SupplierService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/SampleClass2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/SampleClass2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Model/SampleModel2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Model/SampleModel2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Service/SampleService2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Service/SampleService2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Controller/SampleController7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Controller/SampleController7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/SampleModel7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/SampleModel7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Service/SampleService7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Service/SampleService7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/SalesMarketingModule/Controller/SampleController8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SampleModel8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/SalesMarketingModule/Repository/SampleRepository8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/SalesMarketingModule/Service/SampleService8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/EmployeeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Model/Course.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Model/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Repository/CourseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Repository/EmployeeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Repository/SampleRepository3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/CourseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/EmployeeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/SampleService3.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +106,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "Spring Boot.CompanyB_Application.executor": "Run",
+    "git-widget-placeholder": "main",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
@@ -26,5 +126,9 @@
   </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dependency 'Lombok' has been removed from excluding dependency list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dependency 'Lombok' has been removed from excluding dependency list" />
   </component>
 </project>
