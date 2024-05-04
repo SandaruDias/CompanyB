@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Data
 @Document(collection = "prototypes")
-public class Prototype {
+public class MarkUpModel {
     @Id
     private String id;
 
