@@ -3,30 +3,29 @@ package com.example.CompanyB.SalesMarketingModule.Service;
 //import com.example.CompanyB.SalesMarketingModule.Model;
 import com.example.CompanyB.SalesMarketingModule.Model.InventoryItem;
 import com.example.CompanyB.SalesMarketingModule.Model.OrderItem;
-import com.example.CompanyB.SalesMarketingModule.Model.OrderModel;
+import com.example.CompanyB.SalesMarketingModule.Model.SalesOrderModel;
 import com.example.CompanyB.SalesMarketingModule.Repository.InventoryRepository;
-import com.example.CompanyB.SalesMarketingModule.Repository.OrderRepository;
-import org.bson.types.ObjectId;
+import com.example.CompanyB.SalesMarketingModule.Repository.SalesOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class OrderService {
+public class SalesOrderService {
 
     @Autowired
-    private OrderRepository orderRepository;
+    private SalesOrderRepository salesOrderRepository;
 
     @Autowired
     private InventoryRepository inventoryRepository;
 
-    public List<OrderModel> getAllOrders() {
-        return orderRepository.findAll();
+    public List<SalesOrderModel> getAllOrders() {
+        return salesOrderRepository.findAll();
         //return "hello";
 
     }
-    public OrderModel checkStockAvailability(OrderModel order) {
+    public SalesOrderModel checkStockAvailability(SalesOrderModel order) {
         boolean allItemsGoodToGo = true; // Flag to track if all items have enough stock
 
         List<OrderItem> orderItems = order.getItems();
@@ -57,9 +56,9 @@ public class OrderService {
 
         return order;
     }
-    public OrderModel fetchOrderDetails(String orderId) {
+    public SalesOrderModel fetchOrderDetails(String orderId) {
         // Implement the logic to fetch order details by orderId from the database
-        return orderRepository.findById(orderId).orElse(null);
+        return salesOrderRepository.findById(orderId).orElse(null);
     }
 }
 

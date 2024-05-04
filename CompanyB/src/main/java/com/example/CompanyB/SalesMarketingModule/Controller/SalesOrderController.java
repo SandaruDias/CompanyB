@@ -1,11 +1,8 @@
 package com.example.CompanyB.SalesMarketingModule.Controller;
 
-import com.example.CompanyB.SalesMarketingModule.Model.OrderModel;
-import com.example.CompanyB.SalesMarketingModule.Service.OrderService;
-import org.bson.types.ObjectId;
+import com.example.CompanyB.SalesMarketingModule.Model.SalesOrderModel;
+import com.example.CompanyB.SalesMarketingModule.Service.SalesOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,25 +14,25 @@ import java.util.List;
 
 @RestController
 @RequestMapping("orders")
-public class OrderController {
+public class SalesOrderController {
 
     @Autowired
-    private OrderService orderService;
+    private SalesOrderService salesOrderService;
 
     @GetMapping("allOrders")
-    public List<OrderModel> getAllOrders(Model model) {
-        return orderService.getAllOrders();
+    public List<SalesOrderModel> getAllOrders(Model model) {
+        return salesOrderService.getAllOrders();
         //model.addAttribute("orders", orders);
        // return "order-list"; // Assuming you have a Thymeleaf template named "order-list.html"
     }
 
     @GetMapping("checkStock")
-    public List<OrderModel> checkStockAvailability(@RequestParam("orderId") String orderId, Model model) {
+    public List<SalesOrderModel> checkStockAvailability(@RequestParam("orderId") String orderId, Model model) {
         // Fetch order details by orderId
-        OrderModel order = orderService.fetchOrderDetails(orderId);
+        SalesOrderModel order = salesOrderService.fetchOrderDetails(orderId);
 
         // Check stock availability for the fetched order
-        return Collections.singletonList(orderService.checkStockAvailability(order));
+        return Collections.singletonList(salesOrderService.checkStockAvailability(order));
     }
     /*@GetMapping("idChecker")
     public OrderModel fetchOrderDetails (){

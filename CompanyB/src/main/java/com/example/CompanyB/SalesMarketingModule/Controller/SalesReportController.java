@@ -1,6 +1,5 @@
 package com.example.CompanyB.SalesMarketingModule.Controller;
 
-import com.example.CompanyB.SalesMarketingModule.Model.OrderModel;
 import com.example.CompanyB.SalesMarketingModule.Model.SalesReportModel;
 import com.example.CompanyB.SalesMarketingModule.Service.SalesReportService;
 import org.springframework.beans.factory.annotation.Autowired;

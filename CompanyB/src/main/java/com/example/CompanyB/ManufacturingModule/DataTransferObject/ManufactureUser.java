@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection = "Manufacturing_User")
-public class User {
+public class ManufactureUser {
     @Id
     private String id;
 
@@ -15,7 +15,7 @@ public class User {
     private String role;
     private String Contact_No;
 
-    public User(String id, String first_Name, String last_Name, String password, String role, String contact_No) {
+    public ManufactureUser(String id, String first_Name, String last_Name, String password, String role, String contact_No) {
         this.id = id;
         First_Name = first_Name;
         Last_Name = last_Name;
