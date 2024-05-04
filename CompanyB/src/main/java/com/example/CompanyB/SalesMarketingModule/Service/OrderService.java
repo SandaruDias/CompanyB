@@ -60,6 +60,6 @@ public class OrderService {
    public OrderModel fetchOrderDetails(String orderId) {
         // Implement the logic to fetch order details by orderId from the database
         return orderRepository.findById(orderId).orElse(null);
-    } 
+    }
 }
 

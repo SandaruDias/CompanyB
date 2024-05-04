@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/sales")
+@RequestMapping("sales")
 public class SalesReportController {
 
     @Autowired
