@@ -106,15 +106,14 @@ public class AdministratorController {
         return ResponseEntity.noContent().build();
     }
 
-    // Endpoint to grant permission for an employee's attendance record
-    @GetMapping("/permission/{id}")
-    public boolean getPermission(@PathVariable String id) {
-        Optional<EmployeeAttendanceModel> employee = employeeAttendanceRepo.findById(id);
-        if (employee.isPresent()) {
-            employee.get().setShortLeave("Taken");
-            employeeAttendanceRepo.save(employee.get());
-            return administratorService.getPermission(id);
+    // granting the permission for short leaves at the specified time by the administrator
+    @GetMapping("/attendancePermission/{id}")
+    public String getPermission(@PathVariable String id) {
+        if (administratorService.getPermission(id)) {
+            return "Short leave permission granted for id:" + id;
+        }else {
+            return "Your ID " + id + " is not found in the attendance tracker.";
         }
-        return false;
     }
 }
+
