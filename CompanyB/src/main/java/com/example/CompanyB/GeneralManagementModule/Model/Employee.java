@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Document(collection = "Employee_Data")
+@Document(collection = "Administrative_Data")
 
 public class Employee extends User {
     @NonNull

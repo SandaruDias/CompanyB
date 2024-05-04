@@ -38,7 +38,4 @@ public class ContactUs {
         this.subject = subject;
         this.bodymsg = bodymsg;
     }
-
-
-
 }

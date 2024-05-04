@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * Controller class for handling user authentication and registration.
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/api/user")
 public class LoginController {
 
