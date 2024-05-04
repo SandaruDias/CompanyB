@@ -4,54 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3e8b545-490a-4bb9-a3c9-d7d214b18567" name="Changes" comment="Dependency 'Lombok' has been removed from excluding dependency list">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-24_3_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-24_3_40_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-05-04_1_22_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-05-04_1_22_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-04_2_06_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-04_2_06_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Controller/GMEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Model/GMEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Repository/GMEmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/GeneralManagementModule/Service/GMEmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Controller/QAProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Controller/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Model/QAProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/QualityAssuranceModule/Repository/QAProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/PrototypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/TSPPrototypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Model/PrototypeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Model/TSPPrototypeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Repository/PrototypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Repository/TSPPrototypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/TSPPrototypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CompanyB_Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CompanyB_Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/Feedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/OrderModel$OrderModelBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/OrderModel$OrderModelBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/OrderModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/CustomerOrderMnaagementModule/Model/OrderModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Controller/EmployeeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Model/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Repository/EmployeeRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/GeneralManagementModule/Service/EmployeeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/EmployeeAttendanceModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/HumanResourceManagementModule/Model/EmployeeAttendanceModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/OrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/OrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/InventoryStocksModule/Model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/DataTransferObject/FetchWorksStationUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/DataTransferObject/FetchWorksStationUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/DataTransferObject/FinalOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/DataTransferObject/FinalOutput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Controller/ProductController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Controller/ReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Controller/ReviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/Report.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/Reviews.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Model/Reviews.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/QualityAssuranceModule/Repository/ProductRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.class" afterDir="false" />
-    </list>
+    <list default="true" id="c3e8b545-490a-4bb9-a3c9-d7d214b18567" name="Changes" comment="File Changes in Main" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +21,9 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RunManager">
     <configuration name="CompanyB_Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="CompanyB" />
@@ -94,13 +50,22 @@
       <option name="project" value="LOCAL" />
       <updated>1714851557141</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="File Changes in Main">
+      <option name="closed" value="true" />
+      <created>1714853841755</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714853841755</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dependency 'Lombok' has been removed from excluding dependency list" />
     <MESSAGE value="Changes in target files" />
     <MESSAGE value="New dependency added" />
-    <option name="LAST_COMMIT_MESSAGE" value="New dependency added" />
+    <MESSAGE value="File Changes in Main" />
+    <option name="LAST_COMMIT_MESSAGE" value="File Changes in Main" />
   </component>
 </project>
