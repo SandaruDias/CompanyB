@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("http://localhost:5173/")
 @RequestMapping("/OnGoingOrder")
 
 public class OnGoingOrderController {
@@ -19,7 +20,15 @@ public class OnGoingOrderController {
         this.onGoingOrderService = onGoingOrderService;
     }
 
+    @GetMapping("GetOrderToWorkStation/{orderId}")
+    public ResponseEntity<?> GetOrderToWorkStation(@PathVariable String orderId) {
+        try {
 
+            return ResponseEntity.ok().body(onGoingOrderService.GetOrderToWorkStation(orderId));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderId);
+        }
+    }
     @GetMapping("GetCompletedNumber/{orderId}")
     public ResponseEntity<?> GetCompletedNumber(@PathVariable String orderId) {
         try {
@@ -35,10 +44,10 @@ public class OnGoingOrderController {
     public ResponseEntity<?> WorkStationOneFetch(@PathVariable String orderID,@PathVariable int amount) {
         try {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationOneFetch(orderID,amount);
-            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
+            return ResponseEntity.ok().body("Completed");
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
     @PutMapping("/WorkstationOnePass/{orderID}/{amount}")
@@ -47,8 +56,8 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationOnePass(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
     @PutMapping("/WorkstationTwoFetch/{orderID}/{amount}")
@@ -57,8 +66,8 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationTwoFetch(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
     @PutMapping("/WorkstationTwoPass/{orderID}/{amount}")
@@ -67,8 +76,8 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationTwoPass(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
     @PutMapping("/WorkstationThreeFetch/{orderID}/{amount}")
@@ -77,7 +86,7 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationThreeFetch(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
+        catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order not found with ID: " + orderID);
         }
     }
@@ -87,8 +96,51 @@ public class OnGoingOrderController {
             OnGoingOrder onGoingOrder = onGoingOrderService.WorkStationThreePass(orderID,amount);
             return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder.toString() );
         }
-        catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e + orderID);
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+        }
+    }
+
+//    @PutMapping("/WorkstationOneError/{orderID}")
+//    public ResponseEntity<?> WorkstationOneError(@PathVariable String orderId,@PathVariable int amount) {
+//        try {
+//            int onGoingOrder = onGoingOrderService.WorkstationOneError(orderId);
+//            return ResponseEntity.ok().body(orderId+ "Error " +onGoingOrder );
+//        }
+//        catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+//        }
+//    }
+
+    @PutMapping("/WorkstationOneError/{orderID}/{amount}")
+    public ResponseEntity<?> WorkstationOneError(@PathVariable String orderID, @PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkstationOneError(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder );
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+        }
+    }
+
+    @PutMapping("/WorkstationTwoError/{orderID}/{amount}")
+    public ResponseEntity<?> WorkstationTwoError(@PathVariable String orderID, @PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkstationTwoError(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder );
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+        }
+    }
+    @PutMapping("/WorkstationThreeError/{orderID}/{amount}")
+    public ResponseEntity<?> WorkstationThreeError(@PathVariable String orderID, @PathVariable int amount) {
+        try {
+            OnGoingOrder onGoingOrder = onGoingOrderService.WorkstationThreeError(orderID,amount);
+            return ResponseEntity.ok().body(orderID+ "Completed " +onGoingOrder );
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
         }
     }
 

@@ -10,6 +10,7 @@ import com.example.CompanyB.ManufacturingModule.Repository.OnGoingOrderRepositor
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOError;
 import java.time.LocalDate;
 
 @Service
@@ -39,6 +40,12 @@ public class OnGoingOrderService {
         return IsCompleted;
     }
 
+    public OnGoingOrder GetOrderToWorkStation(String orderId){
+
+        return onGoingOrderRepository.findById(orderId).orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+    }
+
     public OnGoingOrder WorkStationOneFetch (String orderId, int amount){
         OnGoingOrder onGoingOrder = onGoingOrderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
@@ -47,7 +54,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
-            //allocated to handle invalid amount
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
         }
         return onGoingOrder;
     }
@@ -60,6 +67,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
 
@@ -73,6 +81,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
         return onGoingOrder;
@@ -85,6 +94,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
 
@@ -98,6 +108,7 @@ public class OnGoingOrderService {
             onGoingOrderRepository.save(onGoingOrder);
         }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
         return onGoingOrder;
@@ -119,9 +130,55 @@ public class OnGoingOrderService {
           }
       }
         else{
+            throw new IllegalStateException("Failed to fetch items from WorkStationOne for order id: " + orderId);
             //allocated to handle invalid amount
         }
 
+        return onGoingOrder;
+    }
+
+    public OnGoingOrder WorkstationOneError(String orderId, int amount){
+        OnGoingOrder onGoingOrder = onGoingOrderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+        try {
+            int amountOne=(int)amount;
+            onGoingOrder.setErrorOne(onGoingOrder.getErrorOne()+amountOne);
+            onGoingOrderRepository.save(onGoingOrder);
+
+        }catch (Exception e){
+
+        }
+        return onGoingOrder;
+    }
+
+    public OnGoingOrder WorkstationTwoError(String orderId, int amount){
+        OnGoingOrder onGoingOrder = onGoingOrderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+        try {
+            int amountTwo=(int)amount;
+            onGoingOrder.setErrorTwo(onGoingOrder.getErrorTwo()+amountTwo);
+            onGoingOrderRepository.save(onGoingOrder);
+
+        }catch (Exception e){
+
+        }
+        return onGoingOrder;
+    }
+
+    public OnGoingOrder WorkstationThreeError(String orderId, int amount){
+        OnGoingOrder onGoingOrder = onGoingOrderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+        try {
+            int amountThree=(int)amount;
+            onGoingOrder.setErrorThree(onGoingOrder.getErrorThree()+amountThree);
+            onGoingOrderRepository.save(onGoingOrder);
+
+        }catch (Exception e){
+
+        }
         return onGoingOrder;
     }
 }
