@@ -1,11 +1,9 @@
 package com.example.CompanyB.HumanResourceManagementModule.Service;
 
 import com.example.CompanyB.HumanResourceManagementModule.Model.Administrator;
-import com.example.CompanyB.HumanResourceManagementModule.Model.Employee;
 import com.example.CompanyB.HumanResourceManagementModule.Model.EmployeeAttendanceModel;
 import com.example.CompanyB.HumanResourceManagementModule.Repository.AdministratorRepo;
 import com.example.CompanyB.HumanResourceManagementModule.Repository.EmployeeAttendanceRepo;
-import com.example.CompanyB.HumanResourceManagementModule.Repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,15 +45,16 @@ public class AdministratorService {
         administratorRepo.findById(id).ifPresent(administrator -> administrator.setPassword(newPassword));
     }
 
-    // Method to grant permission for an operation (example: set short leave as "Taken")
+    // granting permission for short leaves
+    // but for this the employee has to check in the morning and ask for the permission from HR admin.
     public boolean getPermission(String id){
         Optional<EmployeeAttendanceModel> employeeAttendanceModel = employeeAttendanceRepo.findById(id);
         if (employeeAttendanceModel.isPresent()) {
-            // Set short leave status to "Taken" for the given ID
             employeeAttendanceModel.get().setShortLeave("Taken");
+            employeeAttendanceRepo.save(employeeAttendanceModel.get());
             return true;
-        } else {
-            return false; // Return false if attendance record is not found
+        }else{
+            return false;
         }
     }
 }
