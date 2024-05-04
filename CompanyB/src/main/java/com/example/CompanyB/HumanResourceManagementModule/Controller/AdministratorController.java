@@ -30,20 +30,18 @@ public class AdministratorController {
     @Autowired
     private EmployeeAttendanceRepo employeeAttendanceRepo;
 
+    // Endpoint to create a new administrator
     @PostMapping("/create")
     public void createAdministrator(@RequestBody Administrator administrator){
         administratorService.createAdministrator(administrator);
     }
 
-//    @GetMapping("info/{id}")
-//    public Administrator getAdminInfo(@PathVariable String id){
-//        return administratorService.getAdministratorById(id);
-//    }
-
+    // Endpoint to get administrator information by ID
     @GetMapping("info/{id}")
     public ResponseEntity<Map<String, Object>> getAdminInfo(@PathVariable String id) {
         Administrator administrator = administratorService.getAdministratorById(id);
         if (administrator != null) {
+            // Prepare response with administrator information
             Map<String, Object> response = new HashMap<>();
             response.put("firstName", administrator.getFirstName());
             response.put("lastName", administrator.getLastName());
@@ -57,26 +55,29 @@ public class AdministratorController {
             response.put("division", administrator.getDivision());
             return ResponseEntity.ok(response);
         } else {
+            // Return 404 Not Found if administrator is not found
             return ResponseEntity.notFound().build();
         }
     }
 
+    // Endpoint to get all administrators
     @GetMapping("/getAll")
     public ResponseEntity<List<Administrator>> getAllAdmin() {
         List<Administrator> admin = administratorService.getAllAdmin();
         if(!admin.isEmpty()){
             return ResponseEntity.ok(admin);
-        }
-        else{
+        } else {
+            // Return 404 Not Found if no administrators are found
             return ResponseEntity.notFound().build();
         }
-
     }
 
+    // Endpoint to create an administrator based on an employee ID
     @PostMapping("/create/{employeeId}")
     public ResponseEntity<Void> createAdministrator(@PathVariable String employeeId) {
         Employee employee = employeeService.getEmployeeById(employeeId);
         if (employee != null) {
+            // Create new administrator based on employee information
             Administrator administrator = new Administrator();
             administrator.setUserId(employeeId);
             administrator.setFirstName(employee.getFirstName());
@@ -93,19 +94,19 @@ public class AdministratorController {
             administratorService.createAdministrator(administrator);
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } else {
+            // Return 404 Not Found if employee with given ID is not found
             return ResponseEntity.notFound().build();
         }
     }
 
-
+    // Endpoint to delete an administrator by ID
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteAdministrator(@PathVariable String id) {
         administratorService.deleteAdministrator(id);
         return ResponseEntity.noContent().build();
     }
 
-    //Method For Change Password
-
+    // Endpoint to grant permission for an employee's attendance record
     @GetMapping("/permission/{id}")
     public boolean getPermission(@PathVariable String id) {
         Optional<EmployeeAttendanceModel> employee = employeeAttendanceRepo.findById(id);

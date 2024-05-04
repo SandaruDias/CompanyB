@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Employee")
 @Getter
 @Setter
+
 public class Employee extends Person{
     @Id
     private String userId ;
