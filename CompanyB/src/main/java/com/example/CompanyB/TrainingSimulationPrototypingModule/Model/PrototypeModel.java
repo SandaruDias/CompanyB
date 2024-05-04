@@ -1,3 +1,4 @@
+
 package com.example.CompanyB.TrainingSimulationPrototypingModule.Model;
 
 import lombok.*;
@@ -23,6 +24,7 @@ public class PrototypeModel {
     private String approvalStatus;
     private String approvalMessage;
 }
+
 
 
 
