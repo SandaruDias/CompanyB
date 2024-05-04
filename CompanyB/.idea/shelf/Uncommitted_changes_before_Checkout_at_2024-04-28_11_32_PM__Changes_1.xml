@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM_[Changes]1" date="1714327384710" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2024-04-28 11:32 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Model/Prototype.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Model/Prototype.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM_[Changes]1/Prototype.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM_[Changes]1/PrototypeService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/PrototypeController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/PrototypeController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM_[Changes]1/PrototypeController.class" />
+  </binary>
+</changelist>

@@ -1,0 +1,85 @@
+Index: src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/PrototypeController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.CompanyB.TrainingSimulationPrototypingModule.Controller;\r\n\r\nimport com.example.CompanyB.TrainingSimulationPrototypingModule.Model.PrototypeModel;\r\nimport com.example.CompanyB.TrainingSimulationPrototypingModule.Service.PrototypeService;\r\nimport org.springframework.http.HttpStatus;\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.web.bind.annotation.*;\r\nimport org.springframework.web.multipart.MultipartFile;\r\n\r\n@RestController\r\n@RequestMapping(\"/tps/prototypes\")\r\npublic class PrototypeController {\r\n\r\n\r\n    private final PrototypeService prototypeService;\r\n\r\n    public PrototypeController(PrototypeService prototypeService) {\r\n        this.prototypeService = prototypeService;\r\n    }\r\n\r\n    @PostMapping(\"/create\")\r\n    public ResponseEntity<String> createPrototype(@RequestParam(\"file\") MultipartFile file,\r\n                                                  @RequestParam(\"material\") String material,\r\n                                                  @RequestParam(\"color\") String color,\r\n                                                  @RequestParam(\"shape\") String shape,\r\n                                                  @RequestParam(\"comments\") String comments, boolean thermalTestPassed, boolean electricalTestPassed) {\r\n        try {\r\n            String prototypeId = prototypeService.createPrototype(file, material, color, shape, comments, thermalTestPassed, electricalTestPassed);\r\n            return ResponseEntity.ok(prototypeId);\r\n        } catch (Exception e) {\r\n            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(\"Failed to create prototype.\");\r\n        }\r\n\r\n\r\n    @PutMapping(\"/update/{id}\") // Update existing prototype\r\n    public ResponseEntity<Prototype> updatePrototype(@PathVariable Long id, @RequestBody Prototype prototype) throws NotFoundException {\r\n        prototype.setId(id); // Set the ID in the request body (consider validation)\r\n        Prototype updatedPrototype = prototypeService.createPrototype(prototype); // Use createPrototype to update\r\n        if (updatedPrototype == null) {\r\n            throw new NotFoundException();\r\n        }\r\n        return ResponseEntity.ok(updatedPrototype);\r\n    }\r\n\r\n    @DeleteMapping(\"/delete/{id}\")\r\n    public ResponseEntity<Void> deletePrototype(@PathVariable Long id) {\r\n        prototypeService.deleteById(id); // Assuming a deleteById method in PrototypeService\r\n        return ResponseEntity.noContent().build();\r\n    }\r\n\r\n    @GetMapping(\"get/{id}\")\r\n    public ResponseEntity<PrototypeModel> getPrototype(@PathVariable String id) {\r\n        try {\r\n            PrototypeModel prototype = prototypeService.getPrototype(id);\r\n            if (prototype != null) {\r\n                return ResponseEntity.ok(prototype);\r\n            } else {\r\n                return ResponseEntity.notFound().build();\r\n            }\r\n        } catch (Exception e) {\r\n            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/PrototypeController.java b/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/PrototypeController.java
+--- a/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/PrototypeController.java	
++++ b/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Controller/PrototypeController.java	
+@@ -1,7 +1,9 @@
+ package com.example.CompanyB.TrainingSimulationPrototypingModule.Controller;
+ 
++import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.Prototype;
+ import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.PrototypeModel;
+ import com.example.CompanyB.TrainingSimulationPrototypingModule.Service.PrototypeService;
++import org.springframework.data.crossstore.ChangeSetPersister;
+ import org.springframework.http.HttpStatus;
+ import org.springframework.http.ResponseEntity;
+ import org.springframework.web.bind.annotation.*;
+@@ -32,33 +34,35 @@
+         }
+ 
+ 
+-    @PutMapping("/update/{id}") // Update existing prototype
+-    public ResponseEntity<Prototype> updatePrototype(@PathVariable Long id, @RequestBody Prototype prototype) throws NotFoundException {
+-        prototype.setId(id); // Set the ID in the request body (consider validation)
+-        Prototype updatedPrototype = prototypeService.createPrototype(prototype); // Use createPrototype to update
+-        if (updatedPrototype == null) {
+-            throw new NotFoundException();
+-        }
+-        return ResponseEntity.ok(updatedPrototype);
+-    }
++        @PutMapping("/update/{id}") // Update existing prototype
++        public ResponseEntity<Prototype> updatePrototype (@PathVariable Long id, @RequestBody Prototype prototype;) throws
++        ChangeSetPersister.NotFoundException{
++            prototype.setId(id); // Set the ID in the request body (consider validation)
++            Prototype updatedPrototype = prototypeService.createPrototype(prototype); // Use createPrototype to update
++            if (updatedPrototype == null) {
++                throw new NotFoundException();
++            }
++            return ResponseEntity.ok(updatedPrototype);
++        }
+ 
+-    @DeleteMapping("/delete/{id}")
+-    public ResponseEntity<Void> deletePrototype(@PathVariable Long id) {
+-        prototypeService.deleteById(id); // Assuming a deleteById method in PrototypeService
+-        return ResponseEntity.noContent().build();
+-    }
++        @DeleteMapping("/delete/{id}")
++        public ResponseEntity<Void> deletePrototype (@PathVariable Long id){
++            prototypeService.deleteById(id); // Assuming a deleteById method in PrototypeService
++            return ResponseEntity.noContent().build();
++        }
+ 
+-    @GetMapping("get/{id}")
+-    public ResponseEntity<PrototypeModel> getPrototype(@PathVariable String id) {
+-        try {
+-            PrototypeModel prototype = prototypeService.getPrototype(id);
+-            if (prototype != null) {
+-                return ResponseEntity.ok(prototype);
+-            } else {
+-                return ResponseEntity.notFound().build();
+-            }
+-        } catch (Exception e) {
+-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+-        }
+-    }
+-}
++        @GetMapping("get/{id}")
++        public ResponseEntity<PrototypeModel> getPrototype (@PathVariable String id){
++            try {
++                prototype = prototypeService.getPrototype(id);
++                if (prototype != null) {
++                    return ResponseEntity.ok(prototype);
++                } else {
++                    return ResponseEntity.notFound().build();
++                }
++            } catch (Exception e) {
++                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
++            }
++        }
++    }
++}
+\ No newline at end of file
