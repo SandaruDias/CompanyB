@@ -1,24 +1,24 @@
 package com.example.CompanyB.TrainingSimulationPrototypingModule.Service;
 
-import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.PrototypeModel;
-import com.example.CompanyB.TrainingSimulationPrototypingModule.Repository.PrototypeRepository;
+import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.TSPPrototypeModel;
+import com.example.CompanyB.TrainingSimulationPrototypingModule.Repository.TSPPrototypeRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
 @Service
-public class PrototypeService {
+public class TSPPrototypeService {
 
 
-    private final PrototypeRepository prototypeRepository;
+    private final TSPPrototypeRepository TSPPrototypeRepository;
 
-    public PrototypeService(PrototypeRepository prototypeRepository) {
-        this.prototypeRepository = prototypeRepository;
+    public TSPPrototypeService(TSPPrototypeRepository TSPPrototypeRepository) {
+        this.TSPPrototypeRepository = TSPPrototypeRepository;
     }
 
     public String createPrototype(MultipartFile file, String material, String color, String shape, String comments, boolean thermalTestPassed, boolean electricalTestPassed) throws IOException {
-        PrototypeModel prototype = new PrototypeModel();
+        TSPPrototypeModel prototype = new TSPPrototypeModel();
         prototype.setDesignDocumentPdf(file.getBytes());
         prototype.setMaterial(material);
         prototype.setColor(color);
@@ -42,17 +42,17 @@ public class PrototypeService {
 
         // Save the prototype only if both tests pass
         if (thermalTestPassed && electricalTestPassed) {
-            PrototypeModel savedPrototype = prototypeRepository.save(prototype);
+            TSPPrototypeModel savedPrototype = TSPPrototypeRepository.save(prototype);
             return savedPrototype.getId();
         } else {
             return null; // Return null to indicate rejection
         }
     }
-    public PrototypeModel getPrototype(String id) {
-        return prototypeRepository.findById(id).orElse(null);
+    public TSPPrototypeModel getPrototype(String id) {
+        return TSPPrototypeRepository.findById(id).orElse(null);
     }
     public void deletePrototype(String id) {
-        prototypeRepository.deleteById(id);
+        TSPPrototypeRepository.deleteById(id);
     }
 }
 
