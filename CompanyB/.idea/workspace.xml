@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadef921-9900-422b-8628-1c1b5c8c2532" name="Changes" comment="Manufacturing">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CompanyB/TrainingSimulationPrototypingModule/Service/PrototypeService.java" afterDir="false" />
-    </list>
+    <list default="true" id="eadef921-9900-422b-8628-1c1b5c8c2532" name="Changes" comment="Prototyping error fixing" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714336286920</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Prototyping error fixing">
+      <option name="closed" value="true" />
+      <created>1714810615458</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714810615458</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +135,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Untracked Files" />
     <MESSAGE value="Manufacturing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Manufacturing" />
+    <MESSAGE value="Prototyping error fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prototyping error fixing" />
   </component>
 </project>
