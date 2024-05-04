@@ -1,3 +1,4 @@
+
 package com.example.CompanyB.HumanResourceManagementModule.Controller;
 
 import com.example.CompanyB.HumanResourceManagementModule.Model.Employee;
@@ -47,8 +48,13 @@ public class EmployeeController {
     // Endpoint to update salary info for an employee
     @PatchMapping("/updateSalaryInfo/{id}")
     public ResponseEntity<String> updateEmployeeAttendance(@PathVariable String id, @RequestBody Employee updatedEmployee) {
-        employeeService.updateEmployeeSalaryInfo(id, updatedEmployee);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        boolean updated = employeeService.updateEmployeeSalaryInfo(id, updatedEmployee);
+
+        if (updated) {
+            return ResponseEntity.ok("Employee salary info updated successfully");
+        } else {
+            return ResponseEntity.notFound().build(); // Return 404 if employee is not found
+        }
     }
 
     // Endpoint to get the division of an employee by ID
@@ -60,8 +66,15 @@ public class EmployeeController {
     // Endpoint to delete an employee by ID
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteEmployeeById(@PathVariable String id) {
-        employeeService.deleteEmployeeById(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        boolean deleted = employeeService.deleteEmployeeById(id);
+
+        if (deleted) {
+            // If employee is successfully deleted, return HTTP 200 (OK) with a success message
+            return ResponseEntity.ok("Employee with ID " + id + " has been deleted successfully");
+        } else {
+            // If employee is not found or deletion fails, return HTTP 404 (Not Found) with an error message
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee with ID " + id + " not found");
+        }
     }
 
     // Endpoint to get course level and division of an employee by ID
@@ -77,9 +90,15 @@ public class EmployeeController {
     }
 
     // Endpoint to update course level for an employee by ID
-    @PutMapping("/updateCourseLevel/{id}")
-    public ResponseEntity<String> updateEmployeePosition(@PathVariable String id, @RequestParam String newLevel) {
-        employeeService.updateEmployeeCourseLevel(id, newLevel);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    @PutMapping("/updateCourseLevel/{id}/{newLevel}")
+    public ResponseEntity<String> updateEmployeeCourseLevel(@PathVariable String id, @PathVariable String newLevel) {
+        boolean updated = employeeService.updateEmployeeCourseLevel(id, newLevel);
+
+        if (updated) {
+            String successMessage = "Course level updated for employee with ID " + id + " to " + newLevel;
+            return ResponseEntity.ok(successMessage);
+        } else {
+            return ResponseEntity.notFound().build(); //
+        }
     }
 }
