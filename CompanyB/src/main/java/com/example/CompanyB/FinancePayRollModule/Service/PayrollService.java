@@ -137,6 +137,7 @@
 package com.example.CompanyB.FinancePayRollModule.Service;
 
 import com.example.CompanyB.FinancePayRollModule.Service.dto.PayrollDTO;
+import com.example.CompanyB.FinancePayRollModule.Service.TransactionService;
 import com.example.CompanyB.FinancePayRollModule.Model.EmployeePayroll;
 import com.example.CompanyB.FinancePayRollModule.Repository.PayrollRepository;
 import org.apache.poi.ss.usermodel.Cell;
@@ -156,7 +157,10 @@ public class PayrollService {
     @Autowired
     private PayrollRepository payrollRepository;
 
-    public EmployeePayroll createOrUpdatePayroll(PayrollDTO payrollDTO) {
+    @Autowired
+    private TransactionService transactionService;
+
+    public EmployeePayroll createPayroll(PayrollDTO payrollDTO) {
         EmployeePayroll payroll = new EmployeePayroll();
         // Map from DTO to model here
         payroll.setEmployeeId(payrollDTO.getEmployeeId());
@@ -193,23 +197,13 @@ public class PayrollService {
         return payrollRepository.findById(id).orElseThrow(() -> new RuntimeException("Payroll not found"));
     }
 
-    // In your PayrollService.java
-
-    public Optional<EmployeePayroll> updatePayroll(String id, EmployeePayroll payrollDetails) {
-        return payrollRepository.findById(id)
-                .map(existingPayroll -> {
-                    existingPayroll.setEmployeeName(payrollDetails.getEmployeeName());
-                    existingPayroll.setBasicSalary(payrollDetails.getBasicSalary());
-                    existingPayroll.setOtHours(payrollDetails.getOtHours());
-                    existingPayroll.setSalaryPerHour(payrollDetails.getSalaryPerHour());
-                    existingPayroll.setWorkingHours(payrollDetails.getWorkingHours());
-                    existingPayroll.setTaxPercentage(payrollDetails.getTaxPercentage());
-                    existingPayroll.setDeductions(payrollDetails.getDeductions());
-                    existingPayroll.setBenefits(payrollDetails.getBenefits());
-                    existingPayroll.setNetPay(payrollDetails.getNetPay());
-                    existingPayroll.setPayrollDate(payrollDetails.getPayrollDate());
-                    return payrollRepository.save(existingPayroll);
-                });
+    public EmployeePayroll updatePayroll(String id, EmployeePayroll updatedPayroll) {
+        if (payrollRepository.existsById(id)) {
+            updatedPayroll.setId(id);
+            return payrollRepository.save(updatedPayroll);
+        } else {
+            throw new RuntimeException("Invoice not found");
+        }
     }
 
     public List<EmployeePayroll> findPayrollsByEmployeeId(String employeeId) {
@@ -252,4 +246,17 @@ public class PayrollService {
         }
     }
 
+    public EmployeePayroll processPayroll(EmployeePayroll payroll) {
+        // Save the payroll information
+        payroll = payrollRepository.save(payroll);
+
+        // Process the transaction related to payroll
+        transactionService.processPayrollTransaction(payroll.getNetPay());
+
+        return payroll;
+    }
+
 }
+
+
+

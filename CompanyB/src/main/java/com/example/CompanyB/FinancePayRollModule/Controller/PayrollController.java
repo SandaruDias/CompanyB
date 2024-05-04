@@ -1,6 +1,7 @@
 package com.example.CompanyB.FinancePayRollModule.Controller;
 
 import com.example.CompanyB.FinancePayRollModule.Model.EmployeePayroll;
+import com.example.CompanyB.FinancePayRollModule.Model.Invoice;
 import com.example.CompanyB.FinancePayRollModule.Service.PayrollService;
 import com.example.CompanyB.FinancePayRollModule.Service.dto.PayrollDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class PayrollController {
     private PayrollService payrollService;
 
     @PostMapping
-    public EmployeePayroll addOrUpdatePayroll(@RequestBody PayrollDTO payrollDTO) {
-        return payrollService.createOrUpdatePayroll(payrollDTO);
+    public EmployeePayroll addPayroll(@RequestBody PayrollDTO payrollDTO) {
+        return payrollService.createPayroll(payrollDTO);
     }
 
     @DeleteMapping("/{id}")
@@ -43,12 +44,13 @@ public class PayrollController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EmployeePayroll> updatePayroll(@PathVariable String id, @RequestBody EmployeePayroll payrollDetails) {
-        return payrollService.updatePayroll(id, payrollDetails)
-                .map(updatedPayroll -> ResponseEntity.ok(updatedPayroll))
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<EmployeePayroll> updatePayroll(@PathVariable String id, @RequestBody EmployeePayroll updatedPayroll) {
+        try {
+            return ResponseEntity.ok(payrollService.updatePayroll(id, updatedPayroll));
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
-
 
     @GetMapping("/employee/{employeeId}")
     public ResponseEntity<List<EmployeePayroll>> getPayrollsByEmployeeId(@PathVariable String employeeId) {

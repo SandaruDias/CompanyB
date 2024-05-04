@@ -6,22 +6,43 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 import java.util.List;
 
+
 @Document(collection = "invoices")
 public class Invoice {
-    @Id
-    private String id;
-    private String customerId;  // Reference to Customer ID from Sales System
-    private Double amount;      // Total amount of the invoice
-    private Date dueDate;
-    private Boolean status;     // Paid or unpaid status
-    private List<ProductDetailsDTO> products; // Product details from the order
 
-    public String getId() {
-        return id;
+    @Id
+    private String invoiceId;
+
+    private String orderId;
+    private String customerId;
+
+
+    private Date invoiceDate;
+    private String paymentMethod;
+
+    private double subtotal;
+    private double tax;
+    private double total;
+    private String paymentStatus;
+
+    // Constructors
+    public Invoice() {
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getInvoiceId() {
+        return invoiceId;
+    }
+
+    public void setInvoiceId(String invoiceId) {
+        this.invoiceId = invoiceId;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public String getCustomerId() {
@@ -32,38 +53,52 @@ public class Invoice {
         this.customerId = customerId;
     }
 
-    public Double getAmount() {
-        return amount;
+
+    public Date getInvoiceDate() {
+        return invoiceDate;
     }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setInvoiceDate(Date invoiceDate) {
+        this.invoiceDate = invoiceDate;
     }
 
-    public Date getDueDate() {
-        return dueDate;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public double getSubtotal() {
+        return subtotal;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
     }
 
-    public List<ProductDetailsDTO> getProducts() {
-        return products;
+    public double getTax() {
+        return tax;
     }
 
-    public void setProducts(List<ProductDetailsDTO> products) {
-        this.products = products;
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 }
-
-
-
