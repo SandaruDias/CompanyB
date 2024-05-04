@@ -133,7 +133,7 @@ function WorkerInterfaceThree() {
   };
 
   const handleSignOut =async () => {
-    try{const response =await axios.put("http://localhost:8090/User/workStation/signout/2")
+    try{const response =await axios.put("http://localhost:8090/User/workStation/signout/3")
       history.push("/")
       console.log("Sign Out");
   
@@ -160,16 +160,17 @@ function WorkerInterfaceThree() {
 
 
   return (
+    <div style={{backgroundColor: "#c5c5c5" , height: "100vh"}}>
     <div className="worker-interface-one">
             <div className="top-right">
         <button className="login-button" onClick={handleSignOut}>Sign Out</button>
       </div>
-      <div className="details">
+      <div className="details" style={{ textAlign: 'center' , marginTop: "30px"}}>
         <h1 className="login-title" style={{ textAlign: 'center' }}>Workstation 03</h1>
       </div>
 
       <div className="input-container">
-        <div className="left-container">
+        <div style={{display: "flex"}} className="left-container">
           <input
             type="text"
             placeholder="Order Id"
@@ -207,7 +208,7 @@ function WorkerInterfaceThree() {
       <div className="vertical-space">  </div>
       
       <div className="input-container">
-        <div className="left-container">
+        <div style={{display: "flex"}} className="left-container">
           <input
             type="text"
             placeholder="No of Items"
@@ -220,7 +221,7 @@ function WorkerInterfaceThree() {
           </button>
         </div>
         
-        <div className="right-container">
+        <div  style={{display: "flex"}} className="right-container">
           <input
             type="text"
             placeholder="No of Items"
@@ -233,7 +234,8 @@ function WorkerInterfaceThree() {
           </button>
         </div>
       </div>
-      <button className="error-button" onClick={handleAddError}>Add Error Item</button>
+      <button style={{color:"white",border:"none",padding:"10px",}} className="error-button" onClick={handleAddError}>Add Error Item</button>
+    </div>
     </div>
   );
 }

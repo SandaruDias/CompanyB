@@ -1,0 +1,6 @@
+{
+  "timestamp": "2024-05-04T14:18:16.255+00:00",
+  "status": 500,
+  "error": "Internal Server Error",
+  "path": "/FetchUser/users/King"
+}

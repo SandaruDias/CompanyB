@@ -1,0 +1,56 @@
+//{
+//  "_id": "OD0001",
+//  "totalNumber": 100,
+//  "onGoingStationOne": 8,
+//  "onGoingStationTwo": 8,
+//  "onGoingStationThree": 10,
+//  "waitToOne": 8,
+//  "waitToTwo": 12,
+//  "waitToThree": 14,
+//  "completedNum": 28,
+//  "isCompleted": true,
+//  "QAResult": true,
+//  "errorOne": 6,
+//  "errorTwo": 7,
+//  "errorThree": 4,
+//  "_class": "com.example.CompanyB.ManufacturingModule.DataTransferObject.OnGoingOrder"
+//}
+
+//{
+//  "_id": "OD0002",
+//  "No_Of_Items_Released": 12,
+//  "No_Of_Error_Items": 0,
+//  "QA_Approval": true,
+//  "Released_Date": {
+//    "$date": {
+//      "$numberLong": 1714069800000
+//    }
+//  },
+//  "_class": "com.example.CompanyB.ManufacturingModule.DataTransferObject.FinalOutput"
+//}
+
+
+//
+//{
+//  "_id": "OD0001",
+//  "Released_Date": "2022-01-01",
+//  "Order_Components": "",
+//  "No_Of_Items": 11,
+//  "Is_Released": false
+//}
+
+{
+  "_id": {
+    "$oid": "662e40eee0019463258d0960"
+  },
+  "workStationId": 1,
+  "userId": "ABC123",
+  "userName": "VJ",
+  "isActive": false,
+  "_class": "com.example.CompanyB.ManufacturingModule.DataTransferObject.FetchWorksStationUser"
+}
+
+
+
+
+

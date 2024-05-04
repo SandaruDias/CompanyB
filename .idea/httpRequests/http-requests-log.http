@@ -1,3 +1,21 @@
+GET http://localhost:8090/FetchUser/users/King
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-05-04T194849.200.txt
+
+###
+
+GET http://localhost:8090/FetchUser/users/King
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-05-04T194816.500.json
+
+###
+
 PUT http://localhost:8090/OnGoingOrder/WorkstationTwoError/OD0001/1
 Content-Type: application/x-www-form-urlencoded}
 Content-Length: 0
@@ -473,24 +491,4 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-04-28T205035.200.txt
-
-###
-
-GET http://localhost:8090/FetchOrders/OD0001
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-28T205016.200.txt
-
-###
-
-PUT http://localhost:8090/User/workStation/signout/1/PRH
-Content-Type: application/x-www-form-url
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-28T184347.200.txt
 
