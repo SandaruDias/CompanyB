@@ -57,9 +57,9 @@ public class OrderService {
 
         return order;
     }
-    public OrderModel fetchOrderDetails(String orderId) {
+   /* public OrderModel fetchOrderDetails(String orderId) {
         // Implement the logic to fetch order details by orderId from the database
         return orderRepository.findById(orderId).orElse(null);
-    }
+    }  */
 }
 
