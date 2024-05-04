@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Works Stations are modeled">
-      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/DataTransferObject/FetchUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/DataTransferObject/FetchUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Service/UserControllingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Service/UserControllingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/DataTransferObject/FetchUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/DataTransferObject/FetchUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/UserControllingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/UserControllingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceThree.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceThree.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceTwo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceTwo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +163,7 @@
       <workItem from="1714557237474" duration="87000" />
       <workItem from="1714557373783" duration="398000" />
       <workItem from="1714637799954" duration="615000" />
-      <workItem from="1714831677854" duration="2997000" />
+      <workItem from="1714831677854" duration="3506000" />
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />
