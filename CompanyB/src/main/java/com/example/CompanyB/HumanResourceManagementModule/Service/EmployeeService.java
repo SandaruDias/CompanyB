@@ -1,3 +1,4 @@
+
 package com.example.CompanyB.HumanResourceManagementModule.Service;
 
 import com.example.CompanyB.HumanResourceManagementModule.Model.Employee;
@@ -14,17 +15,17 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepo employeeRepo;
 
-    // Method to create a new employee
+    //  to create a new employee
     public void createEmploy(Employee employee){
         employeeRepo.save(employee);
     }
 
-    // Method to retrieve all employees
+    //  to retrieve all employees
     public List<Employee> getAllEmploy(){
         return employeeRepo.findAll();
     }
 
-    // Method to get the division of an employee by ID
+    //  to get the division of an employee by ID
     public String getEmpDivision(String id){
         boolean isPresent = employeeRepo.findById(id).isPresent();
         if (isPresent) {
@@ -34,8 +35,8 @@ public class EmployeeService {
         }
     }
 
-    // Method to update salary information for an employee
-    public void updateEmployeeSalaryInfo(String id, Employee updatedEmployee) {
+    //  to update salary information for an employee
+    public boolean updateEmployeeSalaryInfo(String id, Employee updatedEmployee) {
         Optional<Employee> optionalEmployee = employeeRepo.findById(id);
         if (optionalEmployee.isPresent()) {
             Employee existingEmployee = optionalEmployee.get();
@@ -48,15 +49,21 @@ public class EmployeeService {
 
             // Save the updated employee
             employeeRepo.save(existingEmployee);
+            return true;
         }
+        return false;
     }
 
-    // Method to delete an employee by ID
-    public void deleteEmployeeById(String id) {
-        employeeRepo.deleteById(id);
+    //  to delete an employee by ID
+    public boolean deleteEmployeeById(String id) {
+        if(employeeRepo.findById(id).isPresent()){
+            employeeRepo.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
-    // Method to get the course level of an employee by ID
+    //  to get the course level of an employee by ID
     public String getCourseLevelById(String id) {
         Optional<Employee> optionalEmployee = employeeRepo.findById(id);
         if (optionalEmployee.isPresent()) {
@@ -66,17 +73,17 @@ public class EmployeeService {
         }
     }
 
-    // Method to update the course level for an employee by ID
-    public void updateEmployeeCourseLevel(String id, String newLevel) {
+    //  to update the course level for an employee by ID
+    public boolean updateEmployeeCourseLevel(String id, String newLevel) {
         Optional<Employee> optionalEmployee = employeeRepo.findById(id);
         if (optionalEmployee.isPresent()) {
             Employee existingEmployee = optionalEmployee.get();
             existingEmployee.setCourseLevel(newLevel);
             employeeRepo.save(existingEmployee);
+            return true;
         }
+        return false;
     }
-
-    // Method to get an employee by ID
     public Employee getEmployeeById(String id) {
         return employeeRepo.findById(id).orElse(null);
     }
