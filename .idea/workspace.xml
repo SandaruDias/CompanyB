@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Works Stations are modeled">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/LoginPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/SelectionPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/SelectionPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerInterfaceOne.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerPortal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/WorkerPortal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/Selection.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/Selection.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/WorkerInterfaceOne.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/WorkerInterfaceOne.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/admininterface.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/admininterface.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -52,63 +43,61 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP Request.All in generated-requests.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #10.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #11.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #12.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #14.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #21.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #30.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #33.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #34.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #35.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #36.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #37.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #46.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #47.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #48.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #49.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #50.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #51.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #52.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #54.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #56.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #6.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #7.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #8.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #9.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.CompanyB_Application.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CustomFrontEnd&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/CompanyB&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.ignored.files&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.All in generated-requests.executor": "Run",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #10.executor": "Run",
+    "HTTP Request.generated-requests | #11.executor": "Run",
+    "HTTP Request.generated-requests | #12.executor": "Run",
+    "HTTP Request.generated-requests | #14.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #21.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #30.executor": "Run",
+    "HTTP Request.generated-requests | #33.executor": "Run",
+    "HTTP Request.generated-requests | #34.executor": "Run",
+    "HTTP Request.generated-requests | #35.executor": "Run",
+    "HTTP Request.generated-requests | #36.executor": "Run",
+    "HTTP Request.generated-requests | #37.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #46.executor": "Run",
+    "HTTP Request.generated-requests | #47.executor": "Run",
+    "HTTP Request.generated-requests | #48.executor": "Run",
+    "HTTP Request.generated-requests | #49.executor": "Run",
+    "HTTP Request.generated-requests | #50.executor": "Run",
+    "HTTP Request.generated-requests | #51.executor": "Run",
+    "HTTP Request.generated-requests | #52.executor": "Run",
+    "HTTP Request.generated-requests | #54.executor": "Run",
+    "HTTP Request.generated-requests | #56.executor": "Run",
+    "HTTP Request.generated-requests | #58.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
+    "HTTP Request.generated-requests | #8.executor": "Run",
+    "HTTP Request.generated-requests | #9.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.CompanyB_Application.executor": "Run",
+    "git-widget-placeholder": "CustomFrontEnd",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/CompanyB",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.CompanyB_Application">
     <configuration name="generated-requests | #50" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="50" requestIdentifier="#50" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #51" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="51" requestIdentifier="#51" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #52" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="52" requestIdentifier="#52" runType="Run single request">
@@ -120,6 +109,9 @@
     <configuration name="generated-requests | #56" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="56" requestIdentifier="#56" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="generated-requests | #58" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="58" requestIdentifier="#58" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="CompanyB_Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="CompanyB" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.CompanyB.CompanyB_Application" />
@@ -129,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #58" />
         <item itemvalue="HTTP Request.generated-requests | #56" />
         <item itemvalue="HTTP Request.generated-requests | #54" />
         <item itemvalue="HTTP Request.generated-requests | #52" />
         <item itemvalue="HTTP Request.generated-requests | #50" />
-        <item itemvalue="HTTP Request.generated-requests | #51" />
       </list>
     </recent_temporary>
   </component>
@@ -171,6 +163,7 @@
       <workItem from="1714557237474" duration="87000" />
       <workItem from="1714557373783" duration="398000" />
       <workItem from="1714637799954" duration="615000" />
+      <workItem from="1714831677854" duration="3506000" />
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />

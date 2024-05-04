@@ -176,7 +176,7 @@ function WorkerInterfaceOne() {
         <button className="login-button" onClick={handleSignOut}>Sign Out</button>
       </div>
       <div className="details"style={{ textAlign: 'center' , marginTop: "30px"}}>
-        <h1 className="login-title">Workstation 01</h1>
+        <h1 className="login-title"  style={{ textAlign: 'center' }}>Workstation 01</h1>
       </div>
 
       <div className="input-container">

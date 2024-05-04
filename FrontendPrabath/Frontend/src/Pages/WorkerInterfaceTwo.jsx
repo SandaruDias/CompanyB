@@ -159,7 +159,10 @@ function WorkerInterfaceTwo() {
   };
 
   return (
-    <div className="worker-interface-one">
+    <div style={{backgroundColor: "#c5c5c5" , height: "100vh"}}>
+
+    
+    <div className="worker-interface-one" >
           <div className="top-right">
         <button className="login-button" onClick={handleSignOut}>Sign Out</button>
       </div>
@@ -168,7 +171,7 @@ function WorkerInterfaceTwo() {
       </div>
 
       <div className="input-container">
-        <div className="left-container">
+        <div style={{display: "flex"}} className="left-container">
           <input
             type="text"
             placeholder="Order Id"
@@ -192,7 +195,7 @@ function WorkerInterfaceTwo() {
       </div>
       <div className="vertical-space">  </div>
 
-      <div className="rectangle-container"> {/* Wrapper for the rectangle */}
+      <div style={{display: "flex"}} className="rectangle-container"> {/* Wrapper for the rectangle */}
         <div className="rectangle-content">
           <div>
             <h3>On-Going Items: {onGoingItems}</h3>
@@ -206,7 +209,7 @@ function WorkerInterfaceTwo() {
       <div className="vertical-space">  </div>
       
       <div className="input-container">
-        <div className="left-container">
+        <div style={{display: "flex"}} className="left-container">
           <input
             type="text"
             placeholder="No of Items"
@@ -219,7 +222,7 @@ function WorkerInterfaceTwo() {
           </button>
         </div>
         
-        <div className="right-container">
+        <div style={{display: "flex"}} className="right-container">
           <input
             type="text"
             placeholder="No of Items"
@@ -232,7 +235,8 @@ function WorkerInterfaceTwo() {
           </button>
         </div>
       </div>
-      <button className="error-button" onClick={handleAddError}>Add Error Item</button>
+      <button style={{color:"white",border:"none",padding:"10px",}} className="error-button" onClick={handleAddError}>Add Error Item</button>
+    </div>
     </div>
   );
 }

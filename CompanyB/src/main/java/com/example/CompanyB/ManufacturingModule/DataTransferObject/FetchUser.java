@@ -3,7 +3,7 @@ package com.example.CompanyB.ManufacturingModule.DataTransferObject;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "User_Data")
+@Document(collection = "Employee_Data")
 public class FetchUser {
     @Id
     private String id;

@@ -24,7 +24,7 @@ public class UserControllingService {
     public int loginAdmin(String userName, String password){
         try {
             FetchUser fetchUser = fetchUserRepository.findByUserName(userName);
-            if (fetchUser.getRole().equals("employee")) {
+            if (fetchUser.getRole().equals("ManufacturerAdmin")) {
                 if (fetchUser.getPassword().equals(password)) {
                     return 0; // login successful
                 } else {
