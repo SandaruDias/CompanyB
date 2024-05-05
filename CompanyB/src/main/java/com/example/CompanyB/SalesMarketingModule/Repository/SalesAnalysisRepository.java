@@ -12,8 +12,8 @@ public interface SalesAnalysisRepository extends MongoRepository<SalesAnalysisMo
 
     List<SalesAnalysisModel> findBySaleDateBetween(Date startDate, Date endDate);
 
-    List<SalesAnalysisModel> findTop3BySaleDateBetweenOrderByQuantitySoldDesc(Date startDate, Date endDate);
+    List<SalesAnalysisModel> findTop3BySaleDateBetweenOrderByQuantityDesc(Date startDate, Date endDate);
 
-    List<SalesAnalysisModel> findTop3BySaleDateBetweenOrderByQuantitySoldAsc(Date startDate, Date endDate);
+    List<SalesAnalysisModel> findTop3BySaleDateBetweenOrderByQuantityAsc(Date startDate, Date endDate);
 
 }

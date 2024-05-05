@@ -23,20 +23,20 @@ public class SalesAnalysisService {
 
         for (SalesAnalysisModel item : soldItems) {
             String productId = item.getProductId();
-            int quantitySold = item.getQuantitySold();
+            int quantity = item.getQuantity();
 
-            itemsSold.put(productId, itemsSold.getOrDefault(productId, 0) + quantitySold);
+            itemsSold.put(productId, itemsSold.getOrDefault(productId, 0) + quantity);
         }
 
         return itemsSold;
     }
 
     public List<SalesAnalysisModel> getTop3MostSoldProducts(Date startDate, Date endDate) {
-        return salesAnalysisRepository.findTop3BySaleDateBetweenOrderByQuantitySoldDesc(startDate, endDate);
+        return salesAnalysisRepository.findTop3BySaleDateBetweenOrderByQuantityDesc(startDate, endDate);
     }
 
     public List<SalesAnalysisModel> getTop3LeastSoldProducts(Date startDate, Date endDate) {
-        return salesAnalysisRepository.findTop3BySaleDateBetweenOrderByQuantitySoldAsc(startDate, endDate);
+        return salesAnalysisRepository.findTop3BySaleDateBetweenOrderByQuantityAsc(startDate, endDate);
     }
 
     public List<SalesAnalysisModel> getAllSalesAnalysis() {

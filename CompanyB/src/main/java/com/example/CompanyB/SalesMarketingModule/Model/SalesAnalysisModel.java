@@ -16,6 +16,6 @@ public class SalesAnalysisModel {
 
     private String productId;
     private String productName;
-    private int quantitySold;
+    private int quantity;
 
 }
