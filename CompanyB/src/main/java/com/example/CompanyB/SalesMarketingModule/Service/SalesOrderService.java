@@ -56,11 +56,9 @@ public class SalesOrderService {
 
         return order;
     }
-<<<<<<< HEAD:CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Service/SalesOrderService.java
+
     public SalesOrderModel fetchOrderDetails(String orderId) {
-=======
-   public OrderModel fetchOrderDetails(String orderId) {
->>>>>>> SalesMarketingSystem:CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Service/OrderService.java
+
         // Implement the logic to fetch order details by orderId from the database
         return salesOrderRepository.findById(orderId).orElse(null);
     }

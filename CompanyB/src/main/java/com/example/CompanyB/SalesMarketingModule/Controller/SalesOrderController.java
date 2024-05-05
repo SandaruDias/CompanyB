@@ -24,12 +24,10 @@ public class SalesOrderController {
     }
 
     @GetMapping("checkStock")
-<<<<<<< HEAD:CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/SalesOrderController.java
+
     public List<SalesOrderModel> checkStockAvailability(@RequestParam("orderId") String orderId, Model model) {
-=======
-    @CrossOrigin(origins = "https://localhost:5173")
-    public List<OrderModel> checkStockAvailability(@RequestParam("orderId") String orderId, Model model) {
->>>>>>> SalesMarketingSystem:CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/OrderController.java
+
+        //@CrossOrigin(origins = "https://localhost:5173")
         // Fetch order details by orderId
         SalesOrderModel order = salesOrderService.fetchOrderDetails(orderId);
 
