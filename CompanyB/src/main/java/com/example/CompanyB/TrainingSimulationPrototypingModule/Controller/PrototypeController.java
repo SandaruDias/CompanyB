@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/tps/prototypes")
 public class PrototypeController {
@@ -22,12 +24,28 @@ public class PrototypeController {
                                                   @RequestParam("material") String material,
                                                   @RequestParam("color") String color,
                                                   @RequestParam("shape") String shape,
-                                                  @RequestParam("comments") String comments, boolean thermalTestPassed, boolean electricalTestPassed) {
+                                                  @RequestParam("comments") String comments) {
         try {
-            String prototypeId = prototypeService.createPrototype(file, material, color, shape, comments, thermalTestPassed, electricalTestPassed);
+            String prototypeId = prototypeService.createPrototype(file, material, color, shape, comments);
             return ResponseEntity.ok(prototypeId);
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create prototype.");
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to process file.");
+        }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updatePrototype(@PathVariable String id,
+                                                @RequestParam boolean thermalTestPassed,
+                                                @RequestParam boolean electricalTestPassed,
+                                                @RequestParam String approvalStatus,
+                                                @RequestParam String approvalMessage) {
+        try {
+            prototypeService.updatePrototype(id, thermalTestPassed, electricalTestPassed, approvalStatus, approvalMessage);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
@@ -44,6 +62,7 @@ public class PrototypeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePrototype(@PathVariable String id) {
         try {
@@ -53,5 +72,4 @@ public class PrototypeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
 }
