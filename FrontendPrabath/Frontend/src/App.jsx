@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Switch>
       
-        <Route path="/" exact component={SelectionPage} />
+        <Route path="/companyB/manufacturing" exact component={SelectionPage} />
         <Route path="/companyB/manufacturing/adminPortal" component={LoginPage} />
         <Route path="/companyB/manufacturing/workerPortal" component={WorkerPortal} />
         <Route path="/companyB/manufacturing/StockManag" component={StockManag} />
