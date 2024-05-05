@@ -19,27 +19,32 @@ public class AdministratorService {
     @Autowired
     private EmployeeAttendanceRepo employeeAttendanceRepo;
 
-    // Method to retrieve an administrator by ID
+    //  to retrieve an administrator by ID
     public Administrator getAdministratorById(String id) {
         return administratorRepo.findById(id).orElse(null);
     }
 
-    // Method to create a new administrator
+    //  to create a new administrator
     public void createAdministrator(Administrator administrator) {
         administratorRepo.save(administrator);
     }
 
-    // Method to delete an administrator by ID
-    public void deleteAdministrator(String id) {
-        administratorRepo.deleteById(id);
+    //  to delete an administrator by ID
+    public boolean deleteAdministrator(String id) {
+        if(administratorRepo.findById(id).isPresent()){
+            administratorRepo.deleteById(id);
+            return true;
+        }
+
+        return false;
     }
 
-    // Method to retrieve all administrators
+    //  to retrieve all administrators
     public List<Administrator> getAllAdmin(){
         return administratorRepo.findAll();
     }
 
-    // Method to change the password of an administrator
+    //  to change the password of an administrator
     public void changePassword(String id, String newPassword){
         // Find the administrator by ID and update the password
         administratorRepo.findById(id).ifPresent(administrator -> administrator.setPassword(newPassword));
