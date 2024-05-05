@@ -24,11 +24,13 @@ public class FeedbackService {
 
     }
 
-    public Feedback createFeedback(String body,int ratings, String customerId) {
-        Feedback feedback = feedbackRepository.insert(new Feedback(body,ratings,customerId));
+
+
+    public Feedback createFeedback(String body,int ratings, long orderID) {
+        Feedback feedback = feedbackRepository.insert(new Feedback(body,ratings,orderID));
 
         mongoTemplate.update(OrderModel.class)
-        .matching(Criteria.where("customerID").is(customerId))
+        .matching(Criteria.where("orderID").is(orderID))
         .apply(new Update().push("feedback").value(feedback))
         .first();
             

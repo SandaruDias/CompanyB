@@ -17,13 +17,14 @@ public class Feedback {
     private ObjectId id;
     private String body;
     private int ratings;
-    private String customerID;
-    public Feedback(String body,int ratings, String customerID) {
+    private long orderID;
+    public Feedback(String body, int ratings, long orderID) {
         this.body = body;
         this.ratings = ratings;
-        this.customerID = customerID;
-        
+        this.orderID = orderID;
     }
+    
+    
     
 
     
