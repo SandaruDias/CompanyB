@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @Document(collection = "Administrative_Data")
 
-public class Employee extends User {
+public class GMEmployee extends User {
     @NonNull
     private double basicSalary;
     @NonNull
@@ -17,12 +17,12 @@ public class Employee extends User {
     @NonNull
     private String bankAccountNumber;
 
-    public Employee() {}
+    public GMEmployee() {}
 
     // Constructor
-    public Employee(String id, String firstName, String lastName, String email, String address,
-                    Integer mobileNo, String userName, String password, String role,
-                    double basicSalary, String joiningDate, String bankAccountNumber) {
+    public GMEmployee(String id, String firstName, String lastName, String email, String address,
+                      Integer mobileNo, String userName, String password, String role,
+                      double basicSalary, String joiningDate, String bankAccountNumber) {
         super(id, firstName, lastName, email, address, mobileNo, userName, password, role);
         this.basicSalary = basicSalary;
         this.joiningDate = joiningDate;

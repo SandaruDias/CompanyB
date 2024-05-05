@@ -1,7 +1,7 @@
 package com.example.CompanyB.GeneralManagementModule.Controller;
 
-import com.example.CompanyB.GeneralManagementModule.Model.Employee;
-import com.example.CompanyB.GeneralManagementModule.Service.EmployeeService;
+import com.example.CompanyB.GeneralManagementModule.Model.GMEmployee;
+import com.example.CompanyB.GeneralManagementModule.Service.GMEmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,21 +12,21 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 @RequestMapping("/api/employee")
-public class EmployeeController {
+public class GMEmployeeController {
 
-    private final EmployeeService employeeService;
-    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+    private final GMEmployeeService GMEmployeeService;
+    private static final Logger logger = LoggerFactory.getLogger(GMEmployeeController.class);
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public GMEmployeeController(GMEmployeeService GMEmployeeService) {
+        this.GMEmployeeService = GMEmployeeService;
     }
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestParam String username, @RequestParam String password) {
         try {
             logger.info("Login attempt for employee: {}", username);
-            String token = employeeService.authenticate(username, password);
+            String token = GMEmployeeService.authenticate(username, password);
             logger.info("Employee logged in successfully: {}", username);
             //return ResponseEntity.ok(token);
             if (token != null)
@@ -41,13 +41,13 @@ public class EmployeeController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<Employee> register(@RequestParam String id, @RequestParam String firstname, @RequestParam String lastname, @RequestParam String email, @RequestParam String address, @RequestParam Integer mobileno, @RequestParam String username, @RequestParam String password, @RequestParam String role, @RequestParam double basicSalary, @RequestParam String joiningDate,
-                                             @RequestParam String bankAccountNumber) {
+    public ResponseEntity<GMEmployee> register(@RequestParam String id, @RequestParam String firstname, @RequestParam String lastname, @RequestParam String email, @RequestParam String address, @RequestParam Integer mobileno, @RequestParam String username, @RequestParam String password, @RequestParam String role, @RequestParam double basicSalary, @RequestParam String joiningDate,
+                                               @RequestParam String bankAccountNumber) {
         try {
             logger.info("Registration attempt for employee: {}", username);
-            Employee newEmployee = employeeService.createEmployee(id, firstname, lastname, email, address, mobileno, username, password, role, basicSalary, joiningDate, bankAccountNumber);
+            GMEmployee newGMEmployee = GMEmployeeService.createEmployee(id, firstname, lastname, email, address, mobileno, username, password, role, basicSalary, joiningDate, bankAccountNumber);
             logger.info("Employee registered successfully: {}", username);
-            return ResponseEntity.status(HttpStatus.CREATED).body(newEmployee);
+            return ResponseEntity.status(HttpStatus.CREATED).body(newGMEmployee);
         } catch (RuntimeException e) {
             logger.error("Registration failed for employee: {}", username, e);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
@@ -56,10 +56,10 @@ public class EmployeeController {
 
 
     @GetMapping("/{username}")
-    public ResponseEntity<Employee> getUserByUsername(@PathVariable String username) {
-        Employee employee = employeeService.findByUsername(username);
-        if (employee != null) {
-            return new ResponseEntity<>(employee, HttpStatus.OK);
+    public ResponseEntity<GMEmployee> getUserByUsername(@PathVariable String username) {
+        GMEmployee GMEmployee = GMEmployeeService.findByUsername(username);
+        if (GMEmployee != null) {
+            return new ResponseEntity<>(GMEmployee, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Return 404 Not Found when employee is not found
         }
