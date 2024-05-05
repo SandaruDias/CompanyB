@@ -21,7 +21,7 @@ public class AuthenticationService {
     @Autowired
     private JwtUtil jwtUtil;
     @Autowired
-    private GMEmployeeRepository employeeRepository;
+    private GMEmployeeRepository GMEmployeeRepository;
 
     public String authenticate(String username, String password) {
         try {
@@ -48,9 +48,9 @@ public class AuthenticationService {
     public String authenticateEmployee(String username, String password) {
         try {
             logger.info("Authentication attempt for employee: {}", username);
-            GMEmployee employee = employeeRepository.findByUserName(username);
-            if (employee != null && employee.getPassword().equals(password)) {
-                String token = jwtUtil.generateToken(employee.getUserName());
+            GMEmployee GMEmployee = GMEmployeeRepository.findByUserName(username);
+            if (GMEmployee != null && GMEmployee.getPassword().equals(password)) {
+                String token = jwtUtil.generateToken(GMEmployee.getUserName());
                 logger.info("Employee authenticated successfully: {}", username);
                 return token;
             } else {
