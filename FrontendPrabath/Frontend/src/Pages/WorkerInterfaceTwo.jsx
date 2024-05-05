@@ -4,8 +4,8 @@ import ProgressBar from './ProgressBar';
 import axios from "axios"
 import { useHistory } from "react-router-dom";
 
-const apiPlaceOrder = "http://localhost:8090/FetchOrders/";
-const apiGetOrderToWorkStation = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
+const apiPlaceOrder = "http://localhost:8090/CompanyB/Manufacturing/FetchOrders/";
+const apiGetOrderToWorkStation = "http://localhost:8090/CompanyB/Manufacturing/OnGoingOrder/GetOrderToWorkStation/";
 
 function WorkerInterfaceTwo() {
 
@@ -108,7 +108,7 @@ function WorkerInterfaceTwo() {
   
   const handleAddOrder = async () => {
     try{
-      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationTwoFetch/'+ orderId1 +'/'+ numberOfItemsAdd)
+      const response = await axios.put('http://localhost:8090/CompanyB/Manufacturing/OnGoingOrder/WorkstationTwoFetch/'+ orderId1 +'/'+ numberOfItemsAdd)
     }
     catch(error){
         alert("Enter Valid Amount");
@@ -120,7 +120,7 @@ function WorkerInterfaceTwo() {
 
   const handleSubmitPass =async (e) => {
     try{
-      const response = await axios.put('http://localhost:8090/OnGoingOrder/WorkstationTwoPass/'+ orderId1 +'/'+ numberOfItemsPass)
+      const response = await axios.put('http://localhost:8090/CompanyB/Manufacturing/OnGoingOrder/WorkstationTwoPass/'+ orderId1 +'/'+ numberOfItemsPass)
     }
     catch(error){
         alert("Enter Valid Amount");
@@ -134,7 +134,7 @@ function WorkerInterfaceTwo() {
     GetOrderToWorkStation();
   }
   const handleSignOut =async () => {
-    try{const response =await axios.put("http://localhost:8090/User/workStation/signout/2")
+    try{const response =await axios.put("http://localhost:8090/CompanyB/Manufacturing/User/workStation/signout/2")
       history.push("/")
       console.log("Sign Out");
   
