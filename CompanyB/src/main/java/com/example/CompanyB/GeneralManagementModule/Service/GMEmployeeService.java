@@ -1,7 +1,6 @@
 package com.example.CompanyB.GeneralManagementModule.Service;
 
 import com.example.CompanyB.GeneralManagementModule.Model.GMEmployee;
-import com.example.CompanyB.GeneralManagementModule.Model.User;
 import com.example.CompanyB.GeneralManagementModule.Repository.GMEmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,25 +11,25 @@ import org.springframework.stereotype.Service;
 public class GMEmployeeService {
 
     private final GMEmployeeRepository GMEmployeeRepository;
+    private final AuthenticationService authenticationService;
 
     @Autowired
-    public GMEmployeeService(GMEmployeeRepository GMEmployeeRepository) {
+    public GMEmployeeService(GMEmployeeRepository GMEmployeeRepository, AuthenticationService authenticationService) {
         this.GMEmployeeRepository = GMEmployeeRepository;
+        this.authenticationService = authenticationService;
     }
 
     //Finding by username
-    public User findByUsername(String username) {
+    public GMEmployee findByUsername(String username) {
         return GMEmployeeRepository.findByUserName(username);
     }
 
     //Manual authentication system
-    public boolean authenticate(String username, String password) {
-        GMEmployee GMEmployee = (GMEmployee) findByUsername(username);
-        if (GMEmployee != null && GMEmployee.getPassword().equals(password)) {
-            return true;
-        }
-        return false;
+    // Use AuthenticationService for JWT handling
+    public String authenticate(String username, String password) {
+        return authenticationService.authenticateEmployee(username, password);  // Redirect authentication to AuthenticationService
     }
+
 
     //Save the new response
     public GMEmployee createEmployee(String id, String firstname, String lastname, String email,

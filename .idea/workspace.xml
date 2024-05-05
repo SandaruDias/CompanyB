@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Works Stations are modeled">
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/package.json" afterDir="false" />
+    <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Removed Unwanted Files">
+      <change beforePath="$PROJECT_DIR$/.idea/CompanyB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CompanyB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-24_3_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-24_3_40_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_9_08_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-05-04_1_22_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-05-04_1_22_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-04_2_06_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-04_2_06_PM__Changes_.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +93,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.CompanyB_Application.executor": "Run",
-    "git-widget-placeholder": "CustomFrontEnd",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/CompanyB",
+    "last_opened_file_path": "C:/Users/Sandaru Dias/Documents/GitHub/CompanyB",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -164,6 +174,7 @@
       <workItem from="1714557373783" duration="398000" />
       <workItem from="1714637799954" duration="615000" />
       <workItem from="1714831677854" duration="3506000" />
+      <workItem from="1714879231846" duration="199000" />
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />
@@ -181,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714039614401</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Removed Unwanted Files">
+      <option name="closed" value="true" />
+      <created>1714879327045</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714879327045</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +219,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Works Stations are modeled" />
-    <option name="LAST_COMMIT_MESSAGE" value="Works Stations are modeled" />
+    <MESSAGE value="Removed Unwanted Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Unwanted Files" />
   </component>
 </project>

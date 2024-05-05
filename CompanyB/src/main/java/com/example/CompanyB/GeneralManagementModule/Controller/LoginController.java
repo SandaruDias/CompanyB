@@ -49,13 +49,18 @@ public class LoginController {
             logger.info("Login attempt for user: {}", username);
             String token = authenticationService.authenticate(username, password);
             logger.info("User logged in successfully: {}", username);
+              //return ResponseEntity.ok(token);
+                if (token != null)
+                    return ResponseEntity.ok("Login successful!");
 
-            return ResponseEntity.ok(token);
+                else
+                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         } catch (RuntimeException e) {
             logger.error("Login failed for user: {}", username, e);
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
+
 
     /**
      * Endpoint for user registration.

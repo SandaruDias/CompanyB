@@ -21,7 +21,7 @@ public class TSPPrototypeModel {
     private String comments;
     private boolean thermalTestPassed;
     private boolean electricalTestPassed;
-    private String approvalStatus;
+    private boolean approvalStatus;
     private String approvalMessage;
 }
 
