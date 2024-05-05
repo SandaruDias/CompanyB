@@ -66,14 +66,18 @@ public class InvoiceController {
     }
 
     @GetMapping("/download/{customerId}")
-    public ResponseEntity<InputStreamResource> downloadInvoicesByCustomerId(@PathVariable String customerId) {
-        List<Invoice> invoices = invoiceService.findInvoicesByCustomerId(customerId);
-        byte[] data = invoiceService.generateExcelReportForInvoices(invoices);
-        HttpHeaders headers = new HttpHeaders();
-        headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=invoices.xlsx");
-        return ResponseEntity.ok()
-                .headers(headers)
-                .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
-                .body(new InputStreamResource(new ByteArrayInputStream(data)));
+    public ResponseEntity<InputStreamResource> downloadInvoicesByCustomerId(@PathVariable String customerId) throws IOException {
+        try {
+            List<Invoice> invoices = invoiceService.findInvoicesByCustomerId(customerId);
+            byte[] data = invoiceService.generateExcelReportForInvoices(invoices);
+            HttpHeaders headers = new HttpHeaders();
+            headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=invoices.xlsx");
+            return ResponseEntity.ok()
+                    .headers(headers)
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .body(new InputStreamResource(new ByteArrayInputStream(data)));
+        } catch (IOException e) {
+            return ResponseEntity.internalServerError().build();
+        }
     }
 }

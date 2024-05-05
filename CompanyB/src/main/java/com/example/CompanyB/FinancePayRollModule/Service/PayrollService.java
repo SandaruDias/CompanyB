@@ -29,9 +29,8 @@ public class PayrollService {
     public EmployeePayroll createPayroll(PayrollDTO payrollDTO) {
         EmployeePayroll payroll = new EmployeePayroll();
         int nextPayrollId = payrollCounterService.getNextPayrollId();
-        String formattedPayrollId = String.format("INV%05d", nextPayrollId);
+        String formattedPayrollId = String.format("PAY%05d", nextPayrollId);
         payroll.setPayrollId(formattedPayrollId);
-
         payroll.setEmployeeId(payrollDTO.getEmployeeId());
         payroll.setEmployeeName(payrollDTO.getEmployeeName());
         payroll.setBasicSalary(payrollDTO.getBasicSalary());
@@ -72,7 +71,7 @@ public class PayrollService {
             updatedPayroll.setPayrollId(id);
             return payrollRepository.save(updatedPayroll);
         } else {
-            throw new RuntimeException("Invoice not found");
+            throw new RuntimeException("Payroll not found");
         }
     }
 
@@ -84,7 +83,7 @@ public class PayrollService {
         try (XSSFWorkbook workbook = new XSSFWorkbook(); ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
             Sheet sheet = workbook.createSheet("Employee Payrolls");
 
-            String[] columns = {"ID", "Employee Name", "Basic Salary", "OT Hours", "Salary Per Hour", "Working Hours", "Tax Percentage", "Deductions", "Benefits", "Net Pay", "Payroll Date"};
+            String[] columns = {"Payroll ID", "Employee Name", "Basic Salary", "OT Hours", "Payroll Start Date", "Payroll End Date", "Working Days","Tax Percentage", "Deductions", "Allowance", "Net Pay", "Payroll Date"};
             Row headerRow = sheet.createRow(0);
             for (int i = 0; i < columns.length; i++) {
                 Cell cell = headerRow.createCell(i);

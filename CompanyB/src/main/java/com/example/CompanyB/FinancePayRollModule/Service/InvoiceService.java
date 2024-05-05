@@ -1,10 +1,17 @@
 package com.example.CompanyB.FinancePayRollModule.Service;
 
+import com.example.CompanyB.FinancePayRollModule.Model.EmployeePayroll;
 import com.example.CompanyB.FinancePayRollModule.Model.Invoice;
 import com.example.CompanyB.FinancePayRollModule.Repository.InvoiceRepository;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,12 +52,37 @@ public class InvoiceService {
         // Assuming method exists in repository to fetch by customer ID
         return invoiceRepository.findByCustomerId(customerId);
     }
+    public byte[] generateExcelReportForInvoices(List<Invoice> invoices) throws IOException {
+        try (XSSFWorkbook workbook = new XSSFWorkbook(); ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+            Sheet sheet = workbook.createSheet("Order Invoices");
 
-    public byte[] generateExcelReportForInvoices(List<Invoice> invoices) {
-        // This would involve generating an Excel file with data from the invoices list
-        // Implementation would depend on the library used (e.g., Apache POI)
-        // This is a placeholder for your implementation
-        return new byte[0]; // Placeholder return value
+            String[] columns = {"Invoice ID", "Order ID", "Customer ID", "Sub Total", "Tax", "Total", "Payment Status", "Invoice Date"};
+            Row headerRow = sheet.createRow(0);
+            for (int i = 0; i < columns.length; i++) {
+                Cell cell = headerRow.createCell(i);
+                cell.setCellValue(columns[i]);
+            }
+
+            int rowNum = 1;
+            for (Invoice invoice : invoices) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(invoice.getInvoiceId());
+                row.createCell(1).setCellValue(invoice.getOrderId());
+                row.createCell(2).setCellValue(invoice.getCustomerId());
+                row.createCell(3).setCellValue(invoice.getSubtotal());
+                row.createCell(4).setCellValue(invoice.getTax());
+                row.createCell(5).setCellValue(invoice.getTotal());
+                row.createCell(6).setCellValue(invoice.getPaymentStatus());
+                row.createCell(7).setCellValue(invoice.getInvoiceDate());
+            }
+
+            for (int i = 0; i < columns.length; i++) {
+                sheet.autoSizeColumn(i);
+            }
+
+            workbook.write(bos);
+            return bos.toByteArray();
+        }
     }
 
     public Invoice createInvoice(Invoice invoice) {
@@ -58,11 +90,6 @@ public class InvoiceService {
         int nextInvoiceId = invoiceCounterService.getNextInvoiceId();
         String formattedInvoiceId = String.format("INV%05d", nextInvoiceId);
         invoice.setInvoiceId(formattedInvoiceId);
-
-        // Set the current date as invoice date
-//        invoice.setInvoiceDate(new Date());
-
-        // Save and return the new invoice
         return invoiceRepository.save(invoice);
     }
 

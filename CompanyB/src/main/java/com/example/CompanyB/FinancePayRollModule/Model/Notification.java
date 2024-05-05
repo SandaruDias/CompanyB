@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "notifications")
 public class Notification {
     @Id
-    private String id;
+    private String notificationId;
     private String employeeId;
     private String message;
     private boolean processed;
@@ -21,12 +21,14 @@ public class Notification {
     }
 
     // Getters and setters
-    public String getId() {
-        return id;
+
+
+    public String getNotificationId() {
+        return notificationId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setNotificationId(String notificationId) {
+        this.notificationId = notificationId;
     }
 
     public String getEmployeeId() {
