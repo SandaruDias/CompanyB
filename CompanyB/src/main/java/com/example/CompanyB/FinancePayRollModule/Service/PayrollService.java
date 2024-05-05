@@ -117,15 +117,15 @@ public class PayrollService {
         }
     }
 
-    public EmployeePayroll processPayroll(EmployeePayroll payroll) {
-        // Save the payroll information
-        payroll = payrollRepository.save(payroll);
-
-        // Process the transaction related to payroll
-        transactionService.processPayrollTransaction(payroll.getNetPay());
-
-        return payroll;
-    }
+//    public EmployeePayroll processPayroll(EmployeePayroll payroll) {
+//        // Save the payroll information
+//        payroll = payrollRepository.save(payroll);
+//
+//        // Process the transaction related to payroll
+//        transactionService.processPayrollTransaction(payroll.getNetPay());
+//
+//        return payroll;
+//    }
 
 }
 
