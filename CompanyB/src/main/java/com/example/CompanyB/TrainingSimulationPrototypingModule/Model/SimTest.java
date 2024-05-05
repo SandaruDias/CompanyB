@@ -17,6 +17,8 @@ public class SimTest
 {
     @Id
     private String testID;
+    @Field("Design File")
+    private byte[] designDoc;
     @Field("simulation_approval")
     private boolean simulApproval;
     @Field("comments")

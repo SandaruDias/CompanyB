@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SimulService {
@@ -19,6 +20,7 @@ public class SimulService {
         try {
             SimTest sim = SimTest.builder()
                     .testID(simTestTO.getTestID())
+                    .designDoc(simTestTO.getDesignDoc())
                     .simulApproval(simTestTO.isSimulApproval())
                     .simulComments(simTestTO.getSimulComments())
                     .circuitSimulStatus(simTestTO.isCircuitSimulStatus())
@@ -43,6 +45,10 @@ public class SimulService {
     }
     /* Get all simulations as a list */
 
+    public SimTest getSim(String id) {
+        Optional<SimTest> optionalSim = simRepo.findById(id);
+        return optionalSim.orElse(null); // Return the simulation or null if not found
+    }
     public String deleteSimulation(@RequestParam String id) {
         try {
             simRepo.deleteById(id);

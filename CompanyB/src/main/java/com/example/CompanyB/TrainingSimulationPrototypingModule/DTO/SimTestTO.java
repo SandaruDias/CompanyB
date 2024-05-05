@@ -13,6 +13,7 @@ public class SimTestTO {
     private boolean simulApproval;
     @Field("comments")
     private String simulComments;
+    private byte[] designDoc;
     private boolean circuitSimulStatus;
     private boolean thermalSimulStatus;
     private boolean manufacturabilityStatus;
