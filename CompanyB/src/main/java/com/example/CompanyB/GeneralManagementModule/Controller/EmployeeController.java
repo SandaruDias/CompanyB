@@ -28,7 +28,12 @@ public class EmployeeController {
             logger.info("Login attempt for employee: {}", username);
             String token = employeeService.authenticate(username, password);
             logger.info("Employee logged in successfully: {}", username);
-            return ResponseEntity.ok(token);
+            //return ResponseEntity.ok(token);
+            if (token != null)
+                return ResponseEntity.ok("Login successful!");
+
+            else
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         } catch (RuntimeException e) {
             logger.error("Login failed for employee: {}", username, e);
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
