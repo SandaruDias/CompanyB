@@ -39,7 +39,7 @@ function WorkerPortal() {
     e.preventDefault();
     console.log(details);
     try {
-      const response = await axios.put(`http://localhost:8090/User/workstationLogin/${details.workStation}/${details.username}/${details.password}`);
+      const response = await axios.put(`http://localhost:8090/companyB/manufacturing/User/workstationLogin/${details.workStation}/${details.username}/${details.password}`);
       console.log(response.data); // Log the response data
       if(response.data === "Login Successful"){
         if(details.workStation==="1"){
@@ -77,7 +77,7 @@ function WorkerPortal() {
       <div className="login">
         <div className="details">
         <div className="navigation-bar">
-        <Link to={"/"} style={{textDecoration: "none", color: "white"}} ><button  className="home-button">Selection Page</button> </Link>
+        <Link to={"/companyB/manufacturing"} style={{textDecoration: "none", color: "white"}} ><button  className="home-button">Selection Page</button> </Link>
         <Link to={"/home"} style={{textDecoration: "none", color: "white"}}><button className="home-button">Home Page</button> </Link>
              
           </div>

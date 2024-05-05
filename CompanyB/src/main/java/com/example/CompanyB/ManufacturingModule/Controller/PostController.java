@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("CompanyB/Manufacturing/posts")
+@RequestMapping("companyB/manufacturing/posts")
 public class PostController {
     @Autowired
     private PostRepository postRepository;
