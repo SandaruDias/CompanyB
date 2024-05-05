@@ -4,7 +4,7 @@ import ProgressBar from './ProgressBar';
 import Pnew from './Pnew';
 import { useHistory } from "react-router-dom";
 
-const apiOrderObject = "http://localhost:8090/Manufacturing/OnGoingOrder/GetOrderToWorkStation/";
+const apiOrderObject = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
 
 function AdminInterface() {
   const history = useHistory();

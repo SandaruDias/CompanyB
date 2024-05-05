@@ -21,7 +21,7 @@ function LoginPage() {
     //setup vaidation
     //pass to database
     try {
-      const response = await axios.put(`http://localhost:8090/Manufacturing/User/adminLogin/${details.username}/${details.password}`);
+      const response = await axios.put(`http://localhost:8090/User/adminLogin/${details.username}/${details.password}`);
       console.log(response.data); // Log the response data
       if (response.data === "Login Successful") {
         // Redirect to AdminInterface.jsx page

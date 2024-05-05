@@ -27,7 +27,7 @@ function App() {
         <Route path="/AddItem" component={AddItem} />
         <Route path="/generatereport" component={GenerateReport} />
         <Route path="/updatestock" component={UpdateStock} />
-        <Route path="Manufacturing/AdminInterface" component={admininterface}/>
+        <Route path="/AdminInterface" component={admininterface}/>
         <Route path="/WorkStationOne" component={WorkerInterfaceOne} />
         <Route path="/WorkStationTwo" component={WorkerInterfaceTwo} />
         <Route path="/WorkStationThree" component={WorkerInterfaceThree} />
