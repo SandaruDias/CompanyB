@@ -43,7 +43,7 @@ public class TSPPrototypeService {
         return prototypeList;
     }
     @Transactional
-    public void updatePrototype(String id, boolean thermalTestPassed, boolean electricalTestPassed, String approvalStatus, String approvalMessage) {
+    public void updatePrototype(String id, boolean thermalTestPassed, boolean electricalTestPassed, boolean approvalStatus, String approvalMessage) {
         TSPPrototypeModel prototype = TSPPrototypeRepository.findById(id).orElse(null);
         if (prototype != null) {
             prototype.setThermalTestPassed(thermalTestPassed);
