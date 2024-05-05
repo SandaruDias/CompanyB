@@ -53,7 +53,7 @@ public class SalesReportService {
         }
     }
 
-    public Map<String, Integer> getItemsSoldBetween(Date startDate, Date endDate) {
+   /* public Map<String, Integer> getItemsSoldBetween(Date startDate, Date endDate) {
         Map<String, Integer> itemsSold = new HashMap<>();
 
         // Retrieve sold items within the date range
@@ -77,5 +77,5 @@ public class SalesReportService {
     // Method to retrieve top 3 least sold products within a given time range
     public List<SalesReportModel> getTop3LeastSoldProducts(Date startDate, Date endDate) {
         return salesRepository.findTop3BySaleDateBetweenOrderByQuantitySoldAsc(startDate, endDate);
-    }
+    } */
 }

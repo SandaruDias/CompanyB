@@ -28,11 +28,11 @@ public class SalesAnalysisController {
         // return "order-list"; // Assuming you have a Thymeleaf template named "order-list.html"
     }
 
-    @GetMapping("/itemsSold")
-    public Map<String, Integer> getItemsSoldBetween(
+    @GetMapping("/profit")
+    public Map<String, Integer> getProfitBetween(
             @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
             @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
-        return salesService.getItemsSoldBetween(startDate, endDate);
+        return salesService.getProfitBetween(startDate, endDate);
     }
 
     @GetMapping("/top3MostSoldProducts")
