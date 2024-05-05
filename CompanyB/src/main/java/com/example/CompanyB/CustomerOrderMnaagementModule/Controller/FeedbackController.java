@@ -30,10 +30,9 @@ public class FeedbackController {
     @PostMapping
     public ResponseEntity<Feedback> createFeedback(@RequestBody Map<String, String> payload) {
         return new ResponseEntity<Feedback>(
-                feedbackService.createFeedback(payload.get("body"), Integer.parseInt(payload.get("ratings")),payload.get("customerID")), HttpStatus.CREATED);
+                feedbackService.createFeedback(payload.get("body"), Integer.parseInt(payload.get("ratings")),
+                        payload.get("orderID")),
+                HttpStatus.CREATED);
     }
 
-    
-    
-    
 }
