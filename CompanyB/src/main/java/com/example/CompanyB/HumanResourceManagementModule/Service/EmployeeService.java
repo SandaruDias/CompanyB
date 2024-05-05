@@ -87,5 +87,13 @@ public class EmployeeService {
     public Employee getEmployeeById(String id) {
         return employeeRepo.findById(id).orElse(null);
     }
+
+    public void setEmployeeRepo(EmployeeRepo employeeRepo) {
+        this.employeeRepo = employeeRepo;
+    }
+
+//    public EmployeeRepo getEmployeeRepo() {
+//        return employeeRepo;
+//    }
 }
 
