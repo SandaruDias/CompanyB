@@ -45,6 +45,16 @@ public class ProductController {
         }
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+        try {
+            return ResponseEntity.ok(productService.addProduct(product));
+        } catch (Exception e) {
+            logger.error("An error has occurred: {}", e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
     @PostMapping("/update")
     public ResponseEntity<String> updateProduct(@RequestBody Product product) {
         try {
