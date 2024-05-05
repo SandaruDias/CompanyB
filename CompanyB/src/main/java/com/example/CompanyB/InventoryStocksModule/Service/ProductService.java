@@ -17,4 +17,6 @@ public interface ProductService {
     String addProductUnits(Product product);
 
     String releaseProduct(Product product);
+
+    Product addProduct(Product product);
 }

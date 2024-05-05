@@ -28,6 +28,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Product addProduct(Product product) {
+        //set timestamp
+        product.setCreatedDate(LocalDateTime.now());
+        product.setUpdatedDate(LocalDateTime.now());
+        //save
+        return productRepository.insert(product);
+    }
+
+    @Override
     public String updateProduct(Product product) {
 
         //get matching product by ID
