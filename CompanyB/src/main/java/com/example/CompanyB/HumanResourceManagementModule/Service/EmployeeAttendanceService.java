@@ -203,11 +203,6 @@ public class EmployeeAttendanceService {
         LocalDateTime currentDateTime = LocalDateTime.now();
 
         // Check if it's a new month
-        // here compare the month value of the current time stamp with the last recorded entry of the specified id we are checking here
-        // the trick here is in the recordCheckOut method
-        // before saving to the database as per "employeeAttendanceRepo.save(attendanceModel);"
-        // we have called the "incrementPerMonthHoursWorked" function.
-        // so todays checkout time is not updated yet instead previous day checkout time is there.
         if (currentDateTime.getMonthValue() != attendanceModel.get().getCheckOutTime().getMonthValue()) {
 
             // Reset perMonthHoursWorked to zero at the first day of each new month
