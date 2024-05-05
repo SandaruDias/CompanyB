@@ -6,10 +6,8 @@ import com.example.CompanyB.SalesMarketingModule.Service.SalesReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +21,7 @@ public class SalesReportController {
     private SalesReportService salesService;
 
     @GetMapping("/salesReport")
+    @CrossOrigin (origins = "https://localhost:5173")
     public List<SalesReportModel> generateSalesReport(
             @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
             @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
