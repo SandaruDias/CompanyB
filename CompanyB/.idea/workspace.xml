@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3e8b545-490a-4bb9-a3c9-d7d214b18567" name="Changes" comment="File Changes in GM" />
+    <list default="true" id="c3e8b545-490a-4bb9-a3c9-d7d214b18567" name="Changes" comment="File Changes for QA">
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Repository/TransactionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Repository/TransactionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Service/InvoiceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Service/InvoiceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Service/PayrollService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Service/PayrollService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Service/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/FinancePayRollModule/Service/TransactionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/FetchOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/FetchOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/ManufactureOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/ManufactureOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +98,15 @@
       <updated>1714879180464</updated>
       <workItem from="1714879182531" duration="2526000" />
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="File Changes for QA">
+      <option name="closed" value="true" />
+      <created>1714918837508</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714918837508</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +118,7 @@
     <MESSAGE value="New dependency added" />
     <MESSAGE value="File Changes in Main" />
     <MESSAGE value="File Changes in GM" />
-    <option name="LAST_COMMIT_MESSAGE" value="File Changes in GM" />
+    <MESSAGE value="File Changes for QA" />
+    <option name="LAST_COMMIT_MESSAGE" value="File Changes for QA" />
   </component>
 </project>
