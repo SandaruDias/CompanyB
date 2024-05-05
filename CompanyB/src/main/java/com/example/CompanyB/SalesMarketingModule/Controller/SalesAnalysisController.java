@@ -27,7 +27,7 @@ public class SalesAnalysisController {
 
     @GetMapping("/profit")
     @CrossOrigin(origins = "https://localhost:5173")
-    public Map<String, Integer> getProfitBetween(
+    public List<SalesAnalysisModel> getProfitBetween(
             @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
             @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
         return salesService.getProfitBetween(startDate, endDate);

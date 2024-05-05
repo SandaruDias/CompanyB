@@ -16,19 +16,19 @@ public class SalesAnalysisService {
     @Autowired
     private SalesAnalysisRepository salesAnalysisRepository;
 
-    public Map<String, Integer> getProfitBetween(Date startDate, Date endDate) {
+    public List<SalesAnalysisModel> getProfitBetween(Date startDate, Date endDate) {
         Map<String, Integer> itemsSold = new HashMap<>();
 
         List<SalesAnalysisModel> soldItems = salesAnalysisRepository.findBySaleDateBetween(startDate, endDate);
 
-        for (SalesAnalysisModel item : soldItems) {
+       /* for (SalesAnalysisModel item : soldItems) {
             String productId = item.getProductId();
             int profit = (int) item.getProfit();
 
             itemsSold.put(productId, itemsSold.getOrDefault(productId, 0) + profit);
-        }
+        } */
 
-        return itemsSold;
+        return soldItems;
     }
 
     public List<SalesAnalysisModel> getTop3MostSoldProducts(Date startDate, Date endDate) {
