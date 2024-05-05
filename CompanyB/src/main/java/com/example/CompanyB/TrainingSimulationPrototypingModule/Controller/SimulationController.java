@@ -28,7 +28,7 @@ public class SimulationController
         return simService.getAllSims();
     }
 
-    @GetMapping("/{id)")
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public SimTest getSim(@PathVariable String id){
         return simService.getSim(id);
