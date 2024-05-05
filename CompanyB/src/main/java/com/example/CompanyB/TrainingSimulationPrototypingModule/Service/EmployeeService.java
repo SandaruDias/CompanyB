@@ -1,14 +1,15 @@
 package com.example.CompanyB.TrainingSimulationPrototypingModule.Service;
 
-import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.Course;
 import com.example.CompanyB.TrainingSimulationPrototypingModule.Model.Employee;
 import com.example.CompanyB.TrainingSimulationPrototypingModule.Repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
 
+    @Autowired
     public EmployeeService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
@@ -18,19 +19,14 @@ public class EmployeeService {
     }
 
     public Employee getEmployeeById(String employeeId) {
-        return employeeRepository.findByEmployeeId(employeeId);
+        return employeeRepository.findBy_Id(employeeId);
     }
 
-    public void selectCourseForEmployee(String employeeId, int skillLevel) {
-        Employee employee = employeeRepository.findByEmployeeId(employeeId);
+    public void selectCourseForEmployee(String employeeId, String courseId) {
+        Employee employee = employeeRepository.findBy_Id(employeeId);
         if (employee != null) {
-            //
-            Course selectedCourse = CourseService.getCourseBySkillLevel(skillLevel);
-            if (selectedCourse != null) {
-                employee.setSelectedCourse();
-                employeeRepository.save(employee);
-            }
+            employee.setSelectedCourseId(courseId);
+            employeeRepository.save(employee);
         }
     }
-
 }
