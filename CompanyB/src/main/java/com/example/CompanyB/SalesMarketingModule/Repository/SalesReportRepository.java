@@ -17,4 +17,5 @@ public interface SalesReportRepository extends MongoRepository<SalesReportModel,
 
     // Method to find slow-moving inventory (products with lowest sales) within a given time range
     List<SalesReportModel> findTop3BySaleDateBetweenOrderByQuantitySoldAsc(Date startDate, Date endDate);
+
 }
