@@ -43,13 +43,13 @@ function WorkerPortal() {
       console.log(response.data); // Log the response data
       if(response.data === "Login Successful"){
         if(details.workStation==="1"){
-          history.push("/WorkStationOne")
+          history.push("/companyB/manufacturing/WorkStationOne")
         }
         if(details.workStation==="2"){
-          history.push("/WorkStationTwo")
+          history.push("/companyB/manufacturing/WorkStationTwo")
         }
         if(details.workStation==="3"){
-          history.push("/WorkStationThree")
+          history.push("/companyB/manufacturing/WorkStationThree")
         }
 
 
