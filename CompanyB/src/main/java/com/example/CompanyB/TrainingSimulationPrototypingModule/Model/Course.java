@@ -10,5 +10,5 @@ public class Course {
     private String courseName;
     private int skillLevel;
 
-    // Constructors, getters, setters
+    // Constructors, getters, and setters
 }

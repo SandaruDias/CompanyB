@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CourseRepository extends MongoRepository<Course, String> {
-    Course findBySkillLevelLessThanEqual(int skillLevel);
+    //Course findBySkillLevelLessThanEqual(int skillLevel);
 }

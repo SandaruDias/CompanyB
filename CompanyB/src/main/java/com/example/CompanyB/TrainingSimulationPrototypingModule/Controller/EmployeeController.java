@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
+    private final EmployeeService employeeService;
+
     @Autowired
-    private EmployeeService employeeService;
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @PostMapping("/add")
     public Employee addEmployee(@RequestBody Employee employee) {
@@ -21,12 +25,11 @@ public class EmployeeController {
         return employeeService.getEmployeeById(employeeId);
     }
 
-    @PostMapping("/selectCourse/{employeeId}/{skillLevel}")
+    @PostMapping("/selectCourse/{employeeId}/{courseId}")
     public void selectCourseForEmployee(
             @PathVariable String employeeId,
-            @PathVariable int skillLevel
+            @PathVariable String courseId
     ) {
-        employeeService.selectCourseForEmployee(employeeId, skillLevel);
+        employeeService.selectCourseForEmployee(employeeId, courseId);
     }
-
 }
