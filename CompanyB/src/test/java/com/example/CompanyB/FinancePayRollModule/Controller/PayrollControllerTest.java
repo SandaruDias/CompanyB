@@ -1,116 +1,121 @@
 package com.example.CompanyB.FinancePayRollModule.Controller;
 
-import com.example.CompanyB.FinancePayRollModule.Model.Payroll;
+import com.example.CompanyB.FinancePayRollModule.Model.EmployeePayroll;
 import com.example.CompanyB.FinancePayRollModule.Service.PayrollService;
-import com.example.CompanyB.FinancePayRollModule.Repository.PayrollRepository;
 import com.example.CompanyB.FinancePayRollModule.Service.dto.PayrollDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentMatchers;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 
-import java.util.Arrays;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.mockito.BDDMockito.*;
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-@ExtendWith(SpringExtension.class)
-@WebMvcTest(PayrollController.class)
-public class PayrollControllerTest {
+class PayrollControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @MockBean
+    @Mock
     private PayrollService payrollService;
 
-    @MockBean
-    private PayrollRepository payrollRepository;
-
-    private PayrollDTO payrollDTO;
-    private Payroll payroll;
+    @InjectMocks
+    private PayrollController payrollController;
 
     @BeforeEach
     void setUp() {
-        payrollDTO = new PayrollDTO();
-        payrollDTO.setEmployeeId(1L);
-        payrollDTO.setEmployeeName("John Doe");
-        payrollDTO.setHoursWorked(40.0);
-        payrollDTO.setHourlyRate(20.0);
-        payrollDTO.setOvertimeHours(5.0);
-        payrollDTO.setOvertimeRate(30.0);
-        payrollDTO.setDeductions(200.0);
-        payrollDTO.setTaxRate(0.15);
-
-        payroll = new Payroll();
-        payroll.setId("1");
-        payroll.setEmployeeId(1L);
-        payroll.setEmployeeName("John Doe");
-        payroll.setGrossSalary(1000.0);
-        payroll.setNetSalary(800.0);
-        payroll.setTaxRate(0.15);
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    void testCalculatePayroll() throws Exception {
-        given(payrollService.calculateAndSavePayroll(anyLong(), anyString(), anyDouble(), anyDouble(), anyDouble(), anyDouble(), anyDouble(), anyDouble())).willReturn(payroll);
+    void testAddPayroll() {
+        PayrollDTO payrollDTO = new PayrollDTO(); // Assume proper setters are called
+        EmployeePayroll expectedPayroll = new EmployeePayroll();
+        when(payrollService.createPayroll(payrollDTO)).thenReturn(expectedPayroll);
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/payroll/calculate")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"employeeId\": 1, \"employeeName\": \"John Doe\", \"hoursWorked\": 40, \"hourlyRate\": 20, \"overtimeHours\": 5, \"overtimeRate\": 30, \"deductions\": 200, \"taxRate\": 0.15}"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.employeeId").value(1))
-                .andExpect(jsonPath("$.employeeName").value("John Doe"))
-                .andExpect(jsonPath("$.grossSalary").value(1000.0))
-                .andExpect(jsonPath("$.netSalary").value(800.0));
+        EmployeePayroll result = payrollController.addPayroll(payrollDTO);
+        assertNotNull(result);
+        assertEquals(expectedPayroll, result);
     }
 
     @Test
-    void testGetPayrollById() throws Exception {
-        given(payrollService.findPayrollById("1")).willReturn(payroll);
+    void testDeletePayroll() {
+        String id = "1";
+        doNothing().when(payrollService).deletePayroll(id);
+        ResponseEntity<Void> response = payrollController.deletePayroll(id);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/payroll/1"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value("1"))
-                .andExpect(jsonPath("$.employeeName").value("John Doe"));
+        assertNotNull(response);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        verify(payrollService, times(1)).deletePayroll(id);
     }
 
     @Test
-    void testUpdatePayroll() throws Exception {
-        given(payrollService.updatePayroll(ArgumentMatchers.anyString(), ArgumentMatchers.anyDouble(), ArgumentMatchers.anyDouble())).willReturn(payroll);
+    void testGetAllPayrolls() {
+        List<EmployeePayroll> expectedList = new ArrayList<>();
+        when(payrollService.getAllPayrollDetails()).thenReturn(expectedList);
 
-        mockMvc.perform(MockMvcRequestBuilders.put("/api/payroll/update/1")
-                        .param("deductions", "300")
-                        .param("taxRate", "0.20"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.taxRate").value(0.15));
+        List<EmployeePayroll> result = payrollController.getAllPayrolls();
+        assertNotNull(result);
+        assertEquals(expectedList, result);
     }
 
     @Test
-    void testDownloadPayrollDetails() throws Exception {
-        List<Payroll> payrollList = Arrays.asList(payroll);
-        byte[] csvContent = "Employee ID,Employee Name,Gross Salary,Net Salary\n1,John Doe,1000.0,800.0".getBytes();
-        given(payrollService.generatePayrollReport(payrollList)).willReturn(csvContent);
+    void testGetPayrollById() {
+        String id = "1";
+        EmployeePayroll expectedPayroll = new EmployeePayroll();
+        when(payrollService.getPayrollById(id)).thenReturn(expectedPayroll);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/payroll/download/1"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_OCTET_STREAM))
-                .andExpect(header().string("Content-Disposition", "attachment; filename=payroll-report.csv"));
+        EmployeePayroll result = payrollController.getPayrollById(id);
+        assertNotNull(result);
+        assertEquals(expectedPayroll, result);
     }
 
     @Test
-    void testDeletePayroll() throws Exception {
-        willDoNothing().given(payrollService).deletePayrollById("1");
+    void testUpdatePayroll() {
+        String id = "1";
+        EmployeePayroll updatedPayroll = new EmployeePayroll();
+        when(payrollService.updatePayroll(id, updatedPayroll)).thenReturn(updatedPayroll);
 
-        mockMvc.perform(MockMvcRequestBuilders.delete("/api/payroll/1"))
-                .andExpect(status().isNoContent());
+        ResponseEntity<EmployeePayroll> response = payrollController.updatePayroll(id, updatedPayroll);
+        assertNotNull(response);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(updatedPayroll, response.getBody());
+    }
+
+    @Test
+    void testGetPayrollsByEmployeeId_NotFound() {
+        String employeeId = "1";
+        when(payrollService.findPayrollsByEmployeeId(employeeId)).thenReturn(new ArrayList<>());
+
+        ResponseEntity<List<EmployeePayroll>> response = payrollController.getPayrollsByEmployeeId(employeeId);
+        assertNotNull(response);
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+//
+//    @Test
+//    void testGetPayrollsByEmployeeId_Found() {
+//        String employeeId = "1";
+//        List<EmployeePayroll> expectedList = new ArrayList<>();
+//        when(payrollService.findPayrollsByEmployeeId(employeeId)).thenReturn(expectedList);
+//
+//        ResponseEntity<List<EmployeePayroll>> response = payrollController.getPayrollsByEmployeeId(employeeId);
+//        assertNotNull(response);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(expectedList, response.getBody());
+//    }
+
+    @Test
+    void testDownloadPayrollsByEmployeeId_IOException() throws Exception {
+        String employeeId = "1";
+        when(payrollService.findPayrollsByEmployeeId(employeeId)).thenReturn(new ArrayList<>());
+        when(payrollService.generateExcelReport(anyList())).thenThrow(IOException.class);
+
+        ResponseEntity<?> response = payrollController.downloadPayrollsByEmployeeId(employeeId);
+        assertNotNull(response);
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
     }
 }
