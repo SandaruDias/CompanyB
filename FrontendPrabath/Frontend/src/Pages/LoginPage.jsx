@@ -25,7 +25,7 @@ function LoginPage() {
       console.log(response.data); // Log the response data
       if (response.data === "Login Successful") {
         // Redirect to AdminInterface.jsx page
-        history.push("/AdminInterface")
+        history.push("/companyB/manufacturing/AdminInterface")
       } else {
         // Handle other cases if needed
         alert("Login failed: " + response.data);
