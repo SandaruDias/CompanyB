@@ -20,6 +20,7 @@ public class SimulService {
         try {
             SimTest sim = SimTest.builder()
                     .testID(simTestTO.getTestID())
+                    .designDoc(simTestTO.getDesignDoc())
                     .simulApproval(simTestTO.isSimulApproval())
                     .simulComments(simTestTO.getSimulComments())
                     .circuitSimulStatus(simTestTO.isCircuitSimulStatus())
