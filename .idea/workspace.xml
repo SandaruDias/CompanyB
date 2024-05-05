@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e70442a-e4f8-4852-b8e4-02c07e3cf967" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/SalesAnalysisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesAnalysisModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Repository/SalesAnalysisRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Service/SalesAnalysisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/SalesReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Controller/SalesReportController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Model/SalesReportModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel$SalesRecordModelBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel$SalesRecordModelBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Model/SalesRecordModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Repository/SalesReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Repository/SalesReportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Service/SalesReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/SalesMarketingModule/Service/SalesReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Controller/SalesReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Controller/SalesReportController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/SalesReportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/SalesMarketingModule/Service/SalesReportService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,7 +139,7 @@
       <workItem from="1714495892453" duration="1197000" />
       <workItem from="1714629222288" duration="221000" />
       <workItem from="1714629453418" duration="739000" />
-      <workItem from="1714821514071" duration="8861000" />
+      <workItem from="1714821514071" duration="24675000" />
     </task>
     <servers />
   </component>
