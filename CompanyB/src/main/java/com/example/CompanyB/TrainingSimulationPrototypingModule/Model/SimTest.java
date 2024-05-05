@@ -27,4 +27,18 @@ public class SimTest
     private boolean thermalSimulStatus;
     @Field("Manufacturability")
     private boolean manufacturabilityStatus;
+
+    public SimTest() {
+        // Default constructor
+    }
+
+    public SimTest(String testID, boolean simulApproval, String simulComments,
+                   boolean circuitSimulStatus, boolean thermalSimulStatus, boolean manufacturabilityStatus) {
+        this.testID = testID;
+        this.simulApproval = simulApproval;
+        this.simulComments = simulComments;
+        this.circuitSimulStatus = circuitSimulStatus;
+        this.thermalSimulStatus = thermalSimulStatus;
+        this.manufacturabilityStatus = manufacturabilityStatus;
+    }
 }
