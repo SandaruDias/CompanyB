@@ -4,6 +4,7 @@ import com.example.CompanyB.SalesMarketingModule.Model.SalesAnalysisModel;
 import com.example.CompanyB.SalesMarketingModule.Service.SalesAnalysisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +20,13 @@ public class SalesAnalysisController {
 
     @Autowired
     private SalesAnalysisService salesService;
+
+    @GetMapping("allSalesAnalysis")
+    public List<SalesAnalysisModel> getAllSales(Model model) {
+        return salesService.getAllSalesAnalysis();
+        //model.addAttribute("orders", orders);
+        // return "order-list"; // Assuming you have a Thymeleaf template named "order-list.html"
+    }
 
     @GetMapping("/itemsSold")
     public Map<String, Integer> getItemsSoldBetween(

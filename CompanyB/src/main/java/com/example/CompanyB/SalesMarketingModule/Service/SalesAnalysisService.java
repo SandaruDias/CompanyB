@@ -14,12 +14,12 @@ import java.util.Map;
 public class SalesAnalysisService {
 
     @Autowired
-    private SalesAnalysisRepository salesRepository;
+    private SalesAnalysisRepository salesAnalysisRepository;
 
     public Map<String, Integer> getItemsSoldBetween(Date startDate, Date endDate) {
         Map<String, Integer> itemsSold = new HashMap<>();
 
-        List<SalesAnalysisModel> soldItems = salesRepository.findBySaleDateBetween(startDate, endDate);
+        List<SalesAnalysisModel> soldItems = salesAnalysisRepository.findBySaleDateBetween(startDate, endDate);
 
         for (SalesAnalysisModel item : soldItems) {
             String productId = item.getProductId();
@@ -32,10 +32,14 @@ public class SalesAnalysisService {
     }
 
     public List<SalesAnalysisModel> getTop3MostSoldProducts(Date startDate, Date endDate) {
-        return salesRepository.findTop3BySaleDateBetweenOrderByQuantitySoldDesc(startDate, endDate);
+        return salesAnalysisRepository.findTop3BySaleDateBetweenOrderByQuantitySoldDesc(startDate, endDate);
     }
 
     public List<SalesAnalysisModel> getTop3LeastSoldProducts(Date startDate, Date endDate) {
-        return salesRepository.findTop3BySaleDateBetweenOrderByQuantitySoldAsc(startDate, endDate);
+        return salesAnalysisRepository.findTop3BySaleDateBetweenOrderByQuantitySoldAsc(startDate, endDate);
+    }
+
+    public List<SalesAnalysisModel> getAllSalesAnalysis() {
+        return salesAnalysisRepository.findAll();
     }
 }
