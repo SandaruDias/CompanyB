@@ -146,7 +146,7 @@ function WorkerInterfaceThree() {
     
     setErrors(errors+1);
     try {
-      const response = await axios.put('http://localhost:8090/companyB/manufacturing/OnGoingOrder/WorkstationOneError/' + orderId1 + '/' + (1))
+      const response = await axios.put('http://localhost:8090/companyB/manufacturing/OnGoingOrder/WorkstationThreeError/' + orderId1 + '/' + (1))
     }
     catch (error) {
       alert("Enter Valid Amount");
