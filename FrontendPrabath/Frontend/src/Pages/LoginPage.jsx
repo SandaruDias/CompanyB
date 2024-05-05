@@ -21,7 +21,7 @@ function LoginPage() {
     //setup vaidation
     //pass to database
     try {
-      const response = await axios.put(`http://localhost:8090/User/adminLogin/${details.username}/${details.password}`);
+      const response = await axios.put(`http://localhost:8090/companyB/manufacturing/User/adminLogin/${details.username}/${details.password}`);
       console.log(response.data); // Log the response data
       if (response.data === "Login Successful") {
         // Redirect to AdminInterface.jsx page
@@ -45,7 +45,7 @@ function LoginPage() {
       <div className="login">
         <div className="details">
         <div className="navigation-bar">
-        <button  className="home-button"><Link to={"/"} style={{textDecoration: "none", color: "white"}} >Selection Page</Link></button>  
+        <button  className="home-button"><Link to={"/companyB/manufacturing"} style={{textDecoration: "none", color: "white"}} >Selection Page</Link></button>  
             <button className="home-button"><Link to={"/home"} style={{textDecoration: "none", color: "white"}}>Home Page</Link></button>  
           </div>
           <h1 style = {{textAlign: "center"}} className="login-title">Admin Portal</h1>
