@@ -17,19 +17,19 @@ public class FileService {
 
     @Autowired
     private OrderRepository orderRepository;
-    
 
-    public String uploadImage(MultipartFile file, String customerId) {
+    public String uploadImage(MultipartFile file, Long orderID) {
         try {
-            Optional<OrderModel> existingOrder = orderRepository.findOrderByCustomerID(customerId);
+            Optional<OrderModel> existingOrder = orderRepository.findOrderByOrderID(orderID);
             if (existingOrder.isPresent()) {
                 OrderModel updatedOrder = existingOrder.get();
-                updatedOrder.setPcbFile(ImageUtils.compressImage(file.getBytes())); // Assuming ImageUtils is properly implemented
+                updatedOrder.setPcbFile(ImageUtils.compressImage(file.getBytes())); // Assuming ImageUtils is properly
+                                                                                    // implemented
                 orderRepository.save(updatedOrder);
                 return "File uploaded successfully: " + file.getOriginalFilename();
             } else {
                 // Handle case where order is not found for customerId
-                return "Order not found for Customer ID: " + customerId;
+                return "Order not found for Order ID: " + orderID;
             }
         } catch (IOException e) {
             // Handle file read/compression errors
@@ -42,13 +42,14 @@ public class FileService {
         }
     }
 
-    public byte[] downloadImage(String customerId) {
-        
-        Optional<OrderModel> existingOrder = orderRepository.findOrderByCustomerID(customerId);
+    public byte[] downloadImage(Long orderID) {
+
+        Optional<OrderModel> existingOrder = orderRepository.findOrderByOrderID(orderID);
         if (existingOrder.isPresent()) {
             OrderModel order = existingOrder.get();
             byte[] dbImageData = order.getPcbFile(); // Assuming getPcbFile() returns byte[]
-            return ImageUtils.decompressImage(dbImageData); // Assuming ImageUtils.decompressImage() is properly implemented
+            return ImageUtils.decompressImage(dbImageData); // Assuming ImageUtils.decompressImage() is properly
+                                                            // implemented
         }
         return null;
     }

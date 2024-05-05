@@ -3,7 +3,6 @@ package com.example.CompanyB.CustomerOrderMnaagementModule.Controller;
 import java.util.List;
 import java.util.Optional;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +23,6 @@ import com.example.CompanyB.CustomerOrderMnaagementModule.Service.OrderService;
 
 public class OrderController {
 
-    
     @Autowired
     private OrderService orderService;
 
@@ -39,17 +37,17 @@ public class OrderController {
     public ResponseEntity<List<OrderModel>> getallOrders() {
         return new ResponseEntity<List<OrderModel>>(orderService.allOrders(), HttpStatus.OK);
     }
-    
-    //Getting order by customer id
-    @GetMapping("/{customerId}")
-    public ResponseEntity<Optional<OrderModel>> getSingleOrder(@PathVariable String customerId) {
-        return new ResponseEntity<Optional<OrderModel>>(orderService.singleOrder(customerId), HttpStatus.OK);
+
+    // Getting order by customer id
+    @GetMapping("/{orderID}")
+    public ResponseEntity<Optional<OrderModel>> getSingleOrder(@PathVariable Long orderID) {
+        return new ResponseEntity<Optional<OrderModel>>(orderService.singleOrder(orderID), HttpStatus.OK);
     }
 
-    //Getting the simulation status
-    @GetMapping("/{customerId}/simulation")
-    public ResponseEntity<Boolean> getSimulationStatus(@PathVariable String customerId) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    // Getting the simulation status
+    @GetMapping("/{orderID}/simulation")
+    public ResponseEntity<Boolean> getSimulationStatus(@PathVariable Long orderID) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
             OrderModel order = orderOptional.get();
             boolean simulationStatus = order.isSimulationStatus();
@@ -59,10 +57,10 @@ public class OrderController {
         }
     }
 
-    //Getting the parts availabilyty
-    @GetMapping("/{customerId}/parts")
-    public ResponseEntity<Boolean> getPartsAvailability(@PathVariable String customerId) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    // Getting the parts availabilyty
+    @GetMapping("/{orderID}/parts")
+    public ResponseEntity<Boolean> getPartsAvailability(@PathVariable Long orderID) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
             OrderModel order = orderOptional.get();
             boolean simulationStatus = order.isPartsAvailable();
@@ -72,12 +70,10 @@ public class OrderController {
         }
     }
 
-
-    
-    //Getting the price of the oder
-    @GetMapping("/{customerId}/price")
-    public ResponseEntity<Double> getPrice(@PathVariable String customerId) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    // Getting the price of the oder
+    @GetMapping("/{orderID}/price")
+    public ResponseEntity<Double> getPrice(@PathVariable Long orderID) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
             OrderModel order = orderOptional.get();
             double payment = order.getPayment();
@@ -87,10 +83,10 @@ public class OrderController {
         }
     }
 
-    //Getting the payment status
-    @GetMapping("/{customerId}/payment")
-    public ResponseEntity<Boolean> getPaymentStatus(@PathVariable String customerId) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    // Getting the payment status
+    @GetMapping("/{orderID}/payment")
+    public ResponseEntity<Boolean> getPaymentStatus(@PathVariable Long orderID) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
             OrderModel order = orderOptional.get();
             boolean paymentDone = order.isPaymentDone();
@@ -100,13 +96,10 @@ public class OrderController {
         }
     }
 
-    
-
-
     // Getting the manufacturing status
-    @GetMapping("/{customerId}/manufacturing")
-    public ResponseEntity<String> getManufactureStatus(@PathVariable String customerId) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    @GetMapping("/{orderID}/manufacturing")
+    public ResponseEntity<String> getManufactureStatus(@PathVariable Long orderID) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
             OrderModel order = orderOptional.get();
             String maufactureDone = order.getManufactureDone();
@@ -116,11 +109,10 @@ public class OrderController {
         }
     }
 
-
-    //Getting the delievery address
-    @GetMapping("/{customerId}/address")
-    public ResponseEntity<String> getAddress(@PathVariable String customerId) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    // Getting the delievery address
+    @GetMapping("/{orderID}/address")
+    public ResponseEntity<String> getAddress(@PathVariable Long orderID) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
             OrderModel order = orderOptional.get();
             String deliveryAddress = order.getDeliveryAddress();
@@ -130,10 +122,10 @@ public class OrderController {
         }
     }
 
-    //Getting the delievery status
-    @GetMapping("/{customerId}/delivery")
-    public ResponseEntity<String> getDeleiveryStatus(@PathVariable String customerId) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    // Getting the delievery status
+    @GetMapping("/{orderID}/delivery")
+    public ResponseEntity<String> getDeleiveryStatus(@PathVariable Long orderID) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
             OrderModel order = orderOptional.get();
             String deliveryStatus = order.getDeliveryStatus();
@@ -142,31 +134,35 @@ public class OrderController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    
-    /*@PatchMapping("/{customerId}")
-    public OrderModel updateOrder(@PathVariable String customerId, @RequestBody Map<String, Object> fields) {
-        return orderService.updateOrder(customerId, fields);
-    }*/
-    
+
+    /*
+     * @PatchMapping("/{customerId}")
+     * public OrderModel updateOrder(@PathVariable String customerId, @RequestBody
+     * Map<String, Object> fields) {
+     * return orderService.updateOrder(customerId, fields);
+     * }
+     */
 
     // Updating the simulation status
-    @PatchMapping("/{customerId}/setSimulation")
-    public ResponseEntity<OrderModel> updateSimulationStatus(@PathVariable String customerId, @RequestBody boolean simulationStatus) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    @PatchMapping("/{orderID}/setSimulation")
+    public ResponseEntity<OrderModel> updateSimulationStatus(@PathVariable Long orderID,
+            @RequestBody boolean simulationStatus) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
-            OrderModel orderModel = orderService.updateSimulationStatus(customerId, simulationStatus);
+            OrderModel orderModel = orderService.updateSimulationStatus(orderID, simulationStatus);
             return new ResponseEntity<>(orderModel, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-    // Updating the parts availability 
-    @PatchMapping("/{customerId}/setParts")
-    public ResponseEntity<OrderModel> updatePartsAvailable(@PathVariable String customerId, @RequestBody boolean partsAvailable) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    // Updating the parts availability
+    @PatchMapping("/{orderID}/setParts")
+    public ResponseEntity<OrderModel> updatePartsAvailable(@PathVariable Long orderID,
+            @RequestBody boolean partsAvailable) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
-            OrderModel orderModel = orderService.updatePartsAvailable(customerId, partsAvailable);
+            OrderModel orderModel = orderService.updatePartsAvailable(orderID, partsAvailable);
             return new ResponseEntity<>(orderModel, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -174,11 +170,11 @@ public class OrderController {
     }
 
     // Updating the total price of the order
-    @PatchMapping("/{customerId}/setPrice")
-    public ResponseEntity<OrderModel> updatePayment(@PathVariable String customerId, @RequestBody double payment) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    @PatchMapping("/{orderID}/setPrice")
+    public ResponseEntity<OrderModel> updatePayment(@PathVariable Long orderID, @RequestBody double payment) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
-            OrderModel orderModel = orderService.updatePayment(customerId, payment);
+            OrderModel orderModel = orderService.updatePayment(orderID, payment);
             return new ResponseEntity<>(orderModel, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -186,11 +182,12 @@ public class OrderController {
     }
 
     // Updating the delivery address
-    @PatchMapping("/{customerId}/setAddress")
-    public ResponseEntity<OrderModel> updateDeliveryAddress(@PathVariable String customerId, @RequestBody String deliveryAddress) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    @PatchMapping("/{orderID}/setAddress")
+    public ResponseEntity<OrderModel> updateDeliveryAddress(@PathVariable Long orderID,
+            @RequestBody String deliveryAddress) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
-            OrderModel orderModel = orderService.updateDeliveryAddress(customerId, deliveryAddress);
+            OrderModel orderModel = orderService.updateDeliveryAddress(orderID, deliveryAddress);
             return new ResponseEntity<>(orderModel, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -198,11 +195,12 @@ public class OrderController {
     }
 
     // Updating the payment status
-    @PatchMapping("/{customerId}/setPayment")
-    public ResponseEntity<OrderModel> updatePaymentStatus(@PathVariable String customerId, @RequestBody boolean paymentDone) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    @PatchMapping("/{orderID}/setPayment")
+    public ResponseEntity<OrderModel> updatePaymentStatus(@PathVariable Long orderID,
+            @RequestBody boolean paymentDone) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
-            OrderModel orderModel = orderService.updatePaymentStaus(customerId, paymentDone);
+            OrderModel orderModel = orderService.updatePaymentStaus(orderID, paymentDone);
             return new ResponseEntity<>(orderModel, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -210,11 +208,12 @@ public class OrderController {
     }
 
     // Updating the manufacturing status
-    @PatchMapping("/{customerId}/setManufacturing")
-    public ResponseEntity<OrderModel> updateManufactureDone(@PathVariable String customerId, @RequestBody String manufactureDone) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    @PatchMapping("/{orderID}/setManufacturing")
+    public ResponseEntity<OrderModel> updateManufactureDone(@PathVariable Long orderID,
+            @RequestBody String manufactureDone) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
-            OrderModel orderModel = orderService.updateManufactueDone(customerId, manufactureDone);
+            OrderModel orderModel = orderService.updateManufactueDone(orderID, manufactureDone);
             return new ResponseEntity<>(orderModel, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -222,11 +221,12 @@ public class OrderController {
     }
 
     // Updating the delivery status
-    @PatchMapping("/{customerId}/setDelivery")
-    public ResponseEntity<OrderModel> updateDeliveryStatus(@PathVariable String customerId, @RequestBody String deliveryStatus) {
-        Optional<OrderModel> orderOptional = orderService.singleOrder(customerId);
+    @PatchMapping("/{orderID}/setDelivery")
+    public ResponseEntity<OrderModel> updateDeliveryStatus(@PathVariable Long orderID,
+            @RequestBody String deliveryStatus) {
+        Optional<OrderModel> orderOptional = orderService.singleOrder(orderID);
         if (orderOptional.isPresent()) {
-            OrderModel orderModel = orderService.updateDeliveryStatus(customerId, deliveryStatus);
+            OrderModel orderModel = orderService.updateDeliveryStatus(orderID, deliveryStatus);
             return new ResponseEntity<>(orderModel, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

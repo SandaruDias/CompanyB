@@ -10,5 +10,7 @@ import com.example.CompanyB.CustomerOrderMnaagementModule.Model.OrderModel;
 
 @Repository
 public interface OrderRepository extends MongoRepository<OrderModel, ObjectId> {
-    Optional<OrderModel> findOrderByCustomerID(String customerID);
+    Optional<OrderModel> findOrderByOrderID(Long orderID);
+
+    Optional<OrderModel> findOrderByCustomerID(String customerId);
 }
