@@ -66,11 +66,9 @@ public class InvoiceService {
         return invoiceRepository.save(invoice);
     }
 
-
-
-    public Invoice processInvoice(Invoice invoice) {
-        invoice = invoiceRepository.save(invoice);
-        transactionService.processInvoiceTransaction(invoice.getTotal());
-        return invoice;
-    }
+//    public Invoice processInvoice(Invoice invoice) {
+//        invoice = invoiceRepository.save(invoice);
+//        transactionService.processInvoiceTransaction(invoice.getTotal());
+//        return invoice;
+//    }
 }
