@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/StationFetchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/StationFetchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +175,7 @@
       <workItem from="1714839970300" duration="217000" />
       <workItem from="1714845248415" duration="106000" />
       <workItem from="1714879946333" duration="1996000" />
-      <workItem from="1714884567071" duration="109000" />
+      <workItem from="1714884567071" duration="319000" />
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("http://localhost:5173/")
-@RequestMapping("CompanyB/Manufacturing/FetchUser")
+@RequestMapping("companyB/manufacturing/FetchUser")
 public class FetchUserController {
 
     private final FetchUserService fetchUserService;

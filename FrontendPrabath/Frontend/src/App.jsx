@@ -20,17 +20,17 @@ function App() {
     <Router>
       <Switch>
       
-        <Route path="/" exact component={SelectionPage} />
-        <Route path="/adminPortal" component={LoginPage} />
-        <Route path="/workerPortal" component={WorkerPortal} />
-        <Route path="/StockManag" component={StockManag} />
-        <Route path="/AddItem" component={AddItem} />
-        <Route path="/generatereport" component={GenerateReport} />
-        <Route path="/updatestock" component={UpdateStock} />
-        <Route path="/AdminInterface" component={admininterface}/>
-        <Route path="/WorkStationOne" component={WorkerInterfaceOne} />
-        <Route path="/WorkStationTwo" component={WorkerInterfaceTwo} />
-        <Route path="/WorkStationThree" component={WorkerInterfaceThree} />
+        <Route path="companyB/manufacturing/" exact component={SelectionPage} />
+        <Route path="companyB/manufacturing/adminPortal" component={LoginPage} />
+        <Route path="companyB/manufacturing/workerPortal" component={WorkerPortal} />
+        <Route path="companyB/manufacturing/StockManag" component={StockManag} />
+        <Route path="companyB/manufacturing/AddItem" component={AddItem} />
+        <Route path="companyB/manufacturing/generatereport" component={GenerateReport} />
+        <Route path="companyB/manufacturing/updatestock" component={UpdateStock} />
+        <Route path="companyB/manufacturing/AdminInterface" component={admininterface}/>
+        <Route path="companyB/manufacturing/WorkStationOne" component={WorkerInterfaceOne} />
+        <Route path="companyB/manufacturing/WorkStationTwo" component={WorkerInterfaceTwo} />
+        <Route path="companyB/manufacturing/WorkStationThree" component={WorkerInterfaceThree} />
 
       </Switch>
     </Router>
