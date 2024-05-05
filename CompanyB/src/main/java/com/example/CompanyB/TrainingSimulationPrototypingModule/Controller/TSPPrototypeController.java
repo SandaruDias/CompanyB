@@ -39,7 +39,7 @@ public class TSPPrototypeController {
     public ResponseEntity<Void> updatePrototype(@PathVariable String id,
                                                 @RequestParam boolean thermalTestPassed,
                                                 @RequestParam boolean electricalTestPassed,
-                                                @RequestParam String approvalStatus,
+                                                @RequestParam boolean approvalStatus,
                                                 @RequestParam String approvalMessage) {
         try {
             TSPPrototypeService.updatePrototype(id, thermalTestPassed, electricalTestPassed, approvalStatus, approvalMessage);
