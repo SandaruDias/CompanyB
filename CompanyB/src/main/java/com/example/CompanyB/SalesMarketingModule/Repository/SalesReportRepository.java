@@ -11,4 +11,11 @@ import java.util.List;
 public interface SalesReportRepository extends MongoRepository<SalesReportModel, String> {
 
     List<SalesReportModel> findBySaleDateBetween(Date startDate, Date endDate);
+
+    // Method to find best-selling products within a given time range
+    List<SalesReportModel> findTop3BySaleDateBetweenOrderByQuantitySoldDesc(Date startDate, Date endDate);
+
+    // Method to find slow-moving inventory (products with lowest sales) within a given time range
+    List<SalesReportModel> findTop3BySaleDateBetweenOrderByQuantitySoldAsc(Date startDate, Date endDate);
+
 }

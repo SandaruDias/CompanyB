@@ -1,13 +1,13 @@
 package com.example.CompanyB.SalesMarketingModule.Model;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Date;
 
 @Data
-@Document(collection = "SalesMarketing/Sales")
-public class SalesReportModel {
+@Document(collection = "SalesMarketing/Analysis")
+public class SalesAnalysisModel {
 
     private String id;
     private Date saleDate;
@@ -16,6 +16,6 @@ public class SalesReportModel {
 
     private String productId;
     private String productName;
-    private int quantitySold;
+    private int quantity;
 
 }
