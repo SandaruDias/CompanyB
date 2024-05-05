@@ -134,7 +134,7 @@ function WorkerInterfaceThree() {
 
   const handleSignOut =async () => {
     try{const response =await axios.put("http://localhost:8090/CompanyB/Manufacturing/User/workStation/signout/3")
-      history.push("/")
+      history.push("/companyB/manufacturing")
       console.log("Sign Out");
   
   }catch(error){

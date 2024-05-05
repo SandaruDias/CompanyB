@@ -62,7 +62,7 @@ function AdminInterface() {
 
   };
   const signOut = (e) =>{
-    history.push("/")
+    history.push("/companyB/manufacturing")
   }
 
   return (

@@ -142,7 +142,7 @@ function WorkerInterfaceOne() {
 
   const handleSignOut =async () => {
     try{const response =await axios.put("http://localhost:8090/CompanyB/Manufacturing/User/workStation/signout/1")
-      history.push("/")
+      history.push("/companyB/manufacturing")
       console.log("Sign Out");
   
   }catch(error){
