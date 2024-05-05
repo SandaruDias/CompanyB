@@ -40,6 +40,7 @@ public class AdministratorController {
         if (administrator != null) {
             // Prepare response with administrator information
             Map<String, Object> response = new HashMap<>();
+            response.put("userID", administrator.getUserId());
             response.put("firstName", administrator.getFirstName());
             response.put("lastName", administrator.getLastName());
             response.put("nicNo", administrator.getNicNo());
