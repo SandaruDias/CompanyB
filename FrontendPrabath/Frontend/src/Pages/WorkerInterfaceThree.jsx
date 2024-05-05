@@ -4,8 +4,8 @@ import ProgressBar from "./ProgressBar";
 import axios from "axios"
 import { useHistory } from "react-router-dom";
 
-const apiPlaceOrder = "http://localhost:8090/CompanyB/Manufacturing/FetchOrders/";
-const apiGetOrderToWorkStation = "http://localhost:8090/CompanyB/Manufacturing/OnGoingOrder/GetOrderToWorkStation/";
+const apiPlaceOrder = "http://localhost:8090/companyB/manufacturing/FetchOrders/";
+const apiGetOrderToWorkStation = "http://localhost:8090/companyB/manufacturing/OnGoingOrder/GetOrderToWorkStation/";
 
 function WorkerInterfaceThree() {
   const history = useHistory();
@@ -106,7 +106,7 @@ function WorkerInterfaceThree() {
   
   const handleAddOrder = async () => {
     try{
-      const response = await axios.put('http://localhost:8090/CompanyB/Manufacturing/OnGoingOrder/WorkstationThreeFetch/'+ orderId1 +'/'+ numberOfItemsAdd)
+      const response = await axios.put('http://localhost:8090/companyB/manufacturing/OnGoingOrder/WorkstationThreeFetch/'+ orderId1 +'/'+ numberOfItemsAdd)
     }
     catch(error){
         alert("Enter Valid Amount");
@@ -118,7 +118,7 @@ function WorkerInterfaceThree() {
 
   const handleSubmitPass =async (e) => {
     try{
-      const response = await axios.put('http://localhost:8090/CompanyB/Manufacturing/OnGoingOrder/WorkstationThreePass/'+ orderId1 +'/'+ numberOfItemsPass)
+      const response = await axios.put('http://localhost:8090/companyB/manufacturing/OnGoingOrder/WorkstationThreePass/'+ orderId1 +'/'+ numberOfItemsPass)
     }
     catch(error){
         alert("Enter valid Amount");
@@ -133,7 +133,7 @@ function WorkerInterfaceThree() {
   };
 
   const handleSignOut =async () => {
-    try{const response =await axios.put("http://localhost:8090/CompanyB/Manufacturing/User/workStation/signout/3")
+    try{const response =await axios.put("http://localhost:8090/companyB/manufacturing/User/workStation/signout/3")
       history.push("/companyB/manufacturing")
       console.log("Sign Out");
   
@@ -146,7 +146,7 @@ function WorkerInterfaceThree() {
     
     setErrors(errors+1);
     try {
-      const response = await axios.put('http://localhost:8090/CompanyB/Manufacturing/OnGoingOrder/WorkstationOneError/' + orderId1 + '/' + (1))
+      const response = await axios.put('http://localhost:8090/companyB/manufacturing/OnGoingOrder/WorkstationOneError/' + orderId1 + '/' + (1))
     }
     catch (error) {
       alert("Enter Valid Amount");
