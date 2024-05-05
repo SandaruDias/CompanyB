@@ -1,8 +1,8 @@
 package com.example.CompanyB.GeneralManagementModule.Service;
 
-import com.example.CompanyB.GeneralManagementModule.Model.Employee;
+import com.example.CompanyB.GeneralManagementModule.Model.GMEmployee;
 import com.example.CompanyB.GeneralManagementModule.Model.User;
-import com.example.CompanyB.GeneralManagementModule.Repository.EmployeeRepository;
+import com.example.CompanyB.GeneralManagementModule.Repository.GMEmployeeRepository;
 import com.example.CompanyB.GeneralManagementModule.Repository.UserRepository;
 import com.example.CompanyB.GeneralManagementModule.Util.JwtUtil;
 import org.slf4j.Logger;
@@ -21,7 +21,7 @@ public class AuthenticationService {
     @Autowired
     private JwtUtil jwtUtil;
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private GMEmployeeRepository employeeRepository;
 
     public String authenticate(String username, String password) {
         try {
@@ -48,7 +48,7 @@ public class AuthenticationService {
     public String authenticateEmployee(String username, String password) {
         try {
             logger.info("Authentication attempt for employee: {}", username);
-            Employee employee = employeeRepository.findByUserName(username);
+            GMEmployee employee = employeeRepository.findByUserName(username);
             if (employee != null && employee.getPassword().equals(password)) {
                 String token = jwtUtil.generateToken(employee.getUserName());
                 logger.info("Employee authenticated successfully: {}", username);
