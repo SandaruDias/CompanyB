@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("User")
+@RequestMapping("CompanyB/Manufacturing/User")
 
 public class ManufactureUserController {
     private final UserControllingService userControllingService;
