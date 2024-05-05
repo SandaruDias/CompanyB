@@ -28,6 +28,12 @@ public class SimulationController
         return simService.getAllSims();
     }
 
+    @GetMapping("/{id)")
+    @ResponseStatus(HttpStatus.OK)
+    public SimTest getSim(@PathVariable String id){
+        return simService.getSim(id);
+    }
+
     @GetMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public String deleteSimulation(@RequestParam String id){
