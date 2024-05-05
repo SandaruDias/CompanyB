@@ -19,20 +19,20 @@ public class SimulService {
     public String createSim(SimTestTO simTestTO) {
         try {
             SimTest sim = SimTest.builder()
-                    .testID(simTestTO.getTestID())
+                    .testID(simTestTO.getTestID())// no need to give test ID
                     .designDoc(simTestTO.getDesignDoc())
                     .simulApproval(simTestTO.isSimulApproval())
                     .simulComments(simTestTO.getSimulComments())
                     .circuitSimulStatus(simTestTO.isCircuitSimulStatus())
                     .thermalSimulStatus(simTestTO.isThermalSimulStatus())
                     .manufacturabilityStatus(simTestTO.isManufacturabilityStatus()).build();
-            simRepo.save(sim);
+            SimTest savedSim = simRepo.save(sim);
+            return savedSim.getTestID(); // Return the MongoDB ID
         } catch (Exception e) {
-            //Write Exception
+            // Handle exception
+            return null; // or throw an exception
         }
-        return "New Simulation added successfully.";
     }
-
     /* Create new simulation in the database*/
     public List<SimTest> getAllSims() {
         List<SimTest> simList = new ArrayList<>();
