@@ -2,7 +2,9 @@ package com.example.CompanyB.FinancePayRollModule.Service;
 
 import com.example.CompanyB.FinancePayRollModule.Service.dto.PayrollDTO;
 import com.example.CompanyB.FinancePayRollModule.Model.EmployeePayroll;
+import com.example.CompanyB.FinancePayRollModule.Model.Transaction;
 import com.example.CompanyB.FinancePayRollModule.Repository.PayrollRepository;
+import com.example.CompanyB.FinancePayRollModule.Repository.TransactionRepository;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -21,6 +23,9 @@ public class PayrollService {
     private PayrollRepository payrollRepository;
 
     @Autowired
+    private TransactionRepository transactionRepository;
+
+    @Autowired
     private TransactionService transactionService;
 
     @Autowired
@@ -29,9 +34,8 @@ public class PayrollService {
     public EmployeePayroll createPayroll(PayrollDTO payrollDTO) {
         EmployeePayroll payroll = new EmployeePayroll();
         int nextPayrollId = payrollCounterService.getNextPayrollId();
-        String formattedPayrollId = String.format("INV%05d", nextPayrollId);
+        String formattedPayrollId = String.format("PAY%05d", nextPayrollId);
         payroll.setPayrollId(formattedPayrollId);
-
         payroll.setEmployeeId(payrollDTO.getEmployeeId());
         payroll.setEmployeeName(payrollDTO.getEmployeeName());
         payroll.setBasicSalary(payrollDTO.getBasicSalary());
@@ -52,11 +56,15 @@ public class PayrollService {
         double netPay = grossPay - taxAmount - deductions + allowance;
         payroll.setNetPay(netPay);
 
+        Transaction transaction = transactionService.processPayrollTransaction(netPay, formattedPayrollId);
+        transactionRepository.save(transaction);
+
         return payrollRepository.save(payroll);
     }
 
     public void deletePayroll(String id) {
         payrollRepository.deleteById(id);
+        transactionRepository.deleteByReferenceId(id);
     }
 
     public List<EmployeePayroll> getAllPayrollDetails() {
@@ -70,9 +78,14 @@ public class PayrollService {
     public EmployeePayroll updatePayroll(String id, EmployeePayroll updatedPayroll) {
         if (payrollRepository.existsById(id)) {
             updatedPayroll.setPayrollId(id);
+            Transaction transaction = transactionService.getTransactionByReferenceId(id);
+            double balance = transaction.getBalance() + transaction.getExpense() - updatedPayroll.getNetPay();
+            transaction.setExpense(updatedPayroll.getNetPay());
+            transaction.setBalance(balance);
+            transactionRepository.save(transaction);
             return payrollRepository.save(updatedPayroll);
         } else {
-            throw new RuntimeException("Invoice not found");
+            throw new RuntimeException("Payroll not found");
         }
     }
 
@@ -84,7 +97,7 @@ public class PayrollService {
         try (XSSFWorkbook workbook = new XSSFWorkbook(); ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
             Sheet sheet = workbook.createSheet("Employee Payrolls");
 
-            String[] columns = {"ID", "Employee Name", "Basic Salary", "OT Hours", "Salary Per Hour", "Working Hours", "Tax Percentage", "Deductions", "Benefits", "Net Pay", "Payroll Date"};
+            String[] columns = {"Payroll ID", "Employee Name", "Basic Salary", "OT Hours", "Payroll Start Date", "Payroll End Date", "Working Days","Tax Percentage", "Deductions", "Allowance", "Net Pay", "Payroll Date"};
             Row headerRow = sheet.createRow(0);
             for (int i = 0; i < columns.length; i++) {
                 Cell cell = headerRow.createCell(i);
@@ -117,15 +130,15 @@ public class PayrollService {
         }
     }
 
-    public EmployeePayroll processPayroll(EmployeePayroll payroll) {
-        // Save the payroll information
-        payroll = payrollRepository.save(payroll);
-
-        // Process the transaction related to payroll
-        transactionService.processPayrollTransaction(payroll.getNetPay());
-
-        return payroll;
-    }
+//    public EmployeePayroll processPayroll(EmployeePayroll payroll) {
+//        // Save the payroll information
+//        payroll = payrollRepository.save(payroll);
+//
+//        // Process the transaction related to payroll
+//        transactionService.processPayrollTransaction(payroll.getNetPay());
+//
+//        return payroll;
+//    }
 
 }
 

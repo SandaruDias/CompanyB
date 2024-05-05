@@ -11,14 +11,12 @@ public class Invoice {
 
     @Id
     private String invoiceId;
-
     private String orderId;
     private String customerId;
 
-
+    private Date orderDate;
     private Date invoiceDate;
     private String paymentMethod;
-
     private double subtotal;
     private double tax;
     private double total;
@@ -99,5 +97,13 @@ public class Invoice {
 
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 }
