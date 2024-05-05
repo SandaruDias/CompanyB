@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Removed Unwanted Files">
-      <change beforePath="$PROJECT_DIR$/.idea/CompanyB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CompanyB.iml" afterDir="false" />
+    <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Moved to original directory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-24_3_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-24_3_40_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-04-28_11_32_PM__Changes_.xml" afterDir="false" />
@@ -16,6 +15,10 @@
       <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-01_1_53_PM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-04_2_06_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-04_2_06_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/GeneralManagementModule/Controller/SampleController9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/GeneralManagementModule/Model/SampleModel9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/GeneralManagementModule/Repository/SampleRepository9.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,16 +99,26 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Sandaru Dias/Documents/GitHub/CompanyB",
+    "last_opened_file_path": "C:/Users/Sandaru Dias/Documents/GitHub/CompanyB/CompanyB/src/main/java/com/example/CompanyB/QualityAssuranceModule/Repository",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sandaru Dias\Documents\GitHub\CompanyB\CompanyB\src\main\java\com\example\CompanyB\QualityAssuranceModule\Repository" />
+      <recent name="C:\Users\Sandaru Dias\Documents\GitHub\CompanyB\CompanyB\src\main\java\com\example\CompanyB\QualityAssuranceModule\Controller" />
+      <recent name="C:\Users\Sandaru Dias\Documents\GitHub\CompanyB\CompanyB\src\main\java\com\example\CompanyB\QualityAssuranceModule\Model" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.CompanyB_Application">
     <configuration name="generated-requests | #50" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="50" requestIdentifier="#50" runType="Run single request">
       <method v="2" />
@@ -175,6 +188,7 @@
       <workItem from="1714637799954" duration="615000" />
       <workItem from="1714831677854" duration="3506000" />
       <workItem from="1714879231846" duration="199000" />
+      <workItem from="1714913862181" duration="634000" />
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />
@@ -200,7 +214,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714879327045</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Moved to original directory">
+      <option name="closed" value="true" />
+      <created>1714914224133</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714914224133</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Moved to original directory">
+      <option name="closed" value="true" />
+      <created>1714914440279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714914440280</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +250,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Works Stations are modeled" />
     <MESSAGE value="Removed Unwanted Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Unwanted Files" />
+    <MESSAGE value="Moved to original directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved to original directory" />
   </component>
 </project>
