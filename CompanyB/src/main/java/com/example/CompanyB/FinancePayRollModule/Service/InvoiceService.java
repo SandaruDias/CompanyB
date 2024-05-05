@@ -2,7 +2,9 @@ package com.example.CompanyB.FinancePayRollModule.Service;
 
 import com.example.CompanyB.FinancePayRollModule.Model.EmployeePayroll;
 import com.example.CompanyB.FinancePayRollModule.Model.Invoice;
+import com.example.CompanyB.FinancePayRollModule.Model.Transaction;
 import com.example.CompanyB.FinancePayRollModule.Repository.InvoiceRepository;
+import com.example.CompanyB.FinancePayRollModule.Repository.TransactionRepository;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -24,6 +26,10 @@ public class InvoiceService {
     @Autowired
     private TransactionService transactionService;
 
+
+    @Autowired
+    private TransactionRepository transactionRepository;
+
     @Autowired
     private InvoiceCounterService invoiceCounterService;
 
@@ -38,6 +44,11 @@ public class InvoiceService {
     public Invoice updateInvoice(String id, Invoice updatedInvoice) {
         if (invoiceRepository.existsById(id)) {
             updatedInvoice.setInvoiceId(id);
+            Transaction transaction = transactionService.getTransactionByReferenceId(id);
+            double balance = transaction.getBalance()- transaction.getIncome() + updatedInvoice.getTotal();
+            transaction.setIncome(updatedInvoice.getTotal());
+            transaction.setBalance(balance);
+            transactionRepository.save(transaction);
             return invoiceRepository.save(updatedInvoice);
         } else {
             throw new RuntimeException("Invoice not found");
@@ -46,6 +57,7 @@ public class InvoiceService {
 
     public void deleteInvoice(String id) {
         invoiceRepository.deleteById(id);
+        transactionRepository.deleteByReferenceId(id);
     }
 
     public List<Invoice> findInvoicesByCustomerId(String customerId) {
@@ -90,12 +102,10 @@ public class InvoiceService {
         int nextInvoiceId = invoiceCounterService.getNextInvoiceId();
         String formattedInvoiceId = String.format("INV%05d", nextInvoiceId);
         invoice.setInvoiceId(formattedInvoiceId);
+
+        Transaction transaction = transactionService.processInvoiceTransaction(invoice.getTotal(), formattedInvoiceId);
+        transactionRepository.save(transaction);
         return invoiceRepository.save(invoice);
     }
 
-//    public Invoice processInvoice(Invoice invoice) {
-//        invoice = invoiceRepository.save(invoice);
-//        transactionService.processInvoiceTransaction(invoice.getTotal());
-//        return invoice;
-//    }
 }

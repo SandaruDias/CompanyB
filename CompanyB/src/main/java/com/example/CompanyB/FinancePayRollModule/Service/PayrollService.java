@@ -2,7 +2,9 @@ package com.example.CompanyB.FinancePayRollModule.Service;
 
 import com.example.CompanyB.FinancePayRollModule.Service.dto.PayrollDTO;
 import com.example.CompanyB.FinancePayRollModule.Model.EmployeePayroll;
+import com.example.CompanyB.FinancePayRollModule.Model.Transaction;
 import com.example.CompanyB.FinancePayRollModule.Repository.PayrollRepository;
+import com.example.CompanyB.FinancePayRollModule.Repository.TransactionRepository;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -19,6 +21,9 @@ import java.util.List;
 public class PayrollService {
     @Autowired
     private PayrollRepository payrollRepository;
+
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     @Autowired
     private TransactionService transactionService;
@@ -51,11 +56,15 @@ public class PayrollService {
         double netPay = grossPay - taxAmount - deductions + allowance;
         payroll.setNetPay(netPay);
 
+        Transaction transaction = transactionService.processPayrollTransaction(netPay, formattedPayrollId);
+        transactionRepository.save(transaction);
+
         return payrollRepository.save(payroll);
     }
 
     public void deletePayroll(String id) {
         payrollRepository.deleteById(id);
+        transactionRepository.deleteByReferenceId(id);
     }
 
     public List<EmployeePayroll> getAllPayrollDetails() {
@@ -69,6 +78,11 @@ public class PayrollService {
     public EmployeePayroll updatePayroll(String id, EmployeePayroll updatedPayroll) {
         if (payrollRepository.existsById(id)) {
             updatedPayroll.setPayrollId(id);
+            Transaction transaction = transactionService.getTransactionByReferenceId(id);
+            double balance = transaction.getBalance() + transaction.getExpense() - updatedPayroll.getNetPay();
+            transaction.setExpense(updatedPayroll.getNetPay());
+            transaction.setBalance(balance);
+            transactionRepository.save(transaction);
             return payrollRepository.save(updatedPayroll);
         } else {
             throw new RuntimeException("Payroll not found");
@@ -116,15 +130,6 @@ public class PayrollService {
         }
     }
 
-//    public EmployeePayroll processPayroll(EmployeePayroll payroll) {
-//        // Save the payroll information
-//        payroll = payrollRepository.save(payroll);
-//
-//        // Process the transaction related to payroll
-//        transactionService.processPayrollTransaction(payroll.getNetPay());
-//
-//        return payroll;
-//    }
 
 }
 
