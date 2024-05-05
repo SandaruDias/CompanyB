@@ -1,7 +1,6 @@
 package com.example.CompanyB.GeneralManagementModule.Service;
 
 import com.example.CompanyB.GeneralManagementModule.Model.Employee;
-import com.example.CompanyB.GeneralManagementModule.Model.User;
 import com.example.CompanyB.GeneralManagementModule.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,25 +11,25 @@ import org.springframework.stereotype.Service;
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
+    private final AuthenticationService authenticationService;
 
     @Autowired
-    public EmployeeService(EmployeeRepository employeeRepository) {
+    public EmployeeService(EmployeeRepository employeeRepository, AuthenticationService authenticationService) {
         this.employeeRepository = employeeRepository;
+        this.authenticationService = authenticationService;
     }
 
     //Finding by username
-    public User findByUsername(String username) {
+    public Employee findByUsername(String username) {
         return employeeRepository.findByUserName(username);
     }
 
     //Manual authentication system
-    public boolean authenticate(String username, String password) {
-        Employee employee = (Employee) findByUsername(username);
-        if (employee != null && employee.getPassword().equals(password)) {
-            return true;
-        }
-        return false;
+    // Use AuthenticationService for JWT handling
+    public String authenticate(String username, String password) {
+        return authenticationService.authenticateEmployee(username, password);  // Redirect authentication to AuthenticationService
     }
+
 
     //Save the new response
     public Employee createEmployee(String id, String firstname, String lastname, String email,

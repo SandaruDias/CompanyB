@@ -1,6 +1,8 @@
 package com.example.CompanyB.GeneralManagementModule.Service;
 
+import com.example.CompanyB.GeneralManagementModule.Model.Employee;
 import com.example.CompanyB.GeneralManagementModule.Model.User;
+import com.example.CompanyB.GeneralManagementModule.Repository.EmployeeRepository;
 import com.example.CompanyB.GeneralManagementModule.Repository.UserRepository;
 import com.example.CompanyB.GeneralManagementModule.Util.JwtUtil;
 import org.slf4j.Logger;
@@ -18,6 +20,8 @@ public class AuthenticationService {
 
     @Autowired
     private JwtUtil jwtUtil;
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
     public String authenticate(String username, String password) {
         try {
@@ -39,4 +43,24 @@ public class AuthenticationService {
             throw new RuntimeException("Authentication failed due to an unexpected error");
         }
     }
+
+    // Modify AuthenticationService to include a method for authenticating employees.
+    public String authenticateEmployee(String username, String password) {
+        try {
+            logger.info("Authentication attempt for employee: {}", username);
+            Employee employee = employeeRepository.findByUserName(username);
+            if (employee != null && employee.getPassword().equals(password)) {
+                String token = jwtUtil.generateToken(employee.getUserName());
+                logger.info("Employee authenticated successfully: {}", username);
+                return token;
+            } else {
+                logger.error("Authentication failed for employee: {}", username);
+                throw new RuntimeException("Incorrect username or password for employee");
+            }
+        } catch (Exception e) {
+            logger.error("Authentication failed due to exception for employee: {}", username, e);
+            throw new RuntimeException("Authentication failed due to an unexpected error for employee");
+        }
+    }
+
 }
