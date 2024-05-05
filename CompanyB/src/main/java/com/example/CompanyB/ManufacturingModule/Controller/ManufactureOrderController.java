@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("http://localhost:5173/")
-@RequestMapping("/Orders")
+@RequestMapping("companyB/manufacturing/Orders")
 public class ManufactureOrderController {
 
     private final ManufactureOrderService manufactureOrderService;
