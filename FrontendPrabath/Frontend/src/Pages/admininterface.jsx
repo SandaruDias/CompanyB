@@ -4,7 +4,7 @@ import ProgressBar from './ProgressBar';
 import Pnew from './Pnew';
 import { useHistory } from "react-router-dom";
 
-const apiOrderObject = "http://localhost:8090/OnGoingOrder/GetOrderToWorkStation/";
+const apiOrderObject = "http://localhost:8090/Manufacturing/OnGoingOrder/GetOrderToWorkStation/";
 
 function AdminInterface() {
   const history = useHistory();
@@ -68,7 +68,7 @@ function AdminInterface() {
   return (
     <div className="assembly-line">
       <h1>Company B</h1>
-      <h2>Assembly line</h2>
+      <h1 style={{textAlign:"center"}}>Assembly Line</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="orderId">Order ID:</label>
         <input type="text" id="orderId" name="orderId" />

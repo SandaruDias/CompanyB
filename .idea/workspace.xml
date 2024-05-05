@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bef99d7c-b06f-4b28-bf28-005525ada8b9" name="Changes" comment="Works Stations are modeled">
-      <change afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Repository/ManufactureOrderRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/ManufactureOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/ManufactureUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Repository/ManufactureOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Service/ManufactureOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/FetchOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/FetchOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/FetchUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/FetchUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/ManufactureOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/ManufactureOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/StationFetchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/StationFetchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/CorsConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/DataTransferObject/OnGoingOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/DataTransferObject/OnGoingOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Repository/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Repository/OrderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/FetchOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/FetchOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/ManufactureOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/ManufactureOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/OnGoingOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/OnGoingOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyB/target/classes/com/example/CompanyB/ManufacturingModule/Service/OrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyB/src/main/java/com/example/CompanyB/ManufacturingModule/Controller/OnGoingOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Pages/admininterface.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/admininterface.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendPrabath/Frontend/src/Styles/admininterface.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +168,8 @@
       <workItem from="1714637799954" duration="615000" />
       <workItem from="1714831677854" duration="4152000" />
       <workItem from="1714839970300" duration="217000" />
+      <workItem from="1714845248415" duration="106000" />
+      <workItem from="1714879946333" duration="1284000" />
     </task>
     <task id="LOCAL-00001" summary="Works Stations are modeled">
       <option name="closed" value="true" />
