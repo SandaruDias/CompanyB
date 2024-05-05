@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-class EmployeeAttendanceControllerTest {
+class TPSEmployeeAttendanceControllerTest {
 
     @Mock
     private EmployeeAttendanceService employeeAttendanceService;
