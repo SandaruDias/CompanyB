@@ -4,6 +4,7 @@ package com.example.CompanyB.TrainingSimulationPrototypingModule.Model;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Data
 @AllArgsConstructor
@@ -12,7 +13,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 public class PrototypeModel {
+
     @Id
+    @Field("id")
     private String id;
     private byte[] designDocumentPdf;
     private String material;

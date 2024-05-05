@@ -24,11 +24,9 @@ public class PrototypeController {
                                                   @RequestParam("material") String material,
                                                   @RequestParam("color") String color,
                                                   @RequestParam("shape") String shape,
-                                                  @RequestParam("comments") String comments,
-                                                  boolean thermalTestPassed,
-                                                  boolean electricalTestPassed) {
+                                                  @RequestParam("comments") String comments) {
         try {
-            String prototypeId = prototypeService.createPrototype(file, material, color, shape, comments, thermalTestPassed, electricalTestPassed);
+            String prototypeId = prototypeService.createPrototype(file, material, color, shape, comments);
             return ResponseEntity.ok(prototypeId);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create prototype.");
@@ -37,6 +35,19 @@ public class PrototypeController {
         }
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updatePrototype(@PathVariable String id,
+                                                @RequestParam boolean thermalTestPassed,
+                                                @RequestParam boolean electricalTestPassed,
+                                                @RequestParam String approvalStatus,
+                                                @RequestParam String approvalMessage) {
+        try {
+            prototypeService.updatePrototype(id, thermalTestPassed, electricalTestPassed, approvalStatus, approvalMessage);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<PrototypeModel> getPrototype(@PathVariable String id) {
@@ -51,6 +62,7 @@ public class PrototypeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePrototype(@PathVariable String id) {
         try {
@@ -60,5 +72,4 @@ public class PrototypeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
 }

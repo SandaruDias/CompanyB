@@ -34,13 +34,10 @@ class PrototypeControllerTest {
         // Mock data
         String prototypeId = "12345";
         MultipartFile file = mock(MultipartFile.class);
-        PrototypeService prototypeService = mock(PrototypeService.class);
-        PrototypeController prototypeController = new PrototypeController(prototypeService);
-
-        when(prototypeService.createPrototype(any(MultipartFile.class), anyString(), anyString(), anyString(), anyString(), anyBoolean(), anyBoolean())).thenReturn(prototypeId);
+        when(prototypeService.createPrototype(any(MultipartFile.class), anyString(), anyString(), anyString(), anyString())).thenReturn(prototypeId);
 
         // Call controller method
-        ResponseEntity<String> response = prototypeController.createPrototype(file, "material", "color", "shape", "comments", true, true);
+        ResponseEntity<String> response = prototypeController.createPrototype(file, "material", "color", "shape", "comments");
 
         // Verify response
         assertEquals(HttpStatus.OK, response.getStatusCode());

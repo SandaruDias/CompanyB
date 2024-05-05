@@ -21,7 +21,7 @@ class PrototypeServiceTest {
         MockMultipartFile file = new MockMultipartFile("file", "test.pdf", "application/pdf", "Mock PDF Content".getBytes());
 
         // Act
-        String id = prototypeService.createPrototype(file, "Material", "Color", "Shape", "Comments", true, false);
+        String id = prototypeService.createPrototype(file, "Material", "Color", "Shape", "Comments");
 
         // Assert
         assertNull(id);
@@ -36,7 +36,7 @@ class PrototypeServiceTest {
         MockMultipartFile file = new MockMultipartFile("file", "test.pdf", "application/pdf", "Mock PDF Content".getBytes());
 
         // Act
-        String id = prototypeService.createPrototype(file, "Material", "Color", "Shape", "Comments", true, false);
+        String id = prototypeService.createPrototype(file, "Material", "Color", "Shape", "Comments");
 
         // Assert
         assertNull(id);
