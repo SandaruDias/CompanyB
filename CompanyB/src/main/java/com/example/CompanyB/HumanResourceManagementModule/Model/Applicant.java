@@ -9,8 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 public class Applicant extends Person {
+
     @Id
-    private String Nic;
+    private String nicNo;
     private String education;
     private String about;
 }
