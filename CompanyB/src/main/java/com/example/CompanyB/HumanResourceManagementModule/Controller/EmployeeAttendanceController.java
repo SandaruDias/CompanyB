@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("hr/employee/attendance")
+@CrossOrigin
 public class EmployeeAttendanceController {
 
     private EmployeeAttendanceService employeeAttendanceService;
@@ -49,7 +50,7 @@ public class EmployeeAttendanceController {
             }else if(message.contains("you don't have arrived at morning-->")){
                 return ResponseEntity.ok("you haven't checked in at morning" + message);
             }else{
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("you can't leave NOW");
+                return ResponseEntity.ok("you can't leave NOW");
             }
 
         } else {

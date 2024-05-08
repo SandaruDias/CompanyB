@@ -15,6 +15,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("hr/administrator")
+@CrossOrigin
 public class AdministratorController {
 
     @Autowired

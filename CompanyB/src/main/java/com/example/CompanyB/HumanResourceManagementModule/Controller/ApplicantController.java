@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/hr/applicant")
+@CrossOrigin
 public class ApplicantController {
 
     @Autowired
@@ -29,5 +30,16 @@ public class ApplicantController {
         List<Applicant> applications = applicantService.getAllApplication();
         return ResponseEntity.ok(applications);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteApplicantById(@PathVariable String id) {
+        try {
+            applicantService.deleteApplicantById(id);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Deleted applicant with ID: " + id);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid ID: " + id);
+        }
+    }
+
 
 }

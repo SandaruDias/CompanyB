@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ApplicantService {
@@ -21,6 +22,15 @@ public class ApplicantService {
     // Method to retrieve all applications
     public List<Applicant> getAllApplication(){
         return applicantRepo.findAll();
+    }
+
+    public void deleteApplicantById(String id) {
+        Optional<Applicant> applicantOptional = applicantRepo.findById(id);
+        if (applicantOptional.isPresent()) {
+            applicantRepo.deleteById(id);
+        } else {
+            throw new IllegalArgumentException("Invalid ID: " + id);
+        }
     }
 
 }
